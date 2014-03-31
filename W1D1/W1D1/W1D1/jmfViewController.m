@@ -1,6 +1,6 @@
 //
 //  jmfViewController.m
-//  Fun App
+//  W1D1
 //
 //  Created by Jeffery Moulds on 3/31/14.
 //  Copyright (c) 2014 Jeffery Moulds. All rights reserved.
@@ -17,8 +17,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    
 }
 
 - (void)didReceiveMemoryWarning
@@ -27,6 +25,21 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)buttonPressed:(id)sender {
-self.myLabel.text=@"Jeffery";}
+
+- (IBAction)buttonOne:(id)sender {
+    self.labelOne.text= @"Label One Affect";
+}
+
+- (IBAction)buttonTwo:(id)sender {
+    self.labelTwo.text= self.textEntry.text;
+}
+
+- (IBAction)buttonThree:(id)sender {
+    self.labelThree.textColor= [ UIColor redColor];
+}
+
+- (IBAction)textEntry:(id)sender {
+    
+}
+
 @end
