@@ -57,7 +57,6 @@
     CARWheel *wheel4 = [[CARWheel alloc] init];
     wheel4.frame = CGRectMake(265, 420, 40, 40);
     [self.view addSubview:wheel4];
-
     
     CARGasPedal * gasPedal = [[CARGasPedal alloc] init];
     gasPedal.frame = CGRectMake(220, 300, 80, 100);
@@ -88,9 +87,6 @@
     bumper.backgroundColor = [UIColor brownColor];
     [self.view addSubview:bumper];
 
-
-    
-    
     
     
     
@@ -108,6 +104,14 @@
 {
     NSLog(@"pressed brake");
 }
+
+
+- (void)pressignition
+
+{
+    NSLog(@"vroom vroom");
+}
+
 
 - (void)didReceiveMemoryWarning
 
