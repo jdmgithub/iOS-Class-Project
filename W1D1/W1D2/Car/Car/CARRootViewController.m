@@ -35,9 +35,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 
-    CARIgnition *startButton = [[CARIgnition alloc] init];
-    CARGasPedal *pedal = [[CARGasPedal alloc] init];
-    CARBrake *brake = [[CARBrake alloc] init];
 
     CARWheel *wheel1 = [[CARWheel alloc] init];
     wheel1.frame = CGRectMake(20, 40, 40, 40);
