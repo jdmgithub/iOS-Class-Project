@@ -27,59 +27,90 @@
     if (self)
     {
 
-        //listItems = [[NSArray alloc] initWithObjects:@"Monday", @"Tuesday", @"Wednesday", nil];
-        //NSLog(@"listItems : %@ .... %@", listItems, listItems[0]);
+    // NSDictionary * list = [NSDictionary alloc] initWithObjects:<#(NSArray *)#> forKeys:<#(NSArray *)#>;
         
-    listItems = @[@"Ali Houshmand", @"Ashby Thronwell", @"Austen Johnson", @"Austin Nolan", @"Derek Weber", @"Ed Salter", @"Heidi Proske", @"Jeff King", @"Jeffery Moulds", @"Jisha Obukwelu", @"John Yam", @"Jon Fox", @"Savitha Reddy", @"Teddy Conyers", @"T.J. Mercer"];
+    //    NSDictionary * list = @{
+    //                            @"name" : @"Savitha Reddy",
+    //                            @"image" : [UIImage imageNamed:@"SavithaReddy"]
+                                
+        
+    //                            };
+        
+      
+    listItems =@[
+@{@"name" : @"Ali Houshmand", @"image" : [UIImage imageNamed:@"AliHoushmand"]},
+@{@"name" : @"Ashby Thronwell", @"image" : [UIImage imageNamed:@"AshbyThornwell"]},
+@{@"name" : @"Austen Johnson", @"image" : [UIImage imageNamed:@"AustenJohnson"]},
+@{@"name" : @"Austin Nolan", @"image" : [UIImage imageNamed:@"AustinNolan"]},
+@{@"name" : @"Derek Weber", @"image" : [UIImage imageNamed:@"DerekWeber"]},
+@{@"name" : @"Ed Salter", @"image" : [UIImage imageNamed:@"edsalter"]},
+@{@"name" : @"Heidi Proske", @"image" : [UIImage imageNamed:@"HeidiProske"]},
+@{@"name" : @"Jeff King", @"image" : [UIImage imageNamed:@"JeffKing"]},
+@{@"name" : @"Jeffery Moulds", @"image" : [UIImage imageNamed:@"JefferyMoulds"]},
+@{@"name" : @"Jisha Obukwelu", @"image" : [UIImage imageNamed:@"JishaObukwelu"]},
+@{@"name" : @"John Yam", @"image" : [UIImage imageNamed:@"JohnYam"]},
+@{@"name" : @"Jon Fox", @"image" : [UIImage imageNamed:@"JonFox"]},
+@{@"name" : @"Savitha Reddy", @"image" : [UIImage imageNamed:@"SavithaReddy"]},
+@{@"name" : @"Teddy Conyers", @"image" : [UIImage imageNamed:@"TeddyConyers"]},
+@{@"name" : @"T.J Mercer", @"image" : [UIImage imageNamed:@"TJMercer"]}
 
-        listImages = @[
-                       [UIImage imageNamed:@"AliHoushmand"],
-                       [UIImage imageNamed:@"AshbyThornwell"],
-                       [UIImage imageNamed:@"AustenJohnson"],
-                       [UIImage imageNamed:@"AustinNolan"],
-                       [UIImage imageNamed:@"DerekWeber"],
-                       [UIImage imageNamed:@"edsalter"],
-                       [UIImage imageNamed:@"HeidiProske"],
-                       [UIImage imageNamed:@"JeffKing"],
-                       [UIImage imageNamed:@"JefferyMoulds"],
-                       [UIImage imageNamed:@"JishaObukwelu"],
-                       [UIImage imageNamed:@"JohnYam"],
-                       [UIImage imageNamed:@"JonFox"],
-                       [UIImage imageNamed:@"SavithaReddy"],
-                       [UIImage imageNamed:@"TeddyConyers"],
-                       [UIImage imageNamed:@"TJMercer"]
-                        ];
+                ];
+        
+        
+        
+//    listItems = @[@"Ali Houshmand", @"Ashby Thronwell", @"Austen Johnson", @"Austin Nolan", @"Derek Weber", @"Ed Salter", @"Heidi Proske", @"Jeff King", @"Jeffery Moulds", @"Jisha Obukwelu", @"John Yam", @"Jon Fox", @"Savitha Reddy", @"Teddy Conyers", @"T.J. Mercer"];
+
+        
+        
+//    listImages = @[
+//                       [UIImage imageNamed:@"AliHoushmand"],
+//                       [UIImage imageNamed:@"AshbyThornwell"],
+//                       [UIImage imageNamed:@"AustenJohnson"],
+//                       [UIImage imageNamed:@"AustinNolan"],
+//                       [UIImage imageNamed:@"DerekWeber"],
+//                       [UIImage imageNamed:@"edsalter"],
+//                       [UIImage imageNamed:@"HeidiProske"],
+//                       [UIImage imageNamed:@"JeffKing"],
+//                       [UIImage imageNamed:@"JefferyMoulds"],
+//                       [UIImage imageNamed:@"JishaObukwelu"],
+//                       [UIImage imageNamed:@"JohnYam"],
+//                       [UIImage imageNamed:@"JonFox"],
+//                       [UIImage imageNamed:@"SavithaReddy"],
+//                       [UIImage imageNamed:@"TeddyConyers"],
+//                       [UIImage imageNamed:@"TJMercer"]
+//                    ];
    
         
         self.tableView.contentInset = UIEdgeInsetsMake(50, 0, 0, 0);
-        //self.tableView.rowHeight = 100;
+//        self.tableView.rowHeight = 100;
         
        
         
         UIView * header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 50)];
         header.backgroundColor = [UIColor grayColor];
-        UILabel * titleHeader = [[UILabel alloc] initWithFrame:CGRectMake(15, 10, 300, 30)];
-        
-        titleHeader.text = @"Class Contacts";
-        titleHeader.textColor = [UIColor whiteColor];
-        [header addSubview:titleHeader];
         
         self.tableView.tableHeaderView = header;
+        
+        
+        UILabel * titleHeader = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 300, 30)];
+        titleHeader.text = @"Class Contacts";
+        titleHeader.textColor = [UIColor whiteColor];
+
+        [header addSubview:titleHeader];
+        
         
  
         UIView * footer = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 50)];
         footer.backgroundColor = [UIColor grayColor];
-        UILabel * titlefooter = [[UILabel alloc] initWithFrame:CGRectMake(15, 10, 300, 30)];
+
+        UILabel * titlefooter = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 300, 30)];
         
         titlefooter.text = @"End of List";
         titlefooter.textColor = [UIColor whiteColor];
+
         [footer addSubview:titlefooter];
      
         self.tableView.tableFooterView = footer;
-        
-        //[listfooter addSubview:listfooter];
-        //self.tableView.tableHeaderView = listfooter;
-        
         
         
     }
@@ -126,16 +157,25 @@
         cell = [[UITableViewCell alloc] init];
     }
     
-    int index = [indexPath row];
-    
-    cell.textLabel.text = listItems[index];
-    cell.imageView.image = listImages[index];
-   
-    // NSString * day=listItems[index];
+//  int index = [indexPath row];  THIS IS THE SAME AS NEXT LINE - an alias/shorthand
+    int index = indexPath.row;
 
-        // cell.textLabel.text = day;
     
-    // Configure the cell...
+//      cell.textLabel.text = listItems[index];
+
+//      cell.imageView.image = listImages[index];
+   
+
+    NSDictionary * listItem = listItems[index];
+    cell.textLabel.text = listItem[@"name"];
+    cell.imageView.image = listItem[@"image"];
+    
+    
+//      NSString * day=listItems[index];
+
+//      cell.textLabel.text = day;
+    
+//      Configure the cell...
     
     return cell;
 
