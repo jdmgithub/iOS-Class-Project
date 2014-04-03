@@ -113,6 +113,7 @@
 		1B18634318EC4AF9007B1E68 = {
 			isa = PBXGroup;
 			children = (
+				1BEEE5FF18EDA7A600EF9A41 /* Controllers */,
 				1B18635518EC4AF9007B1E68 /* todo */,
 				1B18636E18EC4AF9007B1E68 /* todoTests */,
 				1B18634E18EC4AF9007B1E68 /* Frameworks */,
@@ -143,7 +144,6 @@
 		1B18635518EC4AF9007B1E68 /* todo */ = {
 			isa = PBXGroup;
 			children = (
-				1BEEE5FF18EDA7A600EF9A41 /* Controllers */,
 				1B36464018EC8AF300C72836 /* Images */,
 				1B18635E18EC4AF9007B1E68 /* TDLAppDelegate.h */,
 				1B18635F18EC4AF9007B1E68 /* TDLAppDelegate.m */,
@@ -212,6 +212,7 @@
 				1BEEE60018EDA7BC00EF9A41 /* TableView */,
 			);
 			name = Controllers;
+			path = todo;
 			sourceTree = "<group>";
 		};
 		1BEEE60018EDA7BC00EF9A41 /* TableView */ = {

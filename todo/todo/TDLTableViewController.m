@@ -8,7 +8,7 @@
 
 #import "TDLTableViewController.h"
 
-
+#import "TDLTableViewCell.h"
 
 
 @implementation TDLTableViewController
@@ -38,21 +38,21 @@
         
       
     listItems =@[
-@{@"name" : @"Ali Houshmand", @"image" : [UIImage imageNamed:@"AliHoushmand"]},
-@{@"name" : @"Ashby Thronwell", @"image" : [UIImage imageNamed:@"AshbyThornwell"]},
-@{@"name" : @"Austen Johnson", @"image" : [UIImage imageNamed:@"AustenJohnson"]},
-@{@"name" : @"Austin Nolan", @"image" : [UIImage imageNamed:@"AustinNolan"]},
-@{@"name" : @"Derek Weber", @"image" : [UIImage imageNamed:@"DerekWeber"]},
-@{@"name" : @"Ed Salter", @"image" : [UIImage imageNamed:@"edsalter"]},
-@{@"name" : @"Heidi Proske", @"image" : [UIImage imageNamed:@"HeidiProske"]},
-@{@"name" : @"Jeff King", @"image" : [UIImage imageNamed:@"JeffKing"]},
-@{@"name" : @"Jeffery Moulds", @"image" : [UIImage imageNamed:@"JefferyMoulds"]},
-@{@"name" : @"Jisha Obukwelu", @"image" : [UIImage imageNamed:@"JishaObukwelu"]},
-@{@"name" : @"John Yam", @"image" : [UIImage imageNamed:@"JohnYam"]},
-@{@"name" : @"Jon Fox", @"image" : [UIImage imageNamed:@"JonFox"]},
-@{@"name" : @"Savitha Reddy", @"image" : [UIImage imageNamed:@"SavithaReddy"]},
-@{@"name" : @"Teddy Conyers", @"image" : [UIImage imageNamed:@"TeddyConyers"]},
-@{@"name" : @"T.J Mercer", @"image" : [UIImage imageNamed:@"TJMercer"]}
+@{@"name" : @"Ali Houshmand", @"image" : [UIImage imageNamed:@"AliHoushmand"], @"github" : @"https://github.com/HoushmandA06"},
+@{@"name" : @"Ashby Thronwell", @"image" : [UIImage imageNamed:@"AshbyThornwell"], @"github" : @"https://github.com/athornwell"},
+@{@"name" : @"Austen Johnson", @"image" : [UIImage imageNamed:@"AustenJohnson"], @"github" : @"https://github.com/ajohnson21"},
+@{@"name" : @"Austin Nolan", @"image" : [UIImage imageNamed:@"AustinNolan"], @"github" : @"https://github.com/adnolan99"},
+@{@"name" : @"Derek Weber", @"image" : [UIImage imageNamed:@"DerekWeber"], @"github" : @"https://github.com/dweber03"},
+@{@"name" : @"Ed Salter", @"image" : [UIImage imageNamed:@"edsalter"], @"github" : @"https://github.com/MadArkitekt"},
+@{@"name" : @"Heidi Proske", @"image" : [UIImage imageNamed:@"HeidiProske"], @"github" : @"https://github.com/justagirlcoding"},
+@{@"name" : @"Jeff King", @"image" : [UIImage imageNamed:@"JeffKing"], @"github" : @"https://github.com/rampis"},
+@{@"name" : @"Jeffery Moulds", @"image" : [UIImage imageNamed:@"JefferyMoulds"], @"github" : @"https://github.com/jdmgithub"},
+@{@"name" : @"Jisha Obukwelu", @"image" : [UIImage imageNamed:@"JishaObukwelu"], @"github" : @"https://github.com/Jiobu"},
+@{@"name" : @"John Yam", @"image" : [UIImage imageNamed:@"JohnYam"], @"github" : @"https://github.com/yamski"},
+@{@"name" : @"Jon Fox", @"image" : [UIImage imageNamed:@"JonFox"], @"github" : @"https://github.com/FoxJon"},
+@{@"name" : @"Savitha Reddy", @"image" : [UIImage imageNamed:@"SavithaReddy"], @"github" : @"https://github.com/savithareddy"},
+@{@"name" : @"Teddy Conyers", @"image" : [UIImage imageNamed:@"TeddyConyers"], @"github" : @"https://github.com/talented76"},
+@{@"name" : @"T.J Mercer", @"image" : [UIImage imageNamed:@"TJMercer"], @"github" : @"https://github.com/gwanunig14"}
 
                 ];
         
@@ -82,20 +82,38 @@
    
         
         self.tableView.contentInset = UIEdgeInsetsMake(50, 0, 0, 0);
-//        self.tableView.rowHeight = 100;
+        self.tableView.rowHeight = 100;
         
-       
         
-        UIView * header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 50)];
-        header.backgroundColor = [UIColor grayColor];
+        UIView * header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 100)];
+//        header.backgroundColor = [UIColor grayColor];
         
         self.tableView.tableHeaderView = header;
         
         
-        UILabel * titleHeader = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 300, 30)];
-        titleHeader.text = @"Class Contacts";
-        titleHeader.textColor = [UIColor whiteColor];
+//        UILabel * titleHeader = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 300, 30)];
+//        titleHeader.text = @"Class Contacts";
+//        titleHeader.textColor = [UIColor whiteColor];
+//
+//        [header addSubview:titleHeader];
 
+        UITextField * nameField = [[UITextField alloc] initWithFrame:CGRectMake(20, 20, 160, 30)];
+        nameField.backgroundColor = [UIColor colorWithWhite:0.0 alpha:0.05];
+        nameField.layer.cornerRadius = 6;
+        [header addSubview:nameField];
+
+        
+        UIButton * submitButton = [[UIButton alloc] initWithFrame:CGRectMake(200, 20, 100, 30)];
+        [submitButton setTitle:@"New User" forState:UIControlStateNormal];
+        submitButton.titleLabel.font = [UIFont systemFontOfSize:12];
+        submitButton.backgroundColor = [UIColor darkGrayColor];
+        submitButton.layer.cornerRadius = 6;
+        [header addSubview:submitButton];
+        
+        UILabel * titleHeader = [[UILabel alloc] initWithFrame:CGRectMake(20, 70, 280, 30)];
+        titleHeader.text = @"GitHub Users";
+        titleHeader.textColor = [UIColor lightGrayColor];
+        titleHeader.font = [UIFont systemFontOfSize:26];
         [header addSubview:titleHeader];
         
         
@@ -141,7 +159,6 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-
     
     // Return the number of rows in the section.
     return [listItems count];
@@ -149,16 +166,21 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+
+    TDLTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+
+
+    if (cell == nil) cell = [[TDLTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
     
-    if (cell == nil)
-    {
-        cell = [[UITableViewCell alloc] init];
-    }
-    
-//  int index = [indexPath row];  THIS IS THE SAME AS NEXT LINE - an alias/shorthand
+
     int index = indexPath.row;
+    
+ 
+    
+
+    
 
     
 //      cell.textLabel.text = listItems[index];
@@ -167,8 +189,11 @@
    
 
     NSDictionary * listItem = listItems[index];
-    cell.textLabel.text = listItem[@"name"];
-    cell.imageView.image = listItem[@"image"];
+
+    cell.profileInfo = listItem;
+    
+//    cell.textLabel.text = listItem[@"name"];
+//    cell.imageView.image = listItem[@"image"];
     
     
 //      NSString * day=listItems[index];
@@ -178,11 +203,6 @@
 //      Configure the cell...
     
     return cell;
-
-
-
-
-
 
 
 }
