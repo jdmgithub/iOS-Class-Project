@@ -137,9 +137,11 @@
             @"github" : [NSString stringWithFormat:@"https://github.com/%@", username]}
          ];
                             
+
     [nameField resignFirstResponder];
 
     [self.tableView reloadData];
+
     
 //    NSLog(@"listItems Count : %d",[listItems count]);
     
@@ -201,20 +203,21 @@
     if (cell == nil) cell = [[TDLTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
     
 
-    int index = indexPath.row;
+//    int index = indexPath.row;
     
 
     
 //      cell.textLabel.text = listItems[index];
 //      cell.imageView.image = listImages[index];
    
-    NSArray * reverseArray = [[listItems reverseObjectEnumerator] allObjects];
+//    NSArray * reverseArray = [[listItems reverseObjectEnumerator] allObjects];
 
     
     
-    NSDictionary * listItem = reverseArray[index];
 
-    cell.profileInfo = listItem;
+//    NSDictionary * listItem = [self getListItem:indexPath.row];
+
+    cell.profileInfo = [self getListItem:indexPath.row];
     
 //    cell.textLabel.text = listItem[@"name"];
 //    cell.imageView.image = listItem[@"image"];
@@ -228,57 +231,32 @@
     
     return cell;
 
+    
 
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
+//    int index = indexPath.row;
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+    
+//    NSArray * reverseArray = [[listItems reverseObjectEnumerator] allObjects];
+    
+    
+    NSDictionary * listItem = [self getListItem:indexPath.row];
+    
+    NSLog(@"%@", listItem);
+
+    
+    
+}
+
+- (NSDictionary *)getListItem:(NSInteger)row
 {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+    NSArray * reverseArray = [[listItems reverseObjectEnumerator] allObjects];
+    return reverseArray[row];
+    
 }
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

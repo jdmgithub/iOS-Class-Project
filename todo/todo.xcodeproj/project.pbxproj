@@ -36,6 +36,7 @@
 		1B36464218EC917300C72836 /* AustinNolan.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B36464118EC917300C72836 /* AustinNolan.png */; };
 		1B36464418EC918000C72836 /* edsalter.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B36464318EC918000C72836 /* edsalter.png */; };
 		1BEEE5FE18EDA78E00EF9A41 /* TDLTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BEEE5FD18EDA78E00EF9A41 /* TDLTableViewCell.m */; };
+		1BF94EF618EF33260044675B /* GitHubFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BF94EF518EF33260044675B /* GitHubFlow.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +85,7 @@
 		1B36464318EC918000C72836 /* edsalter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = edsalter.png; path = "../../../../../Desktop/Class Images/edsalter.png"; sourceTree = "<group>"; };
 		1BEEE5FC18EDA78E00EF9A41 /* TDLTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDLTableViewCell.h; sourceTree = "<group>"; };
 		1BEEE5FD18EDA78E00EF9A41 /* TDLTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDLTableViewCell.m; sourceTree = "<group>"; };
+		1BF94EF518EF33260044675B /* GitHubFlow.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GitHubFlow.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 		1B18634318EC4AF9007B1E68 = {
 			isa = PBXGroup;
 			children = (
+				1BF94EF518EF33260044675B /* GitHubFlow.storyboard */,
 				1BEEE5FF18EDA7A600EF9A41 /* Controllers */,
 				1B18635518EC4AF9007B1E68 /* todo */,
 				1B18636E18EC4AF9007B1E68 /* todoTests */,
@@ -311,6 +314,7 @@
 				1B36463318EC8AE400C72836 /* AustenJohnson.png in Resources */,
 				1B36463C18EC8AE400C72836 /* JonFox.png in Resources */,
 				1B36463B18EC8AE400C72836 /* JohnYam.png in Resources */,
+				1BF94EF618EF33260044675B /* GitHubFlow.storyboard in Resources */,
 				1B36463A18EC8AE400C72836 /* JishaObukwelu.png in Resources */,
 				1B18635A18EC4AF9007B1E68 /* InfoPlist.strings in Resources */,
 				1B18636218EC4AF9007B1E68 /* Images.xcassets in Resources */,
