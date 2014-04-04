@@ -16,6 +16,7 @@
 {
  
     NSMutableArray *listItems;
+    UITextField * nameField;
 
 //    NSArray *listImages;
     
@@ -55,38 +56,7 @@
   @{@"name" : @"T.J Mercer", @"image" : [UIImage imageNamed:@"TJMercer"], @"github" : @"https://github.com/gwanunig14"}
 
                 ] mutableCopy];
-
         
-
-                               
-        
-        
-        
-        
-        
-        
-//    listItems = @[@"Ali Houshmand", @"Ashby Thronwell", @"Austen Johnson", @"Austin Nolan", @"Derek Weber", @"Ed Salter", @"Heidi Proske", @"Jeff King", @"Jeffery Moulds", @"Jisha Obukwelu", @"John Yam", @"Jon Fox", @"Savitha Reddy", @"Teddy Conyers", @"T.J. Mercer"];
-
-        
-        
-//    listImages = @[
-//                       [UIImage imageNamed:@"AliHoushmand"],
-//                       [UIImage imageNamed:@"AshbyThornwell"],
-//                       [UIImage imageNamed:@"AustenJohnson"],
-//                       [UIImage imageNamed:@"AustinNolan"],
-//                       [UIImage imageNamed:@"DerekWeber"],
-//                       [UIImage imageNamed:@"edsalter"],
-//                       [UIImage imageNamed:@"HeidiProske"],
-//                       [UIImage imageNamed:@"JeffKing"],
-//                       [UIImage imageNamed:@"JefferyMoulds"],
-//                       [UIImage imageNamed:@"JishaObukwelu"],
-//                       [UIImage imageNamed:@"JohnYam"],
-//                       [UIImage imageNamed:@"JonFox"],
-//                       [UIImage imageNamed:@"SavithaReddy"],
-//                       [UIImage imageNamed:@"TeddyConyers"],
-//                       [UIImage imageNamed:@"TJMercer"]
-//                    ];
-   
         
         self.tableView.contentInset = UIEdgeInsetsMake(50, 0, 0, 0);
         self.tableView.rowHeight = 100;
@@ -104,9 +74,12 @@
 //
 //        [header addSubview:titleHeader];
 
-        UITextField * nameField = [[UITextField alloc] initWithFrame:CGRectMake(20, 20, 160, 30)];
+        nameField = [[UITextField alloc] initWithFrame:CGRectMake(20, 20, 160, 30)];
         nameField.backgroundColor = [UIColor colorWithWhite:0.0 alpha:0.05];
         nameField.layer.cornerRadius = 6;
+        
+        nameField.delegate = self;
+        
         [header addSubview:nameField];
 
         
@@ -149,16 +122,41 @@
 - (void)newUser
 
 {
+    NSString * username = nameField.text;
+    
+    nameField.text = @"";
+    
+//    NSLog(@"%@", username);
+    
+    
+    
     NSLog(@"clicking");
 
-        [listItems addObject:@{@"name" : @"New User",
-//                               @"image" : [UIImage imageNamed:@"new_user"],
-                               @"github" :@"https://github.com/new_user"}];
+        [listItems addObject:@{@"name" : username,
+//          @"image" : [UIImage imageNamed:@"new_user"],
+            @"github" : [NSString stringWithFormat:@"https://github.com/%@", username]}
+         ];
+                            
+    [nameField resignFirstResponder];
 
     [self.tableView reloadData];
     
-    NSLog(@"listItems Count : %d",[listItems count]);
+//    NSLog(@"listItems Count : %d",[listItems count]);
+    
 }
+
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+
+
+{
+//    NSLog(@"return key");
+    [self newUser];
+    return YES;
+
+}
+
+
 
 
 
@@ -205,18 +203,16 @@
 
     int index = indexPath.row;
     
- 
-    
-
-    
 
     
 //      cell.textLabel.text = listItems[index];
-
 //      cell.imageView.image = listImages[index];
    
+    NSArray * reverseArray = [[listItems reverseObjectEnumerator] allObjects];
 
-    NSDictionary * listItem = listItems[index];
+    
+    
+    NSDictionary * listItem = reverseArray[index];
 
     cell.profileInfo = listItem;
     
