@@ -337,6 +337,8 @@
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath
 {
 
+    if (sourceIndexPath == destinationIndexPath) return;
+        
     NSDictionary * sourceItem = [self getListItem:sourceIndexPath.row];
     
     NSDictionary * toItem = [self getListItem:destinationIndexPath.row];
@@ -347,6 +349,9 @@
     
     [listItems insertObject:sourceItem atIndex:[listItems indexOfObject:toItem]];
     
+
+
+
 }
 
 
