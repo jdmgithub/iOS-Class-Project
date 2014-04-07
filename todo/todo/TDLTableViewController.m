@@ -61,12 +61,11 @@
         self.tableView.contentInset = UIEdgeInsetsMake(50, 0, 0, 0);
         self.tableView.rowHeight = 100;
         
-        
         UIView * header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 100)];
-//        header.backgroundColor = [UIColor grayColor];
         
         self.tableView.tableHeaderView = header;
-        
+//        header.backgroundColor = [UIColor grayColor];
+
         
 //        UILabel * titleHeader = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 300, 30)];
 //        titleHeader.text = @"Class Contacts";
@@ -89,7 +88,6 @@
         submitButton.backgroundColor = [UIColor darkGrayColor];
         submitButton.layer.cornerRadius = 6;
         [submitButton addTarget:self action:@selector(newUser) forControlEvents:UIControlEventTouchUpInside];
-
         
         [header addSubview:submitButton];
         
@@ -99,6 +97,7 @@
         titleHeader.text = @"GitHub Users";
         titleHeader.textColor = [UIColor lightGrayColor];
         titleHeader.font = [UIFont systemFontOfSize:26];
+
         [header addSubview:titleHeader];
         
         
@@ -109,6 +108,7 @@
         UILabel * titlefooter = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 300, 30)];
         titlefooter.text = @"End of List";
         titlefooter.textColor = [UIColor whiteColor];
+
         [footer addSubview:titlefooter];
         self.tableView.tableFooterView = footer;
         
@@ -120,14 +120,11 @@
 
 
 - (void)newUser
-
 {
     NSString * username = nameField.text;
-    
     nameField.text = @"";
-    
+
 //    NSLog(@"%@", username);
-    
     
     
     NSLog(@"clicking");
@@ -136,20 +133,16 @@
 //          @"image" : [UIImage imageNamed:@"new_user"],
             @"github" : [NSString stringWithFormat:@"https://github.com/%@", username]}
          ];
-                            
-
+    
     [nameField resignFirstResponder];
 
     [self.tableView reloadData];
-
     
 //    NSLog(@"listItems Count : %d",[listItems count]);
-    
 }
 
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
-
 
 {
 //    NSLog(@"return key");
@@ -157,9 +150,6 @@
     return YES;
 
 }
-
-
-
 
 
 - (void)viewDidLoad
@@ -248,6 +238,19 @@
     
     NSLog(@"%@", listItem);
 
+    UIViewController * webController =[[UIViewController alloc] init];
+    
+    UIWebView * webView = [[UIWebView alloc] init];
+
+    webController.view = webView;
+    
+    UIWindow * window = [[UIApplication sharedApplication].windows firstObject];
+
+    UINavigationController * navController = (UINavigationController *)window.rootViewController;
+    
+    [navController pushViewController:webController animated:YES];
+    
+    [webView loadRequest:[NSURLRequest requestWithURL: [NSURL URLWithString:listItem[@"github"]]]];
     
     
 }
