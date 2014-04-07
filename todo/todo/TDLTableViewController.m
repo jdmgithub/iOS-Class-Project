@@ -10,6 +10,7 @@
 
 #import "TDLTableViewCell.h"
 
+#import "TDLGitHubRequest.h"
 
 @implementation TDLTableViewController
 
@@ -17,10 +18,23 @@
  
     NSMutableArray *listItems;
     UITextField * nameField;
-
+//    UINavigationController * navController;
+    
 //    NSArray *listImages;
     
 }
+
+- (void)toggleEdit
+
+{
+    [self.tableView setEditing:!self.tableView.editing animated:YES];
+    
+    //    self.tableView.editing = !self.tableView.editing;
+    
+//    [self.tableView reloadData];
+
+}
+
 
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -29,7 +43,17 @@
     if (self)
     {
 
-// NSDictionary * list = [NSDictionary alloc] initWithObjects:<#(NSArray *)#> forKeys:<#(NSArray *)#>;
+//        UIWindow * window = [[UIApplication sharedApplication].windows firstObject];
+//        navController = (UINavigationController *)window.rootViewController;
+        
+
+        UIBarButtonItem * editButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(toggleEdit)];
+
+        self.navigationItem.rightBarButtonItem = editButton;
+        
+        
+        
+        // NSDictionary * list = [NSDictionary alloc] initWithObjects:<#(NSArray *)#> forKeys:<#(NSArray *)#>;
         
 //    NSDictionary * list = @{
 //           @"name" : @"Savitha Reddy",
@@ -38,28 +62,49 @@
 //                            };
         
       
-    listItems =[@[
-  @{@"name" : @"Ali Houshmand", @"image" : [UIImage imageNamed:@"AliHoushmand"], @"github" : @"https://github.com/HoushmandA06"},
-  @{@"name" : @"Ashby Thronwell", @"image" : [UIImage imageNamed:@"AshbyThornwell"], @"github" : @"https://github.com/athornwell"},
-  @{@"name" : @"Austen Johnson", @"image" : [UIImage imageNamed:@"AustenJohnson"], @"github" : @"https://github.com/ajohnson21"},
-  @{@"name" : @"Austin Nolan", @"image" : [UIImage imageNamed:@"AustinNolan"], @"github" : @"https://github.com/adnolan99"},
-  @{@"name" : @"Derek Weber", @"image" : [UIImage imageNamed:@"DerekWeber"], @"github" : @"https://github.com/dweber03"},
-  @{@"name" : @"Ed Salter", @"image" : [UIImage imageNamed:@"edsalter"], @"github" : @"https://github.com/MadArkitekt"},
-  @{@"name" : @"Heidi Proske", @"image" : [UIImage imageNamed:@"HeidiProske"], @"github" : @"https://github.com/justagirlcoding"},
-  @{@"name" : @"Jeff King", @"image" : [UIImage imageNamed:@"JeffKing"], @"github" : @"https://github.com/rampis"},
-  @{@"name" : @"Jeffery Moulds", @"image" : [UIImage imageNamed:@"JefferyMoulds"], @"github" : @"https://github.com/jdmgithub"},
-  @{@"name" : @"Jisha Obukwelu", @"image" : [UIImage imageNamed:@"JishaObukwelu"], @"github" : @"https://github.com/Jiobu"},
-  @{@"name" : @"John Yam", @"image" : [UIImage imageNamed:@"JohnYam"], @"github" : @"https://github.com/yamski"},
-  @{@"name" : @"Jon Fox", @"image" : [UIImage imageNamed:@"JonFox"], @"github" : @"https://github.com/FoxJon"},
-  @{@"name" : @"Savitha Reddy", @"image" : [UIImage imageNamed:@"SavithaReddy"], @"github" : @"https://github.com/savithareddy"},
-  @{@"name" : @"Teddy Conyers", @"image" : [UIImage imageNamed:@"TeddyConyers"], @"github" : @"https://github.com/talented76"},
-  @{@"name" : @"T.J Mercer", @"image" : [UIImage imageNamed:@"TJMercer"], @"github" : @"https://github.com/gwanunig14"}
+//    listItems =[@[
+//  @{@"name" : @"Ali Houshmand", @"image" : [UIImage imageNamed:@"AliHoushmand"], @"github" : @"https://github.com/HoushmandA06"},
+//  @{@"name" : @"Ashby Thronwell", @"image" : [UIImage imageNamed:@"AshbyThornwell"], @"github" : @"https://github.com/athornwell"},
+//  @{@"name" : @"Austen Johnson", @"image" : [UIImage imageNamed:@"AustenJohnson"], @"github" : @"https://github.com/ajohnson21"},
+//  @{@"name" : @"Austin Nolan", @"image" : [UIImage imageNamed:@"AustinNolan"], @"github" : @"https://github.com/adnolan99"},
+//  @{@"name" : @"Derek Weber", @"image" : [UIImage imageNamed:@"DerekWeber"], @"github" : @"https://github.com/dweber03"},
+//  @{@"name" : @"Ed Salter", @"image" : [UIImage imageNamed:@"edsalter"], @"github" : @"https://github.com/MadArkitekt"},
+//  @{@"name" : @"Heidi Proske", @"image" : [UIImage imageNamed:@"HeidiProske"], @"github" : @"https://github.com/justagirlcoding"},
+//  @{@"name" : @"Jeff King", @"image" : [UIImage imageNamed:@"JeffKing"], @"github" : @"https://github.com/rampis"},
+//  @{@"name" : @"Jeffery Moulds", @"image" : [UIImage imageNamed:@"JefferyMoulds"], @"github" : @"https://github.com/jdmgithub"},
+//  @{@"name" : @"Jisha Obukwelu", @"image" : [UIImage imageNamed:@"JishaObukwelu"], @"github" : @"https://github.com/Jiobu"},
+//  @{@"name" : @"John Yam", @"image" : [UIImage imageNamed:@"JohnYam"], @"github" : @"https://github.com/yamski"},
+//  @{@"name" : @"Jon Fox", @"image" : [UIImage imageNamed:@"JonFox"], @"github" : @"https://github.com/FoxJon"},
+//  @{@"name" : @"Savitha Reddy", @"image" : [UIImage imageNamed:@"SavithaReddy"], @"github" : @"https://github.com/savithareddy"},
+//  @{@"name" : @"Teddy Conyers", @"image" : [UIImage imageNamed:@"TeddyConyers"], @"github" : @"https://github.com/talented76"},
+//  @{@"name" : @"T.J Mercer", @"image" : [UIImage imageNamed:@"TJMercer"], @"github" : @"https://github.com/gwanunig14"}
+//
+//                ] mutableCopy];
+        
 
-                ] mutableCopy];
+        listItems = [@[
+                       @{
+                       @"name" : @"Jo Albright",
+                       @"image" : @"https://avatars.githubusercontent.com/u/1536630?",
+                       @"github" : @"https://github.com/joalbright"
+                       },
+                       
+                       @{
+                       @"name" : @"John Yam",
+                       @"image" : @"https://avatars1.githubusercontent.com/u/2688381",
+                       @"github" : @"https://github.com/yamski"
+                       }
+                       ] mutableCopy];
+        
+
+        
         
         
         self.tableView.contentInset = UIEdgeInsetsMake(50, 0, 0, 0);
         self.tableView.rowHeight = 100;
+
+        
+        
         
         UIView * header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 100)];
         
@@ -129,10 +174,15 @@
     
     NSLog(@"clicking");
 
-        [listItems addObject:@{@"name" : username,
-//          @"image" : [UIImage imageNamed:@"new_user"],
-            @"github" : [NSString stringWithFormat:@"https://github.com/%@", username]}
-         ];
+//        [listItems addObject:@{@"name" : username,
+////          @"image" : [UIImage imageNamed:@"new_user"],
+//            @"github" : [NSString stringWithFormat:@"https://github.com/%@", username]}
+//         ];
+    
+    NSDictionary * userInfo = [TDLGitHubRequest getUserWithUsername:username];
+    
+    if([[userInfo allKeys] count] ==3) [listItems addObject:userInfo];
+    else NSLog(@"Not Enough Data");
     
     [nameField resignFirstResponder];
 
@@ -244,16 +294,61 @@
 
     webController.view = webView;
     
-    UIWindow * window = [[UIApplication sharedApplication].windows firstObject];
 
-    UINavigationController * navController = (UINavigationController *)window.rootViewController;
     
-    [navController pushViewController:webController animated:YES];
+    [self.navigationController pushViewController:webController animated:YES];
     
-    [webView loadRequest:[NSURLRequest requestWithURL: [NSURL URLWithString:listItem[@"github"]]]];
+    NSURL * url = [NSURL URLWithString:listItem[@"github"]];
+    
+    NSURLRequest * request = [NSURLRequest requestWithURL:url];
+    
+    [webView loadRequest:request];
+    
+//    [webView loadRequest:[NSURLRequest requestWithURL: [NSURL URLWithString:listItem[@"github"]]]];
     
     
 }
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+
+    {
+    return YES;
+    };
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+//    [listItems removeObjectAtIndex:indexPath.row];
+
+    NSDictionary * listItem = [self getListItem:indexPath.row];
+    
+    [listItems removeObjectIdenticalTo:listItem];
+    
+    [self.tableView reloadData];
+    
+    NSLog(@"%@", listItems);
+}
+
+- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return YES;
+}
+
+
+
+- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath
+{
+
+    NSDictionary * sourceItem = [self getListItem:sourceIndexPath.row];
+    
+    NSDictionary * toItem = [self getListItem:destinationIndexPath.row];
+    
+    [listItems removeObjectIdenticalTo:sourceItem];
+    
+    //    [listItems removeObjectAtIndex:[listItems indexOfObject:sourceItem]];
+    
+    [listItems insertObject:sourceItem atIndex:[listItems indexOfObject:toItem]];
+    
+}
+
 
 - (NSDictionary *)getListItem:(NSInteger)row
 {

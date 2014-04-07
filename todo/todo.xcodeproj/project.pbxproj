@@ -20,6 +20,7 @@
 		1B18637318EC4AF9007B1E68 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1B18637118EC4AF9007B1E68 /* InfoPlist.strings */; };
 		1B18637518EC4AF9007B1E68 /* todoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B18637418EC4AF9007B1E68 /* todoTests.m */; };
 		1B18638018EC4C77007B1E68 /* TDLTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B18637F18EC4C77007B1E68 /* TDLTableViewController.m */; };
+		1B1D722418F2F432008B3913 /* TDLGitHubRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B1D722318F2F432008B3913 /* TDLGitHubRequest.m */; };
 		1B36463118EC8AE400C72836 /* AliHoushmand.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B36462218EC8AE400C72836 /* AliHoushmand.png */; };
 		1B36463218EC8AE400C72836 /* AshbyThornwell.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B36462318EC8AE400C72836 /* AshbyThornwell.png */; };
 		1B36463318EC8AE400C72836 /* AustenJohnson.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B36462418EC8AE400C72836 /* AustenJohnson.png */; };
@@ -68,6 +69,8 @@
 		1B18637418EC4AF9007B1E68 /* todoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = todoTests.m; sourceTree = "<group>"; };
 		1B18637E18EC4C77007B1E68 /* TDLTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDLTableViewController.h; sourceTree = "<group>"; };
 		1B18637F18EC4C77007B1E68 /* TDLTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDLTableViewController.m; sourceTree = "<group>"; };
+		1B1D722218F2F432008B3913 /* TDLGitHubRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDLGitHubRequest.h; sourceTree = "<group>"; };
+		1B1D722318F2F432008B3913 /* TDLGitHubRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDLGitHubRequest.m; sourceTree = "<group>"; };
 		1B36462218EC8AE400C72836 /* AliHoushmand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = AliHoushmand.png; path = "../../../../../Desktop/Class Images/AliHoushmand.png"; sourceTree = "<group>"; };
 		1B36462318EC8AE400C72836 /* AshbyThornwell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = AshbyThornwell.png; path = "../../../../../Desktop/Class Images/AshbyThornwell.png"; sourceTree = "<group>"; };
 		1B36462418EC8AE400C72836 /* AustenJohnson.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = AustenJohnson.png; path = "../../../../../Desktop/Class Images/AustenJohnson.png"; sourceTree = "<group>"; };
@@ -115,6 +118,7 @@
 		1B18634318EC4AF9007B1E68 = {
 			isa = PBXGroup;
 			children = (
+				1B1D722118F2F3C3008B3913 /* Random */,
 				1BF94EF518EF33260044675B /* GitHubFlow.storyboard */,
 				1BEEE5FF18EDA7A600EF9A41 /* Controllers */,
 				1B18635518EC4AF9007B1E68 /* todo */,
@@ -183,6 +187,15 @@
 				1B18637118EC4AF9007B1E68 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1B1D722118F2F3C3008B3913 /* Random */ = {
+			isa = PBXGroup;
+			children = (
+				1B1D722218F2F432008B3913 /* TDLGitHubRequest.h */,
+				1B1D722318F2F432008B3913 /* TDLGitHubRequest.m */,
+			);
+			name = Random;
 			sourceTree = "<group>";
 		};
 		1B36464018EC8AF300C72836 /* Images */ = {
@@ -341,6 +354,7 @@
 			files = (
 				1BEEE5FE18EDA78E00EF9A41 /* TDLTableViewCell.m in Sources */,
 				1B18638018EC4C77007B1E68 /* TDLTableViewController.m in Sources */,
+				1B1D722418F2F432008B3913 /* TDLGitHubRequest.m in Sources */,
 				1B18635C18EC4AF9007B1E68 /* main.m in Sources */,
 				1B18636018EC4AF9007B1E68 /* TDLAppDelegate.m in Sources */,
 			);

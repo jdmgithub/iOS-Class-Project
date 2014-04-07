@@ -12,6 +12,9 @@
 
 //@synthesize profileInfo=_profileInfo;
 {
+
+
+    
 UIImageView * profileImage;
 UILabel * profileName;
 UILabel * profileURL;
@@ -63,8 +66,13 @@ UILabel * profileURL;
 -(void) setProfileInfo:(NSDictionary *)profileInfo
 
 {
+    NSURL * imageUrl = [NSURL URLWithString:profileInfo [@"image"]];
 
-    profileImage.image= profileInfo[@"image"];
+    NSData * imageData = [NSData dataWithContentsOfURL:imageUrl];
+
+    UIImage * image = [UIImage imageWithData:imageData];
+
+    profileImage.image= image;
     profileName.text= profileInfo[@"name"];
     profileURL.text= profileInfo[@"github"];
     
