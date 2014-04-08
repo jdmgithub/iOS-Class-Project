@@ -14,11 +14,10 @@
 @end
 
 @implementation TDLTableViewController
-
-
+{
     UITextField * itemField;
     NSMutableArray *listItems;
-
+}
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -63,6 +62,17 @@
         [header addSubview: highprioritybutton];
         [highprioritybutton addTarget:self action:@selector(newItem) forControlEvents:UIControlEventTouchUpInside];
         
+//        listItems = [@[
+////                       @{@"Task" : @"XXXX", @"Priority" : @"XXXX", @"Complete" : @"Yes"}
+//                 
+//                       ] mutableCopy];
+
+        listItems = [@[]mutableCopy];
+        
+        
+        self.tableView.contentInset = UIEdgeInsetsMake(50, 0, 0, 0);
+        self.tableView.rowHeight = 100;
+        
         
     }
     return self;
@@ -75,15 +85,16 @@
 {
     NSString * itemName = itemField.text;
     itemField.text = @"";
-    NSLog(@"%@", itemName);
+
+    [itemField resignFirstResponder];
+    
+    [listItems insertObject:itemName atIndex:0];
+    
+//    NSLog(@"%@", itemName);
+    
+    [self.tableView reloadData];
     
 }
-
-
-
-
-
-
 
 
 
@@ -98,38 +109,52 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
+
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Table view data source
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
-}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return [listItems count];
 }
 
-/*
+
+
+
+// Configure the cell...
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    TDLTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     
-    // Configure the cell...
+    if (cell == nil) cell = [[TDLTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
+
+    NSLog(@"%@",listItems[indexPath.row]);
+    
+    cell.textLabel.text = listItems[indexPath.row];
     
     return cell;
+
 }
-*/
+
+
+
+
+- (NSDictionary *)getListItem:(NSInteger)row
+{
+    NSArray * reverseArray = [[listItems reverseObjectEnumerator] allObjects];
+    return reverseArray[row];
+
+}
+
+
+
 
 /*
 // Override to support conditional editing of the table view.

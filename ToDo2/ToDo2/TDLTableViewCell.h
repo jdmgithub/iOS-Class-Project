@@ -10,6 +10,6 @@
 
 @interface TDLTableViewCell : UITableViewCell
 
-@property (nonatomic) NSDictionary * taskItems;
+@property (nonatomic) NSDictionary * profileInfo;
 
 @end

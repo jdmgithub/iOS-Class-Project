@@ -8,6 +8,8 @@
 
 #import "TDLTableViewCell.h"
 
+UILabel * taskName;
+
 @implementation TDLTableViewCell
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
@@ -16,11 +18,37 @@
     if (self) {
         // Initialization code
     }
+ 
+    taskName = [[UILabel alloc] initWithFrame:CGRectMake(100, 20, 200, 30)];
+    taskName.backgroundColor = [UIColor blueColor];
+    [self.contentView addSubview:taskName];
+    
     return self;
 }
 
 
 
+
+//-(void) profileInfo:(NSDictionary *)profileInfo
+//
+//{
+//    profileName.text= profileInfo[@"name"];
+//    _profileInfo = profileInfo;
+// 
+//}
+
+//    NSURL * imageUrl = [NSURL URLWithString:profileInfo [@"image"]];
+//    
+//    NSData * imageData = [NSData dataWithContentsOfURL:imageUrl];
+//    
+//    UIImage * image = [UIImage imageWithData:imageData];
+//    
+//    profileImage.image= image;
+//    profileName.text= profileInfo[@"name"];
+//    profileURL.text= profileInfo[@"github"];
+//    
+//    
+//    _profileInfo = profileInfo;
 
 
 
