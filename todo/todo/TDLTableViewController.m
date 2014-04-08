@@ -18,6 +18,7 @@
  
     NSMutableArray *listItems;
     UITextField * nameField;
+
 //    UINavigationController * navController;
     
 //    NSArray *listImages;
@@ -27,9 +28,9 @@
 - (void)toggleEdit
 
 {
-    [self.tableView setEditing:!self.tableView.editing animated:YES];
+//    [self.tableView setEditing:!self.tableView.editing animated:YES];
     
-    //    self.tableView.editing = !self.tableView.editing;
+//    self.tableView.editing = !self.tableView.editing;
     
 //    [self.tableView reloadData];
 
@@ -47,9 +48,9 @@
 //        navController = (UINavigationController *)window.rootViewController;
         
 
-        UIBarButtonItem * editButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(toggleEdit)];
-
-        self.navigationItem.rightBarButtonItem = editButton;
+//        UIBarButtonItem * editButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(toggleEdit)];
+//
+//        self.navigationItem.rightBarButtonItem = editButton;
         
         
         
@@ -82,23 +83,9 @@
 //                ] mutableCopy];
         
 
-        listItems = [@[
-                       @{
-                       @"name" : @"Jo Albright",
-                       @"image" : @"https://avatars.githubusercontent.com/u/1536630?",
-                       @"github" : @"https://github.com/joalbright"
-                       },
-                       
-                       @{
-                       @"name" : @"John Yam",
-                       @"image" : @"https://avatars1.githubusercontent.com/u/2688381",
-                       @"github" : @"https://github.com/yamski"
-                       }
-                       ] mutableCopy];
+        listItems = [@[] mutableCopy];
         
-
-        
-        
+        [self loadListItems];
         
         self.tableView.contentInset = UIEdgeInsetsMake(50, 0, 0, 0);
         self.tableView.rowHeight = 100;
@@ -181,12 +168,27 @@
     
     NSDictionary * userInfo = [TDLGitHubRequest getUserWithUsername:username];
     
-    if([[userInfo allKeys] count] ==3) [listItems addObject:userInfo];
-    else NSLog(@"Not Enough Data");
+    if([[userInfo allKeys] count] ==3)
+    {
+    [listItems addObject:userInfo];
+
+}   else {
+
+    NSLog(@"Not Enough Data");
+    
+    
+    UIAlertView * alertView = [[UIAlertView alloc] initWithTitle:@"Bad Information" message:@"Unable to Add User" delegate:self cancelButtonTitle:@"Try Again" otherButtonTitles:nil];
+ 
+        [alertView show];
+    
+    }
     
     [nameField resignFirstResponder];
 
     [self.tableView reloadData];
+    
+    [self saveData];
+    
     
 //    NSLog(@"listItems Count : %d",[listItems count]);
 }
@@ -210,7 +212,7 @@
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 
@@ -279,7 +281,6 @@
 
 {
 //    int index = indexPath.row;
-
     
 //    NSArray * reverseArray = [[listItems reverseObjectEnumerator] allObjects];
     
@@ -314,6 +315,7 @@
     return YES;
     };
 
+
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
 //    [listItems removeObjectAtIndex:indexPath.row];
@@ -322,9 +324,18 @@
     
     [listItems removeObjectIdenticalTo:listItem];
     
-    [self.tableView reloadData];
+//    [self.tableView reloadData];
+
+    TDLTableViewCell *cell = (TDLTableViewCell *)[tableView cellForRowAtIndexPath:indexPath];
+    cell.alpha = .0;
+    
+    [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     
     NSLog(@"%@", listItems);
+
+    [self saveData];
+
+
 }
 
 - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
@@ -345,12 +356,11 @@
     
     [listItems removeObjectIdenticalTo:sourceItem];
     
-    //    [listItems removeObjectAtIndex:[listItems indexOfObject:sourceItem]];
+//    [listItems removeObjectAtIndex:[listItems indexOfObject:sourceItem]];
     
     [listItems insertObject:sourceItem atIndex:[listItems indexOfObject:toItem]];
     
-
-
+    [self saveData];
 
 }
 
@@ -361,5 +371,35 @@
     return reverseArray[row];
     
 }
+
+- (void)saveData
+{
+    NSString *path = [self listArchivePath];
+    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:listItems];
+    [data writeToFile:path options:NSDataWritingAtomic error: nil];
+
+}
+
+
+- (NSString *) listArchivePath
+{
+    NSArray *documentDirectories = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentDirectory = documentDirectories[0];
+    return [documentDirectory stringByAppendingPathComponent:@"listdata.data"];
+
+}
+
+
+-(void)loadListItems
+{
+
+    NSString *path = [self listArchivePath];
+    if([[NSFileManager defaultManager] fileExistsAtPath:path])
+       {
+           listItems = [NSKeyedUnarchiver unarchiveObjectWithFile:path];
+       }
+
+}
+
 
 @end
