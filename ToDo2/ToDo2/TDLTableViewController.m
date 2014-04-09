@@ -16,7 +16,12 @@
 @implementation TDLTableViewController
 {
     UITextField * itemField;
-    NSMutableArray *listItems;
+    NSMutableArray * listItems;
+    NSArray * priorityColors;
+    UIButton * lowbutton;
+    UIButton * medbutton;
+    UIButton * highbutton;
+    
 }
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -24,53 +29,74 @@
     self = [super initWithStyle:style];
     if (self) {
 
-
+        
+        //  Dictionary
+        priorityColors = @[TAN_COLOR, YELLOW_COLOR, ORANGE_COLOR, RED_COLOR];
+        
+        listItems = [@[
+                       @{@"name" : @"Workshop App", @"priority" : @3},
+                       @{@"name": @"Go To Blogging Thing", @"priority" : @2},
+                       @{@"name" : @"Lean Objective - C", @"priority" : @1},
+                       @{@"name" : @"Finish GitHub App", @"priority" : @0}
+                       ] mutableCopy];
         
 //      Header
-        UIView * header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 40)];
+        UIView * header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 60)];
         
         self.tableView.tableHeaderView = header;
 
         
-//      TextField
-        itemField = [[UITextField alloc] initWithFrame:CGRectMake(20, 15, 160, 35)];
-        itemField.backgroundColor = [UIColor colorWithWhite:0.0 alpha:0.05];
-        itemField.layer.cornerRadius = 6;
-        itemField.placeholder = @"  To Do Item";
+        //      TextField
+        itemField = [[UITextField alloc] initWithFrame:CGRectMake(10, 10, 150, 40)];  // position of field
+        itemField.backgroundColor = [UIColor colorWithWhite:0.0 alpha:0.05];  // background color
+        itemField.leftViewMode = UITextFieldViewModeAlways;    // changes curser position
+        itemField.leftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 10, 40)]; // changes curser position
+        itemField.layer.cornerRadius = 6;  // rounds corners
+        itemField.placeholder = @"  To Do Item";  // placeholder text
+        itemField.tintColor =[UIColor blackColor];  // changes cursor color
+        
+//        [self.tableView.tableHeaderView addSubview:itemField];
         
         [header addSubview:itemField];
 
         
-//      Buttons
-        UIButton * lowprioritybutton = [[UIButton alloc] initWithFrame:CGRectMake(200, 15, 30, 30)];
-        lowprioritybutton.backgroundColor = [UIColor greenColor];
-        lowprioritybutton.layer.cornerRadius = 15;
-        [lowprioritybutton addTarget:self action:@selector(newItem) forControlEvents:UIControlEventTouchUpInside];
-        [header addSubview: lowprioritybutton];
+        //      Buttons
+        lowbutton = [[UIButton alloc] initWithFrame:CGRectMake(170, 10, 40, 40)];
+        lowbutton.tag = 1;
+        lowbutton.backgroundColor = ORANGE_COLOR;
+        lowbutton.layer.cornerRadius = 20;
+        [lowbutton addTarget:self action:@selector(addNewListItem:) forControlEvents:UIControlEventTouchUpInside];
+        [lowbutton setTitle:@"L" forState:UIControlStateNormal];
+        [header addSubview: lowbutton];
 
  
-        UIButton * mediumprioritybutton = [[UIButton alloc] initWithFrame:CGRectMake(240, 15, 30, 30)];
-        mediumprioritybutton.backgroundColor = [UIColor orangeColor];
-        mediumprioritybutton.layer.cornerRadius = 15;
-        [mediumprioritybutton addTarget:self action:@selector(newItem) forControlEvents:UIControlEventTouchUpInside];
-        [header addSubview: mediumprioritybutton];
+        medbutton = [[UIButton alloc] initWithFrame:CGRectMake(220, 10, 40, 40)];
+        lowbutton.tag = 2;
+        medbutton.backgroundColor = YELLOW_COLOR;
+        medbutton.layer.cornerRadius = 20;
+        [medbutton addTarget:self action:@selector(addNewListItem:) forControlEvents:UIControlEventTouchUpInside];
+        [medbutton setTitle:@"M" forState:UIControlStateNormal];
+        [header addSubview: medbutton];
         
 
-        UIButton * highprioritybutton = [[UIButton alloc] initWithFrame:CGRectMake(280, 15, 30 , 30)];
-        highprioritybutton.backgroundColor = [UIColor redColor];
-        highprioritybutton.layer.cornerRadius = 15;
-        [header addSubview: highprioritybutton];
-        [highprioritybutton addTarget:self action:@selector(newItem) forControlEvents:UIControlEventTouchUpInside];
+        highbutton = [[UIButton alloc] initWithFrame:CGRectMake(270, 10, 40 , 40)];
+        highbutton.tag = 3;
+        highbutton.backgroundColor = RED_COLOR;
+        highbutton.layer.cornerRadius = 20;
+        [header addSubview: highbutton];
+        [highbutton setTitle:@"H" forState:UIControlStateNormal];
+        [highbutton addTarget:self action:@selector(addNewListItem:) forControlEvents:UIControlEventTouchUpInside];
         
-//        listItems = [@[
-////                       @{@"Task" : @"XXXX", @"Priority" : @"XXXX", @"Complete" : @"Yes"}
-//                 
-//                       ] mutableCopy];
 
-        listItems = [@[]mutableCopy];
+        
+
+//        listItems = [@[]mutableCopy];
+//        self.tableView.contentInset = ui
         
         
-        self.tableView.contentInset = UIEdgeInsetsMake(50, 0, 0, 0);
+        
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        self.tableView.contentInset = UIEdgeInsetsMake(20, 0, 0, 0);
         self.tableView.rowHeight = 50;
         
         
@@ -79,22 +105,62 @@
 }
 
 
-// Text Field Entry
+
+
 - (void)newItem
 
 {
     NSString * itemName = itemField.text;
     itemField.text = @"";
-
+    
     [itemField resignFirstResponder];
     
     [listItems insertObject:itemName atIndex:0];
     
-//    NSLog(@"%@", itemName);
+    NSLog(@"%@", itemName);
     
+    NSLog(@"Clicking");
+
     [self.tableView reloadData];
+}
+
+- (BOOL) textFieldShouldReturn:(UITextField *) textfield
+    
+{
+    [self newItem];
+
+    return YES;
     
 }
+
+
+
+
+- (void)addNewListItem: (id)sender
+{
+    UIButton * button = (UIButton *)sender;
+    
+    NSString * name = itemField.text;
+//    NSInteger * priority = button.tag;
+//    if ([sender isEqual:highbutton]) NSLog(@"highButton");
+
+    if(![name isEqualToString:@""])
+        
+    {
+    
+    [listItems insertObject:@{@"name" :name,@"priority" : @(button.tag)} atIndex:0];
+ 
+    }
+
+    NSLog(@"%@", sender);
+ 
+    [self.tableView reloadData];
+}
+
+
+
+
+
 
 
 
@@ -128,25 +194,35 @@
 
 
 // Configure the cell...
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     TDLTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     
     if (cell == nil) cell = [[TDLTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
-
-    NSLog(@"%@",listItems[indexPath.row]);
     
-    cell.textLabel.text = listItems[indexPath.row];
+    NSDictionary * listItem = listItems[indexPath.row];
+    
+    cell.bgView.backgroundColor = priorityColors[[listItem[@"priority"] intValue]];
+    
+    cell.textLabel.text = listItem[@"name"];
+    
+    cell.textLabel.textColor = [UIColor whiteColor];  // cell text color
+
     
     return cell;
 
+    
+    //    NSLog(@"%@",listItems[indexPath.row]);
+    
+    //    cell.textLabel.text = listItems[indexPath.row];
+    
+    
     
 }
 
 
 //  Styles for Cells
-- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath { cell.backgroundColor = [UIColor redColor]; }
+//- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath { cell.backgroundColor = [UIColor redColor]; }
 
 // Base on Priority Selected
 

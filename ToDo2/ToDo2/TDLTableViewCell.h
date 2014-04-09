@@ -12,4 +12,10 @@
 
 @property (nonatomic) NSDictionary * profileInfo;
 
+
+@property (nonatomic) UILabel * nameLabel;
+@property (nonatomic) UIView * bgView;
+@property (nonatomic) UIButton * circleButton;
+
+
 @end

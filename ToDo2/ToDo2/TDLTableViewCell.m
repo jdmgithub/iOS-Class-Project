@@ -15,17 +15,27 @@ UILabel * taskName;
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if (self) {
-        // Initialization code
-    }
+    if (self)
+    
+    {
+        
+    self.bgView = [[UIView alloc] initWithFrame:CGRectMake(10, 15, 300, 40)];
+    
+    self.bgView.layer.cornerRadius = 6;
 
- 
-   
-    
-//    taskName = [[UILabel alloc] initWithFrame:CGRectMake(100, 20, 200, 30)];
-//    taskName.backgroundColor = [UIColor blueColor];
-    [self.contentView addSubview:taskName];
-    
+        [self.contentView addSubview:self.bgView];
+
+        
+        self.nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(15, 5, 200, 30)];
+        self.nameLabel.textColor = [UIColor whiteColor];
+        self.nameLabel.font = [UIFont fontWithName:@"HelveticaNeue-UltraLight" size:26];
+                               
+                               
+                               
+        
+        [self.contentView addSubview:_nameLabel];
+        
+    }
     return self;
 }
 
