@@ -18,13 +18,20 @@ UILabel * taskName;
     if (self) {
         // Initialization code
     }
+
  
-    taskName = [[UILabel alloc] initWithFrame:CGRectMake(100, 20, 200, 30)];
-    taskName.backgroundColor = [UIColor blueColor];
+   
+    
+//    taskName = [[UILabel alloc] initWithFrame:CGRectMake(100, 20, 200, 30)];
+//    taskName.backgroundColor = [UIColor blueColor];
     [self.contentView addSubview:taskName];
     
     return self;
 }
+
+
+
+
 
 
 

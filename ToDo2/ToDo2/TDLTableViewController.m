@@ -27,13 +27,13 @@
 
         
 //      Header
-        UIView * header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 55)];
+        UIView * header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 40)];
         
         self.tableView.tableHeaderView = header;
 
         
 //      TextField
-        itemField = [[UITextField alloc] initWithFrame:CGRectMake(20, 30, 160, 30)];
+        itemField = [[UITextField alloc] initWithFrame:CGRectMake(20, 15, 160, 35)];
         itemField.backgroundColor = [UIColor colorWithWhite:0.0 alpha:0.05];
         itemField.layer.cornerRadius = 6;
         itemField.placeholder = @"  To Do Item";
@@ -42,21 +42,21 @@
 
         
 //      Buttons
-        UIButton * lowprioritybutton = [[UIButton alloc] initWithFrame:CGRectMake(200, 30, 30, 30)];
+        UIButton * lowprioritybutton = [[UIButton alloc] initWithFrame:CGRectMake(200, 15, 30, 30)];
         lowprioritybutton.backgroundColor = [UIColor greenColor];
         lowprioritybutton.layer.cornerRadius = 15;
         [lowprioritybutton addTarget:self action:@selector(newItem) forControlEvents:UIControlEventTouchUpInside];
         [header addSubview: lowprioritybutton];
 
  
-        UIButton * mediumprioritybutton = [[UIButton alloc] initWithFrame:CGRectMake(240, 30, 30, 30)];
+        UIButton * mediumprioritybutton = [[UIButton alloc] initWithFrame:CGRectMake(240, 15, 30, 30)];
         mediumprioritybutton.backgroundColor = [UIColor orangeColor];
         mediumprioritybutton.layer.cornerRadius = 15;
         [mediumprioritybutton addTarget:self action:@selector(newItem) forControlEvents:UIControlEventTouchUpInside];
         [header addSubview: mediumprioritybutton];
         
 
-        UIButton * highprioritybutton = [[UIButton alloc] initWithFrame:CGRectMake(280, 30, 30, 30)];
+        UIButton * highprioritybutton = [[UIButton alloc] initWithFrame:CGRectMake(280, 15, 30 , 30)];
         highprioritybutton.backgroundColor = [UIColor redColor];
         highprioritybutton.layer.cornerRadius = 15;
         [header addSubview: highprioritybutton];
@@ -71,7 +71,7 @@
         
         
         self.tableView.contentInset = UIEdgeInsetsMake(50, 0, 0, 0);
-        self.tableView.rowHeight = 100;
+        self.tableView.rowHeight = 50;
         
         
     }
@@ -141,7 +141,15 @@
     
     return cell;
 
+    
 }
+
+
+//  Styles for Cells
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath { cell.backgroundColor = [UIColor redColor]; }
+
+// Base on Priority Selected
+
 
 
 
