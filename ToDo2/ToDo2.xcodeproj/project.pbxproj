@@ -21,6 +21,7 @@
 		1B1AF91718F44A6D0083066A /* ToDo2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B1AF91618F44A6D0083066A /* ToDo2Tests.m */; };
 		1B1AF92218F44AC40083066A /* TDLTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B1AF92118F44AC40083066A /* TDLTableViewController.m */; };
 		1B1AF92518F45BB40083066A /* TDLTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B1AF92418F45BB40083066A /* TDLTableViewCell.m */; };
+		1BA131DA18F5D4A3004AE3CB /* MOVE.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BA131D918F5D4A3004AE3CB /* MOVE.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,8 @@
 		1B1AF92118F44AC40083066A /* TDLTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDLTableViewController.m; sourceTree = "<group>"; };
 		1B1AF92318F45BB40083066A /* TDLTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDLTableViewCell.h; sourceTree = "<group>"; };
 		1B1AF92418F45BB40083066A /* TDLTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDLTableViewCell.m; sourceTree = "<group>"; };
+		1BA131D818F5D4A3004AE3CB /* MOVE.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MOVE.h; path = "../../../../../Downloads/Move-master/MOVE.h"; sourceTree = "<group>"; };
+		1BA131D918F5D4A3004AE3CB /* MOVE.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MOVE.m; path = "../../../../../Downloads/Move-master/MOVE.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +116,8 @@
 		1B1AF8F718F44A6D0083066A /* ToDo2 */ = {
 			isa = PBXGroup;
 			children = (
+				1BA131D818F5D4A3004AE3CB /* MOVE.h */,
+				1BA131D918F5D4A3004AE3CB /* MOVE.m */,
 				1B1AF90018F44A6D0083066A /* TDLAppDelegate.h */,
 				1B1AF90118F44A6D0083066A /* TDLAppDelegate.m */,
 				1B1AF90318F44A6D0083066A /* Images.xcassets */,
@@ -250,6 +255,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1BA131DA18F5D4A3004AE3CB /* MOVE.m in Sources */,
 				1B1AF92518F45BB40083066A /* TDLTableViewCell.m in Sources */,
 				1B1AF92218F44AC40083066A /* TDLTableViewController.m in Sources */,
 				1B1AF8FE18F44A6D0083066A /* main.m in Sources */,
@@ -450,6 +456,7 @@
 				1B1AF91C18F44A6D0083066A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1B1AF91D18F44A6D0083066A /* Build configuration list for PBXNativeTarget "ToDo2Tests" */ = {
 			isa = XCConfigurationList;
@@ -458,6 +465,7 @@
 				1B1AF91F18F44A6D0083066A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
