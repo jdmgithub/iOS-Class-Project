@@ -261,17 +261,17 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-
+    
     
     // get cell from tableview at row
     TDLTableViewCell *cell = (TDLTableViewCell *)[tableView cellForRowAtIndexPath:indexPath];
     
     // if cell state "swiped" is true : stop (this will be set in the swipe gesture method)
     if(cell.swiped) return;
-
+    
     
     /// if() is true.... return;  return stops the function
- 
+    
     
     NSDictionary * listItem = listItems[indexPath.row];
     
@@ -282,9 +282,9 @@
     //                                     };
     
     // if position is to the left then stop
-//    if (cell.bgView.frame.origin.x < 0) {
-//        return;
-//    }
+    //    if (cell.bgView.frame.origin.x < 0) {
+    //        return;
+    //    }
     
     
     // remove old dictionary for cell
@@ -292,9 +292,9 @@
     // add new dictionary for cell
     
     
-//    TJ's Unclick / Unstrike Solution
+    //    TJ's Unclick / Unstrike Solution
     
-
+    
     NSDictionary * updateListItem = listItem;
     
     
@@ -331,9 +331,40 @@
     
     TDLTableViewCell * cell = (TDLTableViewCell *)gesture.view;
     
+// gesture.direction == left :2
+// gesture.direction == right : 1
+// if gesture.direction == left && priority = 0 : 12  (Switch must use a number)
+// if gesutre.direction == right && priority = 1 : 11 (Switch must use a number)
+    
+    
+    
+    
     //    NSInteger index = [self.tableView indexPathForCell:cell].row;
     
-    switch (gesture.direction) {
+
+    NSInteger index = [self.tableView indexPathForCell:cell].row;
+    NSDictionary * listItem = listItems[index];
+    
+    int completed;
+    
+    completed = ([listItem[@"priority"] intValue] == 0) ? 10 :0;     // same as code block below
+
+//    int completed;
+//
+//    if([listItem[@"priority"] intValue] == 0)
+//    {
+//        completed = 1;
+//    } else {
+//        completed = 0;
+//    }
+    
+        
+        
+        
+        
+                      
+    switch (gesture.direction + completed)
+    {
         case 1:  // right
             NSLog(@"swiping right");
             cell.swiped = NO;
@@ -347,6 +378,25 @@
             [MOVE animateView:cell.bgView properties:@{@"x" : @-140,@"duration" : @0.5}];
             [cell showCircleButtons];
             break;
+
+        case 11:  // right
+//            NSLog(@"swiping right");
+            cell.swiped = NO;
+            [MOVE animateView:cell.bgView properties:@{@"x" : @10,@"duration" : @0.5}];
+           [cell hideDeleteButton];
+            break;
+            
+        case 12:  // left
+//            NSLog(@"swiping left");
+            cell.swiped = YES;
+            [MOVE animateView:cell.bgView properties:@{@"x" : @-40,@"duration" : @0.5}];
+            [cell showDeleteButton];
+            break;
+
+            
+            
+            
+            
             
             
         default:

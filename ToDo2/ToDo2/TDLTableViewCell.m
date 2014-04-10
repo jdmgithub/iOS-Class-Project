@@ -141,6 +141,35 @@ UILabel * taskName;
     
 }
 
+-(void)showDeleteButton
+{
+
+    highbutton = [[UIButton alloc] initWithFrame:CGRectMake(270, 15, 40 , 40)];
+    highbutton.tag = 3;
+    highbutton.alpha = 0;
+    highbutton.backgroundColor = RED_COLOR;
+    highbutton.layer.cornerRadius = 20;
+    [highbutton setTitle:@"D" forState:UIControlStateNormal];
+    //    [highbutton addTarget:self action:@selector(addNewListItem:) forControlEvents:UIControlEventTouchUpInside];
+    [self.contentView addSubview:highbutton];
+
+    [MOVE animateView:highbutton properties:@{@"alpha":@1,@"duration":@0.2,@"delay":@0.3}];
+
+    
+    
+    
+}
+
+
+
+-(void)hideDeleteButton
+{
+    
+    [MOVE animateView:highbutton
+           properties:@{@"alpha":@0,@"duration":@0.2,@"delay":@0.0, @"remove":@YES}];
+
+}
+
 
 
 - (void)awakeFromNib

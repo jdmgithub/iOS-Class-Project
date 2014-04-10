@@ -23,5 +23,8 @@
 - (void)showCircleButtons;
 - (void)hideCircleButtons;
 
+- (void)showDeleteButton;
+- (void)hideDeleteButton;
+
 
 @end
