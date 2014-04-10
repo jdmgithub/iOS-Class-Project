@@ -18,6 +18,8 @@
 @property (nonatomic) UIView * strikeThrough;
 @property (nonatomic) UIButton * circleButton;
 
+@property (nonatomic) BOOL swiped; 
+
 - (void)showCircleButtons;
 - (void)hideCircleButtons;
 

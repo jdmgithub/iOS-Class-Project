@@ -22,16 +22,16 @@ UILabel * taskName;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
-        self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-        if (self)
-    
+    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    if (self)
+        
     {
         
         self.bgView = [[UIView alloc] initWithFrame:CGRectMake(10, 15, 300, 40)];
         self.bgView.layer.cornerRadius = 6;
-
+        
         [self.contentView addSubview:self.bgView];
-
+        
         
         self.nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, -10, 200, 57)];
         self.nameLabel.textColor = [UIColor whiteColor];
@@ -39,13 +39,13 @@ UILabel * taskName;
         
         
         [self.bgView addSubview:_nameLabel];
-
-
+        
+        
         self.strikeThrough = [[UIView alloc] initWithFrame:CGRectMake(5, 22, self.frame.size.width - 30, 2)];
         self.strikeThrough.backgroundColor = [UIColor whiteColor];
         self.strikeThrough.alpha = 0;
         [self.bgView addSubview:self.strikeThrough];
- 
+        
         
         
         
@@ -56,7 +56,7 @@ UILabel * taskName;
         
         [self.bgView addSubview:self.circleButton];
         
-
+        
         
         
     }
@@ -75,20 +75,20 @@ UILabel * taskName;
 //{
 //    profileName.text= profileInfo[@"name"];
 //    _profileInfo = profileInfo;
-// 
+//
 //}
 
 //    NSURL * imageUrl = [NSURL URLWithString:profileInfo [@"image"]];
-//    
+//
 //    NSData * imageData = [NSData dataWithContentsOfURL:imageUrl];
-//    
+//
 //    UIImage * image = [UIImage imageWithData:imageData];
-//    
+//
 //    profileImage.image= image;
 //    profileName.text= profileInfo[@"name"];
 //    profileURL.text= profileInfo[@"github"];
-//    
-//    
+//
+//
 //    _profileInfo = profileInfo;
 
 
@@ -100,9 +100,9 @@ UILabel * taskName;
     lowbutton.alpha = 0;
     lowbutton.backgroundColor = ORANGE_COLOR;
     lowbutton.layer.cornerRadius = 20;
-//    [lowbutton addTarget:self action:@selector(addNewListItem:) forControlEvents:UIControlEventTouchUpInside];
+    //    [lowbutton addTarget:self action:@selector(addNewListItem:) forControlEvents:UIControlEventTouchUpInside];
     [lowbutton setTitle:@"L" forState:UIControlStateNormal];
-//    [header addSubview: lowbutton];
+    //    [header addSubview: lowbutton];
     [self.contentView addSubview:lowbutton];
     
     medbutton = [[UIButton alloc] initWithFrame:CGRectMake(220, 15, 40, 40)];
@@ -110,7 +110,7 @@ UILabel * taskName;
     medbutton.alpha = 0;
     medbutton.backgroundColor = YELLOW_COLOR;
     medbutton.layer.cornerRadius = 20;
-//    [medbutton addTarget:self action:@selector(addNewListItem:) forControlEvents:UIControlEventTouchUpInside];
+    //    [medbutton addTarget:self action:@selector(addNewListItem:) forControlEvents:UIControlEventTouchUpInside];
     [medbutton setTitle:@"M" forState:UIControlStateNormal];
     [self.contentView addSubview:medbutton];
     
@@ -120,7 +120,7 @@ UILabel * taskName;
     highbutton.backgroundColor = RED_COLOR;
     highbutton.layer.cornerRadius = 20;
     [highbutton setTitle:@"H" forState:UIControlStateNormal];
-//    [highbutton addTarget:self action:@selector(addNewListItem:) forControlEvents:UIControlEventTouchUpInside];
+    //    [highbutton addTarget:self action:@selector(addNewListItem:) forControlEvents:UIControlEventTouchUpInside];
     [self.contentView addSubview:highbutton];
     
     
@@ -134,7 +134,7 @@ UILabel * taskName;
 
 -(void)hideCircleButtons
 {
-
+    
     [MOVE animateView:lowbutton properties:@{@"alpha":@0,@"duration":@0.2,@"delay":@0.0,  @"remove":@YES}];
     [MOVE animateView:medbutton properties:@{@"alpha":@0,@"duration":@0.2,@"delay":@0.1, @"remove":@YES}];
     [MOVE animateView:highbutton properties:@{@"alpha":@0,@"duration":@0.2,@"delay":@0.2, @"remove":@YES}];
@@ -151,7 +151,7 @@ UILabel * taskName;
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
     [super setSelected:selected animated:animated];
-
+    
     // Configure the view for the selected state
 }
 
