@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TDLTableViewController : UITableViewController
+#import "TDLTableViewCell.h"
+
+@interface TDLTableViewController : UITableViewController <UITextFieldDelegate, TDLTableViewCellDelegate>
 
 @end

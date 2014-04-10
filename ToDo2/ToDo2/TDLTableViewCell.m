@@ -48,8 +48,6 @@ UILabel * taskName;
         
         
         
-        
-        
         self.circleButton = [[UIButton alloc] initWithFrame:CGRectMake(self.frame.size.width - 50, 10, 20, 20)];
         self.circleButton.backgroundColor = [UIColor whiteColor];
         self.circleButton.layer.cornerRadius = 10;
@@ -64,7 +62,25 @@ UILabel * taskName;
 }
 
 
+- (void) resetLayout
 
+{
+//    if (self.swiped)
+//    {
+//        [self. createButtons];
+//        self.swiped = YES;
+//        
+//    } else {
+
+    
+   self.bgView.frame = CGRectMake(10, 15, 300, 40);
+    [lowbutton removeFromSuperview];
+    [medbutton removeFromSuperview];
+    [highbutton removeFromSuperview];
+    self.swiped = NO;
+    
+    }
+    
 
 
 
@@ -92,15 +108,18 @@ UILabel * taskName;
 //    _profileInfo = profileInfo;
 
 
--(void)showCircleButtons
+
+- (void)createButtons
+
 {
+
     //      Buttons
     lowbutton = [[UIButton alloc] initWithFrame:CGRectMake(170, 15, 40, 40)];
     lowbutton.tag = 1;
     lowbutton.alpha = 0;
     lowbutton.backgroundColor = ORANGE_COLOR;
     lowbutton.layer.cornerRadius = 20;
-    //    [lowbutton addTarget:self action:@selector(addNewListItem:) forControlEvents:UIControlEventTouchUpInside];
+    [lowbutton addTarget:self action:@selector(pressPriorityButton:) forControlEvents:UIControlEventTouchUpInside];
     [lowbutton setTitle:@"L" forState:UIControlStateNormal];
     //    [header addSubview: lowbutton];
     [self.contentView addSubview:lowbutton];
@@ -110,7 +129,7 @@ UILabel * taskName;
     medbutton.alpha = 0;
     medbutton.backgroundColor = YELLOW_COLOR;
     medbutton.layer.cornerRadius = 20;
-    //    [medbutton addTarget:self action:@selector(addNewListItem:) forControlEvents:UIControlEventTouchUpInside];
+    [medbutton addTarget:self action:@selector(pressPriorityButton:) forControlEvents:UIControlEventTouchUpInside];
     [medbutton setTitle:@"M" forState:UIControlStateNormal];
     [self.contentView addSubview:medbutton];
     
@@ -120,8 +139,27 @@ UILabel * taskName;
     highbutton.backgroundColor = RED_COLOR;
     highbutton.layer.cornerRadius = 20;
     [highbutton setTitle:@"H" forState:UIControlStateNormal];
-    //    [highbutton addTarget:self action:@selector(addNewListItem:) forControlEvents:UIControlEventTouchUpInside];
+    [highbutton addTarget:self action:@selector(pressPriorityButton:) forControlEvents:UIControlEventTouchUpInside];
     [self.contentView addSubview:highbutton];
+
+
+
+}
+
+-(void)pressPriorityButton:(id)sender
+{
+    UIButton * button = (UIButton *)sender;
+    
+    [self.delegate setItemPriority:(int)button.tag withItem:self];
+    
+}
+
+
+-(void)showCircleButtons
+{
+
+    [self createButtons];
+
     
     
     [MOVE animateView:lowbutton properties:@{@"alpha":@1,@"duration":@0.2,@"delay":@0.3}];
@@ -149,8 +187,9 @@ UILabel * taskName;
     highbutton.alpha = 0;
     highbutton.backgroundColor = RED_COLOR;
     highbutton.layer.cornerRadius = 20;
-    [highbutton setTitle:@"D" forState:UIControlStateNormal];
-    //    [highbutton addTarget:self action:@selector(addNewListItem:) forControlEvents:UIControlEventTouchUpInside];
+    [highbutton setTitle:@"X" forState:UIControlStateNormal];
+    highbutton.titleLabel.font = [UIFont fontWithName:@"HelveticaNeue-UltraLight" size:30];
+    [highbutton addTarget:self action:@selector(pressDeleteButton) forControlEvents:UIControlEventTouchUpInside];
     [self.contentView addSubview:highbutton];
 
     [MOVE animateView:highbutton properties:@{@"alpha":@1,@"duration":@0.2,@"delay":@0.3}];
@@ -159,6 +198,15 @@ UILabel * taskName;
     
     
 }
+
+-(void)pressDeleteButton
+{
+
+    [self.delegate deleteItem:self];  // self.delegate = tableviewcontroller... self = tableviewcellcontroller
+
+}
+
+
 
 
 

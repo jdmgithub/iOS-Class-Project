@@ -56,6 +56,8 @@
         itemField.layer.cornerRadius = 6;  // rounds corners
         itemField.placeholder = @"  To Do Item";  // placeholder text
         itemField.tintColor =[UIColor blackColor];  // changes cursor color
+ 
+        itemField.delegate = self;  //says will be deligate
         
         //        [self.tableView.tableHeaderView addSubview:itemField];
         
@@ -65,7 +67,7 @@
         //      Buttons
         lowbutton = [[UIButton alloc] initWithFrame:CGRectMake(170, 10, 40, 40)];
         lowbutton.tag = 1;
-        lowbutton.backgroundColor = ORANGE_COLOR;
+        lowbutton.backgroundColor = YELLOW_COLOR;
         lowbutton.layer.cornerRadius = 20;
         [lowbutton addTarget:self action:@selector(addNewListItem:) forControlEvents:UIControlEventTouchUpInside];
         [lowbutton setTitle:@"L" forState:UIControlStateNormal];
@@ -74,7 +76,7 @@
         
         medbutton = [[UIButton alloc] initWithFrame:CGRectMake(220, 10, 40, 40)];
         medbutton.tag = 2;
-        medbutton.backgroundColor = YELLOW_COLOR;
+        medbutton.backgroundColor = ORANGE_COLOR;
         medbutton.layer.cornerRadius = 20;
         [medbutton addTarget:self action:@selector(addNewListItem:) forControlEvents:UIControlEventTouchUpInside];
         [medbutton setTitle:@"M" forState:UIControlStateNormal];
@@ -122,14 +124,62 @@
     NSLog(@"%@", itemName);
     
     NSLog(@"Clicking");
-    
+
     [self.tableView reloadData];
 }
+
+
+-(void)deleteItem:(TDLTableViewCell *)cell
+{
+
+    NSLog(@"Delete");
+
+    NSIndexPath * indexPath = [self.tableView indexPathForCell:cell];
+    
+    [listItems removeObjectAtIndex:indexPath.row];
+    
+    [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    
+}
+
+
+
+
+-(void)setItemPriority:(int)priority withItem:(TDLTableViewCell *)cell
+{
+
+    NSLog(@"Priority : %d", priority);
+
+    NSIndexPath * indexPath = [self.tableView indexPathForCell:cell];
+    
+    NSDictionary * listItem = listItems[indexPath.row];
+    
+    NSDictionary * updateListItem = @{
+                                      @"name" : listItem[@"name"],
+                                      @"priority" : @(priority),
+                                      @"constant" : @(priority)
+                                      };
+
+    [listItems removeObjectAtIndex:indexPath.row];
+    [listItems insertObject:updateListItem atIndex:indexPath.row];
+
+    cell.bgView.backgroundColor = priorityColors [priority];
+ 
+    [MOVE animateView:cell.bgView properties:@{@"x":@10,@"duration":@0.5}];
+    [cell hideCircleButtons];
+    cell.swiped = NO;
+    
+}
+
+
+
 
 - (BOOL) textFieldShouldReturn:(UITextField *) textfield
 
 {
-    [self newItem];
+//    [self newItem];
+
+    [textfield resignFirstResponder];
     
     return YES;
     
@@ -201,7 +251,11 @@
     
     if (cell == nil) cell = [[TDLTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
     
+    [cell resetLayout];  // calls the resetLayout method from tableviewcell.m
+    
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    
+    cell.delegate = self;
     
     NSDictionary * listItem = listItems[indexPath.row];
     
@@ -239,6 +293,12 @@
     //    cell.textLabel.text = listItems[indexPath.row];
     
 }
+
+
+
+
+
+
 
 
 //  Styles for Cells
