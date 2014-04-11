@@ -10,4 +10,6 @@
 
 @interface SCGCircle : UIView
 
+@property (nonatomic) int position;
+
 @end

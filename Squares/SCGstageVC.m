@@ -46,15 +46,29 @@
 
     for (float i = 0.0; i < gameSize * gameSize; i++)
     
-    {
+    {// This assigns numbers to rows and colums
         NSLog(@"i = %f", i);
         
-        int row = floor(i /gameSize);
-        int col = ((i /gameSize) - floor(i /gameSize)) * gameSize;
+        float decimal = floor((i / gameSize) * 100) / 100;
+        
+        int row = floor(decimal);
+        int col = ((decimal) - floorf(decimal)) * gameSize;
 
         NSLog(@"i / gameSize =%f", i / gameSize);
 
         NSLog(@"i : %f --- row : %d --- col : %d",i, row, col);
+
+    
+    
+        float circleX = circleWidth * col;
+        float circleY = (circleWidth * row) + ((SCREEN_HEIGHT - SCREEN_WIDTH) / 2);
+    
+        SCGCircle * circle = [[SCGCircle alloc] initWithFrame:CGRectMake(circleX, circleY, circleWidth, circleWidth)];
+
+        circle.position = i;
+        
+        [self.view addSubview:circle];
+    
     }
 
 
@@ -77,5 +91,7 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+-(BOOL)prefersStatusBarHidden {return YES;}
 
 @end
