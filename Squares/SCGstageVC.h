@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SCGStageVC : UIViewController
+#import "SCGCircle.h"
+
+@interface SCGStageVC : UIViewController <SCGCircleDelegate>
 
 @end
