@@ -20,6 +20,7 @@
 		1B49BF3718FAAE60002EB8ED /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1B49BF3518FAAE60002EB8ED /* InfoPlist.strings */; };
 		1B49BF3918FAAE60002EB8ED /* twitterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B49BF3818FAAE60002EB8ED /* twitterTests.m */; };
 		1B49BF4618FAAFF0002EB8ED /* TDATableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B49BF4518FAAFF0002EB8ED /* TDATableViewController.m */; };
+		1B49BF4918FACF16002EB8ED /* TDATableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B49BF4818FACF16002EB8ED /* TDATableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		1B49BF3818FAAE60002EB8ED /* twitterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = twitterTests.m; sourceTree = "<group>"; };
 		1B49BF4418FAAFF0002EB8ED /* TDATableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDATableViewController.h; sourceTree = "<group>"; };
 		1B49BF4518FAAFF0002EB8ED /* TDATableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDATableViewController.m; sourceTree = "<group>"; };
+		1B49BF4718FACF15002EB8ED /* TDATableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDATableViewCell.h; sourceTree = "<group>"; };
+		1B49BF4818FACF16002EB8ED /* TDATableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDATableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +157,8 @@
 			children = (
 				1B49BF4418FAAFF0002EB8ED /* TDATableViewController.h */,
 				1B49BF4518FAAFF0002EB8ED /* TDATableViewController.m */,
+				1B49BF4718FACF15002EB8ED /* TDATableViewCell.h */,
+				1B49BF4818FACF16002EB8ED /* TDATableViewCell.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -262,6 +267,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B49BF2418FAAE5F002EB8ED /* TDAAppDelegate.m in Sources */,
+				1B49BF4918FACF16002EB8ED /* TDATableViewCell.m in Sources */,
 				1B49BF4618FAAFF0002EB8ED /* TDATableViewController.m in Sources */,
 				1B49BF2018FAAE5F002EB8ED /* main.m in Sources */,
 			);

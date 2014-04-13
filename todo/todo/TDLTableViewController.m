@@ -161,7 +161,7 @@
     
     NSLog(@"clicking");
 
-//        [listItems addObject:@{@"name" : username,
+  //      [listItems addObject:@{@"name" : username,
 ////          @"image" : [UIImage imageNamed:@"new_user"],
 //            @"github" : [NSString stringWithFormat:@"https://github.com/%@", username]}
 //         ];

@@ -31,14 +31,14 @@
 
         tweetLists = [@[] mutableCopy];
 
-        self.tableView.contentInset = UIEdgeInsetsMake(50, 0, 0, 0);
+        self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
         self.tableView.rowHeight = 150;
         
-        UIView * header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 100)];
+        UIView * header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 130)];
         header.backgroundColor = [UIColor grayColor];
         self.tableView.tableHeaderView = header;
         
-        nameField = [[UITextField alloc] initWithFrame:CGRectMake(20, 20, 280, 30)];
+        nameField = [[UITextField alloc] initWithFrame:CGRectMake(20, 45, 280, 30)];
         nameField.backgroundColor = [UIColor colorWithWhite:1.0 alpha:1.0];
         nameField.layer.cornerRadius = 6;
         
@@ -47,13 +47,13 @@
         [header addSubview:nameField];
 
     
-        UIButton * submitButton = [[UIButton alloc] initWithFrame:CGRectMake(20, 55, 280, 30)];
+        UIButton * submitButton = [[UIButton alloc] initWithFrame:CGRectMake(20, 80, 280, 30)];
         [submitButton setTitle:@"New Tweets" forState:UIControlStateNormal];
-        submitButton.titleLabel.font = [UIFont systemFontOfSize:12];
+        submitButton.titleLabel.font = [UIFont systemFontOfSize:14];
         submitButton.backgroundColor = [UIColor blackColor];
         submitButton.layer.cornerRadius = 6;
 
-        [submitButton addTarget:self action:@selector(newTweet) forControlEvents:UIControlEventTouchUpInside];
+        [submitButton addTarget:self action:@selector(newUser) forControlEvents:UIControlEventTouchUpInside];
         
         [header addSubview:submitButton];
   
@@ -89,12 +89,12 @@
     
     NSLog(@"clicking");
     
-    //        [listItems addObject:@{@"name" : username,
-    ////          @"image" : [UIImage imageNamed:@"new_user"],
-    //            @"github" : [NSString stringWithFormat:@"https://github.com/%@", username]}
-    //         ];
-    
-    NSDictionary * userTweets = [TDLGitHubRequest getUserWithUsername:username];
+//            [tweetLists addObject:@{@"name" : username,
+//              @"image" : [UIImage imageNamed:@"new_user"],
+//                @"github" : [NSString stringWithFormat:@"https://github.com/%@", username]}
+//             ];
+//    
+//    NSDictionary * userTweets = [TDLGitHubRequest getUserWithUsername:username];
     
 
 }
@@ -116,7 +116,7 @@
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+     self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)didReceiveMemoryWarning
@@ -152,16 +152,18 @@
 
 
 
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
-    return cell;
-}
-*/
+
+//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+//    
+//    // Configure the cell...
+//    
+//
+//    
+//    return cell;
+//}
+
 
 /*
 // Override to support conditional editing of the table view.
