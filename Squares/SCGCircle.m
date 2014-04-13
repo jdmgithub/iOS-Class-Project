@@ -40,7 +40,7 @@
     
     float dotXY = (self.frame.size.width -20) /2;
 
-    CGContextAddEllipseInRect(context, CGRectMake(dotXY, dotXY, 20, 20));
+    CGContextAddEllipseInRect(context, CGRectMake(dotXY, dotXY, 30, 30));
     
     CGContextFillPath(context);
     

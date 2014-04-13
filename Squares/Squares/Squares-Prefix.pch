@@ -15,8 +15,8 @@
     #import <Foundation/Foundation.h>
 
 
-#define BLUE_COLOR [UIColor colorWithRed:0.000f green:0.780f blue:1.000f alpha:1.0f]
-#define ORANGE_COLOR [UIColor colorWithRed:1.000f green:0.204f blue:0.000f alpha:1.0f]
+#define BLUE_COLOR [UIColor colorWithRed:39/255.0f green:60/255.0f blue:154/255.0f alpha:1.0f]
+#define ORANGE_COLOR [UIColor colorWithRed:210/255.0f green:82/255.0f blue:2/255.0f alpha:1.0f]
 
 #define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
 #define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width

@@ -82,10 +82,11 @@
             float squareX = ((circleWidth - squareWidth) * 1.5) + (circleWidth * sCol);
             float squareY = ((circleWidth - squareWidth) * 1.5) + (circleWidth * sRow) + ((SCREEN_HEIGHT - SCREEN_WIDTH) / 2);
             
-            SCGSquare * square = [[SCGSquare alloc] initWithFrame:CGRectMake(squareX, squareY, squareWidth, squareWidth)];
+            SCGSquare * square = [[SCGSquare alloc] initWithFrame:CGRectMake(squareX -5, squareY-5, squareWidth+20, squareWidth+20)];
             
             square.backgroundColor = [UIColor lightGrayColor];
-
+            square.layer.cornerRadius = 5;
+            
             NSString * key = [NSString stringWithFormat:@"c%dr%d", sCol, sRow]; // 0,1, c0r1
             
             allSquares[key] = square;
@@ -181,7 +182,9 @@
         for (UIColor * color in playerColors)
         {
             // gives us number of player by checking color
+
             int player = [playerColors indexOfObject:color];
+
             // checking -1,-1  0,-1,  -1,0  0,0  boxes
             
             NSString * topLeftDot = [NSString stringWithFormat:@"c%dr%d", pX-1, pY-1];
@@ -220,12 +223,24 @@
     if (above && right)
     {
         // check top right quadrant
+
+ 
+    
+    
     }
     
     if (below && left)
         
     {
         // check bottom left quadrant
+
+        
+        
+        
+    
+    
+    
+    
     }
     
     if (below && right)
