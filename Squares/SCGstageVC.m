@@ -25,12 +25,8 @@
     NSMutableDictionary * tappedDots;
 
     NSMutableDictionary * allSquares;
-
-    NSString * topLeftDot;
-    NSString * topRightDot;
-    NSString * bottomLeftDot;
-    NSString * bottomRightDot;
     
+    UIView * gameBoard;
     
 }
 
@@ -53,6 +49,21 @@
     }
     return self;
 }
+
+
+- (void)resetGame
+
+{
+    
+    
+    
+    
+    
+    
+}
+
+
+
 
 - (void)viewDidLoad
 {
@@ -156,7 +167,6 @@
     int pX = position.x;
     int pY = position.y;
     
-    
     // x = col and y = row
     
     BOOL above = (pY > 0);
@@ -181,10 +191,10 @@
 
             // checking -1,-1  0,-1,  -1,0  0,0  boxes
             
-            topLeftDot = [NSString stringWithFormat:@"c%dr%d", pX-1, pY-1];
-            topRightDot = [NSString stringWithFormat:@"c%dr%d", pX, pY-1];
-            bottomLeftDot = [NSString stringWithFormat:@"c%dr%d", pX-1, pY];
-            bottomRightDot = [NSString stringWithFormat:@"c%dr%d", pX, pY];
+            NSString * topLeftDot = [NSString stringWithFormat:@"c%dr%d", pX-1, pY-1];
+            NSString * topRightDot = [NSString stringWithFormat:@"c%dr%d", pX, pY-1];
+            NSString * bottomLeftDot = [NSString stringWithFormat:@"c%dr%d", pX-1, pY];
+            NSString * bottomRightDot = [NSString stringWithFormat:@"c%dr%d", pX, pY];
             
             
             
@@ -211,18 +221,41 @@
             }
             
         }
-        
+
     }
     
     if (above && right)
     {
         // check top right quadrant
 
+        for (UIColor * color in playerColors)
+        {
+            int player = [playerColors indexOfObject:color];
         
-        
- 
-    
-    
+            NSString * topLeftDot = [NSString stringWithFormat:@"c%dr%d", pX, pY-1];
+            NSString * topRightDot = [NSString stringWithFormat:@"c%dr%d", pX+1, pY-1];
+            NSString * bottomLeftDot = [NSString stringWithFormat:@"c%dr%d", pX, pY];
+            NSString * bottomRightDot = [NSString stringWithFormat:@"c%dr%d", pX+1, pY];
+
+            BOOL topDotsSame = ([tappedDots[topLeftDot] isEqualToValue:tappedDots[topRightDot]]);
+            BOOL bottomDotsSame = ([tappedDots[bottomLeftDot] isEqualToValue:tappedDots[bottomRightDot]]);
+            BOOL leftDotsSame = ([tappedDots[topLeftDot] isEqualToValue:tappedDots[bottomLeftDot]]);
+
+            if(topDotsSame && bottomDotsSame && leftDotsSame && [tappedDots[topLeftDot] isEqualToValue:@(player)])
+
+            {
+                
+                
+                SCGSquare * currentSquare = allSquares[topLeftDot];
+                
+                NSLog(@"%@",topLeftDot);
+                
+                currentSquare.backgroundColor = color;
+                
+            }
+                
+        }
+
     }
     
     if (below && left)
@@ -230,22 +263,72 @@
     {
         // check bottom left quadrant
 
+        for (UIColor * color in playerColors)
+        {
+            int player = [playerColors indexOfObject:color];
+            
+            NSString * topLeftDot = [NSString stringWithFormat:@"c%dr%d", pX-1, pY];
+            NSString * topRightDot = [NSString stringWithFormat:@"c%dr%d", pX, pY];
+            NSString * bottomLeftDot = [NSString stringWithFormat:@"c%dr%d", pX-1, pY+1];
+            NSString * bottomRightDot = [NSString stringWithFormat:@"c%dr%d", pX, pY+1];
+            
+            BOOL topDotsSame = ([tappedDots[topLeftDot] isEqualToValue:tappedDots[topRightDot]]);
+            BOOL bottomDotsSame = ([tappedDots[bottomLeftDot] isEqualToValue:tappedDots[bottomRightDot]]);
+            BOOL leftDotsSame = ([tappedDots[topLeftDot] isEqualToValue:tappedDots[bottomLeftDot]]);
+            
+            if(topDotsSame && bottomDotsSame && leftDotsSame && [tappedDots[topLeftDot] isEqualToValue:@(player)])
+                
+            {
+                
+                
+                SCGSquare * currentSquare = allSquares[topLeftDot];
+                
+                NSLog(@"%@",topLeftDot);
+                
+                currentSquare.backgroundColor = color;
+                
+            }
         
+        }
         
-        
-    
-    
-    
-    
     }
-    
     if (below && right)
         
     {
         // check bottom right quadrant
+
+        for (UIColor * color in playerColors)
+        {
+            int player = [playerColors indexOfObject:color];
+            
+            NSString * topLeftDot = [NSString stringWithFormat:@"c%dr%d", pX, pY];
+            NSString * topRightDot = [NSString stringWithFormat:@"c%dr%d", pX+1, pY];
+            NSString * bottomLeftDot = [NSString stringWithFormat:@"c%dr%d", pX, pY+1];
+            NSString * bottomRightDot = [NSString stringWithFormat:@"c%dr%d", pX+1, pY+1];
+            
+            BOOL topDotsSame = ([tappedDots[topLeftDot] isEqualToValue:tappedDots[topRightDot]]);
+            BOOL bottomDotsSame = ([tappedDots[bottomLeftDot] isEqualToValue:tappedDots[bottomRightDot]]);
+            BOOL leftDotsSame = ([tappedDots[topLeftDot] isEqualToValue:tappedDots[bottomLeftDot]]);
+            
+            if(topDotsSame && bottomDotsSame && leftDotsSame && [tappedDots[topLeftDot] isEqualToValue:@(player)])
+                
+            {
+                
+                
+                SCGSquare * currentSquare = allSquares[topLeftDot];
+                
+                NSLog(@"%@",topLeftDot);
+                
+                currentSquare.backgroundColor = color;
+                
+            }
+            
+        }
+        
     }
-    
+
 }
+
 
 
 
