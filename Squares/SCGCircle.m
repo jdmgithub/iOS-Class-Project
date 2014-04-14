@@ -34,13 +34,15 @@
 {
     // Drawing code -- Draws circles on the square.  Could have used a UIlabel or a UIbutton to put show the circle.  
 
+    float dotWidth = self.frame.size.width / 3;
+    
     CGContextRef context = UIGraphicsGetCurrentContext();
     
     [dotColor set];
     
-    float dotXY = (self.frame.size.width -20) /2;
+    float dotXY = (self.frame.size.width - dotWidth) /2;
 
-    CGContextAddEllipseInRect(context, CGRectMake(dotXY, dotXY, 30, 30));
+    CGContextAddEllipseInRect(context, CGRectMake(dotXY, dotXY, dotWidth, dotWidth));
     
     CGContextFillPath(context);
     
