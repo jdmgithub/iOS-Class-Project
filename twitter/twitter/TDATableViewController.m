@@ -66,86 +66,83 @@
     
 
         
-/* Dictionary
-    tweetLists =[@[
+// Dictionary
+/*    tweetLists =[@[
   @{
  
- @"created_at": "Sat Apr 12 03:35:47 +0000 2014",
- @"id": 454825180305817600,
- @"id_str": "454825180305817600",
- @"text": "@foxjon123 What an awesome #FirstTweet ! So excited that you are doing things outside of what is being taught @TheIronYard #YouRock",
- @"source": "<a href=\"http://itunes.apple.com/us/app/twitter/id409789998?mt=12\" rel=\"nofollow\">Twitter for Mac</a>",
- @"truncated": false,
- @"in_reply_to_status_id": 454805152306696200,
- @"in_reply_to_status_id_str": "454805152306696193",
- @"in_reply_to_user_id": 2435447227,
- @"in_reply_to_user_id_str": "2435447227",
- @"in_reply_to_screen_name": "foxjon123",
+ @"created_at": @"Sat Apr 12 03:35:47 +0000 2014",
+ @"id": @"454825180305817600",
+ @"id_str": @"454825180305817600",
+ @"text": @"@foxjon123 What an awesome #FirstTweet ! So excited that you are doing things outside of what is being taught @TheIronYard #YouRock",
+ @"source": "@<a href=\"http://itunes.apple.com/us/app/twitter/id409789998?mt=12\" rel=\"nofollow\">Twitter for Mac</a>",
+ @"truncated": @"no",
+ @"in_reply_to_status_id": @"454805152306696200",
+ @"in_reply_to_status_id_str": @"454805152306696193",
+ @"in_reply_to_user_id": @"2435447227",
+ @"in_reply_to_user_id_str": @"2435447227",
+ @"in_reply_to_screen_name": @"foxjon123",
  
  
  
  @"user" : @{
  
- @"id": 18487945,
- @"id_str": "18487945",
- @"name": "Jo Albright",
- @"screen_name": "Joalbright",
- @"location": "",
- @"description": "Co-Founder & iOS Developer for HighFive | iOS Instructor @TheIronYard",
- @"url": "http://t.co/0j8pzmKFox",
- @"entities":  {
- @"url":  {
- @"urls":  [
- {
- @"url": "http://t.co/0j8pzmKFox",
- @"expanded_url": "http://jo2.co",
- @"display_url": "jo2.co",
- @"indices":  [
-    0,
-    22
- ]
- }
- ]
- },
- @"description":  {
- @"urls":  []
- }
- },
+         @"id": @"18487945",
+         @"id_str": @"18487945",
+         @"name": @"Jo Albright",
+         @"screen_name": @"Joalbright",
+         @"location": @"",
+         @"description": @"Co-Founder & iOS Developer for HighFive | iOS Instructor @TheIronYard",
+         @"url": @"http://t.co/0j8pzmKFox",
+         @"entities":  @{
+                 @"url":  @{
+                         @"urls":  @[
+                                     @{
+                                         @"url": @"http://t.co/0j8pzmKFox",
+                                         @"expanded_url": @"http://jo2.co",
+                                         @"display_url": @"jo2.co",
+                                         @"indices":  @[@"0",@"22"]
+                                         }
+                                     ]
+                            },
+                         @"description": @{
+                            @"urls":  @[]
+                            }
+                        },
  
   
  
- @"protected": false,
- @"followers_count": 207,
- @"friends_count": 313,
- @"listed_count": 12,
- @"created_at": "Tue Dec 30 20:46:32 +0000 2008",
- @"favourites_count": 26,
- @"utc_offset": -14400,
- @"time_zone": "Eastern Time (US & Canada)",
- @"geo_enabled": true,
- @"verified": false,
- @"statuses_count": 201,
- @"lang": "en",
- @"contributors_enabled": false,
- @"is_translator": false,
- @"is_translation_enabled": false,
- @"profile_background_color": "FFFFFF",
- @"profile_background_image_url": "http://pbs.twimg.com/profile_background_images/267632372/logo.jpg",
- @"profile_background_image_url_https": "https://pbs.twimg.com/profile_background_images/267632372/logo.jpg",
- @"profile_background_tile": false,
- @"profile_image_url": "http://pbs.twimg.com/profile_images/420687815211364352/wF9mtzLq_normal.jpeg",
- @"profile_image_url_https": "https://pbs.twimg.com/profile_images/420687815211364352/wF9mtzLq_normal.jpeg",
- @"profile_banner_url": "https://pbs.twimg.com/profile_banners/18487945/1391875911",
- @"profile_link_color": "00E0E0",
- @"profile_sidebar_border_color": "FFFFFF",
- @"profile_sidebar_fill_color": "F7F7F7",
- @"profile_text_color": "424242",
- @"profile_use_background_image": true,
- @"default_profile": false,
- @"default_profile_image": false,
- @"following": false,
- @"follow_request_sent": false,
- @"notifications": false
+ @"protected": @"no",
+ @"followers_count": @"207",
+ @"friends_count": @"313",
+ @"listed_count": @"12",
+ @"created_at": @"Tue Dec 30 20:46:32 +0000 2008",
+ @"favourites_count": @"26",
+ @"utc_offset": @"-14400",
+ @"time_zone": @"Eastern Time (US & Canada)",
+ @"geo_enabled": @"yes",
+ @"verified": @"no",
+ @"statuses_count": @"201",
+ @"lang": @"en",
+ @"contributors_enabled": @"no",
+ @"is_translator": @"no",
+ @"is_translation_enabled": @"no",
+ @"profile_background_color": @"FFFFFF",
+ @"profile_background_image_url": @"http://pbs.twimg.com/profile_background_images/267632372/logo.jpg",
+ @"profile_background_image_url_https": @"https://pbs.twimg.com/profile_background_images/267632372/logo.jpg",
+ @"profile_background_tile": @"no",
+ @"profile_image_url": @"http://pbs.twimg.com/profile_images/420687815211364352/wF9mtzLq_normal.jpeg",
+ @"profile_image_url_https": @"https://pbs.twimg.com/profile_images/420687815211364352/wF9mtzLq_normal.jpeg",
+ @"profile_banner_url": @"https://pbs.twimg.com/profile_banners/18487945/1391875911",
+ @"profile_link_color": @"00E0E0",
+ @"profile_sidebar_border_color": @"FFFFFF",
+ @"profile_sidebar_fill_color": @"F7F7F7",
+ @"profile_text_color": @"424242",
+ @"profile_use_background_image": @"yes",
+ @"default_profile": @"no",
+ @"default_profile_image": @"no",
+ @"following": @"no",
+ @"follow_request_sent": @"no",
+ @"notifications": @"no"
  
  }
  
@@ -157,11 +154,11 @@
   @{@"name" : XXX, @"image" : XXX, @"github" : XXX}
 
                 ] mutableCopy];
+
 */
         
         
-        
-        
+ 
         
     
     

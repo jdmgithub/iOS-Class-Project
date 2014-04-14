@@ -25,6 +25,12 @@
     NSMutableDictionary * tappedDots;
 
     NSMutableDictionary * allSquares;
+
+    NSString * topLeftDot;
+    NSString * topRightDot;
+    NSString * bottomLeftDot;
+    NSString * bottomRightDot;
+    
     
 }
 
@@ -103,10 +109,7 @@
     {
         for (int col = 0; col < gameSize; col++)
         {
-            
-            
-            
-            
+
             float circleX = circleWidth * col;
             float circleY = (circleWidth * row) + ((SCREEN_HEIGHT - SCREEN_WIDTH) / 2);
             
@@ -119,8 +122,6 @@
             NSString * key = [NSString stringWithFormat:@"c%dr%d", col, row]; // 0,1, c0r1
             
             tappedDots[key] =@2;
-            
-            
             
             [self.view addSubview:circle];
         }
@@ -152,13 +153,6 @@
 - (void)checkForSquareAroundPosition:(CGPoint)position
 {
     
-    //    @{
-    //      @"r0c0": @0,
-    //      @"r0c1": @1,
-    //      @"r0c2": @2
-    //
-    //      };
-    
     int pX = position.x;
     int pY = position.y;
     
@@ -187,10 +181,10 @@
 
             // checking -1,-1  0,-1,  -1,0  0,0  boxes
             
-            NSString * topLeftDot = [NSString stringWithFormat:@"c%dr%d", pX-1, pY-1];
-            NSString * topRightDot = [NSString stringWithFormat:@"c%dr%d", pX, pY-1];
-            NSString * bottomLeftDot = [NSString stringWithFormat:@"c%dr%d", pX-1, pY];
-            NSString * bottomRightDot = [NSString stringWithFormat:@"c%dr%d", pX, pY];
+            topLeftDot = [NSString stringWithFormat:@"c%dr%d", pX-1, pY-1];
+            topRightDot = [NSString stringWithFormat:@"c%dr%d", pX, pY-1];
+            bottomLeftDot = [NSString stringWithFormat:@"c%dr%d", pX-1, pY];
+            bottomRightDot = [NSString stringWithFormat:@"c%dr%d", pX, pY];
             
             
             
@@ -224,6 +218,8 @@
     {
         // check top right quadrant
 
+        
+        
  
     
     
