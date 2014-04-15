@@ -16,6 +16,11 @@
 
 @implementation DLAViewController
 
+{
+    DLAStageScribble * scribbleView;
+
+}
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -24,7 +29,7 @@
 
 //        self.view = [[DLAStageLines alloc] initWithFrame:self.view.frame];
  
-        self.view = [[DLAStageScribble alloc] initWithFrame:self.view.frame];
+//        self.view = [[DLAStageScribble alloc] initWithFrame:self.view.frame];
         
     }
     return self;
@@ -34,6 +39,23 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+
+
+    scribbleView = [[DLAStageScribble alloc] initWithFrame:self.view.frame];
+    
+//    scribbleView.lineColor = [UIColor blueColor];
+    
+    [self.view addSubview:scribbleView];
+    
+
+    
+    
+    UISlider * slider = [[UISlider alloc] initWithFrame:CGRectMake(20, 320, 280, 40)];
+
+    [self.view addSubview:slider];
+    
+
+
 }
 
 - (void)didReceiveMemoryWarning

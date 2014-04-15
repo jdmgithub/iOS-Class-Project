@@ -30,6 +30,14 @@
     if (self) {
         // Initialization code
 
+
+        
+        self.lineWidth = 2.0;
+        self.lineColor = [UIColor colorWithWhite:0.3 alpha:1.0];
+        
+        
+        
+        
 // allocs and inits the dictionary
         
         scribbles = [@[] mutableCopy];
@@ -72,12 +80,12 @@
         
         [self addSubview:blueButton];
     
-        widthslider = [[UISlider alloc] initWithFrame:CGRectMake(20, 320, 280, 40)];
-//        [widthslider setTitle:@"Width Selector" forState:UIControlStateNormal];
-        widthslider.backgroundColor = [UIColor greenColor];
-        widthslider.layer.cornerRadius = 5;
-    
-        [self addSubview:widthslider];
+//        widthslider = [[UISlider alloc] initWithFrame:CGRectMake(20, 320, 280, 40)];
+////        [widthslider setTitle:@"Width Selector" forState:UIControlStateNormal];
+//        widthslider.backgroundColor = [UIColor greenColor];
+//        widthslider.layer.cornerRadius = 5;
+//    
+//        [self addSubview:widthslider];
     
     }
     return self;
@@ -139,7 +147,7 @@
     CGContextRef context = UIGraphicsGetCurrentContext();
 
     CGContextSetLineCap(context, kCGLineCapRound);
-    CGContextSetLineWidth(context, 5.0);
+    CGContextSetLineWidth(context, self.lineWidth);
     
     [self.lineColor set];
 

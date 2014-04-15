@@ -10,7 +10,7 @@
 
 @interface DLAStageScribble : UIView
 
-@property (nonatomic) int * lineWidth;
+@property (nonatomic) float lineWidth;
 
 @property (nonatomic) UIColor * lineColor;
 
