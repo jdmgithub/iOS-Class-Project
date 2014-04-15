@@ -34,7 +34,8 @@
         
         self.lineWidth = 2.0;
         self.lineColor = [UIColor colorWithWhite:0.3 alpha:1.0];
-        
+
+
         
         
         
@@ -42,50 +43,50 @@
         
         scribbles = [@[] mutableCopy];
         
-        // Color Buttons
-        redButton = [[UIButton alloc] initWithFrame:CGRectMake(220, 380, 80, 80)];
-        [redButton setTitle:@"Red Line" forState:UIControlStateNormal];
-        redButton.titleLabel.font = [UIFont systemFontOfSize:14];
-        redButton.backgroundColor = [UIColor redColor];
-        redButton.layer.cornerRadius = 30;
-
-//        redButton.tag = 0;
-        
-        [redButton addTarget:self action:@selector(changeLineColor:) forControlEvents:UIControlEventTouchUpInside];
-        
-        [self addSubview:redButton];
-    
-        yellowButton = [[UIButton alloc] initWithFrame:CGRectMake(120, 380, 80, 80)];
-        [yellowButton setTitle:@"Yellow Line" forState:UIControlStateNormal];
-        yellowButton.titleLabel.font = [UIFont systemFontOfSize:14];
-        yellowButton.backgroundColor = [UIColor yellowColor];
-        yellowButton.layer.cornerRadius = 30;
-
-//        yellowButton.tag = 1;
-        
-        [yellowButton addTarget:self action:@selector(changeLineColor:) forControlEvents:UIControlEventTouchUpInside];
-        
-        [self addSubview:yellowButton];
-
-        blueButton = [[UIButton alloc] initWithFrame:CGRectMake(20, 380, 80, 80)];
-        [blueButton setTitle:@"Blue Line" forState:UIControlStateNormal];
-        blueButton.titleLabel.font = [UIFont systemFontOfSize:14];
-        blueButton.backgroundColor = [UIColor blueColor];
-        blueButton.layer.cornerRadius = 30;
-//        blueButton.tintColor = [UIColor blackColor];
-
-//        blueButton.tag = 2;
-        
-        [blueButton addTarget:self action:@selector(changeLineColor:) forControlEvents:UIControlEventTouchUpInside];
-        
-        [self addSubview:blueButton];
-    
-//        widthslider = [[UISlider alloc] initWithFrame:CGRectMake(20, 320, 280, 40)];
-////        [widthslider setTitle:@"Width Selector" forState:UIControlStateNormal];
-//        widthslider.backgroundColor = [UIColor greenColor];
-//        widthslider.layer.cornerRadius = 5;
+//        // Color Buttons
+//        redButton = [[UIButton alloc] initWithFrame:CGRectMake(220, 380, 80, 80)];
+//        [redButton setTitle:@"Red Line" forState:UIControlStateNormal];
+//        redButton.titleLabel.font = [UIFont systemFontOfSize:14];
+//        redButton.backgroundColor = [UIColor redColor];
+//        redButton.layer.cornerRadius = 30;
+//
+////        redButton.tag = 0;
+//        
+//        [redButton addTarget:self action:@selector(changeLineColor:) forControlEvents:UIControlEventTouchUpInside];
+//        
+//        [self addSubview:redButton];
 //    
-//        [self addSubview:widthslider];
+//        yellowButton = [[UIButton alloc] initWithFrame:CGRectMake(120, 380, 80, 80)];
+//        [yellowButton setTitle:@"Yellow Line" forState:UIControlStateNormal];
+//        yellowButton.titleLabel.font = [UIFont systemFontOfSize:14];
+//        yellowButton.backgroundColor = [UIColor yellowColor];
+//        yellowButton.layer.cornerRadius = 30;
+//
+////        yellowButton.tag = 1;
+//        
+//        [yellowButton addTarget:self action:@selector(changeLineColor:) forControlEvents:UIControlEventTouchUpInside];
+//        
+//        [self addSubview:yellowButton];
+//
+//        blueButton = [[UIButton alloc] initWithFrame:CGRectMake(20, 380, 80, 80)];
+//        [blueButton setTitle:@"Blue Line" forState:UIControlStateNormal];
+//        blueButton.titleLabel.font = [UIFont systemFontOfSize:14];
+//        blueButton.backgroundColor = [UIColor blueColor];
+//        blueButton.layer.cornerRadius = 30;
+////        blueButton.tintColor = [UIColor blackColor];
+//
+////        blueButton.tag = 2;
+//        
+//        [blueButton addTarget:self action:@selector(changeLineColor:) forControlEvents:UIControlEventTouchUpInside];
+//        
+//        [self addSubview:blueButton];
+//    
+////        widthslider = [[UISlider alloc] initWithFrame:CGRectMake(20, 320, 280, 40)];
+//////        [widthslider setTitle:@"Width Selector" forState:UIControlStateNormal];
+////        widthslider.backgroundColor = [UIColor greenColor];
+////        widthslider.layer.cornerRadius = 5;
+////    
+////        [self addSubview:widthslider];
     
     }
     return self;
@@ -148,15 +149,25 @@
 
     CGContextSetLineCap(context, kCGLineCapRound);
     CGContextSetLineWidth(context, self.lineWidth);
+    [self.lineColor set];
+
+    CGContextClearRect(context, rect);
     
     [self.lineColor set];
 
-    for (NSArray * scribble in scribbles) {
-        CGPoint start = [scribble[0] CGPointValue];
+    for (NSDictionary * scribble in scribbles)
+    {
+        CGContextSetLineWidth(context, [scribble[@"width"] floatValue]);
+        [(UIColor *)scribble[@"color"] set];
+
+        NSArray * points = scribble[@"points"];
+        
+        
+        CGPoint start = [points[0] CGPointValue];
         
         CGContextMoveToPoint(context, start.x, start.y);
         
-        for (NSValue * value in scribble)
+        for (NSValue * value in points)
         {
     
 //            int index = [scribble indexOfObject:value];
@@ -174,6 +185,17 @@
 }
 
 
+- (void)setLineWidth:(float)lineWidth
+
+{
+
+    _lineWidth = lineWidth;
+    
+    [self setNeedsDisplay];
+
+}
+
+
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
 
@@ -181,11 +203,13 @@
     {
         CGPoint location = [touch locationInView:self];
         
-        [scribbles addObject:[@[
-                              [NSValue valueWithCGPoint:location]
-                               
-                              ] mutableCopy]];
+        [scribbles addObject:[@{
+                                @"color" : self.lineColor,
+                                @"width" : @(self.lineWidth),
+                                @"points" : [@[[NSValue valueWithCGPoint:location]]mutableCopy]
+                                } mutableCopy]];
     }
+    
     [self setNeedsDisplay];
     
 }
@@ -197,7 +221,11 @@
     {
         CGPoint location = [touch locationInView:self];
     
-        [[scribbles lastObject] addObject:[NSValue valueWithCGPoint:location]];
+//        [[scribbles lastObject] addObject:[NSValue valueWithCGPoint:location]];
+        
+
+        [[scribbles lastObject][@"points"] addObject:[NSValue valueWithCGPoint:location]];
+        
         
         [self setNeedsDisplay];
 
@@ -214,7 +242,9 @@
     {
         CGPoint location = [touch locationInView:self];
         
-        [[scribbles lastObject] addObject:[NSValue valueWithCGPoint:location]];
+//        [[scribbles lastObject] addObject:[NSValue valueWithCGPoint:location]];
+
+        [[scribbles lastObject][@"points"] addObject:[NSValue valueWithCGPoint:location]];
 
         [self setNeedsDisplay];
    

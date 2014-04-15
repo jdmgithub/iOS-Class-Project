@@ -19,6 +19,8 @@
 {
     DLAStageScribble * scribbleView;
 
+    UIView * colorsDrawer;
+
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -52,11 +54,63 @@
     
     UISlider * slider = [[UISlider alloc] initWithFrame:CGRectMake(20, 320, 280, 40)];
 
+    slider.minimumValue = 2.0;
+    slider.maximumValue = 20.0;
+    
+    [slider addTarget:self action:@selector(changeSize:) forControlEvents:UIControlEventValueChanged];
+    
     [self.view addSubview:slider];
     
+    
+    colorsDrawer = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 40)];
+    
+    NSArray * colors = @[
+                         [UIColor colorWithRed:0.251f green:0.251f blue:0.251f alpha:1.0f],
+                         [UIColor colorWithRed:0.008f green:0.353f blue:0.431f alpha:1.0f],
+                         [UIColor colorWithRed:0.016f green:0.604f blue:0.671f alpha:1.0f],
+                         [UIColor colorWithRed:1.000f green:0.988f blue:0.910f alpha:1.0f],
+                         [UIColor colorWithRed:1.000f green:0.298f blue:0.153f alpha:1.0f]
+                         ];
+
+    float buttonWidth = 320 / [colors count];
+    
+    for (UIColor * color in colors)
+    
+    {
+        int index = [colors indexOfObject:color];
+        UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(buttonWidth * index, 0, buttonWidth, 40)];
+        
+        button.backgroundColor = color;
+        
+        [button addTarget:self action:@selector(changeColor:) forControlEvents:UIControlEventTouchUpInside];
+        
+        [colorsDrawer addSubview:button];
+        
+    }
+    
+    [self.view addSubview:colorsDrawer];
+
+}
+
+-(void)changeSize:(UISlider *)sender
+
+{
+
+    scribbleView.lineWidth = sender.value;
+
+}
+
+
+-(void)changeColor:(UIButton *)sender
+{
+    scribbleView.lineColor = sender.backgroundColor;
 
 
 }
+
+-(BOOL)prefersStatusBarHidden {return YES;}
+
+
 
 - (void)didReceiveMemoryWarning
 {
