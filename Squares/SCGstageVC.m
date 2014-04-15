@@ -39,13 +39,15 @@
     if (self) {
         // Custom initialization
         
-        playerColors = @[BLUE_COLOR, ORANGE_COLOR];
+        playerColors = @[BLUE_COLOR, GREEN_COLOR];
         
         playerTurn = 0;
         
         tappedDots = [@{} mutableCopy];
         
         allSquares = [@{} mutableCopy];
+        
+//        self.view.backgroundColor = [UIColor colorWithRed:0.149f green:0.149f blue:0.149f alpha:1.0f];
         
     }
     return self;
@@ -66,7 +68,7 @@
     newGame = [[UIButton alloc] initWithFrame:CGRectMake(240, 400, 60, 60)];
     [newGame setTitle:@"Start" forState:UIControlStateNormal];
     newGame.titleLabel.font = [UIFont systemFontOfSize:14];
-    newGame.backgroundColor = [UIColor blackColor];
+    newGame.backgroundColor = [UIColor colorWithRed:0.024f green:0.024f blue:0.255f alpha:1.0f];
     newGame.layer.cornerRadius = 30;
     
     [newGame addTarget:self action:@selector(resetGame) forControlEvents:UIControlEventTouchUpInside];
@@ -88,7 +90,7 @@
         
         
         
-        gameSize = 8;
+        gameSize = 6;
         
         float circleWidth = SCREEN_WIDTH / gameSize;
         float squareWidth = circleWidth / 2;
