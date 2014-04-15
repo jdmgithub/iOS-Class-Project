@@ -7,7 +7,8 @@
 //
 
 #import "DLAViewController.h"
-#import "DLAStage.h"
+#import "DLAStageLines.h"
+#import "DLAStageScribble.h"
 
 @interface DLAViewController ()
 
@@ -21,8 +22,10 @@
     if (self) {
         // Custom initialization
 
-        self.view = [[DLAStage alloc] initWithFrame:self.view.frame];
-    
+//        self.view = [[DLAStageLines alloc] initWithFrame:self.view.frame];
+ 
+        self.view = [[DLAStageScribble alloc] initWithFrame:self.view.frame];
+        
     }
     return self;
 }
