@@ -52,15 +52,22 @@
     
     [[UIColor blackColor] set];
     
-    CGContextSetLineWidth(context, 3.0);
+    CGContextSetLineWidth(context, self.lineWidth);
+
     CGContextSetLineCap(context, kCGLineCapRound);
     
+    [self.lineColor set];
     
-    for (NSArray * line in lines)
+    for (NSDictionary * line in lines)
         
     {
-        CGPoint start = [line[0] CGPointValue];
-        CGPoint end = [line[1] CGPointValue];
+
+        CGContextSetLineWidth(context, [line[@"width"] floatValue]);
+        [(UIColor *)line[@"color"] set];
+
+        
+        CGPoint start = [line[@"points"][0] CGPointValue];
+        CGPoint end = [line[@"points"][1] CGPointValue];
 
         CGContextMoveToPoint(context, start.x, start.y);
         CGContextAddLineToPoint(context, end.x, end.y);
@@ -81,11 +88,23 @@
     {
         CGPoint location = [touch locationInView:self];
         
-        [lines addObject:[@[
-                            [NSValue valueWithCGPoint:location],
-                            [NSValue valueWithCGPoint:location]
-                            
-                            ] mutableCopy]];
+//        [lines addObject:[@[
+//                            [NSValue valueWithCGPoint:location],
+//                            [NSValue valueWithCGPoint:location]
+//                            
+//                            ] mutableCopy]];
+        
+
+        [lines addObject:[@{
+                                @"color" : self.lineColor,
+                                @"width" : @(self.lineWidth),
+                                @"points" : [@[
+                                               
+                                               [NSValue valueWithCGPoint:location],
+                                               [NSValue valueWithCGPoint:location]
+                                               ] mutableCopy]
+                                } mutableCopy]];
+        
         
         
         
@@ -112,8 +131,8 @@
         
         NSLog(@"Touch X %f, Y %f", location.x, location.y);
         
-        [lines lastObject][1] = [NSValue valueWithCGPoint:location];
-        
+//        [lines lastObject][1] = [NSValue valueWithCGPoint:location];
+        [lines lastObject][@"points"][1] = [NSValue valueWithCGPoint:location];
     
         
     
@@ -137,7 +156,7 @@
         
         NSLog(@"Touch X %f, Y %f", location.x, location.y);
         
-        [lines lastObject][1] = [NSValue valueWithCGPoint:location];
+        [lines lastObject][@"points"][1] = [NSValue valueWithCGPoint:location];
 
     
     }

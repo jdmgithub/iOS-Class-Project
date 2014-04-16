@@ -43,7 +43,7 @@
     // Do any additional setup after loading the view.
 
 
-    scribbleView = [[DLAStageScribble alloc] initWithFrame:self.view.frame];
+    scribbleView = [[DLAStageLines alloc] initWithFrame:self.view.frame];
     
 //    scribbleView.lineColor = [UIColor blueColor];
     
@@ -52,7 +52,7 @@
 
     
     
-    UISlider * slider = [[UISlider alloc] initWithFrame:CGRectMake(20, 320, 280, 40)];
+    UISlider * slider = [[UISlider alloc] initWithFrame:CGRectMake(20, 430, 280, 40)];
 
     slider.minimumValue = 2.0;
     slider.maximumValue = 20.0;
@@ -78,6 +78,7 @@
     
     {
         int index = [colors indexOfObject:color];
+        
         UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(buttonWidth * index, 0, buttonWidth, 40)];
         
         button.backgroundColor = color;
