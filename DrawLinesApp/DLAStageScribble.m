@@ -12,13 +12,13 @@
 
 {
 // declares the dictionary
-    NSMutableArray * scribbles;
 
-    UIButton * redButton;
-    UIButton * yellowButton;
-    UIButton * blueButton;
+
+//    UIButton * redButton;
+//    UIButton * yellowButton;
+//    UIButton * blueButton;
     
-    UISlider * widthslider;
+//    UISlider * widthslider;
    
     
 }
@@ -35,13 +35,14 @@
         self.lineWidth = 2.0;
         self.lineColor = [UIColor colorWithWhite:0.3 alpha:1.0];
 
+        self.backgroundColor = [UIColor whiteColor];
 
         
         
         
 // allocs and inits the dictionary
         
-        scribbles = [@[] mutableCopy];
+        self.lines = [@[] mutableCopy];
         
 //        // Color Buttons
 //        redButton = [[UIButton alloc] initWithFrame:CGRectMake(220, 380, 80, 80)];
@@ -92,6 +93,23 @@
     return self;
 }
 
+-(void)clearStage
+{
+
+    [self.lines removeAllObjects];
+    
+    [self setNeedsDisplay];
+}
+
+-(void)undo
+
+{
+    [self.lines removeLastObject];
+
+    [self setNeedsDisplay];
+
+}
+
 
 
 - (void) setWidth
@@ -103,7 +121,7 @@
 }
 
 
-// Use Scribbles or Lines and:
+// Use self.lines or Lines and:
 // 1.  Add Properties to UIView (integer value = line width, integer value = line color)
 
 // 2.  add subview a UI Slider and 3 UI buttons (square with red, yellow, blue).  Slider changes width, buttons change line color property on UI View)
@@ -148,19 +166,27 @@
     CGContextRef context = UIGraphicsGetCurrentContext();
 
     CGContextSetLineCap(context, kCGLineCapRound);
+    CGContextSetLineJoin(context, kCGLineJoinRound);
+    
+
+// Adds a Curve
+    CGContextMoveToPoint(context, 50, 50);
+    CGContextAddCurveToPoint(context, 270, 50, 270, 400, 50, 400);
+    
+    
     CGContextSetLineWidth(context, self.lineWidth);
     [self.lineColor set];
 
-    CGContextClearRect(context, rect);
+//    CGContextClearRect(context, rect);
     
     [self.lineColor set];
 
-    for (NSDictionary * scribble in scribbles)
+    for (NSDictionary * line in self.lines)
     {
-        CGContextSetLineWidth(context, [scribble[@"width"] floatValue]);
-        [(UIColor *)scribble[@"color"] set];
+        CGContextSetLineWidth(context, [line[@"width"] floatValue]);
+        [(UIColor *)line[@"color"] set];
 
-        NSArray * points = scribble[@"points"];
+        NSArray * points = line[@"points"];
         
         
         CGPoint start = [points[0] CGPointValue];
@@ -203,7 +229,7 @@
     {
         CGPoint location = [touch locationInView:self];
         
-        [scribbles addObject:[@{
+        [self.lines addObject:[@{
                                 @"color" : self.lineColor,
                                 @"width" : @(self.lineWidth),
                                 @"points" : [@[[NSValue valueWithCGPoint:location]]mutableCopy]
@@ -217,19 +243,8 @@
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    for (UITouch * touch in touches)
-    {
-        CGPoint location = [touch locationInView:self];
-    
-//        [[scribbles lastObject] addObject:[NSValue valueWithCGPoint:location]];
-        
 
-        [[scribbles lastObject][@"points"] addObject:[NSValue valueWithCGPoint:location]];
-        
-        
-        [self setNeedsDisplay];
-
-}
+    [self doTouch:touches];
 
 }
 
@@ -237,18 +252,24 @@
     - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 
 {
+    [self doTouch:touches];
 
-    for (UITouch * touch in touches)
-    {
-        CGPoint location = [touch locationInView:self];
-        
-//        [[scribbles lastObject] addObject:[NSValue valueWithCGPoint:location]];
 
-        [[scribbles lastObject][@"points"] addObject:[NSValue valueWithCGPoint:location]];
-
-        [self setNeedsDisplay];
-   
-    }
 }
+
+
+-(void)doTouch:(NSSet *)touches
+{
+    
+    UITouch * touch = [touches allObjects][0];
+    CGPoint location = [touch locationInView:self];
+    
+    [[self.lines lastObject][@"points"] addObject:[NSValue valueWithCGPoint:location]];
+    
+    [self setNeedsDisplay];
+    
+    
+}
+
 
 @end
