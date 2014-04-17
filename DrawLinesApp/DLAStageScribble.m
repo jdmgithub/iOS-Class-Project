@@ -17,9 +17,7 @@
 //    UIButton * redButton;
 //    UIButton * yellowButton;
 //    UIButton * blueButton;
-    
 //    UISlider * widthslider;
-   
     
 }
 
@@ -29,15 +27,11 @@
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
-
-
         
         self.lineWidth = 2.0;
         self.lineColor = [UIColor colorWithWhite:0.3 alpha:1.0];
 
         self.backgroundColor = [UIColor whiteColor];
-
-        
         
         
 // allocs and inits the dictionary
@@ -152,11 +146,6 @@
 
 
 
-
-
-
-
-
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect
@@ -169,9 +158,38 @@
     CGContextSetLineJoin(context, kCGLineJoinRound);
     
 
+// Adds and fills Rectangle  ODD - CLEARS CURRENT PATH
+    CGContextFillRect(context, CGRectMake(140, 200, 50, 100));
+
+    
 // Adds a Curve
     CGContextMoveToPoint(context, 50, 50);
     CGContextAddCurveToPoint(context, 270, 50, 270, 400, 50, 400);
+
+// Adds an Ellipses
+    CGContextAddEllipseInRect(context, CGRectMake(80, 100, 50, 70));
+
+// Adds Rectangle
+    CGContextAddRect(context, CGRectMake(100, 100, 70, 140));
+    
+//  ???
+//    CGContextAddRects(context, <#const CGRect *rects#>, <#size_t count#>);
+
+
+// Why do Fills over write and erase shapes above, but not filled rectangle?
+    
+    
+// adds and fills Rectangle with color    ODD - CLEARS CURRENT PATH
+//        CGContextSetRGBFillColor(context, 0.100f, 0.705f, 0.300f, 1.0);
+//
+//        CGContextFillRect(context, CGRectMake(100, 200, 50, 100));
+    
+    CGContextStrokePath(context);
+
+    
+    
+    
+    
     
     
     CGContextSetLineWidth(context, self.lineWidth);

@@ -88,7 +88,7 @@
     
     [self.view addSubview:colorsDrawer];
     
-    UISwitch * toggleSwitch = [[UISwitch alloc] initWithFrame:CGRectMake(10, 140, 50, 50)];
+    UISwitch * toggleSwitch = [[UISwitch alloc] initWithFrame:CGRectMake(10, 50, 50, 50)];
 //    toggleSwitch.backgroundColor = [UIColor orangeColor];
     [toggleSwitch addTarget:self action:@selector(toggleStage) forControlEvents:UIControlEventTouchUpInside];
     toggleSwitch.onTintColor = [UIColor blackColor];
@@ -98,11 +98,11 @@
     [self.view addSubview:toggleSwitch];
     
     
-    UIButton   * toggleButton = [[UIButton alloc] initWithFrame:CGRectMake(10, 50, 50, 50)];
-    toggleButton.backgroundColor = [UIColor orangeColor];
-    [toggleButton addTarget:self action:@selector(toggleStage) forControlEvents:UIControlEventTouchUpInside];
-    
-    [self.view addSubview:toggleButton];
+//    UIButton   * toggleButton = [[UIButton alloc] initWithFrame:CGRectMake(10, 50, 50, 50)];
+//    toggleButton.backgroundColor = [UIColor orangeColor];
+//    [toggleButton addTarget:self action:@selector(toggleStage) forControlEvents:UIControlEventTouchUpInside];
+//    
+//    [self.view addSubview:toggleButton];
     
     
     
