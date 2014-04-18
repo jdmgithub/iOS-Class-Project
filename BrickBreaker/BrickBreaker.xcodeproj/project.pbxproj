@@ -21,6 +21,7 @@
 		1B130AAD190019C4002CA2C5 /* BrickBreakerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B130AAC190019C4002CA2C5 /* BrickBreakerTests.m */; };
 		1B130AB819001BC0002CA2C5 /* BBAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B130AB719001BC0002CA2C5 /* BBAViewController.m */; };
 		1B130ABB19001D4A002CA2C5 /* BBALevelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B130ABA19001D4A002CA2C5 /* BBALevelController.m */; };
+		1B23EDF8190151980020A633 /* MOVE.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B23EDF7190151980020A633 /* MOVE.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,8 @@
 		1B130AB719001BC0002CA2C5 /* BBAViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBAViewController.m; sourceTree = "<group>"; };
 		1B130AB919001D4A002CA2C5 /* BBALevelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBALevelController.h; sourceTree = "<group>"; };
 		1B130ABA19001D4A002CA2C5 /* BBALevelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBALevelController.m; sourceTree = "<group>"; };
+		1B23EDF6190151980020A633 /* MOVE.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MOVE.h; path = "../../../../Downloads/Move-master/MOVE.h"; sourceTree = "<group>"; };
+		1B23EDF7190151980020A633 /* MOVE.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MOVE.m; path = "../../../../Downloads/Move-master/MOVE.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +86,8 @@
 		1B130A7B190019C4002CA2C5 = {
 			isa = PBXGroup;
 			children = (
+				1B23EDF6190151980020A633 /* MOVE.h */,
+				1B23EDF7190151980020A633 /* MOVE.m */,
 				1B130AB919001D4A002CA2C5 /* BBALevelController.h */,
 				1B130ABA19001D4A002CA2C5 /* BBALevelController.m */,
 				1B130AB619001BC0002CA2C5 /* BBAViewController.h */,
@@ -250,6 +255,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B23EDF8190151980020A633 /* MOVE.m in Sources */,
 				1B130ABB19001D4A002CA2C5 /* BBALevelController.m in Sources */,
 				1B130AB819001BC0002CA2C5 /* BBAViewController.m in Sources */,
 				1B130A98190019C4002CA2C5 /* BBAAppDelegate.m in Sources */,
@@ -450,6 +456,7 @@
 				1B130AB2190019C4002CA2C5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1B130AB3190019C4002CA2C5 /* Build configuration list for PBXNativeTarget "BrickBreakerTests" */ = {
 			isa = XCConfigurationList;
@@ -458,6 +465,7 @@
 				1B130AB5190019C4002CA2C5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
