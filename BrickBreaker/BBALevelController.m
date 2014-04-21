@@ -12,7 +12,7 @@
 
 @interface BBALevelController () <UICollisionBehaviorDelegate>
 
-@property (nonatomic) UIView * paddle;
+@property (nonatomic) UIImageView * paddle;
 @property (nonatomic) NSMutableArray * balls;
 @property (nonatomic) NSMutableArray * bricks;
 
@@ -95,16 +95,16 @@
     self.collider.collisionMode = UICollisionBehaviorModeEverything;
 
 // everything collides... cant lose
-//    self.collider.translatesReferenceBoundsIntoBoundary = YES;
+    self.collider.translatesReferenceBoundsIntoBoundary = YES;
     
 // collides on certain walls only by setting new boundary
-    int w = self.view.frame.size.width;
-    int h = self.view.frame.size.height;
-    
-    [self.collider addBoundaryWithIdentifier:@"ceiling" fromPoint:CGPointMake(0, 0) toPoint:CGPointMake(w, 0)];
-    [self.collider addBoundaryWithIdentifier:@"leftwall" fromPoint:CGPointMake(0, 0) toPoint:CGPointMake(0, h)];
-    [self.collider addBoundaryWithIdentifier:@"rightwall" fromPoint:CGPointMake(w, 0) toPoint:CGPointMake(w, h)];
-    [self.collider addBoundaryWithIdentifier:@"floor" fromPoint:CGPointMake(0, h + 10) toPoint:CGPointMake(w, h +10)];
+//    int w = self.view.frame.size.width;
+//    int h = self.view.frame.size.height;
+//    
+//    [self.collider addBoundaryWithIdentifier:@"ceiling" fromPoint:CGPointMake(0, 0) toPoint:CGPointMake(w, 0)];
+//    [self.collider addBoundaryWithIdentifier:@"leftwall" fromPoint:CGPointMake(0, 0) toPoint:CGPointMake(0, h)];
+//    [self.collider addBoundaryWithIdentifier:@"rightwall" fromPoint:CGPointMake(w, 0) toPoint:CGPointMake(w, h)];
+//    [self.collider addBoundaryWithIdentifier:@"floor" fromPoint:CGPointMake(0, h + 10) toPoint:CGPointMake(w, h +10)];
 
     
     
@@ -226,12 +226,15 @@
 
 -(void)createPaddle
 {
+    // 396 x 127  .... 400 x 125
 
-    self.paddle = [[UIView alloc] initWithFrame:CGRectMake((SCREEN_WIDTH - paddleWidth) / 2, 260, paddleWidth, 6)];
+    self.paddle = [[UIImageView alloc] initWithFrame:CGRectMake((SCREEN_WIDTH - paddleWidth) / 2, 220, paddleWidth, 25)];
     
     self.paddle.backgroundColor = [UIColor colorWithWhite:0.5 alpha:1.0];
 
     self.paddle.layer.cornerRadius = 3;
+    
+    self.paddle.image = [UIImage imageNamed:@"bookPaddle"];
     
     [self.view addSubview:self.paddle];
     
