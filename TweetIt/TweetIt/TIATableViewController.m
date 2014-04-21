@@ -8,6 +8,8 @@
 
 #import "TIATableViewController.h"
 
+#import "TIAViewController.h"
+
 @interface TIATableViewController ()
 
 @end
@@ -99,7 +101,7 @@
     NSDictionary * tweet = tweets[indexPath.row];
 
     // array of types for switch
-    NSArray * types = @[@"quote", @"icebreaker", @"look"];
+//    NSArray * types = @[@"quote", @"icebreaker", @"look"];
     
     // cell identifier that will be changed in switch
     NSString * reuseID = @"cell";
@@ -108,28 +110,28 @@
     UITableViewCellStyle style = UITableViewCellStyleDefault;
     
     
-    switch ([types indexOfObject:tweet[@"type"]])
-    {
-        case 0 :   //quote
-            reuseID = @"cell0";
-            style = UITableViewCellStyleValue1;
-            break;
- 
-        case 1 :   // icebreaker
-            reuseID = @"cell1";
-            style = UITableViewCellStyleValue2;
-            break;
-            
-        case 2 :   // look
-            reuseID = @"cell2";
-            style = UITableViewCellStyleSubtitle;
-            break;
-   
-            
-        default:
-            break;
-
-    }
+//    switch ([types indexOfObject:tweet[@"type"]])
+//    {
+//        case 0 :   //quote
+//            reuseID = @"cell0";
+//            style = UITableViewCellStyleValue1;
+//            break;
+// 
+//        case 1 :   // icebreaker
+//            reuseID = @"cell1";
+//            style = UITableViewCellStyleValue2;
+//            break;
+//            
+//        case 2 :   // look
+//            reuseID = @"cell2";
+//            style = UITableViewCellStyleSubtitle;
+//            break;
+//   
+//            
+//        default:
+//            break;
+//
+//    }
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseID];
     
     if(cell == nil)
@@ -186,15 +188,37 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    
+    UITableViewCell * cell = sender;
+ 
+    NSIndexPath * indexPath = [self.tableView indexPathForCell:cell];
+    
+    NSDictionary * tweet = tweets[indexPath.row];
+    
+    if ([segue.identifier isEqualToString:@"tweetDetail"])
+    {
+        // tweetDetail
+        TIAViewController * tweetDetailVC = segue.destinationViewController;
+
+        tweetDetailVC.tweet = tweet;
+        
+//        tweetDetailVC.nameLabel.text = tweet[@"name"];
+//        tweetDetailVC.tweetLabel.text = tweet[@"text"];
+        
+    }
+    
+    
+    
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+
 }
-*/
+
 
 @end

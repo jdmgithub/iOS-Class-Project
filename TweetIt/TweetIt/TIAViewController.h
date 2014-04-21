@@ -8,6 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+
 @interface TIAViewController : UIViewController
+
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *tweetLabel;
+
+@property (nonatomic) NSDictionary * tweet;
 
 @end

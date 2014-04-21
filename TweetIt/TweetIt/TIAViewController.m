@@ -18,6 +18,10 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+
+    self.nameLabel.text = self.tweet[@"name"];
+    self.tweetLabel.text = self.tweet[@"text"];
+
 }
 
 - (void)didReceiveMemoryWarning
