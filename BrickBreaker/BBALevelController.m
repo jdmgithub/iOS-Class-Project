@@ -95,18 +95,18 @@
     self.collider.collisionMode = UICollisionBehaviorModeEverything;
 
 // everything collides... cant lose
-    self.collider.translatesReferenceBoundsIntoBoundary = YES;
+//    self.collider.translatesReferenceBoundsIntoBoundary = YES;
     
 // collides on certain walls only by setting new boundary
-//    int w = self.view.frame.size.width;
-//    int h = self.view.frame.size.height;
-//    
-//    [self.collider addBoundaryWithIdentifier:@"ceiling" fromPoint:CGPointMake(0, 0) toPoint:CGPointMake(w, 0)];
-//    [self.collider addBoundaryWithIdentifier:@"leftwall" fromPoint:CGPointMake(0, 0) toPoint:CGPointMake(0, h)];
-//    [self.collider addBoundaryWithIdentifier:@"rightwall" fromPoint:CGPointMake(w, 0) toPoint:CGPointMake(w, h)];
-//    [self.collider addBoundaryWithIdentifier:@"floor" fromPoint:CGPointMake(0, h + 10) toPoint:CGPointMake(w, h +10)];
-//
-//    
+    int w = self.view.frame.size.width;
+    int h = self.view.frame.size.height;
+    
+    [self.collider addBoundaryWithIdentifier:@"ceiling" fromPoint:CGPointMake(0, 0) toPoint:CGPointMake(w, 0)];
+    [self.collider addBoundaryWithIdentifier:@"leftwall" fromPoint:CGPointMake(0, 0) toPoint:CGPointMake(0, h)];
+    [self.collider addBoundaryWithIdentifier:@"rightwall" fromPoint:CGPointMake(w, 0) toPoint:CGPointMake(w, h)];
+    [self.collider addBoundaryWithIdentifier:@"floor" fromPoint:CGPointMake(0, h + 10) toPoint:CGPointMake(w, h +10)];
+
+    
     
     [self.animator addBehavior:self.collider];
 
@@ -238,8 +238,27 @@
     self.attacher = [[UIAttachmentBehavior alloc] initWithItem:self.paddle attachedToAnchor:CGPointMake(CGRectGetMidX(self.paddle.frame), CGRectGetMidY(self.paddle.frame))];
     
     [self.animator addBehavior:self.attacher];
+    
+//    [self createPaddleImage];
 
 }
+
+//-(void)createPaddleImage
+//
+//{
+//
+//    // Image on Paddle - Does Not Move
+//    UIImageView * paddleImage = [[UIImageView alloc] initWithFrame:self.paddle.frame];
+//    paddleImage.image = [UIImage imageNamed:@"bookPaddle"];
+//    
+//    self.attacher = [[UIAttachmentBehavior alloc] initWithItem:paddleImage attachedToAnchor:CGPointMake(CGRectGetMidX(self.paddle.frame), CGRectGetMidY(self.paddle.frame))];
+//
+//    [self.animator addBehavior:self.attacher];
+//    
+//    [self.view addSubview:paddleImage];
+//}
+
+
 
 
 -(void)createBricks
@@ -268,11 +287,16 @@
                          
         [self.view addSubview:brick];
         [self.bricks addObject:brick];
+  
+
+            
+// Images on Bricks - They dont Alpha
+//            UIImageView * brickImage = [[UIImageView alloc] initWithFrame:brick.frame];
+//            brickImage.image = [UIImage imageNamed:@"bookBlocks"];
+//            [self.view addSubview:brickImage];
+        
         }
     }
-    
-    
-    
 }
 
 
@@ -286,7 +310,6 @@
     for (int x = 0; x < multiBalls; x++)
     {
         
-    
     
     
     CGRect frame = self.paddle.frame;
@@ -305,13 +328,14 @@
 
     //add ball to balls array
     [self.balls addObject:ball];
+
     }
     
     
     // Start Ball Off with a Push
     self.pusher = [[UIPushBehavior alloc] initWithItems:self.balls mode:UIPushBehaviorModeInstantaneous];
     
-    self.pusher.pushDirection = CGVectorMake(0.02, 0.02);
+    self.pusher.pushDirection = CGVectorMake(0.01, 0.01);
     
     self.pusher.active = YES;
     

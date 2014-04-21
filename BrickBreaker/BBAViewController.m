@@ -32,9 +32,6 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-
-
-        
         startButton = [[UIButton alloc] initWithFrame:CGRectMake(SCREEN_WIDTH / 2.75, SCREEN_HEIGHT / 3.5, 160, 160)];
         [startButton setTitle:@"Start" forState:UIControlStateNormal];
         startButton.titleLabel.font = [UIFont systemFontOfSize:40];
@@ -44,7 +41,6 @@
         [self.view addSubview:startButton];
 
         [startButton addTarget:self action:@selector(runResetLevel) forControlEvents:UIControlEventTouchUpInside];
-
         
     }
     return self;
@@ -68,7 +64,6 @@
 -(void)runResetLevel
 
 {
-    
     level = [[BBALevelController alloc] initWithNibName:nil bundle:nil];
     
     level.view.frame = CGRectMake(0, 40, SCREEN_WIDTH, SCREEN_HEIGHT);
@@ -88,15 +83,21 @@
 
 
 
+
+
+
+
+
+
+
 -(void)statusBarLeft
 
 {
     statusBarLeft = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 40)];
     statusBarLeft.text = [NSString stringWithFormat:@"Score: "];
-    //   statusBarLeft.text = [NSString stringWithFormat:@"Score: %f", points];
     statusBarLeft.textColor = [UIColor whiteColor];
     statusBarLeft.textAlignment = NSTextAlignmentCenter;
-    statusBarLeft.font = [UIFont fontWithName:@"helveticaNeue" size:12];
+    statusBarLeft.font = [UIFont fontWithName:@"HelveticaNeue" size:12];
     statusBarLeft.backgroundColor = [UIColor lightGrayColor];
     
     [self.view addSubview:statusBarLeft];
@@ -134,11 +135,43 @@
 
 
 
+
+
+
+//-(void)LOSTLOSTLOST
+//
+//{
+ // Update my default value to track top score
+    
+//    
+//    topScore = header.currentScore;
+//    newHighScore = YES;
+//    
+//    
+//    NSUserDefaults * userDefalts = [NSUserDefaults standardUserDefaults];
+//    
+//    [userDefalts setObject:@(topScore) forKey:@"topSore"];
+//    
+//    [userDefalts synchronize];
+//    
+//    
+//}
+
+
+
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+//
+//    NSUserDefaults * userDefalts = [NSUserDefaults standardUserDefaults];
+//    topScore - [[userDefalts objectForKey:@"topScore"] intValue];
+
+
+
 }
 
 - (void)didReceiveMemoryWarning
