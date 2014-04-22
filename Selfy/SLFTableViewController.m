@@ -103,17 +103,18 @@
                        ] mutableCopy];
 
 
-        
-        PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
-        testObject[@"foo"] = @"bar";
+// Move to SelfyViewController
+        PFObject *testObject = [PFObject objectWithClassName:@"UserSelfy"];
+        testObject[@"image"] = @"";
+        testObject[@"caption"] = @"Test Caption";
         [testObject saveInBackground];
         
-        PFUser * user = [PFUser currentUser];
+//        PFUser * user = [PFUser currentUser];
         
-        user.username = @"jefferymoulds";
-        user.password = @"password";
-        
-        [user saveInBackground];
+//        user.username = @"jefferymoulds";
+//        user.password = @"password";
+//        
+//        [user saveInBackground];
         
         self.tableView.rowHeight = self.tableView.frame.size.width + 100;
 

@@ -9,6 +9,8 @@
 #import "SLFAppDelegate.h"
 #import "SLFTableViewController.h"
 #import <Parse/Parse.h>
+#import "SLFViewController.h"
+#import "SLFSelfyViewController.h"
 
 @implementation SLFAppDelegate
 
@@ -24,8 +26,16 @@
     [PFUser enableAutomaticUser];
     
     
-    self.window.rootViewController = [[SLFTableViewController alloc] initWithStyle:UITableViewStylePlain];
+
+//  Table View Controller
+//    self.window.rootViewController = [[SLFTableViewController alloc] initWithStyle:UITableViewStylePlain];
     
+    
+//  Launch View Controller
+    self.window.rootViewController = [[SLFViewController alloc] initWithNibName:nil bundle:nil];
+
+// Selfie View Controller
+//    self.window.rootViewController = [[SLFSelfyViewController alloc] initWithNibName:nil bundle:nil];
     
     
     self.window.backgroundColor = [UIColor whiteColor];
