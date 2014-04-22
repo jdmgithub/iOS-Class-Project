@@ -74,30 +74,43 @@
         
         [header addSubview:titleHeader];
 
-    
+
+        
+        selfyData = [@[
+                       
+                       @{@"image"   : [UIImage imageNamed:@"JohnYam"],
+                         @"caption" : @"IOS Programmer TO BE",
+                         @"user_id" : @"Jeffery Moulds",
+                         @"avatar"  : @"url"
+                         }
+                       
+                       ] mutableCopy];
+
+
+        
+// Loading Saved Data - Not Implemented
+//        [self loadSelfyData];
+        
+        
+        
     }
     return self;
 }
+//  Saving Data - Not Implemented
+//-(void)loadSelfyData
+//
+//{
+// NSString *path = [self XXX]
+//    
+//    
+//    
+//}
+
+
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    selfyData = [@[
-                   
-                   @{@"image" : @"url",
-                     @"caption" : @"string - Caption Test String",
-                     @"user_id" : @"string - User_ID Test String",
-                     @"avatar" : @"url"
-                     }
-                   
-                   ] mutableCopy];
-    
-    
-    
-    
-    
-    
     
     
     
@@ -105,12 +118,7 @@
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-//    self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
-   
-    
-    
-    
+    self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
 }
 
@@ -122,12 +130,6 @@
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-//#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
-}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -139,29 +141,27 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSDictionary * selfy = selfyData[indexPath.row];
     
-    UITableViewCellStyle style = UITableViewCellStyleDefault;
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    SLFTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     
     if(cell == nil)
-    {
-        cell = [[UITableViewCell alloc] initWithStyle:style reuseIdentifier:@"cell"];
     
-    }
-    
-    // Configure the cell...
+        cell = [[SLFTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"cell"];
 
-//    cell.textLabel.text = selfy[@"caption"];
-//    cell.detailTextLabel.text = selfy[@"user_id"];
+        NSDictionary * listItem = selfyData[indexPath.row];
+        cell.textLabel.text = listItem[@"user_id"];
+        cell.detailTextLabel.text = listItem[@"caption"];
+        cell.imageView.image = listItem[@"image"];
     
-
-
+//    UIImage * testImage = [UIImage imageNamed:@"JohnYam"];
+//    cell.imageView.image = testImage;
     
-    
+        
     return cell;
+    
 }
+    
+
 
 
 /*
