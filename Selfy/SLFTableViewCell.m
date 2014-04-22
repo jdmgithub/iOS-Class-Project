@@ -12,7 +12,8 @@
 
 
 {
-    UIImageView * image;
+    UIImageView * imageView;
+    UIImageView * avatarView;
     UILabel * caption;
     
 }
@@ -25,25 +26,62 @@
     if (self) {
         // Initialization code
  
-       
+      
         
-//        image = [[UIImageView alloc] initWithFrame:CGRectMake(20, 20, 60, 60)];
-//        image.layer.cornerRadius = 30;
-//        image.layer.masksToBounds = YES;
-//
-//        [self.contentView addSubview:image];
-//        
-//        caption = [[UILabel alloc] initWithFrame:CGRectMake(100, 20, 200, 30)];
-//        caption.textColor = [UIColor darkGrayColor];
-//        caption.font = [UIFont systemFontOfSize:20];
-//    
-//        [self.contentView addSubview:caption];
+// slefy image View
+        
+        imageView = [[UIImageView alloc] initWithFrame:CGRectMake(20, 20, 280, 280)];
+        imageView.layer.masksToBounds = YES;
+        
+        [self.contentView addSubview:imageView];
+        
+// avatar image view
+        
+        avatarView = [[UIImageView alloc] initWithFrame:CGRectMake(20, 320, 60, 60)];
+        avatarView.layer.cornerRadius = 30;
+        avatarView.layer.masksToBounds = YES;
+
+        [self.contentView addSubview:avatarView];
+        
+// selfy caption
+        
+        caption = [[UILabel alloc] initWithFrame:CGRectMake(100, 320, 200, 30)];
+        caption.textColor = [UIColor darkGrayColor];
+        caption.font = [UIFont systemFontOfSize:20];
+    
+        [self.contentView addSubview:caption];
     
     
     
     }
     return self;
 }
+
+
+
+- (void)setSelfyInfo:(NSDictionary *)selfyInfo
+{
+    
+    _selfyInfo = selfyInfo;
+
+    caption.text = selfyInfo[@"caption"];
+
+    NSURL * imageURL = [NSURL URLWithString:selfyInfo[@"image"]];
+    NSData * imageData = [NSData dataWithContentsOfURL:imageURL];
+    UIImage * image = [UIImage imageWithData:imageData];
+
+    imageView.image = image;
+
+    NSURL * avatarURL = [NSURL URLWithString:selfyInfo[@"avatar"]];
+    NSData * avatarData = [NSData dataWithContentsOfURL:avatarURL];
+    UIImage * avatar = [UIImage imageWithData:avatarData];
+
+    avatarView.image = avatar;
+
+
+}
+
+
 
 - (void)awakeFromNib
 {

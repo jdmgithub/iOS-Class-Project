@@ -8,6 +8,7 @@
 
 #import "SLFTableViewController.h"
 #import "SLFTableViewCell.h"
+#import <Parse/Parse.h>
 
 @interface SLFTableViewController ()
 
@@ -19,9 +20,10 @@
 {
     UIButton * settingsButton;
     UIButton * editButton;
-    NSMutableArray * selfyData;
+    NSMutableArray * selfies;
     
-    
+    UIView * selfyView;
+    UIImage * selfyImage;
 }
 
 
@@ -64,7 +66,6 @@
         [header addSubview:editButton];
         
         self.tableView.contentInset = UIEdgeInsetsMake(20, 0, 0, 0);
-        self.tableView.rowHeight = 230;
         
 
         UILabel * titleHeader = [[UILabel alloc] initWithFrame:CGRectMake(130, 0, 60, 70)];
@@ -76,35 +77,65 @@
 
 
         
-        selfyData = [@[
+        selfies = [@[
                        
-                       @{@"image"   : [UIImage imageNamed:@"JohnYam"],
-                         @"caption" : @"IOS Programmer TO BE",
-                         @"user_id" : @"Jeffery Moulds",
-                         @"avatar"  : @"url"
-                         }
+ 
+                   @{
                        
+                       @"image" : @"http://distilleryimage7.ak.instagram.com/6756ea06a44b11e2b62722000a1fbc10_7.jpg",
+                       @"caption" : @"This is a selfy!",
+                       @"user_id" : @"3n2mb23bnm",
+                       @"avatar" : @"https://media.licdn.com/mpr/mpr/shrink_200_200/p/4/005/036/354/393842f.jpg",
+                       @"selfy_id" : @"hjk2l32bn1"
+                       
+                       }
+  
+  
+  
+//  
+//  @{@"image"   : [UIImage imageNamed:@"JohnYam"],
+//                         @"caption" : @"IOS Programmer TO BE",
+//                         @"user_id" : @"Jeffery Moulds",
+//                         @"avatar"  : @"url",
+//                         @"selfy_id" : @"hfdskl;fjds;l"
+//                         }
+                   
                        ] mutableCopy];
 
 
         
-// Loading Saved Data - Not Implemented
-//        [self loadSelfyData];
+        PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
+        testObject[@"foo"] = @"bar";
+        [testObject saveInBackground];
+        
+        PFUser * user = [PFUser currentUser];
+        
+        user.username = @"jefferymoulds";
+        user.password = @"password";
+        
+        [user saveInBackground];
+        
+        self.tableView.rowHeight = self.tableView.frame.size.width + 100;
+
+      
+        selfyView = [[UIView alloc] initWithFrame:CGRectMake(20, 20, 280, 180)];
+        selfyView.backgroundColor = [UIColor lightGrayColor];
+        
+//        [self.contentView addSubview:selfyView];
+
         
         
         
     }
     return self;
 }
-//  Saving Data - Not Implemented
-//-(void)loadSelfyData
-//
-//{
-// NSString *path = [self XXX]
-//    
-//    
-//    
-//}
+
+
+
+
+
+
+
 
 
 
@@ -135,7 +166,7 @@
 {
     // Return the number of rows in the section.
     
-    return [selfyData count];
+    return [selfies count];
 }
 
 
@@ -148,13 +179,17 @@
     
         cell = [[SLFTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"cell"];
 
-        NSDictionary * listItem = selfyData[indexPath.row];
-        cell.textLabel.text = listItem[@"user_id"];
-        cell.detailTextLabel.text = listItem[@"caption"];
-        cell.imageView.image = listItem[@"image"];
+        cell.selfyInfo = selfies[indexPath.row];   //calls the selfies method (setSelfyInfo:(NSDictionary *)selfyInfo) in the tvcell.m
     
-//    UIImage * testImage = [UIImage imageNamed:@"JohnYam"];
-//    cell.imageView.image = testImage;
+    
+    
+//        NSDictionary * listItem = selfy[indexPath.row];
+//        cell.textLabel.text = listItem[@"user_id"];
+//        cell.detailTextLabel.text = listItem[@"caption"];
+//        cell.imageView.image = listItem[@"image"];
+    
+//      UIImage * testImage = [UIImage imageNamed:@"JohnYam"];
+//      cell.imageView.image = testImage;
     
         
     return cell;

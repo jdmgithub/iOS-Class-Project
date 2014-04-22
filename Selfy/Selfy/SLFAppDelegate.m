@@ -8,6 +8,7 @@
 
 #import "SLFAppDelegate.h"
 #import "SLFTableViewController.h"
+#import <Parse/Parse.h>
 
 @implementation SLFAppDelegate
 
@@ -16,6 +17,12 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
 
+  
+    [Parse setApplicationId:@"H1JHLiA7kFRmIWvtbkHDcnA1Caj4UofHxRx6UZAB"
+                  clientKey:@"dKLyXccYHUy1MXNgrdR2Sq5b1fNQoTr4clSXVd3p"];
+    
+    [PFUser enableAutomaticUser];
+    
     
     self.window.rootViewController = [[SLFTableViewController alloc] initWithStyle:UITableViewStylePlain];
     
