@@ -25,6 +25,8 @@
     UIButton * cancel;
     
     UIImageView * heartLogo;
+    
+    UIView * newForm;
 
     
 }
@@ -48,6 +50,13 @@
         blueBox.backgroundColor = [UIColor colorWithRed:0.216f green:0.533f blue:0.984f alpha:1.0f];
         
         [self.navigationBar addSubview:blueBox];
+
+        
+//        newForm = [[UIView alloc] initWithFrame:blueBox.frame];
+//        newForm.backgroundColor = [UIColor redColor];
+        
+        [self.view addSubview:newForm];
+        
         
         
         addNewItem = [[UIButton alloc] initWithFrame:CGRectMake(80, (self.navigationBar.frame.size.height -35), 160, 30)];
@@ -59,13 +68,21 @@
         [addNewItem addTarget:self action:@selector(newItem:) forControlEvents:UIControlEventTouchUpInside];
 
         [self.navigationBar addSubview:addNewItem];
+        [newForm addSubview:addNewItem];
 
+        
+        
+        
         captionField = [[UITextView alloc] initWithFrame:CGRectMake(40, 150, 240, 160)];
         captionField.backgroundColor = [UIColor whiteColor];
         captionField.layer.cornerRadius = 6;
         
         captionField.tintColor =[UIColor blackColor];  // changes cursor color
         captionField.keyboardType = UIKeyboardTypeTwitter;
+        
+
+        
+        
         
         submit = [[UIButton alloc] initWithFrame:CGRectMake(20, 320, 100, 30)];
         submit.backgroundColor = [UIColor greenColor];
@@ -77,11 +94,18 @@
         cancel = [[UIButton alloc] initWithFrame:CGRectMake(200, 320, 100, 30)];
         cancel.backgroundColor = [UIColor redColor];
         cancel.layer.cornerRadius = 8;
+
+        
+        
+        
         
         [cancel setTitle:@"Cancel" forState:normal];
         [cancel setTitleColor:[UIColor blackColor] forState:normal];
 
         [cancel addTarget:self action:@selector(cancelTweet) forControlEvents:UIControlEventTouchUpInside];
+        
+
+        
         
         heartLogo = [[UIImageView alloc] initWithFrame:CGRectMake(90, 70, 150, 40)];
         heartLogo.image = [UIImage imageNamed:@"logo"];
@@ -92,7 +116,6 @@
 }
 
 
-
 -(void)newItem:(UIButton *)sender
 
 {
@@ -100,16 +123,16 @@
         blueBox.frame = self.view.frame;
             
         } completion:^(BOOL finished) {    // waits for animation completion before rendering
-
             
-// currently on navigation controller... should be on blue bar.  change self.view to bluebar.  broken on blue bar
-        [self.view addSubview:heartLogo];
+// on navigation controller for testing ... should be on blue bar or newForm.  change self.view to bluebar.  broken on blue bar.
+     
+        [blueBox addSubview:heartLogo];
                              
-        [self.view addSubview:captionField];
+        [blueBox addSubview:captionField];
             
-        [self.view addSubview:submit];
+        [blueBox addSubview:submit];
 
-        [self.view addSubview:cancel];
+        [blueBox addSubview:cancel];
             
         }];
     
@@ -118,6 +141,7 @@
 -(void)cancelTweet
 
 {
+// failing
 //    [UIView animateWithDuration:0.4 animations:^{
 //        blueBox.frame = blueBox.frame;
 //    }];
