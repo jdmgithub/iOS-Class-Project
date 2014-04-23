@@ -101,13 +101,12 @@
 
 
 -(void)textFieldDidBeginEditing:(UITextField *)textField
-
 {
     NSLog(@"Keyboard");
     
     [UIView animateWithDuration:0.3 animations:^{
         
-        newForm.frame = CGRectMake(0, -150, 320, self.view.frame.size.height);
+        newForm.frame = CGRectMake(0, -50, 320, self.view.frame.size.height);
         
     }];
     

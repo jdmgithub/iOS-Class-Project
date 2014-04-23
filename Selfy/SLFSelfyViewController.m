@@ -49,20 +49,24 @@
         captionField.delegate = self;
 
         [newForm addSubview:captionField];
+
         
         submit = [[UIButton alloc] initWithFrame:CGRectMake((SCREEN_WIDTH /2) - 80, 400, 160, 30)];
         submit.backgroundColor = [UIColor lightGrayColor];
         submit.layer.cornerRadius = 8;
         [submit setTitle:@"New Selfy" forState:normal];
+        [submit addTarget:self action:@selector(createNewSelfy) forControlEvents:UIControlEventTouchUpInside];
         
         [newForm addSubview:submit];
 
+        
         cancel = [[UIButton alloc] initWithFrame:CGRectMake(SCREEN_WIDTH - 50, 20, 30, 30)];
         cancel.backgroundColor = [UIColor lightGrayColor];
         cancel.layer.cornerRadius = 15;
         [cancel setTitle:@"X" forState:normal];
 
         [newForm addSubview:cancel];
+
         
         cameraButton = [[UIImageView alloc] initWithFrame:CGRectMake(35, 60, 250, 250)];
         cameraButton.backgroundColor = [UIColor lightGrayColor];
@@ -73,10 +77,6 @@
         
         cameraButton.image = [UIImage imageNamed:@"cameraIcon"];
 
-       
-
-        
-//        [cameraButton addTarget:self action:@selector(beginTouch) forControlEvents:UIControlEventTouchUpInside];
 
         [newForm addSubview:cameraButton];
         
@@ -86,10 +86,7 @@
         
         
         UITapGestureRecognizer * cameraImageTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(cameraTap)];
-
-        
         [cameraButton addGestureRecognizer:cameraImageTap];
-
         
     }
     return self;
@@ -113,18 +110,6 @@
     }];
 }
 
-
-// keyboard goes away with uiTextView
-
-//- (BOOL) textView: (UITextView*) textView shouldChangeTextInRange: (NSRange) range
-//  replacementText: (NSString*) String
-//{
-//    if ([String isEqualToString:@"\n"]) {
-//        [textView resignFirstResponder];
-//        return NO;
-//    }
-//    return YES;
-//}
 
 
 
@@ -162,25 +147,13 @@ testObject[@"caption"] = @"Test Caption";
 
 - (void)viewDidLoad
 {
-    // keyboard goes away with uiTextView
-//    {   UITapGestureRecognizer *recognizer;
-//    recognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:nil];
-//    recognizer.numberOfTouchesRequired=1;
-//    [self.view addGestureRecognizer:recognizer];
-////    recognizer.delegate = self;
-//    }
+
     
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
 
 
-// keyboard goes away with uiTextView
-//- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer
-//{
-//    [captionField resignFirstResponder];//Take as global Your_textView
-//    return NO;
-//}
 
 
 
