@@ -24,6 +24,7 @@
 		1B3BA03C1907FB6800A15017 /* TLAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B3BA03B1907FB6800A15017 /* TLAViewController.m */; };
 		1B3BA0401907FF8E00A15017 /* heart.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B3BA03F1907FF8E00A15017 /* heart.png */; };
 		1B3BA0431908188500A15017 /* TLANavController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B3BA0421908188500A15017 /* TLANavController.m */; };
+		1B3BA0451908401B00A15017 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B3BA0441908401B00A15017 /* logo.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		1B3BA03F1907FF8E00A15017 /* heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart.png; sourceTree = "<group>"; };
 		1B3BA0411908188500A15017 /* TLANavController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLANavController.h; sourceTree = "<group>"; };
 		1B3BA0421908188500A15017 /* TLANavController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLANavController.m; sourceTree = "<group>"; };
+		1B3BA0441908401B00A15017 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +172,7 @@
 		1B3BA03E1907FF8100A15017 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				1B3BA0441908401B00A15017 /* logo.png */,
 				1B3BA03F1907FF8E00A15017 /* heart.png */,
 			);
 			name = Images;
@@ -251,6 +254,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B3BA0451908401B00A15017 /* logo.png in Resources */,
 				1B3BA0101907F64300A15017 /* InfoPlist.strings in Resources */,
 				1B3BA0401907FF8E00A15017 /* heart.png in Resources */,
 				1B3BA0181907F64300A15017 /* Images.xcassets in Resources */,
