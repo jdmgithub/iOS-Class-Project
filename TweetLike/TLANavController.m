@@ -67,6 +67,8 @@
         addNewItem.titleLabel.textColor = [UIColor colorWithRed:0.216f green:0.533f blue:0.984f alpha:1.0f];
         [addNewItem addTarget:self action:@selector(newItem:) forControlEvents:UIControlEventTouchUpInside];
 
+        
+        
         [self.navigationBar addSubview:addNewItem];
         [newForm addSubview:addNewItem];
 
@@ -80,8 +82,9 @@
         captionField.tintColor =[UIColor blackColor];  // changes cursor color
         captionField.keyboardType = UIKeyboardTypeTwitter;
         
-
         
+//        captionField.delegate = self;
+
         
         
         submit = [[UIButton alloc] initWithFrame:CGRectMake(20, 320, 100, 30)];
@@ -110,10 +113,46 @@
         heartLogo = [[UIImageView alloc] initWithFrame:CGRectMake(90, 70, 150, 40)];
         heartLogo.image = [UIImage imageNamed:@"logo"];
 
+
+//  slides keyboard back down
+        UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapScreen)];
+        [self.view addGestureRecognizer:tap];
+        
     }
     
     return self;
 }
+
+
+-(void)tapScreen  // slides keyboard back down
+{
+    [captionField resignFirstResponder];
+    [UIView animateWithDuration:0.2 animations:^{
+        
+        newForm.frame = self.view.frame;
+        
+    }];
+}
+
+
+
+-(void)textViewDidBeginEditing:(UITextView *)textView
+
+{
+    NSLog(@"Keyboard");
+    
+    [UIView animateWithDuration:0.3 animations:^{
+        
+        newForm.frame = CGRectMake(0, -216, 320, self.view.frame.size.height);
+        
+    }];
+    
+}
+
+
+
+
+
 
 
 -(void)newItem:(UIButton *)sender
@@ -126,13 +165,13 @@
             
 // on navigation controller for testing ... should be on blue bar or newForm.  change self.view to bluebar.  broken on blue bar.
      
-        [blueBox addSubview:heartLogo];
+        [self.view addSubview:heartLogo];
                              
-        [blueBox addSubview:captionField];
+        [self.view addSubview:captionField];
             
-        [blueBox addSubview:submit];
+        [self.view addSubview:submit];
 
-        [blueBox addSubview:cancel];
+        [self.view addSubview:cancel];
             
         }];
     
