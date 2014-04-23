@@ -32,10 +32,10 @@
     
     
 //  Launch View Controller
-    self.window.rootViewController = [[SLFViewController alloc] initWithNibName:nil bundle:nil];
+//    self.window.rootViewController = [[SLFViewController alloc] initWithNibName:nil bundle:nil];
 
 // Selfie View Controller
-//    self.window.rootViewController = [[SLFSelfyViewController alloc] initWithNibName:nil bundle:nil];
+    self.window.rootViewController = [[SLFSelfyViewController alloc] initWithNibName:nil bundle:nil];
     
     
     self.window.backgroundColor = [UIColor whiteColor];

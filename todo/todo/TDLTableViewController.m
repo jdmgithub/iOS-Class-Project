@@ -273,7 +273,6 @@ self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     return cell;
 
-    
 
 }
 

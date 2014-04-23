@@ -15,8 +15,7 @@
     UITextView * captionField;
     UIButton * submit;
     UIButton * cancel;
-    UIImageView * cameraButton;
-   
+    UIImageView * cameraButton;   
     UIView * newForm;
 }
 
@@ -39,7 +38,7 @@
         [self.view addSubview:newForm];
         
         
-// used UITextview to wrap the text
+// used UITextview to wrap the text instead of UITextfield
         captionField = [[UITextView alloc] initWithFrame:CGRectMake((SCREEN_WIDTH /2) - 140, 330, 280, 50)];
         captionField.backgroundColor = [UIColor colorWithWhite:0.0 alpha:0.05];
         captionField.layer.cornerRadius = 6;
@@ -70,21 +69,27 @@
         cameraButton.layer.cornerRadius = 30;
         [cameraButton.layer setBorderColor:[[UIColor blackColor] CGColor]];
         [cameraButton.layer setBorderWidth:2.0];
-  
+        cameraButton.userInteractionEnabled = YES;
+        
         self->cameraButton.image = [UIImage imageNamed:@"cameraIcon"];
 
        
-//        UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:cameraButton action:@selector(beginTouch)];
-//        singleTap.numberOfTapsRequired = 1;
 
         
 //        [cameraButton addTarget:self action:@selector(beginTouch) forControlEvents:UIControlEventTouchUpInside];
 
         [newForm addSubview:cameraButton];
 
+
+        
+        UITapGestureRecognizer * cameraImageTap = [[UITapGestureRecognizer alloc] initWithTarget:cameraButton action:@selector(cameraTap)];
+        [self.view addGestureRecognizer:cameraImageTap];
+        
         UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapScreen)];
         [self.view addGestureRecognizer:tap];
-    
+
+
+        
     }
     return self;
 }
@@ -122,10 +127,10 @@
 
 
 
--(void)beginTouch
+-(void)cameraTap
 
 {
-    NSLog(@"Touch");
+    NSLog(@"Camera Tap");
 }
 
 
@@ -140,6 +145,17 @@
         
     }];
     
+}
+
+
+-(void)createNewSelfy
+
+{
+PFObject *testObject = [PFObject objectWithClassName:@"UserSelfy"];
+testObject[@"image"] = @"";
+testObject[@"caption"] = @"Test Caption";
+[testObject saveInBackground];
+
 }
 
 

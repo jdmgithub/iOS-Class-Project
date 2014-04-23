@@ -10,7 +10,7 @@
 #import <Parse/Parse.h>
 
 
-@interface SLFViewController ()
+@interface SLFViewController () 
 {
     UITextField * username;
     UITextField * password;
@@ -45,8 +45,8 @@
         username.leftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 10, 30)];
         // must do to show spacing for left justification
         username.leftViewMode = UITextFieldViewModeAlways;
+   
         username.keyboardType = UIKeyboardTypeTwitter;
-
         
         username.delegate = self;
         
@@ -56,11 +56,16 @@
         password = [[UITextField alloc] initWithFrame:CGRectMake((SCREEN_WIDTH /2) - 80, 150, 160, 30)];
         password.backgroundColor = [UIColor colorWithWhite:0.0 alpha:0.05];
         password.layer.cornerRadius = 6;
-        password.placeholder = @"    Enter Password";  // placeholder text
+        password.placeholder = @"Enter Password";  // placeholder text
         password.tintColor =[UIColor blackColor];  // changes cursor color
+
+        // size of spacing for left justification
+        password.leftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 10, 30)];
+        // must do to show spacing for left justification
+        password.leftViewMode = UITextFieldViewModeAlways;
+        
         password.secureTextEntry = YES;
         password.keyboardType = UIKeyboardTypeTwitter;
-
         
         password.delegate = self;
 
@@ -69,12 +74,14 @@
         submit = [[UIButton alloc] initWithFrame:CGRectMake((SCREEN_WIDTH /2) - 80, 210, 160, 30)];
         submit.backgroundColor = [UIColor lightGrayColor];
         submit.layer.cornerRadius = 10;
-        [submit setTitle:@"  Sign In" forState:normal];
+        [submit setTitle:@" Sign In" forState:normal];
         [submit addTarget:self action:@selector(newUser) forControlEvents:UIControlEventTouchUpInside];
 
         
         [newForm addSubview:submit];
-        
+ 
+        UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapScreen)];
+        [self.view addGestureRecognizer:tap];
     
     }
     return self;
@@ -101,7 +108,7 @@
     
     [UIView animateWithDuration:0.3 animations:^{
         
-        newForm.frame = CGRectMake(0, -50, 320, self.view.frame.size.height);
+        newForm.frame = CGRectMake(0, -150, 320, self.view.frame.size.height);
         
     }];
     

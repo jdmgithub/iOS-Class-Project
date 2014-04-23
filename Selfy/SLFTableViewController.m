@@ -104,10 +104,10 @@
 
 
 // Move to SelfyViewController
-        PFObject *testObject = [PFObject objectWithClassName:@"UserSelfy"];
-        testObject[@"image"] = @"";
-        testObject[@"caption"] = @"Test Caption";
-        [testObject saveInBackground];
+//        PFObject *testObject = [PFObject objectWithClassName:@"UserSelfy"];
+//        testObject[@"image"] = @"";
+//        testObject[@"caption"] = @"Test Caption";
+//        [testObject saveInBackground];
         
 //        PFUser * user = [PFUser currentUser];
         
