@@ -71,7 +71,7 @@
         [cameraButton.layer setBorderWidth:2.0];
         cameraButton.userInteractionEnabled = YES;
         
-        self->cameraButton.image = [UIImage imageNamed:@"cameraIcon"];
+        cameraButton.image = [UIImage imageNamed:@"cameraIcon"];
 
        
 
@@ -79,15 +79,16 @@
 //        [cameraButton addTarget:self action:@selector(beginTouch) forControlEvents:UIControlEventTouchUpInside];
 
         [newForm addSubview:cameraButton];
-
-
         
-        UITapGestureRecognizer * cameraImageTap = [[UITapGestureRecognizer alloc] initWithTarget:cameraButton action:@selector(cameraTap)];
-        [self.view addGestureRecognizer:cameraImageTap];
         
         UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapScreen)];
         [self.view addGestureRecognizer:tap];
+        
+        
+        UITapGestureRecognizer * cameraImageTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(cameraTap)];
 
+        
+        [cameraButton addGestureRecognizer:cameraImageTap];
 
         
     }

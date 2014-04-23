@@ -100,8 +100,7 @@
 }
 
 
-
--(void)textViewDidBeginEditing:(UITextField *)textField
+-(void)textFieldDidBeginEditing:(UITextField *)textField
 
 {
     NSLog(@"Keyboard");
