@@ -8,6 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TLATableViewController : UITableViewController
+@interface TLATableViewController : UITableViewController <UITextFieldDelegate>
+
+-(void)addNewTweet : (NSString*) newTweet;
+
+@property (nonatomic) NSMutableArray * tweetItems;
+@property (nonatomic, getter = isTweetItemsEmpty, readonly) BOOL tweetItemsEmpty;  // makes the bool a question with the getter addition, cannot run setter as empty b/c readonly
+
+
+
+//-(void)createNewTweet:(NSString*) tweet;
+
+
 
 @end

@@ -8,7 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+@class TLATableViewController;  // says I will init in the .m ... you will know what this is, compiler
+
 @interface TLANavController : UINavigationController
+
+-(void)addTableViewController:(TLATableViewController *)viewController;
 
 
 @end

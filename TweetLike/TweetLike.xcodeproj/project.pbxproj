@@ -21,7 +21,6 @@
 		1B3BA02B1907F64300A15017 /* TweetLikeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B3BA02A1907F64300A15017 /* TweetLikeTests.m */; };
 		1B3BA0361907F67D00A15017 /* TLATableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B3BA0351907F67D00A15017 /* TLATableViewController.m */; };
 		1B3BA0391907F76100A15017 /* TLATableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B3BA0381907F76100A15017 /* TLATableViewCell.m */; };
-		1B3BA03C1907FB6800A15017 /* TLAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B3BA03B1907FB6800A15017 /* TLAViewController.m */; };
 		1B3BA0401907FF8E00A15017 /* heart.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B3BA03F1907FF8E00A15017 /* heart.png */; };
 		1B3BA0431908188500A15017 /* TLANavController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B3BA0421908188500A15017 /* TLANavController.m */; };
 		1B3BA0451908401B00A15017 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B3BA0441908401B00A15017 /* logo.png */; };
@@ -58,8 +57,6 @@
 		1B3BA0351907F67D00A15017 /* TLATableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLATableViewController.m; sourceTree = "<group>"; };
 		1B3BA0371907F76100A15017 /* TLATableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLATableViewCell.h; sourceTree = "<group>"; };
 		1B3BA0381907F76100A15017 /* TLATableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLATableViewCell.m; sourceTree = "<group>"; };
-		1B3BA03A1907FB6800A15017 /* TLAViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLAViewController.h; sourceTree = "<group>"; };
-		1B3BA03B1907FB6800A15017 /* TLAViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLAViewController.m; sourceTree = "<group>"; };
 		1B3BA03F1907FF8E00A15017 /* heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart.png; sourceTree = "<group>"; };
 		1B3BA0411908188500A15017 /* TLANavController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLANavController.h; sourceTree = "<group>"; };
 		1B3BA0421908188500A15017 /* TLANavController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLANavController.m; sourceTree = "<group>"; };
@@ -96,8 +93,6 @@
 				1B3BA0411908188500A15017 /* TLANavController.h */,
 				1B3BA0421908188500A15017 /* TLANavController.m */,
 				1B3BA03E1907FF8100A15017 /* Images */,
-				1B3BA03A1907FB6800A15017 /* TLAViewController.h */,
-				1B3BA03B1907FB6800A15017 /* TLAViewController.m */,
 				1B3BA0371907F76100A15017 /* TLATableViewCell.h */,
 				1B3BA0381907F76100A15017 /* TLATableViewCell.m */,
 				1B3BA0341907F67D00A15017 /* TLATableViewController.h */,
@@ -281,7 +276,6 @@
 				1B3BA0391907F76100A15017 /* TLATableViewCell.m in Sources */,
 				1B3BA0121907F64300A15017 /* main.m in Sources */,
 				1B3BA0361907F67D00A15017 /* TLATableViewController.m in Sources */,
-				1B3BA03C1907FB6800A15017 /* TLAViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -478,6 +472,7 @@
 				1B3BA0301907F64300A15017 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1B3BA0311907F64300A15017 /* Build configuration list for PBXNativeTarget "TweetLikeTests" */ = {
 			isa = XCConfigurationList;
@@ -486,6 +481,7 @@
 				1B3BA0331907F64300A15017 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

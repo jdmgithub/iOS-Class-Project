@@ -20,7 +20,7 @@
     UIView * header;
     UIButton * addNewButton;
     
-    NSMutableArray * tweetItems;
+//    NSMutableArray * tweetItems;
 
 }
 
@@ -34,7 +34,7 @@
 
 
         
-        tweetItems = [
+        self.tweetItems = [
   
                     @[
                         
@@ -73,19 +73,20 @@
 //        addNewButton.titleLabel.font = [UIFont systemFontOfSize:18];
 //
 //        [self.view addSubview:addNewButton];
- 
-                      
-       
-        
-    
-    
-                        
-                        
 
-    
-    
     return self;
 }
+
+
+-(void)addNewTweet : (NSString*) newTweet;
+{
+    NSLog(@"Testing New Tweet in TVC.m");
+
+}
+
+
+
+
 
 - (void)viewDidLoad
 {
@@ -116,7 +117,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [tweetItems count];
+    return [self.tweetItems count];
 }
 
 
@@ -132,14 +133,45 @@
 
     }
     
-    cell.tweet = tweetItems[indexPath.row];
+    cell.tweet = self.tweetItems[indexPath.row];
+    
    
 //    DONT [DO THIS LAGGY]
 //    UITableViewCell * cell = [[UITableViewCell alloc] init];
     
-    
     return cell;
 }
+//-(void)createNewTweet:(NSString *)tweet
+//
+//
+//{
+//
+//    if ([tweet isEqualToString:@""]) return;
+//
+//   
+//    
+//    [self.tweetItems insertObject:@{                             // addObject puts it at top
+//                                   @"likes" : @0,
+//                                   @"text"  : tweet
+//                                   
+//                                   } atIndex:0];
+//    
+//    [self.tableView reloadData];
+//
+//
+//}
+
+
+-(BOOL)isTweetItemsEmpty
+
+{
+    return ([self.tweetItems count] == 0);   // if self.tweetitems count = 0, it is empty
+    
+    
+}
+
+
+
 
 
 /*

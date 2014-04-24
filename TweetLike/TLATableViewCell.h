@@ -11,4 +11,6 @@
 @interface TLATableViewCell : UITableViewCell
 @property (nonatomic) NSDictionary * tweet;
 
+@property (nonatomic, assign) id<UITableViewDelegate> delegate;
+
 @end

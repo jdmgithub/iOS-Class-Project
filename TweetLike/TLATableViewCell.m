@@ -59,7 +59,6 @@
 
     likesLabel.text = [tweet[@"likes"] stringValue]; // makes a string a number so it works
     textLabel.text = tweet[@"text"];
-    
 }
 
 

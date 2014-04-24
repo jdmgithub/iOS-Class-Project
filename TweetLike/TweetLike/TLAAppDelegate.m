@@ -8,9 +8,10 @@
 
 #import "TLAAppDelegate.h"
 #import "TLATableViewController.h"
-#import "TLAViewController.h"
 #import "TLATableViewCell.h" 
 #import "TLANavController.h"
+
+
 
 @implementation TLAAppDelegate
 
@@ -24,11 +25,22 @@
     
 //    self.window.rootViewController = [[TLAViewController alloc] initWithNibName:nil bundle:nil];
         
-    self.window.rootViewController = [[TLANavController alloc] initWithRootViewController:[[TLATableViewController alloc] initWithStyle:UITableViewStylePlain]];
+//    self.window.rootViewController = [[TLANavController alloc] initWithRootViewController:[[TLATableViewController alloc] initWithStyle:UITableViewStylePlain]];
+
+    
+    
+    TLANavController * nc = [[TLANavController alloc] init];
+    self.window.rootViewController = nc;
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
 
+    [nc addTableViewController:[[TLATableViewController alloc] initWithStyle:UITableViewStylePlain]];
+    
+    
+    
+    
+    
     return YES;
 }
 
