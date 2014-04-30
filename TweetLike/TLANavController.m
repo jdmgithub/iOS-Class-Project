@@ -355,7 +355,7 @@
     if ([TVC isTweetItemsEmpty])
         
     {
-        [self newItem:nil];  // nil calls the method without requireing the button.  May have been able to pass a button through to manually call the button.
+        [self newItem:nil];  // nil calls the method without requiring the button.  May have been able to pass a button through to manually call the button.
     
     }
         

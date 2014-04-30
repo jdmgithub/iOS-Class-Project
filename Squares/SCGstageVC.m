@@ -7,7 +7,6 @@
 //
 
 #import "SCGStageVC.h"
-
 #import "SCGSquare.h"
 
 //#import "SCGCircle.h"
@@ -17,18 +16,14 @@
 
 {
     int gameSize;
-    
-    NSArray * playerColors;
-    
     int playerTurn;
     
+    NSArray * playerColors;
     NSMutableDictionary * tappedDots;
-    
     NSMutableDictionary * allSquares;
-    
     UIView * gameBoard;
-    
     UIButton * newGame;
+    UIButton * endGame;
 }
 
 
@@ -47,7 +42,7 @@
         
         allSquares = [@{} mutableCopy];
         
-//        self.view.backgroundColor = [UIColor colorWithRed:0.149f green:0.149f blue:0.149f alpha:1.0f];
+        self.view.backgroundColor = [UIColor colorWithRed:0.149f green:0.149f blue:0.149f alpha:1.0f];
         
     }
     return self;
@@ -60,10 +55,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    
-    
-    
+
     // New Game Button
     newGame = [[UIButton alloc] initWithFrame:CGRectMake(240, 400, 60, 60)];
     [newGame setTitle:@"Start" forState:UIControlStateNormal];
@@ -75,6 +67,21 @@
     
     [self.view addSubview:newGame];
     
+    UILabel * title = [[UILabel alloc] initWithFrame:CGRectMake(110, 35, 100, 30)];
+    title.text = @"Squats";
+    title.textColor = [UIColor whiteColor];
+    title.textAlignment = NSTextAlignmentCenter;
+    [title setFont: [UIFont fontWithName:@"TrebuchetMS-Bold" size:28]];
+    [self.view addSubview:title];
+
+    
+    UILabel * subtitle1 = [[UILabel alloc] initWithFrame:CGRectMake(20, 70, 280, 30)];
+    subtitle1.text = @"A Simple Game of Squares and Dots";
+    subtitle1.textColor = [UIColor whiteColor];
+    subtitle1.textAlignment = NSTextAlignmentCenter;
+    [subtitle1 setFont: [UIFont fontWithName:@"TrebuchetMS-Bold" size:16]];
+    [self.view addSubview:subtitle1];
+
     
     
 }
@@ -87,9 +94,6 @@
     [newGame removeFromSuperview];
     
     {
-        
-        
-        
         gameSize = 6;
         
         float circleWidth = SCREEN_WIDTH / gameSize;
@@ -144,15 +148,7 @@
             }
         }
         
-        
-        
-        
-        
-        
     }
-    
-    
-    
     
 }
 
@@ -233,15 +229,10 @@
                 
                 currentSquare.backgroundColor = color;
                 
-                
-                
-                
                 // player owns square
                 
             }
-            
         }
-        
     }
     
     if (above && right)
@@ -264,18 +255,12 @@
             if(topDotsSame && bottomDotsSame && leftDotsSame && [tappedDots[topLeftDot] isEqualToValue:@(player)])
                 
             {
-                
-                
                 SCGSquare * currentSquare = allSquares[topLeftDot];
-                
                 NSLog(@"%@",topLeftDot);
-                
                 currentSquare.backgroundColor = color;
                 
             }
-            
         }
-        
     }
     
     if (below && left)
@@ -299,19 +284,14 @@
             if(topDotsSame && bottomDotsSame && leftDotsSame && [tappedDots[topLeftDot] isEqualToValue:@(player)])
                 
             {
-                
-                
                 SCGSquare * currentSquare = allSquares[topLeftDot];
-                
                 NSLog(@"%@",topLeftDot);
-                
                 currentSquare.backgroundColor = color;
                 
             }
-            
         }
-        
     }
+    
     if (below && right)
         
     {
@@ -333,20 +313,13 @@
             if(topDotsSame && bottomDotsSame && leftDotsSame && [tappedDots[topLeftDot] isEqualToValue:@(player)])
                 
             {
-                
-                
                 SCGSquare * currentSquare = allSquares[topLeftDot];
-                
                 NSLog(@"%@",topLeftDot);
-                
                 currentSquare.backgroundColor = color;
-                
             }
-            
         }
-        
     }
-    
+
 }
 
 
