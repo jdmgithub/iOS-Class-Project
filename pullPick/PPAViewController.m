@@ -13,7 +13,7 @@
 {
 
     UIImageView * imageView;
-    
+    UIButton * button;
 }
 
 
@@ -53,6 +53,36 @@
     [libraryButton addTarget:self action:@selector(choosePhoto) forControlEvents:UIControlEventTouchUpInside];
     
     [navBar addSubview:libraryButton];
+    
+    
+    
+    UIScrollView * imageScroller = [[UIScrollView alloc] initWithFrame:CGRectMake(0, SCREEN_HEIGHT - 100, SCREEN_WIDTH, 100)];
+    
+    imageScroller.pagingEnabled = YES;
+    [imageScroller setAlwaysBounceVertical:NO];
+    imageScroller.backgroundColor = [UIColor colorWithWhite:0.0 alpha:0.8];
+    
+    NSInteger numberofViews = 20;
+    
+    for (int i = 0; i < numberofViews; i++) {
+
+        button = [[UIButton alloc] initWithFrame:CGRectMake((i*90), 10, 80, 80)]; // X adds pad each alloc/init
+        button.backgroundColor = [UIColor whiteColor];
+        [imageScroller addSubview:button];
+    }
+    
+    imageScroller.contentSize = CGSizeMake((button.frame.size.width) * numberofViews, 100);
+
+    [self.view addSubview:imageScroller];
+
+    
+    
+    UIView * viewAboveScroller = [[UIView alloc] initWithFrame:CGRectMake(0, SCREEN_HEIGHT - 140, SCREEN_WIDTH, 40)];
+    
+    viewAboveScroller.backgroundColor = [UIColor lightGrayColor];
+//transparnecy?
+  
+    [self.view addSubview:viewAboveScroller];
     
     
 }
