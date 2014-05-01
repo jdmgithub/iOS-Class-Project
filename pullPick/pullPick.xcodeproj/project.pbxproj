@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1B26D30D1912694300EEE5D5 /* JefferyMoulds.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B26D30C1912694300EEE5D5 /* JefferyMoulds.png */; };
+		1B26D3101912834000EEE5D5 /* PPAFilterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B26D30F1912834000EEE5D5 /* PPAFilterController.m */; };
 		1B87C2A219116D5900894A95 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B87C2A119116D5900894A95 /* Foundation.framework */; };
 		1B87C2A419116D5900894A95 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B87C2A319116D5900894A95 /* CoreGraphics.framework */; };
 		1B87C2A619116D5900894A95 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B87C2A519116D5900894A95 /* UIKit.framework */; };
@@ -35,6 +36,8 @@
 
 /* Begin PBXFileReference section */
 		1B26D30C1912694300EEE5D5 /* JefferyMoulds.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = JefferyMoulds.png; sourceTree = "<group>"; };
+		1B26D30E1912834000EEE5D5 /* PPAFilterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPAFilterController.h; sourceTree = "<group>"; };
+		1B26D30F1912834000EEE5D5 /* PPAFilterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPAFilterController.m; sourceTree = "<group>"; };
 		1B87C29E19116D5900894A95 /* pullPick.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pullPick.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B87C2A119116D5900894A95 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1B87C2A319116D5900894A95 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -90,6 +93,8 @@
 		1B87C29519116D5900894A95 = {
 			isa = PBXGroup;
 			children = (
+				1B26D30E1912834000EEE5D5 /* PPAFilterController.h */,
+				1B26D30F1912834000EEE5D5 /* PPAFilterController.m */,
 				1B26D30B1912693300EEE5D5 /* Images */,
 				1B87C2D019116DF200894A95 /* PPAViewController.h */,
 				1B87C2D119116DF200894A95 /* PPAViewController.m */,
@@ -260,6 +265,7 @@
 				1B87C2B219116D5900894A95 /* PPAAppDelegate.m in Sources */,
 				1B87C2D219116DF200894A95 /* PPAViewController.m in Sources */,
 				1B87C2AE19116D5900894A95 /* main.m in Sources */,
+				1B26D3101912834000EEE5D5 /* PPAFilterController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

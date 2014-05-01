@@ -7,20 +7,31 @@
 //
 
 #import "PPAViewController.h"
+#import "PPAFilterController.h"
 
-@interface PPAViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
-{
+@interface PPAViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate, PPAFilterControllerDelegate>
 
-    UIImageView * imageView;
-    UIButton * button;
-}
+@property (nonatomic) UIImage * originalImage;
 
 
 @end
 
 @implementation PPAViewController
 
+{
+
+
+    UIButton * button;
+    
+    NSMutableArray * filters;
+    NSMutableArray * filterButtons;
+    NSArray * filterNames;
+
+    UIImageView * imageView;
+    PPAFilterController * filterVC;
+
+}
 
 
 
@@ -32,8 +43,7 @@
    
     
     imageView = [[UIImageView alloc] initWithFrame:self.view.frame];
-
-    // adjusts the view once cropped if enabled editing below.  Various content modes to use
+// adjusts the view once cropped if enabled editing below.  Various content modes to use
     imageView.contentMode = UIViewContentModeScaleAspectFit;
     
     [self.view addSubview:imageView];
@@ -44,45 +54,27 @@
     
     [self.view addSubview:navBar];
     
+     
+
+    
+    filterVC = [[PPAFilterController alloc] initWithNibName:nil bundle:nil];
+    
+    filterVC.delegate = self;
+    
+    filterVC.view.frame = CGRectMake(0, SCREEN_HEIGHT - 100, SCREEN_WIDTH, 100);
+    
+    [self.view addSubview:filterVC.view];
+    
     
     UIButton * libraryButton = [[UIButton alloc] initWithFrame:CGRectMake(10, 10, 30, 30)];
-    
     libraryButton.layer.cornerRadius = 15;
     libraryButton.backgroundColor = [UIColor whiteColor];
-    
     [libraryButton addTarget:self action:@selector(choosePhoto) forControlEvents:UIControlEventTouchUpInside];
     
-    [navBar addSubview:libraryButton];
-    
-    
-    
-    UIScrollView * imageScroller = [[UIScrollView alloc] initWithFrame:CGRectMake(0, SCREEN_HEIGHT - 100, SCREEN_WIDTH, 100)];
-    
-    imageScroller.pagingEnabled = YES;
-    [imageScroller setAlwaysBounceVertical:NO];
-    imageScroller.backgroundColor = [UIColor colorWithWhite:0.0 alpha:0.8];
-    
-    NSInteger numberofViews = 20;
-    
-    for (int i = 0; i < numberofViews; i++) {
-
-        button = [[UIButton alloc] initWithFrame:CGRectMake((i*90), 10, 80, 80)]; // X adds pad each alloc/init
-        button.backgroundColor = [UIColor whiteColor];
-        [imageScroller addSubview:button];
-    }
-    
-    imageScroller.contentSize = CGSizeMake((button.frame.size.width) * numberofViews, 100);
-
-    [self.view addSubview:imageScroller];
+    [self.view addSubview:libraryButton];
 
     
     
-    UIView * viewAboveScroller = [[UIView alloc] initWithFrame:CGRectMake(0, SCREEN_HEIGHT - 140, SCREEN_WIDTH, 40)];
-    
-    viewAboveScroller.backgroundColor = [UIColor lightGrayColor];
-//transparnecy?
-  
-    [self.view addSubview:viewAboveScroller];
     
     
 }
@@ -96,7 +88,7 @@
     
     photoLibrary.delegate = self;
 
-//    photoLibrary.allowsEditing = YES;
+    photoLibrary.allowsEditing = YES;
     
     [self presentViewController:photoLibrary animated:YES completion:nil];
 
@@ -107,13 +99,79 @@
 
 {   NSLog(@"%@", info);
 
-    imageView.image = info[UIImagePickerControllerOriginalImage];
-    [picker dismissViewControllerAnimated:YES completion:^{
-        
-    }];
+    self.originalImage = info[UIImagePickerControllerOriginalImage];
+    [picker dismissViewControllerAnimated:YES completion:nil];
 
 
 }
+
+
+
+-(void)setOriginalImage:(UIImage *)originalImage
+
+{
+
+    _originalImage = originalImage;
+
+    filterVC.imageToFilter = originalImage;
+    imageView.image = originalImage;
+    
+    NSLog(@"hello");
+}
+
+
+
+
+
+-(void)viewWillLayoutSubviews
+
+{
+
+//    filters = [@{} mutableCopy];
+//    filterButtons = [@[] mutableCopy];
+//    filterNames = @[
+////                  @"CIColorCrossPolynomial",
+////                  @"CIColorCube",
+////                  @"CIColorCubeWithColorSpace",
+//                    @"CIColorInvert",
+////                  @"CIColorMap",
+//                    @"CIColorMonochrome",
+//                    @"CIColorPosterize",
+//                    @"CIFalseColor",
+////                  @"CIMaskToAlpha",
+//                    @"CIMaximumComponent",
+//                    @"CIMinimumComponent",
+//                    @"CIPhotoEffectChrome",
+//                    @"CIPhotoEffectFade",
+//                    @"CIPhotoEffectInstant",
+//                    @"CIPhotoEffectMono",
+//                    @"CIPhotoEffectNoir",
+//                    @"CIPhotoEffectProcess",
+//                    @"CIPhotoEffectTonal",
+//                    @"CIPhotoEffectTransfer",
+//                    @"CISepiaTone",
+//                    @"CIVignette",
+////                  @"CIVignetteEffect"
+//                    ];
+
+}
+
+
+//    wh = self.view.frame.size.height - 20;
+
+
+-(void)updateCurrentImageWithFilteredImage:(UIImage *)image
+
+{
+    
+    imageView.image = image;
+
+}
+
+
+
+
+
 
 
 - (void)didReceiveMemoryWarning
