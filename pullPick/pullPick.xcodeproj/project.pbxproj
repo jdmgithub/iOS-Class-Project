@@ -10,6 +10,10 @@
 		1B26D30D1912694300EEE5D5 /* JefferyMoulds.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B26D30C1912694300EEE5D5 /* JefferyMoulds.png */; };
 		1B26D3101912834000EEE5D5 /* PPAFilterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B26D30F1912834000EEE5D5 /* PPAFilterController.m */; };
 		1B7D30851913B76200200DF4 /* PPACustomCIFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B7D30841913B76200200DF4 /* PPACustomCIFilter.m */; };
+		1B7D308819141CEF00200DF4 /* ControlsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B7D308719141CEF00200DF4 /* ControlsViewController.m */; };
+		1B7D308C19141D0000200DF4 /* HSB.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B7D308919141D0000200DF4 /* HSB.png */; };
+		1B7D308D19141D0000200DF4 /* filter.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B7D308A19141D0000200DF4 /* filter.png */; };
+		1B7D308E19141D0000200DF4 /* blur.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B7D308B19141D0000200DF4 /* blur.png */; };
 		1B87C2A219116D5900894A95 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B87C2A119116D5900894A95 /* Foundation.framework */; };
 		1B87C2A419116D5900894A95 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B87C2A319116D5900894A95 /* CoreGraphics.framework */; };
 		1B87C2A619116D5900894A95 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B87C2A519116D5900894A95 /* UIKit.framework */; };
@@ -41,6 +45,11 @@
 		1B26D30F1912834000EEE5D5 /* PPAFilterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPAFilterController.m; sourceTree = "<group>"; };
 		1B7D30831913B76200200DF4 /* PPACustomCIFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPACustomCIFilter.h; sourceTree = "<group>"; };
 		1B7D30841913B76200200DF4 /* PPACustomCIFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPACustomCIFilter.m; sourceTree = "<group>"; };
+		1B7D308619141CEF00200DF4 /* ControlsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControlsViewController.h; sourceTree = "<group>"; };
+		1B7D308719141CEF00200DF4 /* ControlsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ControlsViewController.m; sourceTree = "<group>"; };
+		1B7D308919141D0000200DF4 /* HSB.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HSB.png; sourceTree = "<group>"; };
+		1B7D308A19141D0000200DF4 /* filter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = filter.png; sourceTree = "<group>"; };
+		1B7D308B19141D0000200DF4 /* blur.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blur.png; sourceTree = "<group>"; };
 		1B87C29E19116D5900894A95 /* pullPick.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pullPick.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B87C2A119116D5900894A95 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1B87C2A319116D5900894A95 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -88,6 +97,9 @@
 		1B26D30B1912693300EEE5D5 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				1B7D308919141D0000200DF4 /* HSB.png */,
+				1B7D308A19141D0000200DF4 /* filter.png */,
+				1B7D308B19141D0000200DF4 /* blur.png */,
 				1B26D30C1912694300EEE5D5 /* JefferyMoulds.png */,
 			);
 			name = Images;
@@ -96,6 +108,8 @@
 		1B87C29519116D5900894A95 = {
 			isa = PBXGroup;
 			children = (
+				1B7D308619141CEF00200DF4 /* ControlsViewController.h */,
+				1B7D308719141CEF00200DF4 /* ControlsViewController.m */,
 				1B7D30831913B76200200DF4 /* PPACustomCIFilter.h */,
 				1B7D30841913B76200200DF4 /* PPACustomCIFilter.m */,
 				1B26D30E1912834000EEE5D5 /* PPAFilterController.h */,
@@ -248,7 +262,10 @@
 			files = (
 				1B87C2AC19116D5900894A95 /* InfoPlist.strings in Resources */,
 				1B26D30D1912694300EEE5D5 /* JefferyMoulds.png in Resources */,
+				1B7D308E19141D0000200DF4 /* blur.png in Resources */,
+				1B7D308D19141D0000200DF4 /* filter.png in Resources */,
 				1B87C2B419116D5900894A95 /* Images.xcassets in Resources */,
+				1B7D308C19141D0000200DF4 /* HSB.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,6 +286,7 @@
 			files = (
 				1B7D30851913B76200200DF4 /* PPACustomCIFilter.m in Sources */,
 				1B87C2B219116D5900894A95 /* PPAAppDelegate.m in Sources */,
+				1B7D308819141CEF00200DF4 /* ControlsViewController.m in Sources */,
 				1B87C2D219116DF200894A95 /* PPAViewController.m in Sources */,
 				1B87C2AE19116D5900894A95 /* main.m in Sources */,
 				1B26D3101912834000EEE5D5 /* PPAFilterController.m in Sources */,

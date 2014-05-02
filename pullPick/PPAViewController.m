@@ -8,9 +8,11 @@
 
 #import "PPAViewController.h"
 #import "PPAFilterController.h"
+#import "ControlsViewController.h"
 
 
-@interface PPAViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate, PPAFilterControllerDelegate>
+@interface PPAViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate, PPAFilterControllerDelegate, ControlsViewControllerDelegate>
+
 
 @property (nonatomic) UIImage * originalImage;
 
@@ -30,7 +32,7 @@
 
     UIImageView * imageView;
     PPAFilterController * filterVC;
-
+    ControlsViewController * controlVC;
 }
 
 
@@ -56,8 +58,17 @@
     
     [self.view addSubview:navBar];
     
-     
+    controlVC = [[ControlsViewController alloc] initWithNibName:nil bundle:nil];
 
+    controlVC.delegate = self;
+    
+    controlVC.view.frame = CGRectMake(0, SCREEN_HEIGHT - 140, SCREEN_WIDTH, 100);
+    controlVC.view.backgroundColor = [UIColor lightGrayColor];
+
+    [self.view addSubview:controlVC.view];
+    
+
+    
     
     filterVC = [[PPAFilterController alloc] initWithNibName:nil bundle:nil];
     
@@ -169,6 +180,33 @@
     imageView.image = image;
 
 }
+
+
+-(void)selectfilter
+{
+
+  //  [self.delegate selectFilter];
+
+}
+
+
+-(void)selecthsb
+
+{
+
+ //   [self.delegate selectHsb];
+
+
+}
+
+-(void)selectblurr
+{
+
+  //  [self.delegate selectBlurr];
+
+
+}
+
 
 
 
