@@ -30,12 +30,8 @@
     NSMutableArray * filters;
     
     float wh;
-//    NSMutableArray * filterButtons;
-//    NSArray * filterNames;
 
-  
     
-
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -43,12 +39,11 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-
     
         self.view.backgroundColor = [UIColor colorWithWhite:0.0 alpha:0.7];
+
+        // pasted from color image filter reference.
         
-        
-//        filters = [@{} mutableCopy];
         filterButtons = [@[] mutableCopy];
         filterNames = @[
                         @"CIColorInvert",
@@ -67,13 +62,22 @@
                         @"CIPhotoEffectTransfer",
                         @"CISepiaTone",
                         @"CIVignette",
+// pasted from color image filter reference.
+//blurr effects
+//                        @"CIBoxBlur",
+//                        @"CIDiscBlur",
+//                        @"CIGaussianBlur",
+//                        @"CIMedianFilter",
+//                        @"CIMotionBlur",
+//                        @"CINoiseReduction",
+//                        @"CIZoomBlur"
+
                         ];
 
     
         scrollView = [[UIScrollView alloc] init];
         [self.view addSubview:scrollView];
-    
-    
+        
     
     }
     return self;
@@ -81,10 +85,7 @@
 
 - (void)viewWillLayoutSubviews
 {
-    // Do any additional setup after loading the view.
     
- 
- 
     wh = self.view.frame.size.height - 20;
 
     NSLog(@"create button");
@@ -92,8 +93,8 @@
     
     int numButtons = (int) [scrollView.subviews count];
     NSLog(@"currently scrollview has %d buttons", numButtons);
-//    if (numButtons == 0)
-//    {
+
+    
     for (NSString * filterName in filterNames)
     {
         int i = (int)[filterNames indexOfObject:filterName];
@@ -108,21 +109,9 @@
         
         [scrollView addSubview:filterButton];
     }
-//    }
     
     scrollView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
-
     scrollView.contentSize = CGSizeMake((wh + 10) * [filterNames count] + 10, self.view.frame.size.height);
-    
-        //// moved back to PPAViewController .m
-    
-//    UIButton * libraryButton = [[UIButton alloc] initWithFrame:CGRectMake(10, 10, 30, 30)];
-//    libraryButton.layer.cornerRadius = 15;
-//    libraryButton.backgroundColor = [UIColor whiteColor];
-//    [libraryButton addTarget:self action:@selector(choosePhoto) forControlEvents:UIControlEventTouchUpInside];
-//    
-//    [self.view addSubview:libraryButton];
-    
     
 
     
@@ -176,6 +165,12 @@
 
 
 
+
+
+
+
+
+
 -(void)switchFilter:(UIButton *)filterButton;
 
 {
@@ -204,6 +199,9 @@
     
     for (UIButton * filterButton in filterButtons)
     {
+    
+        [filterButton setImage:nil forState:UIControlStateNormal];
+        
         NSString * filterName = [filterNames objectAtIndex:filterButton.tag];
     
         
@@ -211,14 +209,33 @@
         
         UIImage * smallImage = [self shrinkImage:imageToFilter maxWH:wh];
         
-        UIImage * image = [self filterImage:smallImage filterName:filterName];
-        
-        [filterButton setImage:image forState:UIControlStateNormal];
-        filterButton.imageView.contentMode = UIViewContentModeScaleAspectFill;
+// working in different thread to speed it up
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, (unsigned long)NULL), ^{
+            
+            UIImage * image = [self filterImage:smallImage filterName:filterName];
+
+//  uibuttons are not threadsafe; bring them back to main thread.
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [filterButton setImage:image forState:UIControlStateNormal];
+                filterButton.imageView.contentMode = UIViewContentModeScaleAspectFill;
+
+            });
+            
+            
+        });
         
     }
 
+    
+    
 }
+
+
+
+
+
+
+
 // shrinks image to speed up processing
 -(UIImage *)shrinkImage:(UIImage *)image maxWH:(int)widthHeight
 {

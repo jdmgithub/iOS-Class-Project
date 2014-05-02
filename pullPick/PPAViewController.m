@@ -43,7 +43,9 @@
    
     
     imageView = [[UIImageView alloc] initWithFrame:self.view.frame];
-// adjusts the view once cropped if enabled editing below.  Various content modes to use
+
+    
+    // adjusts the view once cropped if enabled editing below.  Various content modes to use
     imageView.contentMode = UIViewContentModeScaleAspectFit;
     
     [self.view addSubview:imageView];
