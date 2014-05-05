@@ -1,0 +1,485 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1B0D68141917C6DA002A1A1B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B0D68131917C6DA002A1A1B /* Foundation.framework */; };
+		1B0D68161917C6DA002A1A1B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B0D68151917C6DA002A1A1B /* CoreGraphics.framework */; };
+		1B0D68181917C6DA002A1A1B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B0D68171917C6DA002A1A1B /* UIKit.framework */; };
+		1B0D681E1917C6DA002A1A1B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1B0D681C1917C6DA002A1A1B /* InfoPlist.strings */; };
+		1B0D68201917C6DA002A1A1B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B0D681F1917C6DA002A1A1B /* main.m */; };
+		1B0D68241917C6DA002A1A1B /* PNAAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B0D68231917C6DA002A1A1B /* PNAAppDelegate.m */; };
+		1B0D68261917C6DA002A1A1B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B0D68251917C6DA002A1A1B /* Images.xcassets */; };
+		1B0D682D1917C6DA002A1A1B /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B0D682C1917C6DA002A1A1B /* XCTest.framework */; };
+		1B0D682E1917C6DA002A1A1B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B0D68131917C6DA002A1A1B /* Foundation.framework */; };
+		1B0D682F1917C6DA002A1A1B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B0D68171917C6DA002A1A1B /* UIKit.framework */; };
+		1B0D68371917C6DA002A1A1B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1B0D68351917C6DA002A1A1B /* InfoPlist.strings */; };
+		1B0D68391917C6DA002A1A1B /* PixelNoiseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B0D68381917C6DA002A1A1B /* PixelNoiseTests.m */; };
+		1B0D68441917C76E002A1A1B /* PNAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B0D68431917C76E002A1A1B /* PNAViewController.m */; };
+		1B0D68471917C89D002A1A1B /* PNAPixelSounds.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B0D68461917C89D002A1A1B /* PNAPixelSounds.m */; };
+		1B0D684A1917CD01002A1A1B /* click_alert.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1B0D68491917CD01002A1A1B /* click_alert.wav */; };
+		1B0D68551917F0C4002A1A1B /* PNAWorldViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B0D68541917F0C4002A1A1B /* PNAWorldViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1B0D68301917C6DA002A1A1B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1B0D68081917C6DA002A1A1B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1B0D680F1917C6DA002A1A1B;
+			remoteInfo = PixelNoise;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1B0D68101917C6DA002A1A1B /* PixelNoise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PixelNoise.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B0D68131917C6DA002A1A1B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1B0D68151917C6DA002A1A1B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		1B0D68171917C6DA002A1A1B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		1B0D681B1917C6DA002A1A1B /* PixelNoise-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PixelNoise-Info.plist"; sourceTree = "<group>"; };
+		1B0D681D1917C6DA002A1A1B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1B0D681F1917C6DA002A1A1B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1B0D68211917C6DA002A1A1B /* PixelNoise-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PixelNoise-Prefix.pch"; sourceTree = "<group>"; };
+		1B0D68221917C6DA002A1A1B /* PNAAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNAAppDelegate.h; sourceTree = "<group>"; };
+		1B0D68231917C6DA002A1A1B /* PNAAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PNAAppDelegate.m; sourceTree = "<group>"; };
+		1B0D68251917C6DA002A1A1B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		1B0D682B1917C6DA002A1A1B /* PixelNoiseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PixelNoiseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B0D682C1917C6DA002A1A1B /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		1B0D68341917C6DA002A1A1B /* PixelNoiseTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PixelNoiseTests-Info.plist"; sourceTree = "<group>"; };
+		1B0D68361917C6DA002A1A1B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1B0D68381917C6DA002A1A1B /* PixelNoiseTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PixelNoiseTests.m; sourceTree = "<group>"; };
+		1B0D68421917C76E002A1A1B /* PNAViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNAViewController.h; sourceTree = "<group>"; };
+		1B0D68431917C76E002A1A1B /* PNAViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNAViewController.m; sourceTree = "<group>"; };
+		1B0D68451917C89D002A1A1B /* PNAPixelSounds.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNAPixelSounds.h; sourceTree = "<group>"; };
+		1B0D68461917C89D002A1A1B /* PNAPixelSounds.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNAPixelSounds.m; sourceTree = "<group>"; };
+		1B0D68491917CD01002A1A1B /* click_alert.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = click_alert.wav; sourceTree = "<group>"; };
+		1B0D68531917F0C4002A1A1B /* PNAWorldViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNAWorldViewController.h; sourceTree = "<group>"; };
+		1B0D68541917F0C4002A1A1B /* PNAWorldViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNAWorldViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1B0D680D1917C6DA002A1A1B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B0D68161917C6DA002A1A1B /* CoreGraphics.framework in Frameworks */,
+				1B0D68181917C6DA002A1A1B /* UIKit.framework in Frameworks */,
+				1B0D68141917C6DA002A1A1B /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1B0D68281917C6DA002A1A1B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B0D682D1917C6DA002A1A1B /* XCTest.framework in Frameworks */,
+				1B0D682F1917C6DA002A1A1B /* UIKit.framework in Frameworks */,
+				1B0D682E1917C6DA002A1A1B /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1B0D68071917C6DA002A1A1B = {
+			isa = PBXGroup;
+			children = (
+				1B0D68531917F0C4002A1A1B /* PNAWorldViewController.h */,
+				1B0D68541917F0C4002A1A1B /* PNAWorldViewController.m */,
+				1B0D68481917CCEF002A1A1B /* Sounds */,
+				1B0D68451917C89D002A1A1B /* PNAPixelSounds.h */,
+				1B0D68461917C89D002A1A1B /* PNAPixelSounds.m */,
+				1B0D68421917C76E002A1A1B /* PNAViewController.h */,
+				1B0D68431917C76E002A1A1B /* PNAViewController.m */,
+				1B0D68191917C6DA002A1A1B /* PixelNoise */,
+				1B0D68321917C6DA002A1A1B /* PixelNoiseTests */,
+				1B0D68121917C6DA002A1A1B /* Frameworks */,
+				1B0D68111917C6DA002A1A1B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1B0D68111917C6DA002A1A1B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1B0D68101917C6DA002A1A1B /* PixelNoise.app */,
+				1B0D682B1917C6DA002A1A1B /* PixelNoiseTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1B0D68121917C6DA002A1A1B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1B0D68131917C6DA002A1A1B /* Foundation.framework */,
+				1B0D68151917C6DA002A1A1B /* CoreGraphics.framework */,
+				1B0D68171917C6DA002A1A1B /* UIKit.framework */,
+				1B0D682C1917C6DA002A1A1B /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1B0D68191917C6DA002A1A1B /* PixelNoise */ = {
+			isa = PBXGroup;
+			children = (
+				1B0D68221917C6DA002A1A1B /* PNAAppDelegate.h */,
+				1B0D68231917C6DA002A1A1B /* PNAAppDelegate.m */,
+				1B0D68251917C6DA002A1A1B /* Images.xcassets */,
+				1B0D681A1917C6DA002A1A1B /* Supporting Files */,
+			);
+			path = PixelNoise;
+			sourceTree = "<group>";
+		};
+		1B0D681A1917C6DA002A1A1B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1B0D681B1917C6DA002A1A1B /* PixelNoise-Info.plist */,
+				1B0D681C1917C6DA002A1A1B /* InfoPlist.strings */,
+				1B0D681F1917C6DA002A1A1B /* main.m */,
+				1B0D68211917C6DA002A1A1B /* PixelNoise-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1B0D68321917C6DA002A1A1B /* PixelNoiseTests */ = {
+			isa = PBXGroup;
+			children = (
+				1B0D68381917C6DA002A1A1B /* PixelNoiseTests.m */,
+				1B0D68331917C6DA002A1A1B /* Supporting Files */,
+			);
+			path = PixelNoiseTests;
+			sourceTree = "<group>";
+		};
+		1B0D68331917C6DA002A1A1B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1B0D68341917C6DA002A1A1B /* PixelNoiseTests-Info.plist */,
+				1B0D68351917C6DA002A1A1B /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1B0D68481917CCEF002A1A1B /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				1B0D68491917CD01002A1A1B /* click_alert.wav */,
+			);
+			name = Sounds;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1B0D680F1917C6DA002A1A1B /* PixelNoise */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1B0D683C1917C6DA002A1A1B /* Build configuration list for PBXNativeTarget "PixelNoise" */;
+			buildPhases = (
+				1B0D680C1917C6DA002A1A1B /* Sources */,
+				1B0D680D1917C6DA002A1A1B /* Frameworks */,
+				1B0D680E1917C6DA002A1A1B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PixelNoise;
+			productName = PixelNoise;
+			productReference = 1B0D68101917C6DA002A1A1B /* PixelNoise.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1B0D682A1917C6DA002A1A1B /* PixelNoiseTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1B0D683F1917C6DA002A1A1B /* Build configuration list for PBXNativeTarget "PixelNoiseTests" */;
+			buildPhases = (
+				1B0D68271917C6DA002A1A1B /* Sources */,
+				1B0D68281917C6DA002A1A1B /* Frameworks */,
+				1B0D68291917C6DA002A1A1B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1B0D68311917C6DA002A1A1B /* PBXTargetDependency */,
+			);
+			name = PixelNoiseTests;
+			productName = PixelNoiseTests;
+			productReference = 1B0D682B1917C6DA002A1A1B /* PixelNoiseTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1B0D68081917C6DA002A1A1B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = PNA;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Jeffery Moulds";
+				TargetAttributes = {
+					1B0D682A1917C6DA002A1A1B = {
+						TestTargetID = 1B0D680F1917C6DA002A1A1B;
+					};
+				};
+			};
+			buildConfigurationList = 1B0D680B1917C6DA002A1A1B /* Build configuration list for PBXProject "PixelNoise" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 1B0D68071917C6DA002A1A1B;
+			productRefGroup = 1B0D68111917C6DA002A1A1B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1B0D680F1917C6DA002A1A1B /* PixelNoise */,
+				1B0D682A1917C6DA002A1A1B /* PixelNoiseTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1B0D680E1917C6DA002A1A1B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B0D684A1917CD01002A1A1B /* click_alert.wav in Resources */,
+				1B0D681E1917C6DA002A1A1B /* InfoPlist.strings in Resources */,
+				1B0D68261917C6DA002A1A1B /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1B0D68291917C6DA002A1A1B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B0D68371917C6DA002A1A1B /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1B0D680C1917C6DA002A1A1B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B0D68471917C89D002A1A1B /* PNAPixelSounds.m in Sources */,
+				1B0D68241917C6DA002A1A1B /* PNAAppDelegate.m in Sources */,
+				1B0D68441917C76E002A1A1B /* PNAViewController.m in Sources */,
+				1B0D68201917C6DA002A1A1B /* main.m in Sources */,
+				1B0D68551917F0C4002A1A1B /* PNAWorldViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1B0D68271917C6DA002A1A1B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B0D68391917C6DA002A1A1B /* PixelNoiseTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1B0D68311917C6DA002A1A1B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1B0D680F1917C6DA002A1A1B /* PixelNoise */;
+			targetProxy = 1B0D68301917C6DA002A1A1B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1B0D681C1917C6DA002A1A1B /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1B0D681D1917C6DA002A1A1B /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		1B0D68351917C6DA002A1A1B /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1B0D68361917C6DA002A1A1B /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1B0D683A1917C6DA002A1A1B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		1B0D683B1917C6DA002A1A1B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1B0D683D1917C6DA002A1A1B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PixelNoise/PixelNoise-Prefix.pch";
+				INFOPLIST_FILE = "PixelNoise/PixelNoise-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		1B0D683E1917C6DA002A1A1B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PixelNoise/PixelNoise-Prefix.pch";
+				INFOPLIST_FILE = "PixelNoise/PixelNoise-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		1B0D68401917C6DA002A1A1B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PixelNoise.app/PixelNoise";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PixelNoise/PixelNoise-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "PixelNoiseTests/PixelNoiseTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		1B0D68411917C6DA002A1A1B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PixelNoise.app/PixelNoise";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PixelNoise/PixelNoise-Prefix.pch";
+				INFOPLIST_FILE = "PixelNoiseTests/PixelNoiseTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1B0D680B1917C6DA002A1A1B /* Build configuration list for PBXProject "PixelNoise" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1B0D683A1917C6DA002A1A1B /* Debug */,
+				1B0D683B1917C6DA002A1A1B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1B0D683C1917C6DA002A1A1B /* Build configuration list for PBXNativeTarget "PixelNoise" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1B0D683D1917C6DA002A1A1B /* Debug */,
+				1B0D683E1917C6DA002A1A1B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1B0D683F1917C6DA002A1A1B /* Build configuration list for PBXNativeTarget "PixelNoiseTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1B0D68401917C6DA002A1A1B /* Debug */,
+				1B0D68411917C6DA002A1A1B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1B0D68081917C6DA002A1A1B /* Project object */;
+}

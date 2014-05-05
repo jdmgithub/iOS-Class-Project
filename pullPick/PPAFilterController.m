@@ -27,7 +27,7 @@
     
     UIButton * button;
     
-    NSMutableArray * filters;
+//    NSMutableArray * filters;
     
     float wh;
 
@@ -162,7 +162,6 @@
     return [UIImage imageWithCGImage:[ciContext createCGImage:ciResult fromRect:[ciResult extent]]];
     
 }
-
 
 
 

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B0D684D1917D603002A1A1B /* retro_click.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1B0D684C1917D603002A1A1B /* retro_click.wav */; };
+		1B0D684F1917D615002A1A1B /* electric_alert.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1B0D684E1917D615002A1A1B /* electric_alert.wav */; };
 		1B130A88190019C4002CA2C5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B130A87190019C4002CA2C5 /* Foundation.framework */; };
 		1B130A8A190019C4002CA2C5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B130A89190019C4002CA2C5 /* CoreGraphics.framework */; };
 		1B130A8C190019C4002CA2C5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B130A8B190019C4002CA2C5 /* UIKit.framework */; };
@@ -37,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1B0D684C1917D603002A1A1B /* retro_click.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = retro_click.wav; sourceTree = "<group>"; };
+		1B0D684E1917D615002A1A1B /* electric_alert.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = electric_alert.wav; sourceTree = "<group>"; };
 		1B130A84190019C4002CA2C5 /* BrickBreaker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BrickBreaker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B130A87190019C4002CA2C5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1B130A89190019C4002CA2C5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -87,9 +91,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1B0D684B1917D5EC002A1A1B /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				1B0D684E1917D615002A1A1B /* electric_alert.wav */,
+				1B0D684C1917D603002A1A1B /* retro_click.wav */,
+			);
+			name = Sounds;
+			sourceTree = "<group>";
+		};
 		1B130A7B190019C4002CA2C5 = {
 			isa = PBXGroup;
 			children = (
+				1B0D684B1917D5EC002A1A1B /* Sounds */,
 				1B66CE151903F52E001E2CB3 /* Images */,
 				1B23EDF6190151980020A633 /* MOVE.h */,
 				1B23EDF7190151980020A633 /* MOVE.m */,
@@ -249,9 +263,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B0D684F1917D615002A1A1B /* electric_alert.wav in Resources */,
 				1B130A92190019C4002CA2C5 /* InfoPlist.strings in Resources */,
 				1B66CE181903F5FA001E2CB3 /* bookPaddle.png in Resources */,
 				1B66CE191903F5FA001E2CB3 /* bookBlocks.png in Resources */,
+				1B0D684D1917D603002A1A1B /* retro_click.wav in Resources */,
 				1B130A9A190019C4002CA2C5 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

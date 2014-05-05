@@ -8,9 +8,14 @@
 
 #import "BBALevelController.h"
 #import "MOVE.h"
+#import <AVFoundation/AVFoundation.h>
 
 
 @interface BBALevelController () <UICollisionBehaviorDelegate>
+
+// audio player
+@property (nonatomic) AVAudioPlayer * player;
+
 
 @property (nonatomic) UIImageView * paddle;
 @property (nonatomic) NSMutableArray * balls;
@@ -67,11 +72,34 @@
   
         UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapScreen:)];
         [self.view addGestureRecognizer:tap];
+      
         
-    
+        
     }
     return self;
 }
+
+
+
+-(void)playSoundWithName:(NSString *)soundName
+{
+    
+
+    NSString * file = [[NSBundle mainBundle] pathForResource:soundName ofType:@"wav"];
+
+    // can do a url to file within the app (eg. a local URL). Do this or with data.
+    NSURL * url = [[NSURL alloc] initFileURLWithPath:file];
+    
+    self.player = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
+    
+    [self.player play];
+    
+}
+
+
+
+
+
 
 - (void)viewDidLoad
 {
@@ -128,6 +156,17 @@
 -(void)collisionBehavior:(UICollisionBehavior *)behavior beganContactForItem:(id<UIDynamicItem>)item1 withItem:(id<UIDynamicItem>)item2 atPoint:(CGPoint)p
 {
     UIView * tempBrick;
+
+    
+    if([item1 isEqual:self.paddle] || [item2 isEqual:self.paddle])
+    {
+ 
+        [self playSoundWithName:@"retro_click"];
+    
+    
+    }
+    
+    
     
     for (UIView * brick in self.bricks)
     {
@@ -152,7 +191,9 @@
         }
     }
     
-    if (tempBrick != nil) [self.bricks removeObjectIdenticalTo:tempBrick];
+    if (tempBrick != nil)
+        [self playSoundWithName:@"electric_alert"];
+        [self.bricks removeObjectIdenticalTo:tempBrick];
 }
 
 

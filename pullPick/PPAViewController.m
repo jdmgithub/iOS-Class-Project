@@ -139,7 +139,8 @@
 -(void)viewWillLayoutSubviews
 
 {
-
+// all moved to own subclass
+    
 //    filters = [@{} mutableCopy];
 //    filterButtons = [@[] mutableCopy];
 //    filterNames = @[
