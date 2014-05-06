@@ -165,10 +165,10 @@
      
         CGPoint direction = [pointValue CGPointValue];
         
-        UIView * shard = [[UIView alloc] initWithFrame:CGRectMake(location.x + (direction.x *200), location.y -50, 10, 10)];
+        UIView * shard = [[UIView alloc] initWithFrame:CGRectMake(location.x + (direction.x *200), location.y -50, 5, 5)];
         
         
-        shard.backgroundColor = [UIColor blueColor];
+        shard.backgroundColor = [UIColor greenColor];
  
         [self.view addSubview:shard];
 

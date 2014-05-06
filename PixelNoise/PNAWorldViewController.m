@@ -9,6 +9,10 @@
 #import "PNAWorldViewController.h"
 #import <AVFoundation/AVFoundation.h>
 
+//////////////////////////
+////////////////////////////
+// This is homework... see PixelWorld2 for better examples that work.
+
 
 @interface PNAWorldViewController () <UICollisionBehaviorDelegate>
 
