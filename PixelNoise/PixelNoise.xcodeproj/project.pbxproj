@@ -25,6 +25,7 @@
 		1B0D68551917F0C4002A1A1B /* PNAWorldViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B0D68541917F0C4002A1A1B /* PNAWorldViewController.m */; };
 		1BAA82261919054400B9A853 /* short_whoosh.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1BAA82251919054400B9A853 /* short_whoosh.wav */; };
 		1BAA82291919153100B9A853 /* PNAPixelWorld2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BAA82281919153100B9A853 /* PNAPixelWorld2ViewController.m */; };
+		1BAA822B1919212800B9A853 /* drip.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1BAA822A1919212800B9A853 /* drip.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		1BAA82251919054400B9A853 /* short_whoosh.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = short_whoosh.wav; sourceTree = "<group>"; };
 		1BAA82271919153100B9A853 /* PNAPixelWorld2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNAPixelWorld2ViewController.h; sourceTree = "<group>"; };
 		1BAA82281919153100B9A853 /* PNAPixelWorld2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNAPixelWorld2ViewController.m; sourceTree = "<group>"; };
+		1BAA822A1919212800B9A853 /* drip.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = drip.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +174,7 @@
 		1B0D68481917CCEF002A1A1B /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				1BAA822A1919212800B9A853 /* drip.wav */,
 				1BAA82251919054400B9A853 /* short_whoosh.wav */,
 				1B0D68491917CD01002A1A1B /* click_alert.wav */,
 			);
@@ -254,6 +257,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1BAA822B1919212800B9A853 /* drip.wav in Resources */,
 				1B0D684A1917CD01002A1A1B /* click_alert.wav in Resources */,
 				1B0D681E1917C6DA002A1A1B /* InfoPlist.strings in Resources */,
 				1B0D68261917C6DA002A1A1B /* Images.xcassets in Resources */,
