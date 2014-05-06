@@ -12,11 +12,13 @@
 
 #import "TDLGitHubRequest.h"
 
+#import "TDLSingleton.h"
+
 @implementation TDLTableViewController
 
 {
  
-    NSMutableArray *listItems;
+//    NSMutableArray *listItems;
     UITextField * nameField;
 
 //    UINavigationController * navController;
@@ -83,9 +85,8 @@
 //                ] mutableCopy];
         
 
-        listItems = [@[] mutableCopy];
+//        listItems = [@[] mutableCopy];
         
-        [self loadListItems];
         
         self.tableView.contentInset = UIEdgeInsetsMake(50, 0, 0, 0);
         self.tableView.rowHeight = 100;
@@ -170,9 +171,10 @@
     
     if([[userInfo allKeys] count] ==3)
     {
-    [listItems addObject:userInfo];
+        [[TDLSingleton sharedCollection] addListItem:userInfo];
+//        [listItems addObject:userInfo];
 
-}   else {
+} else {
 
     NSLog(@"Not Enough Data");
     
@@ -187,7 +189,7 @@
 
     [self.tableView reloadData];
     
-    [self saveData];
+//    [self saveData];
     
     
 //    NSLog(@"listItems Count : %d",[listItems count]);
@@ -231,7 +233,9 @@ self.navigationItem.rightBarButtonItem = self.editButtonItem;
 {
     
     // Return the number of rows in the section.
-    return [listItems count];
+    
+    return [[[TDLSingleton sharedCollection]allListItems] count];
+    
 }
 
 
@@ -244,32 +248,7 @@ self.navigationItem.rightBarButtonItem = self.editButtonItem;
 
     if (cell == nil) cell = [[TDLTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
     
-
-//    int index = indexPath.row;
-    
-
-    
-//      cell.textLabel.text = listItems[index];
-//      cell.imageView.image = listImages[index];
-   
-//    NSArray * reverseArray = [[listItems reverseObjectEnumerator] allObjects];
-
-    
-    
-
-//    NSDictionary * listItem = [self getListItem:indexPath.row];
-
-    cell.profileInfo = [self getListItem:indexPath.row];
-    
-//    cell.textLabel.text = listItem[@"name"];
-//    cell.imageView.image = listItem[@"image"];
-    
-    
-//      NSString * day=listItems[index];
-
-//      cell.textLabel.text = day;
-    
-//      Configure the cell...
+    cell.index = indexPath.row;
     
     return cell;
 
@@ -284,7 +263,7 @@ self.navigationItem.rightBarButtonItem = self.editButtonItem;
 //    NSArray * reverseArray = [[listItems reverseObjectEnumerator] allObjects];
     
     
-    NSDictionary * listItem = [self getListItem:indexPath.row];
+    NSDictionary * listItem = [[TDLSingleton sharedCollection] allListItems] [indexPath.row];
     
     NSLog(@"%@", listItem);
 
@@ -317,22 +296,15 @@ self.navigationItem.rightBarButtonItem = self.editButtonItem;
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-//    [listItems removeObjectAtIndex:indexPath.row];
 
-    NSDictionary * listItem = [self getListItem:indexPath.row];
-    
-    [listItems removeObjectIdenticalTo:listItem];
-    
-//    [self.tableView reloadData];
+
+    [[TDLSingleton sharedCollection] removeListItemAtIndex:indexPath.row];
 
     TDLTableViewCell *cell = (TDLTableViewCell *)[tableView cellForRowAtIndexPath:indexPath];
     cell.alpha = .0;
     
     [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    
-    NSLog(@"%@", listItems);
 
-    [self saveData];
 
 
 }
@@ -344,61 +316,38 @@ self.navigationItem.rightBarButtonItem = self.editButtonItem;
 
 
 
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath
-{
-
-    if (sourceIndexPath == destinationIndexPath) return;
-        
-    NSDictionary * sourceItem = [self getListItem:sourceIndexPath.row];
-    
-    NSDictionary * toItem = [self getListItem:destinationIndexPath.row];
-    
-    [listItems removeObjectIdenticalTo:sourceItem];
-    
-//    [listItems removeObjectAtIndex:[listItems indexOfObject:sourceItem]];
-    
-    [listItems insertObject:sourceItem atIndex:[listItems indexOfObject:toItem]];
-    
-    [self saveData];
-
-}
-
-
-- (NSDictionary *)getListItem:(NSInteger)row
-{
-    NSArray * reverseArray = [[listItems reverseObjectEnumerator] allObjects];
-    return reverseArray[row];
-    
-}
-
-- (void)saveData
-{
-    NSString *path = [self listArchivePath];
-    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:listItems];
-    [data writeToFile:path options:NSDataWritingAtomic error: nil];
-
-}
+//- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath
+//{
+//
+//    if (sourceIndexPath == destinationIndexPath) return;
+//        
+//    NSDictionary * sourceItem = [self getListItem:sourceIndexPath.row];
+//    
+//    NSDictionary * toItem = [self getListItem:destinationIndexPath.row];
+//    
+//
+//    
+//    [listItems removeObjectIdenticalTo:sourceItem];
+//    
+////    [listItems removeObjectAtIndex:[listItems indexOfObject:sourceItem]];
+//    
+//    [listItems insertObject:sourceItem atIndex:[listItems indexOfObject:toItem]];
+//    
+//    [self saveData];
+//
+//}
 
 
-- (NSString *) listArchivePath
-{
-    NSArray *documentDirectories = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *documentDirectory = documentDirectories[0];
-    return [documentDirectory stringByAppendingPathComponent:@"listdata.data"];
+//- (NSDictionary *)getListItem:(NSInteger)row
+//{
+//    NSArray * reverseArray = [[listItems reverseObjectEnumerator] allObjects];
+//    return reverseArray[row];
+//    
+//}
 
-}
 
 
--(void)loadListItems
-{
 
-    NSString *path = [self listArchivePath];
-    if([[NSFileManager defaultManager] fileExistsAtPath:path])
-       {
-           listItems = [NSKeyedUnarchiver unarchiveObjectWithFile:path];
-       }
-
-}
 
 
 @end
