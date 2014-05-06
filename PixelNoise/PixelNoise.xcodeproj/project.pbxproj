@@ -24,6 +24,7 @@
 		1B0D684A1917CD01002A1A1B /* click_alert.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1B0D68491917CD01002A1A1B /* click_alert.wav */; };
 		1B0D68551917F0C4002A1A1B /* PNAWorldViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B0D68541917F0C4002A1A1B /* PNAWorldViewController.m */; };
 		1BAA82261919054400B9A853 /* short_whoosh.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1BAA82251919054400B9A853 /* short_whoosh.wav */; };
+		1BAA82291919153100B9A853 /* PNAPixelWorld2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BAA82281919153100B9A853 /* PNAPixelWorld2ViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,8 @@
 		1B0D68531917F0C4002A1A1B /* PNAWorldViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNAWorldViewController.h; sourceTree = "<group>"; };
 		1B0D68541917F0C4002A1A1B /* PNAWorldViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNAWorldViewController.m; sourceTree = "<group>"; };
 		1BAA82251919054400B9A853 /* short_whoosh.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = short_whoosh.wav; sourceTree = "<group>"; };
+		1BAA82271919153100B9A853 /* PNAPixelWorld2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNAPixelWorld2ViewController.h; sourceTree = "<group>"; };
+		1BAA82281919153100B9A853 /* PNAPixelWorld2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNAPixelWorld2ViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +93,8 @@
 		1B0D68071917C6DA002A1A1B = {
 			isa = PBXGroup;
 			children = (
+				1BAA82271919153100B9A853 /* PNAPixelWorld2ViewController.h */,
+				1BAA82281919153100B9A853 /* PNAPixelWorld2ViewController.m */,
 				1B0D68531917F0C4002A1A1B /* PNAWorldViewController.h */,
 				1B0D68541917F0C4002A1A1B /* PNAWorldViewController.m */,
 				1B0D68481917CCEF002A1A1B /* Sounds */,
@@ -274,6 +279,7 @@
 				1B0D68471917C89D002A1A1B /* PNAPixelSounds.m in Sources */,
 				1B0D68241917C6DA002A1A1B /* PNAAppDelegate.m in Sources */,
 				1B0D68441917C76E002A1A1B /* PNAViewController.m in Sources */,
+				1BAA82291919153100B9A853 /* PNAPixelWorld2ViewController.m in Sources */,
 				1B0D68201917C6DA002A1A1B /* main.m in Sources */,
 				1B0D68551917F0C4002A1A1B /* PNAWorldViewController.m in Sources */,
 			);
