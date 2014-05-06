@@ -15,6 +15,10 @@
 @property (nonatomic) UIGravityBehavior * gravity;
 @property (nonatomic) UICollisionBehavior * collision;
 
+// Shards
+@property (nonatomic) UIDynamicItemBehavior * shardBehavior;
+@property (nonatomic) UICollisionBehavior * shardCollision;
+
 
 @end
 
@@ -22,6 +26,8 @@
 
 {
     PNAPixelSounds * sounds;
+    
+    NSArray * splatterDirections;
 }
 
 
@@ -32,6 +38,17 @@
 
         
         sounds = [[PNAPixelSounds alloc] init];
+
+// cant put cstruct in array... must use object
+        splatterDirections = @[
+                            [NSValue valueWithCGPoint:CGPointMake(-.1, -0.1)],
+                            [NSValue valueWithCGPoint:CGPointMake(-0.05, -0.1)],
+                            [NSValue valueWithCGPoint:CGPointMake(0.0, -0.1)],
+                            [NSValue valueWithCGPoint:CGPointMake(0.05, -0.1)],
+                            [NSValue valueWithCGPoint:CGPointMake(0.1, -0.1)],
+                            
+                             ];
+        
         
         // animator is reference view
         // Add each behaviors to an animator; can have seperate animators
@@ -43,13 +60,23 @@
         
         self.collision = [[UICollisionBehavior alloc] init];
         self.collision.translatesReferenceBoundsIntoBoundary = YES;
-
         // sets delegate
         self.collision.collisionDelegate = self;
-        
         [self.animator addBehavior:self.collision];
+
         
-      
+        self.shardBehavior = [[UIDynamicItemBehavior alloc] init];
+        self.shardBehavior.density = 10;
+        [self.animator addBehavior:self.shardBehavior];
+
+        
+        self.shardCollision = [[UICollisionBehavior alloc] init];
+        self.shardCollision.translatesReferenceBoundsIntoBoundary = YES;
+        // sets delegate
+        self.shardCollision.collisionDelegate = self;
+        [self.animator addBehavior:self.shardCollision];
+
+        
     
     }
     return self;
@@ -65,6 +92,7 @@
     }
     
 }
+
 
 
 -(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
@@ -97,20 +125,80 @@
 -(void)collisionBehavior:(UICollisionBehavior *)behavior beganContactForItem:(id<UIDynamicItem>)item withBoundaryIdentifier:(id<NSCopying>)identifier atPoint:(CGPoint)p
 
 {
-//    NSLog(@"%@", identifier);  // hitting an unspecified border (nil)
+    
+    if ([behavior isEqual:self.collision])
+        {
+            [sounds playSoundWithName:@"drip"];
+            
+            [self createShardsWithLocation:p];
+            
+            UIView * collidedBlock = (UIView *)item;
 
-    UIView * collidedBlock = (UIView *)item;
-    
-//    NSLog(@"Collided Block %@", collidedBlock);
-    
-//    remove them to save memory.  Appears to have no floor.
-    [self.gravity removeItem:collidedBlock];
-    [self.collision removeItem:collidedBlock];
-    [collidedBlock removeFromSuperview];
+            [self.gravity removeItem:collidedBlock];
+            [self.collision removeItem:collidedBlock];
+            
+            [collidedBlock removeFromSuperview];
+        }
     
     
-    [sounds playSoundWithName:@"drip"];
+    else  if ([behavior isEqual:self.shardCollision])
+    {
+        UIView * collidedShard = (UIView *)item;
+
+        [self.gravity removeItem:collidedShard];
+        [self.shardBehavior removeItem:collidedShard];
+        [self.shardCollision removeItem:collidedShard];
+        
+        [collidedShard removeFromSuperview];
+    }
+
+
+    
+    
+    
 }
+
+-(void)createShardsWithLocation:(CGPoint)location
+{
+    for (NSValue * pointValue in splatterDirections)
+    {
+     
+        CGPoint direction = [pointValue CGPointValue];
+        
+        UIView * shard = [[UIView alloc] initWithFrame:CGRectMake(location.x + (direction.x *200), location.y -50, 10, 10)];
+        
+        
+        shard.backgroundColor = [UIColor blueColor];
+ 
+        [self.view addSubview:shard];
+
+        [self.gravity addItem:shard];
+    
+        
+        [self.shardBehavior addItem:shard];
+        [self.shardCollision addItem:shard];
+        
+        
+        
+        
+        
+
+//        [self.collision addItem:shard];
+
+        UIPushBehavior * pusher = [[UIPushBehavior alloc] initWithItems:@[shard] mode:UIPushBehaviorModeInstantaneous];
+        
+//        [pusher addItem:shard];
+        
+        [self.animator addBehavior:pusher];
+        
+        pusher.pushDirection = CGVectorMake(direction.x, direction.y);
+        
+        
+    }
+
+
+}
+
 
 
 
