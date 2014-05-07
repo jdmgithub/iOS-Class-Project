@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RBAViewControllerTwoRed.h"
 
-@interface RBAViewControllerThreeBlue : UIViewController
+@interface RBAViewControllerThreeBlue : RBAViewControllerTwoRed
 
 @end
