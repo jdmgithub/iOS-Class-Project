@@ -32,7 +32,10 @@
         secondVC = [[RBAViewControllerTwoRed alloc] initWithNibName:nil bundle:nil];
         
         int halfHeight = self.view.frame.size.height /2;
-        int halfWidth = self.view.frame.size.height;
+        int halfWidth = self.view.frame.size.width;
+        int height = self.view.frame.size.height;
+        int width = self.view.frame.size.width;
+        
         
         secondVC.view.frame = CGRectMake(0, 0, halfWidth, halfHeight);
         secondVC.view.backgroundColor = [UIColor redColor];
@@ -47,7 +50,7 @@
         [self.view addSubview:secondVC.view];
         [self.view addSubview:thirdVC.view];
         
-        UILabel * redScore = [[UILabel alloc] initWithFrame:CGRectMake(145, 80, 60, 60)];
+        UILabel * redScore = [[UILabel alloc] initWithFrame:CGRectMake(width /2 -15, halfHeight -150, 60, 60)];
 //        redScore.backgroundColor = [UIColor blackColor];
         redScore.tintColor = [UIColor blackColor];
         redScore.font = [UIFont systemFontOfSize:60];
@@ -58,7 +61,7 @@
         
         
         
-        UILabel * blueScore = [[UILabel alloc] initWithFrame:CGRectMake(145, 320, 60, 60)];
+        UILabel * blueScore = [[UILabel alloc] initWithFrame:CGRectMake(width /2 -15, halfHeight + 100, 60, 60)];
 
 //        blueScore.backgroundColor = [UIColor blackColor];
         blueScore.tintColor = [UIColor blackColor];
