@@ -9,6 +9,7 @@
 #import "RBAViewControllerOneRoot.h"
 #import "RBAViewControllerTwoRed.h"
 #import "RBAViewControllerThreeBlue.h"
+#import "RBAScoreSingleton.h"
 
 @interface RBAViewControllerOneRoot ()
 
@@ -45,6 +46,29 @@
 
         [self.view addSubview:secondVC.view];
         [self.view addSubview:thirdVC.view];
+        
+        UILabel * redScore = [[UILabel alloc] initWithFrame:CGRectMake(145, 80, 60, 60)];
+//        redScore.backgroundColor = [UIColor blackColor];
+        redScore.tintColor = [UIColor blackColor];
+        redScore.font = [UIFont systemFontOfSize:60];
+        redScore.text = @"7";
+        
+        [self.view addSubview:redScore];
+        
+        
+        
+        
+        UILabel * blueScore = [[UILabel alloc] initWithFrame:CGRectMake(145, 320, 60, 60)];
+
+//        blueScore.backgroundColor = [UIColor blackColor];
+        blueScore.tintColor = [UIColor blackColor];
+        blueScore.font = [UIFont systemFontOfSize:60];
+        blueScore.text = @"7";
+        
+        [self.view addSubview:blueScore];
+       
+        
+        
         
     }
     return self;
