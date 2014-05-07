@@ -12,9 +12,9 @@
 
 + (DNASingleton *)sharedSingleton;
 
-@property (nonatomic) NSDictionary * sectionInfo;
+    @property (nonatomic) NSDictionary * sectionInfo;
 
-- (NSArray *)allSections;
-- (NSArray *)allRowsForSection:(NSString *)sectionName;
+    - (NSArray *)allSections;
+    - (NSArray *)allRowsForSection:(NSString *)sectionName;
 
 @end
