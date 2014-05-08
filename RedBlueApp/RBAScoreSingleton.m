@@ -7,8 +7,9 @@
 //
 
 #import "RBAScoreSingleton.h"
+#import "RBAViewControllerTwoRed.h"
 
-@implementation RBAScoreSingleton
+@implementation RBAScoreSingleton 
 
 +(RBAScoreSingleton *)sharedScores
 {
@@ -24,26 +25,14 @@
     
 }
 
-//-(id)init
-//
-//{
-//    self = [super init];
-//    
-//    if(self){
-//    _redScore = 0;
-//    }
-//
-////    NSLog(@"%d",(int)[RBAScoreSingleton sharedScores].redScore);
-//    return self;
-//    
-//}
+
 
 
 -(void)updateRedScore;
 {
-    _redScore ++;
+//    _redScore ++;
 //  or
-//  _redScore++;
+  _redScore = _redScore +1;
     
     NSLog(@"update %d",_redScore);
     
@@ -52,8 +41,8 @@
 
 -(void)updateBlueScore;
 {
-
-    _blueScore ++;
+    _blueScore = _blueScore +1;
+//    _blueScore ++;
 
 }
 

@@ -11,11 +11,15 @@
 #import "RBAViewControllerThreeBlue.h"
 #import "RBAScoreSingleton.h"
 
-@interface RBAViewControllerOneRoot ()
+@interface RBAViewControllerOneRoot () <VCTwoRedScoreDelegate>
 
 {
     RBAViewControllerTwoRed * secondVC;
     RBAViewControllerThreeBlue * thirdVC;
+    
+    UILabel * blueScore;
+    UILabel * redScore;
+    
 
 }
 
@@ -50,35 +54,49 @@
         [self.view addSubview:secondVC.view];
         [self.view addSubview:thirdVC.view];
         
-        UILabel * redScore = [[UILabel alloc] initWithFrame:CGRectMake(width /2 -15, halfHeight -150, 60, 60)];
+        redScore = [[UILabel alloc] initWithFrame:CGRectMake(width /2 -15, halfHeight -150, 50, 50)];
 //        redScore.backgroundColor = [UIColor blackColor];
         redScore.tintColor = [UIColor blackColor];
-        redScore.font = [UIFont systemFontOfSize:60];
-        redScore.text = @"7";
+        redScore.font = [UIFont systemFontOfSize:40];
+//        redScore.text = @"";
         
         [self.view addSubview:redScore];
         
         
         
         
-        UILabel * blueScore = [[UILabel alloc] initWithFrame:CGRectMake(width /2 -15, halfHeight + 100, 60, 60)];
+        blueScore = [[UILabel alloc] initWithFrame:CGRectMake(width /2 -15, halfHeight + 100, 50, 50)];
 
 //        blueScore.backgroundColor = [UIColor blackColor];
         blueScore.tintColor = [UIColor blackColor];
-        blueScore.font = [UIFont systemFontOfSize:60];
-        blueScore.text = @"7";
+        blueScore.font = [UIFont systemFontOfSize:40];
+ //       blueScore.text = @"7";
         
         [self.view addSubview:blueScore];
        
-        
-        
-        
+    
+        secondVC.delegate = self;
+        thirdVC.delegate = self;
     }
     return self;
 }
 
 
+-(void)redTeamScores
 
+{
+    // getter getting game score
+    redScore.text = [NSString stringWithFormat:@"%i", [RBAScoreSingleton sharedScores].redScore];
+}
+
+
+-(void)blueTeamScores
+{
+    // getter getting game score
+    blueScore.text = [NSString stringWithFormat:@"%i", [RBAScoreSingleton sharedScores].blueScore];
+
+
+}
 
 
 - (void)viewDidLoad

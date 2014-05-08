@@ -8,6 +8,7 @@
 
 #import "RBAViewControllerTwoRed.h"
 #import "RBAScoreSingleton.h"
+#import "RBAScoreSingleton.h"
 
 @interface RBAViewControllerTwoRed ()
 
@@ -16,7 +17,7 @@
 @implementation RBAViewControllerTwoRed
 
 {
-UIView * redView;
+//UIView * redView;
 }
 
 
@@ -39,8 +40,7 @@ UIView * redView;
 
 
 
-    
-    
+
     
 }
 
@@ -49,19 +49,25 @@ UIView * redView;
 
 {
     NSLog(@"Red Touch");
-    
+    // setter
     [[RBAScoreSingleton sharedScores] updateRedScore];
-    
+
+    // getter
     NSLog(@"%d",(int)[RBAScoreSingleton sharedScores].redScore);
+    
+    // calling the method from root.m
+    [self.delegate redTeamScores];
     
 }
 
 
 
-
-
-
-
+//-(void)teamScores
+//
+//{
+//    [[RBAScoreSingleton sharedScores] updateRedScore];
+//    
+//}
 
 
 
@@ -72,15 +78,6 @@ UIView * redView;
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

@@ -40,6 +40,8 @@
     
     NSLog(@"%d",(int)[RBAScoreSingleton sharedScores].blueScore);
     
+    [self.delegate blueTeamScores];
+
 }
 
 
