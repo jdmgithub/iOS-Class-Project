@@ -258,7 +258,9 @@
     cell.delegate = self;
     
     NSDictionary * listItem = listItems[indexPath.row];
+
     
+// sets button's background color from the color array above.  
     cell.bgView.backgroundColor = priorityColors[[listItem[@"priority"] intValue]];
     
     
