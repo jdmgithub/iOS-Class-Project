@@ -187,16 +187,54 @@
 }
 
 
-//
-//
-//-(void)pausePlay:(UIButton *)sender
-//{
-//    
-//    if (sender.selected == NO) {
-//        [player pause];
-//    }
-//    
-//}
+
+
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+
+{
+    
+    NSLog(@"Touches Began");
+    [player pause];
+//    [self.timer invalidate];
+    
+}
+
+
+-(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
+
+{
+
+    for (UITouch * touch in touches)
+    {
+        CGPoint location = [touch locationInView:progressBar];
+        seekButton.frame = CGRectMake(location.x, -5, 20, 20);
+    
+        NSLog(@"Touches Moved");
+    }
+        
+}
+
+-(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+
+{
+
+    NSLog(@"Touches Ended");
+
+    for (UITouch * touch in touches)
+    {
+        CGPoint location = [touch locationInView:progressBar];
+        seekButton.frame = CGRectMake(location.x, -5, 20, 20);
+        player.currentTime = location.x;
+        
+        [player play];
+        
+    }
+
+}
+
+
+
+
 
 
 -(void)stopPlay
