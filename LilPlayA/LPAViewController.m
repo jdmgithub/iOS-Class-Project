@@ -21,6 +21,7 @@
     float xPosition;
     UIButton * playButton;
     UILabel * songTimer;
+    UILabel * remainingTimer;
     UIBarButtonItem * TEST;
     
 }
@@ -42,6 +43,11 @@
         songTimer = [[UILabel alloc] initWithFrame:CGRectMake(10, 100, 200, 25)];
         songTimer.backgroundColor = [UIColor magentaColor];
         [self.view addSubview:songTimer];
+
+        remainingTimer = [[UILabel alloc] initWithFrame:CGRectMake(10, 130, 200, 25)];
+        remainingTimer.backgroundColor = [UIColor yellowColor];
+        [self.view addSubview:remainingTimer];
+
         
         
         playButton = [[UIButton alloc] initWithFrame:CGRectMake(10, (h-50) / 2, 50, 50)];
@@ -179,11 +185,12 @@
     seekButton.frame = CGRectMake(xPosition, ((h - 50)/2)-5, 15, 15);
     
 //    player.currentTime = xPosition;
-    xPosition = player.currentTime;
+//    xPosition = player.currentTime;
     
     NSLog(@"Button Postion: %f, Song Position %f", xPosition, player.currentTime);
     songTimer.text = [NSString stringWithFormat:@"Seconds Played: %0.02f", player.currentTime];
-
+    NSTimeInterval remainingTime = totalTime - currentTime;
+    remainingTimer.text = [NSString stringWithFormat:@"Remaining Time: %0.02f", remainingTime];
 }
 
 
@@ -201,35 +208,29 @@
 
 
 -(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
-
 {
-
     for (UITouch * touch in touches)
     {
         CGPoint location = [touch locationInView:progressBar];
-        seekButton.frame = CGRectMake(location.x, -5, 20, 20);
+   //     seekButton.frame = CGRectMake(location.x, -5, 20, 20);
     
         NSLog(@"Touches Moved");
     }
-        
 }
 
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
-
 {
-
     NSLog(@"Touches Ended");
 
     for (UITouch * touch in touches)
     {
         CGPoint location = [touch locationInView:progressBar];
-        seekButton.frame = CGRectMake(location.x, -5, 20, 20);
+//        seekButton.frame = CGRectMake(location.x, -5, 20, 20);
+
         player.currentTime = location.x;
         
         [player play];
-        
     }
-
 }
 
 
@@ -238,7 +239,6 @@
 
 
 -(void)stopPlay
-
 {
     int h = [UIScreen mainScreen].bounds.size.height;
 
