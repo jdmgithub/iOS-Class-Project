@@ -42,18 +42,25 @@
                              ];
         
         
+       
+        UIButton * swipeArea = [[UIButton alloc] initWithFrame:CGRectMake(20, 20, 280, 40)];
+        swipeArea.backgroundColor = [UIColor colorWithWhite:0.0 alpha:.05];
+        [self.view addSubview:swipeArea];
+        
+        
+        
         UISwipeGestureRecognizer * swipeRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipe:)];
         
         swipeRight.direction = UISwipeGestureRecognizerDirectionRight;
         
-        [self.view addGestureRecognizer:swipeRight];
+        [swipeArea addGestureRecognizer:swipeRight];
         
 
         UISwipeGestureRecognizer * swipeLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipe:)];
         
         swipeLeft.direction = UISwipeGestureRecognizerDirectionLeft;
         
-        [self.view addGestureRecognizer:swipeLeft];
+        [swipeArea addGestureRecognizer:swipeLeft];
         
         
     }
@@ -145,7 +152,7 @@
 
     UIView * bgview = [[UIView alloc] initWithFrame:self.view.frame];
     bgview.backgroundColor = colors[currentBackground];
-    [self.view addSubview:bgview];
+    [self.view insertSubview:bgview atIndex:0];
  
     [backgrounds addObject:bgview];
     

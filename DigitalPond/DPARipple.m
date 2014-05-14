@@ -44,9 +44,11 @@
 
     rippleLine.backgroundColor = [UIColor colorWithWhite:0.0 alpha:0.5];
     rippleLine.layer.cornerRadius = 40;
-    rippleLine.layer.borderWidth = 1.0;
+    rippleLine.layer.borderWidth = 2.0;
 
-    rippleLine.layer.borderColor = [UIColor whiteColor].CGColor;
+    rippleLine.layer.borderColor = [UIColor blackColor].CGColor;
+
+//    rippleLine.layer.borderColor = [UIColor whiteColor].CGColor;
 //    rippleLine.layer.borderColor = [UIColor colorWithWhite:0.0 alpha:0.5].CGColor;
     rippleLine.backgroundColor = self.tintColor;
     //    [UIColor colorWithWhite:0.0 alpha:0.3];
