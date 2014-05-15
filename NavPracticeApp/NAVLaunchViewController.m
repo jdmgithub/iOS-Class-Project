@@ -6,17 +6,20 @@
 //  Copyright (c) 2014 Jeffery Moulds. All rights reserved.
 //
 
-#import "NAVViewController.h"
+#import "NAVLaunchViewController.h"
 #import "NAVColorsTableViewController.h"
 
-@interface NAVViewController ()
+@interface NAVLaunchViewController ()
 
 @end
 
 
 
 
-@implementation NAVViewController
+@implementation NAVLaunchViewController
+{
+    
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -38,6 +41,8 @@
         [self.view addSubview:launchButton];
         
         
+
+
         
     
     }
@@ -47,9 +52,36 @@
 -(void)launchTableView
 
 {
+    UITableViewController * colorTVC = [[NAVColorsTableViewController alloc] initWithStyle:UITableViewStylePlain];
+
+    UINavigationController * nc = [[UINavigationController alloc] initWithRootViewController: colorTVC];
+    
+    [self presentViewController:nc animated:NO completion:nil];
+    
+//    [self.view addSubview:nc.view];
+//    
+//    [nc.view addSubview:colorTVC.view];
+    
+    nc.toolbarHidden = NO;
+    
+    //STARS AND MOONS!  ADD THE VIEW!!!!
+//    [self.view addSubview:colorTVC.view];
+
+    
+    
 
 
+//    
+//    UINavigationController * navigationBarController = [[UINavigationController alloc] initWithNibName:nil bundle:nil];
+//    
+//    [self.view addSubview:navigationBarController.view];
+//
+//    
+//
+//    [navigationBarController.view addSubview:colorTVC.view];
+    
 
+    
 }
 
 
@@ -66,15 +98,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

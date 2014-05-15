@@ -7,7 +7,7 @@
 //
 
 #import "NAVAppDelegate.h"
-#import "NAVViewController.h"
+#import "NAVLaunchViewController.h"
 #import "NAVColorsTableViewController.h"
 
 @implementation NAVAppDelegate
@@ -16,15 +16,19 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 
-//    NAVViewController * launch = [[NAVViewController alloc] initWithNibName:nil bundle:nil];
-//    self.window.rootViewController = launch;
+    
+    
+    
+    NAVLaunchViewController * launch = [[NAVLaunchViewController alloc] initWithNibName:nil bundle:nil];
 
+//    UINavigationController * navigationBarController = [[UINavigationController alloc] initWithRootViewController:launch];
     
-    UITableViewController * colorTVC = [[NAVColorsTableViewController alloc] initWithStyle:UITableViewStylePlain];
+    
+    self.window.rootViewController = launch;
+    
+    
+//    [navigationBarController setNavigationBarHidden:YES animated:NO];
 
-    self.window.rootViewController = colorTVC;
-    
-    
     
     
     self.window.backgroundColor = [UIColor whiteColor];

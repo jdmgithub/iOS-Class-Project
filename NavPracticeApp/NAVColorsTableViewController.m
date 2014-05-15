@@ -13,6 +13,8 @@
 @end
 
 @implementation NAVColorsTableViewController
+{
+}
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -32,17 +34,29 @@
     [super viewDidLoad];
     
 
-    UINavigationController * nc = [[UINavigationController alloc] init];
+//    UINavigationController * navigationBarController = [[UINavigationController alloc] initWithNibName:nil bundle:nil];
+//    
+//    navigationController.toolbarHidden = NO;
+//
+//    
+//    [self.view addSubview:navigationBarController.view];
     
-    nc.toolbarHidden= NO;
     
-    UIBarButtonItem * button1 = [[UIBarButtonItem alloc] initWithTitle:@"Tracks" style:UIBarButtonItemStylePlain target:nil action:nil];
     
-    UIBarButtonItem * button2 = [[UIBarButtonItem alloc] initWithTitle:@"Playlists" style:UIBarButtonItemStylePlain target:nil action:nil];
     
-    UIBarButtonItem * flexible = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
     
-    [nc.toolbar setItems:@[flexible, button1, flexible, button2, flexible] animated:YES];
+    
+//    UINavigationController * nc = [[UINavigationController alloc] init];
+    
+//    nc.toolbarHidden= NO;
+    
+//    UIBarButtonItem * button1 = [[UIBarButtonItem alloc] initWithTitle:@"Tracks" style:UIBarButtonItemStylePlain target:nil action:nil];
+//    
+//    UIBarButtonItem * button2 = [[UIBarButtonItem alloc] initWithTitle:@"Playlists" style:UIBarButtonItemStylePlain target:nil action:nil];
+//    
+//    UIBarButtonItem * flexible = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+//    
+//    [nc.toolbar setItems:@[flexible, button1, flexible, button2, flexible] animated:YES];
     
 //    [self.view addSubview:nc];
     

@@ -19,7 +19,7 @@
 		1BF5EC6919242A580067631B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BF5EC5119242A580067631B /* UIKit.framework */; };
 		1BF5EC7119242A580067631B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1BF5EC6F19242A580067631B /* InfoPlist.strings */; };
 		1BF5EC7319242A580067631B /* NavPracticeAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BF5EC7219242A580067631B /* NavPracticeAppTests.m */; };
-		1BF5EC7E19242AB70067631B /* NAVViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BF5EC7D19242AB70067631B /* NAVViewController.m */; };
+		1BF5EC7E19242AB70067631B /* NAVLaunchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BF5EC7D19242AB70067631B /* NAVLaunchViewController.m */; };
 		1BF5EC81192434A50067631B /* NAVColorsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BF5EC80192434A50067631B /* NAVColorsTableViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -50,8 +50,8 @@
 		1BF5EC6E19242A580067631B /* NavPracticeAppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NavPracticeAppTests-Info.plist"; sourceTree = "<group>"; };
 		1BF5EC7019242A580067631B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1BF5EC7219242A580067631B /* NavPracticeAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NavPracticeAppTests.m; sourceTree = "<group>"; };
-		1BF5EC7C19242AB70067631B /* NAVViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAVViewController.h; sourceTree = "<group>"; };
-		1BF5EC7D19242AB70067631B /* NAVViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NAVViewController.m; sourceTree = "<group>"; };
+		1BF5EC7C19242AB70067631B /* NAVLaunchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAVLaunchViewController.h; sourceTree = "<group>"; };
+		1BF5EC7D19242AB70067631B /* NAVLaunchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NAVLaunchViewController.m; sourceTree = "<group>"; };
 		1BF5EC7F192434A50067631B /* NAVColorsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAVColorsTableViewController.h; sourceTree = "<group>"; };
 		1BF5EC80192434A50067631B /* NAVColorsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NAVColorsTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -85,8 +85,8 @@
 			children = (
 				1BF5EC7F192434A50067631B /* NAVColorsTableViewController.h */,
 				1BF5EC80192434A50067631B /* NAVColorsTableViewController.m */,
-				1BF5EC7C19242AB70067631B /* NAVViewController.h */,
-				1BF5EC7D19242AB70067631B /* NAVViewController.m */,
+				1BF5EC7C19242AB70067631B /* NAVLaunchViewController.h */,
+				1BF5EC7D19242AB70067631B /* NAVLaunchViewController.m */,
 				1BF5EC5319242A580067631B /* NavPracticeApp */,
 				1BF5EC6C19242A580067631B /* NavPracticeAppTests */,
 				1BF5EC4C19242A580067631B /* Frameworks */,
@@ -250,7 +250,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1BF5EC7E19242AB70067631B /* NAVViewController.m in Sources */,
+				1BF5EC7E19242AB70067631B /* NAVLaunchViewController.m in Sources */,
 				1BF5EC5E19242A580067631B /* NAVAppDelegate.m in Sources */,
 				1BF5EC5A19242A580067631B /* main.m in Sources */,
 				1BF5EC81192434A50067631B /* NAVColorsTableViewController.m in Sources */,
@@ -450,6 +450,7 @@
 				1BF5EC7819242A580067631B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1BF5EC7919242A580067631B /* Build configuration list for PBXNativeTarget "NavPracticeAppTests" */ = {
 			isa = XCConfigurationList;
@@ -458,6 +459,7 @@
 				1BF5EC7B19242A580067631B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
