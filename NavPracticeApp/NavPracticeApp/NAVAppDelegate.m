@@ -21,14 +21,14 @@
     
     NAVLaunchViewController * launch = [[NAVLaunchViewController alloc] initWithNibName:nil bundle:nil];
 
-//    UINavigationController * navigationBarController = [[UINavigationController alloc] initWithRootViewController:launch];
     
+    
+    
+    //    UINavigationController * navigationBarController = [[UINavigationController alloc] initWithRootViewController:launch];
+    //    [navigationBarController setNavigationBarHidden:YES animated:NO];
+
     
     self.window.rootViewController = launch;
-    
-    
-//    [navigationBarController setNavigationBarHidden:YES animated:NO];
-
     
     
     self.window.backgroundColor = [UIColor whiteColor];
