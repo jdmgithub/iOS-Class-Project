@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NAVColorsTableViewController : UITableViewController
+@interface NAVTableViewController : UITableViewController
 
 @end

@@ -8,7 +8,7 @@
 
 #import "NAVAppDelegate.h"
 #import "NAVLaunchViewController.h"
-#import "NAVColorsTableViewController.h"
+#import "NAVTableViewController.h"
 
 @implementation NAVAppDelegate
 
@@ -18,17 +18,39 @@
 
     
     
-    
+
     NAVLaunchViewController * launch = [[NAVLaunchViewController alloc] initWithNibName:nil bundle:nil];
 
+    UINavigationController * nc = [[UINavigationController alloc] initWithRootViewController:launch];
+
     
+    
+    //UINavigationController * nc = [[UINavigationController alloc] init];
+
+    
+    
+    
+//    [nc setNavigationBarHidden:YES];
+
     
     
     //    UINavigationController * navigationBarController = [[UINavigationController alloc] initWithRootViewController:launch];
     //    [navigationBarController setNavigationBarHidden:YES animated:NO];
 
     
-    self.window.rootViewController = launch;
+    
+//    nc.toolbarHidden= NO;
+//
+//    UIBarButtonItem * button1 = [[UIBarButtonItem alloc] initWithTitle:@"Colors" style:UIBarButtonItemStylePlain target:nil action:nil];
+////
+//    UIBarButtonItem * button2 = [[UIBarButtonItem alloc] initWithTitle:@"Shapes" style:UIBarButtonItemStylePlain target:nil action:nil];
+////
+//    UIBarButtonItem * flexible = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+////
+//    [nc.toolbar setItems:@[flexible, button1, flexible, button2, flexible] animated:YES];
+//    
+    
+    self.window.rootViewController = nc;
     
     
     self.window.backgroundColor = [UIColor whiteColor];

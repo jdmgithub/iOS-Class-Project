@@ -7,7 +7,8 @@
 //
 
 #import "NAVLaunchViewController.h"
-#import "NAVColorsTableViewController.h"
+#import "NAVTableViewController.h"
+#import "NAVVC.h"
 
 @interface NAVLaunchViewController ()
 
@@ -15,6 +16,8 @@
     
     UINavigationController * nc;
     UITableViewController * colorTVC;
+    UIBarButtonItem * toolbarButton1;
+    UIBarButtonItem * toolbarButton2;
     
     
 }
@@ -50,10 +53,6 @@
         [self.view addSubview:launchButton];
         
         
-        
-        
-        
-        
     }
     return self;
 }
@@ -61,48 +60,22 @@
 -(void)launchTableView
 
 {
-    colorTVC = [[NAVColorsTableViewController alloc] initWithStyle:UITableViewStylePlain];
+    colorTVC = [[NAVTableViewController alloc] initWithStyle:UITableViewStylePlain];
     
     nc = [[UINavigationController alloc] initWithRootViewController: colorTVC];
-    
-    [self presentViewController:nc animated:NO completion:nil];
-    
-    
-    nc.toolbarHidden = NO;
-    
-    UIBarButtonItem * button1 = [[UIBarButtonItem alloc] initWithTitle:@"Numbers" style:UIBarButtonItemStylePlain target:nil action:nil];
-    
-    UIBarButtonItem * button2 = [[UIBarButtonItem alloc] initWithTitle:@"Shapes" style:UIBarButtonItemStylePlain target:nil action:nil];
-    
-    UIBarButtonItem * flexible = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
-    
-    [nc.toolbar setItems:@[flexible, button1, flexible, button2, flexible] animated:YES];
-    
-//    [self.view addSubview:nc.view];
+
     
     
+//   [self.navigationController presentViewController:nc animated:YES completion:nil];
+    [self.navigationController pushViewController:colorTVC animated:YES];
+
+
     
-    
-    
-    
+    self.navigationController.toolbarHidden = NO;
     
     
     //STARS AND MOONS!  ADD THE VIEW!!!!
     //    [self.view addSubview:colorTVC.view];
-    
-    
-    
-    
-    
-    //
-    //    UINavigationController * navigationBarController = [[UINavigationController alloc] initWithNibName:nil bundle:nil];
-    //
-    //    [self.view addSubview:navigationBarController.view];
-    //
-    //
-    //
-    //    [navigationBarController.view addSubview:colorTVC.view];
-    
     
     
 }
@@ -112,7 +85,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+
     
     
 }

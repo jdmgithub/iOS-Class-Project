@@ -6,14 +6,23 @@
 //  Copyright (c) 2014 Jeffery Moulds. All rights reserved.
 //
 
-#import "NAVColorsTableViewController.h"
+#import "NAVTableViewController.h"
+#import "NAVLaunchViewController.h"
 
-@interface NAVColorsTableViewController ()
+@interface NAVTableViewController ()
+{
+
+
+}
+
 
 @end
 
-@implementation NAVColorsTableViewController
+@implementation NAVTableViewController
 {
+
+
+
 }
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -33,33 +42,17 @@
 {
     [super viewDidLoad];
     
-
-//    UINavigationController * navigationBarController = [[UINavigationController alloc] initWithNibName:nil bundle:nil];
-//    
-//    navigationController.toolbarHidden = NO;
-//
-//    
-//    [self.view addSubview:navigationBarController.view];
+    
+    UIBarButtonItem * numbersButton = [[UIBarButtonItem alloc] initWithTitle:@"Numbers" style:UIBarButtonItemStylePlain target:nil action:nil];
+    
+    UIBarButtonItem * shapesButton = [[UIBarButtonItem alloc] initWithTitle:@"Shapes" style:UIBarButtonItemStylePlain target:nil action:nil];
+    
+    UIBarButtonItem * flexible = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+    
+    [self setToolbarItems:@[flexible, numbersButton, flexible, shapesButton, flexible] animated:YES];
     
     
-    
-    
-    
-    
-//    UINavigationController * nc = [[UINavigationController alloc] init];
-    
-//    nc.toolbarHidden= NO;
-    
-//    UIBarButtonItem * button1 = [[UIBarButtonItem alloc] initWithTitle:@"Tracks" style:UIBarButtonItemStylePlain target:nil action:nil];
-//    
-//    UIBarButtonItem * button2 = [[UIBarButtonItem alloc] initWithTitle:@"Playlists" style:UIBarButtonItemStylePlain target:nil action:nil];
-//    
-//    UIBarButtonItem * flexible = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
-//    
-//    [nc.toolbar setItems:@[flexible, button1, flexible, button2, flexible] animated:YES];
-    
-//    [self.view addSubview:nc];
-    
+     
     
     
     

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B2F79F119290A1A00226121 /* NAVTableViewCellColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B2F79F019290A1A00226121 /* NAVTableViewCellColors.m */; };
+		1B2F79F419290A4300226121 /* NAVTableViewCellNumbers.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B2F79F319290A4300226121 /* NAVTableViewCellNumbers.m */; };
+		1B2F79F71929160C00226121 /* NAVVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B2F79F61929160C00226121 /* NAVVC.m */; };
 		1BF5EC4E19242A580067631B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BF5EC4D19242A580067631B /* Foundation.framework */; };
 		1BF5EC5019242A580067631B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BF5EC4F19242A580067631B /* CoreGraphics.framework */; };
 		1BF5EC5219242A580067631B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BF5EC5119242A580067631B /* UIKit.framework */; };
@@ -20,7 +23,7 @@
 		1BF5EC7119242A580067631B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1BF5EC6F19242A580067631B /* InfoPlist.strings */; };
 		1BF5EC7319242A580067631B /* NavPracticeAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BF5EC7219242A580067631B /* NavPracticeAppTests.m */; };
 		1BF5EC7E19242AB70067631B /* NAVLaunchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BF5EC7D19242AB70067631B /* NAVLaunchViewController.m */; };
-		1BF5EC81192434A50067631B /* NAVColorsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BF5EC80192434A50067631B /* NAVColorsTableViewController.m */; };
+		1BF5EC81192434A50067631B /* NAVTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BF5EC80192434A50067631B /* NAVTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +37,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1B2F79EF19290A1A00226121 /* NAVTableViewCellColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAVTableViewCellColors.h; sourceTree = "<group>"; };
+		1B2F79F019290A1A00226121 /* NAVTableViewCellColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NAVTableViewCellColors.m; sourceTree = "<group>"; };
+		1B2F79F219290A4300226121 /* NAVTableViewCellNumbers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAVTableViewCellNumbers.h; sourceTree = "<group>"; };
+		1B2F79F319290A4300226121 /* NAVTableViewCellNumbers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NAVTableViewCellNumbers.m; sourceTree = "<group>"; };
+		1B2F79F51929160C00226121 /* NAVVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAVVC.h; sourceTree = "<group>"; };
+		1B2F79F61929160C00226121 /* NAVVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NAVVC.m; sourceTree = "<group>"; };
 		1BF5EC4A19242A580067631B /* NavPracticeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NavPracticeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BF5EC4D19242A580067631B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1BF5EC4F19242A580067631B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -52,8 +61,8 @@
 		1BF5EC7219242A580067631B /* NavPracticeAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NavPracticeAppTests.m; sourceTree = "<group>"; };
 		1BF5EC7C19242AB70067631B /* NAVLaunchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAVLaunchViewController.h; sourceTree = "<group>"; };
 		1BF5EC7D19242AB70067631B /* NAVLaunchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NAVLaunchViewController.m; sourceTree = "<group>"; };
-		1BF5EC7F192434A50067631B /* NAVColorsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAVColorsTableViewController.h; sourceTree = "<group>"; };
-		1BF5EC80192434A50067631B /* NAVColorsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NAVColorsTableViewController.m; sourceTree = "<group>"; };
+		1BF5EC7F192434A50067631B /* NAVTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAVTableViewController.h; sourceTree = "<group>"; };
+		1BF5EC80192434A50067631B /* NAVTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NAVTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,13 +89,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1B2F79F819291AB300226121 /* TVCells */ = {
+			isa = PBXGroup;
+			children = (
+				1B2F79F219290A4300226121 /* NAVTableViewCellNumbers.h */,
+				1B2F79F319290A4300226121 /* NAVTableViewCellNumbers.m */,
+				1B2F79EF19290A1A00226121 /* NAVTableViewCellColors.h */,
+				1B2F79F019290A1A00226121 /* NAVTableViewCellColors.m */,
+			);
+			name = TVCells;
+			sourceTree = "<group>";
+		};
+		1B2F79F919291ADD00226121 /* TableVCs */ = {
+			isa = PBXGroup;
+			children = (
+				1B2F79F51929160C00226121 /* NAVVC.h */,
+				1B2F79F61929160C00226121 /* NAVVC.m */,
+				1BF5EC7F192434A50067631B /* NAVTableViewController.h */,
+				1BF5EC80192434A50067631B /* NAVTableViewController.m */,
+				1BF5EC7C19242AB70067631B /* NAVLaunchViewController.h */,
+				1BF5EC7D19242AB70067631B /* NAVLaunchViewController.m */,
+			);
+			name = TableVCs;
+			sourceTree = "<group>";
+		};
 		1BF5EC4119242A580067631B = {
 			isa = PBXGroup;
 			children = (
-				1BF5EC7F192434A50067631B /* NAVColorsTableViewController.h */,
-				1BF5EC80192434A50067631B /* NAVColorsTableViewController.m */,
-				1BF5EC7C19242AB70067631B /* NAVLaunchViewController.h */,
-				1BF5EC7D19242AB70067631B /* NAVLaunchViewController.m */,
+				1B2F79F919291ADD00226121 /* TableVCs */,
+				1B2F79F819291AB300226121 /* TVCells */,
 				1BF5EC5319242A580067631B /* NavPracticeApp */,
 				1BF5EC6C19242A580067631B /* NavPracticeAppTests */,
 				1BF5EC4C19242A580067631B /* Frameworks */,
@@ -250,10 +281,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B2F79F71929160C00226121 /* NAVVC.m in Sources */,
 				1BF5EC7E19242AB70067631B /* NAVLaunchViewController.m in Sources */,
+				1B2F79F119290A1A00226121 /* NAVTableViewCellColors.m in Sources */,
+				1B2F79F419290A4300226121 /* NAVTableViewCellNumbers.m in Sources */,
 				1BF5EC5E19242A580067631B /* NAVAppDelegate.m in Sources */,
 				1BF5EC5A19242A580067631B /* main.m in Sources */,
-				1BF5EC81192434A50067631B /* NAVColorsTableViewController.m in Sources */,
+				1BF5EC81192434A50067631B /* NAVTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
