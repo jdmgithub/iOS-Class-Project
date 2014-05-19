@@ -67,9 +67,10 @@
     
     
 //   [self.navigationController presentViewController:nc animated:YES completion:nil];
+    
     [self.navigationController pushViewController:colorTVC animated:YES];
 
-
+    self.navigationController.navigationBarHidden = NO;
     
     self.navigationController.toolbarHidden = NO;
     

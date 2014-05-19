@@ -12,6 +12,9 @@
 @interface NAVTableViewController ()
 {
 
+    NSMutableArray * colorsList;
+    NSMutableArray * numbersList;
+    
 
 }
 
@@ -21,6 +24,7 @@
 @implementation NAVTableViewController
 {
 
+    
 
 
 }
@@ -31,7 +35,9 @@
     if (self) {
         
         
-        self.view.backgroundColor = [UIColor yellowColor];
+        
+        self.view.backgroundColor = [UIColor whiteColor];
+        
         
         
     }
@@ -41,15 +47,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+   
+
     
     UIBarButtonItem * numbersButton = [[UIBarButtonItem alloc] initWithTitle:@"Numbers" style:UIBarButtonItemStylePlain target:nil action:nil];
     
-    UIBarButtonItem * shapesButton = [[UIBarButtonItem alloc] initWithTitle:@"Shapes" style:UIBarButtonItemStylePlain target:nil action:nil];
+    UIBarButtonItem * colorsButton = [[UIBarButtonItem alloc] initWithTitle:@"Colors" style:UIBarButtonItemStylePlain target:nil action:nil];
     
     UIBarButtonItem * flexible = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
     
-    [self setToolbarItems:@[flexible, numbersButton, flexible, shapesButton, flexible] animated:YES];
+    [self setToolbarItems:@[flexible, numbersButton, flexible, colorsButton, flexible] animated:YES];
     
     
      
