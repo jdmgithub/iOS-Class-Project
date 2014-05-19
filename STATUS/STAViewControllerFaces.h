@@ -10,4 +10,9 @@
 
 @interface STAViewControllerFaces : UIViewController
 
+@property (nonatomic) NSArray * colors;
+@property (nonatomic) NSString * color;
+
+- (void)setColorWithIndex:(int)index;
+
 @end

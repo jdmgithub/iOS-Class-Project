@@ -10,4 +10,11 @@
 
 @interface STAViewControllerShare : UIViewController
 
+
+
+@property (nonatomic) NSArray * faces;
+@property (nonatomic) NSString * face;
+
+- (void)setfaceWithIndex:(int)index;
+
 @end

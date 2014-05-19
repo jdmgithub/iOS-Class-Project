@@ -13,6 +13,16 @@
 @end
 
 @implementation STAViewControllerShare
+{
+    BOOL twitterIsSelected;
+    BOOL googleIsSelected;
+    BOOL facebookIsSelected;
+    
+    UIButton * googleButton;
+    UIButton * twitterButton;
+    UIButton * facebookButton;
+    
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -28,6 +38,38 @@
     [super viewDidLoad];
 
 
+    googleButton = [[UIButton alloc] initWithFrame:CGRectMake((SCREEN_WIDTH / 2) - 24, 75, 48, 48)];
+
+    [googleButton setImage:[UIImage imageNamed:@"sm_google_g.png"] forState:UIControlStateNormal];
+    [googleButton addTarget:self action:@selector(googleClick) forControlEvents:UIControlEventTouchUpInside];
+    
+    // does not work
+//    [googleButton setImage:[UIImage imageNamed:@"sM_google.png"] forState:UIControlStateSelected];
+
+//    UIImage * grayGoogle = [UIImage imageNamed:@"sm_google_g.png"];
+//    [googleButton setImage:grayGoogle forState:UIControlStateNormal];
+    
+    [self.view addSubview:googleButton];
+    
+
+    twitterButton = [[UIButton alloc] initWithFrame:CGRectMake((SCREEN_WIDTH / 2) - 92, 75, 48, 48)];
+    [twitterButton setImage:[UIImage imageNamed:@"sm_twitter_g.png"] forState:UIControlStateNormal];
+    [twitterButton addTarget:self action:@selector(twitterClick) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:twitterButton];
+    
+    
+    facebookButton = [[UIButton alloc] initWithFrame:CGRectMake((SCREEN_WIDTH / 2) + 45, 75, 48, 48)];
+    [facebookButton setImage:[UIImage imageNamed:@"sm_facebook_g.png"] forState:UIControlStateNormal];
+    [facebookButton addTarget:self action:@selector(facebookClick) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:facebookButton];
+    
+    
+    
+    
+    
+    
+    
+    
     UIButton * bigSmile = [[UIButton alloc] initWithFrame:CGRectMake((SCREEN_WIDTH / 2) - 96, (SCREEN_HEIGHT /2) - 96, 192, 192)];
     UIImage * bigSmileImage = [UIImage imageNamed:@"big_smilie.png"];
     [bigSmile setImage:bigSmileImage forState:UIControlStateNormal];
@@ -45,12 +87,62 @@
 }
 
 
+- (void)setfaceWithIndex:(int)index;
+{
+
+
+}
+
+
+
+
 -(void)share
 
 {
 
 
 }
+
+- (void)googleClick
+{
+    // change BOOL value then runs if conditional
+    
+    googleIsSelected = !googleIsSelected;
+    if (googleIsSelected == YES) {
+        [googleButton setImage:[UIImage imageNamed:@"sm_google.png"] forState:UIControlStateNormal];
+    }
+    if (googleIsSelected == NO) {
+        [googleButton setImage:[UIImage imageNamed:@"sM_google_g.png"] forState:UIControlStateNormal];
+    }
+}
+
+- (void)twitterClick
+{
+    twitterIsSelected = !twitterIsSelected;
+    if (twitterIsSelected == YES) {
+        [twitterButton setImage:[UIImage imageNamed:@"sm_twitter.png"] forState:UIControlStateNormal];
+    }
+    if (twitterIsSelected == NO) {
+        [twitterButton setImage:[UIImage imageNamed:@"sm_twitter_g.png"] forState:UIControlStateNormal];
+    }
+}
+
+- (void)facebookClick
+{    
+    facebookIsSelected = !facebookIsSelected;
+    if (facebookIsSelected == YES) {
+        [facebookButton setImage:[UIImage imageNamed:@"sm_facebook.png"] forState:UIControlStateNormal];
+    }
+    if (facebookIsSelected == NO) {
+        [facebookButton setImage:[UIImage imageNamed:@"sm_facebook_g.png"] forState:UIControlStateNormal];
+    }
+}
+
+
+
+
+
+
 
 
 
