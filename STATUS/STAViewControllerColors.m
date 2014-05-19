@@ -17,6 +17,7 @@
     STAViewControllerFaces * facesVC;
     
     UIImage * selectionSquares;
+    UIImageView * selectedFrame;
     
     int chosenColorIndex;
 
@@ -43,7 +44,10 @@
 
         self.navigationController.navigationBarHidden = YES;
 
-
+        
+        selectedFrame = [[UIImageView alloc] initWithFrame:CGRectMake(-6, -6, 69, 69)];
+        selectedFrame.image = [UIImage imageNamed:@"squares.png"];
+        
         
     }
     return self;
@@ -143,6 +147,8 @@
 {
     NSLog(@"%d", (int)sender.tag);
     chosenColorIndex = (int)sender.tag;
+    [sender insertSubview:selectedFrame atIndex:0];
+    
 }
 
 
