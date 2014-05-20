@@ -75,74 +75,13 @@
     
     self.face = self.faces[self.colorIndex][index];
 //    self.redFace = self.redFaces[index];
-    
 //    NSLog(@"Face Tag: %@",self.face);
+    
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-//    
-//    if ([self.face isEqualToString:@"yellow_1.png"])
-//    {imageTitle = @"yellow_1.png";}
-//
-//    if ([self.face isEqualToString:@"yellow_2.png"])
-//    {imageTitle = @"yellow_2.png";}
-//
-//    if ([self.face isEqualToString:@"yellow_3.png"])
-//    {imageTitle = @"yellow_3.png";}
-//
-//    if ([self.face isEqualToString:@"yellow_4.png"])
-//    {imageTitle = @"yellow_4.png";}
-//
-//    if ([self.face isEqualToString:@"yellow_5.png"])
-//    {imageTitle = @"yellow_5.png";}
-//
-//    if ([self.face isEqualToString:@"yellow_6.png"])
-//    {imageTitle = @"yellow_6.png";}
-//
-//    if ([self.face isEqualToString:@"yellow_7.png"])
-//    {imageTitle = @"yellow_7.png";}
-//
-//    if ([self.face isEqualToString:@"yellow_8.png"])
-//    {imageTitle = @"yellow_8.png";}
-//
-//    if ([self.face isEqualToString:@"yellow_9.png"])
-//    {imageTitle = @"yellow_9.png";}
-
-    
-// Set Up Ifs for Red Images:
-//    if ([self.redFace isEqualToString:@"angry_1.png"])
-//    {imageTitle = @"angry_1.png";}
-//    
-//    if ([self.redFace isEqualToString:@"angry_2.png"])
-//    {imageTitle = @"angry_2.png";}
-//    
-//    if ([self.redFace isEqualToString:@"angry_3.png"])
-//    {imageTitle = @"angry_3.png";}
-//    
-//    if ([self.redFace isEqualToString:@"angry_4.png"])
-//    {imageTitle = @"angry_4.png";}
-//    
-//    if ([self.redFace isEqualToString:@"angry_5.png"])
-//    {imageTitle = @"angry_5.png";}
-//    
-//    if ([self.redFace isEqualToString:@"angry_6.png"])
-//    {imageTitle = @"angry_6.png";}
-//    
-//    if ([self.redFace isEqualToString:@"angry_7.png"])
-//    {imageTitle = @"angry_7.png";}
-//    
-//    if ([self.redFace isEqualToString:@"angry_8.png"])
-//    {imageTitle = @"angry_8.png";}
-//    
-//    if ([self.redFace isEqualToString:@"angry_9.png"])
-//    {imageTitle = @"angry_9.png";}
-
-    
-//    NSString * baseString = [NSString stringWithFormat:@"%@", imageTitle];
-    
     
     imageTitle = self.face;
     
@@ -197,7 +136,7 @@
 {
     NSLog(@"Posted to Twitter");
 
-    NSString *urlString = [NSString stringWithFormat:imageTitle];
+    NSString *urlString = imageTitle;
     NSURL *url = [NSURL URLWithString:[urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
     
     NSLog(@"%@", url);
@@ -218,7 +157,6 @@
     NSLog(@"Posted to Facebook");
     
 }
-
 
 
 //- (void)googleClick
@@ -258,39 +196,23 @@
 
 
 
-
 -(void)share
 
 {
     if (twitterIsSelected == YES) {
         [self postTweet];
     };
-    
-    
     if (facebookIsSelected == YES) {
         [self postFacebook];
     }
-    
 }
-
-
 
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
