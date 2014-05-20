@@ -22,21 +22,87 @@
     UIButton * twitterButton;
     UIButton * facebookButton;
     
+    NSString * imageTitle;
+    NSString * titleString;
+    
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        
+
+//        self.faces = @[@"yellow",@"red"];
+
+        self.faces = @[@"yellow_1.png",@"yellow_2.png",@"yellow_3.png",@"yellow_4.png",@"yellow_5.png",@"yellow_6.png",@"yellow_7.png",@"yellow_8.png",@"yellow_9.png"];
+
+        
+        
     }
     return self;
+}
+
+- (void)setFaceWithIndex:(int)index
+{
+    
+    self.face = self.faces[index];
+    
+//    NSLog(@"Face Tag: %@",self.face);
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 
+    
+    if ([self.face isEqualToString:@"yellow_1.png"])
+    {imageTitle = @"yellow_1.png";}
+
+    if ([self.face isEqualToString:@"yellow_2.png"])
+    {imageTitle = @"yellow_2.png";}
+
+    if ([self.face isEqualToString:@"yellow_3.png"])
+    {imageTitle = @"yellow_3.png";}
+
+    if ([self.face isEqualToString:@"yellow_4.png"])
+    {imageTitle = @"yellow_4.png";}
+
+    if ([self.face isEqualToString:@"yellow_5.png"])
+    {imageTitle = @"yellow_5.png";}
+
+    if ([self.face isEqualToString:@"yellow_6.png"])
+    {imageTitle = @"yellow_6.png";}
+
+    if ([self.face isEqualToString:@"yellow_7.png"])
+    {imageTitle = @"yellow_7.png";}
+
+    if ([self.face isEqualToString:@"yellow_8.png"])
+    {imageTitle = @"yellow_8.png";}
+
+    if ([self.face isEqualToString:@"yellow_9.png"])
+    {imageTitle = @"yellow_9.png";}
+
+    
+    
+    
+    NSString * baseString = [NSString stringWithFormat:@"%@", imageTitle];
+
+    
+    
+    UIButton * bigSmile = [[UIButton alloc] initWithFrame:CGRectMake((SCREEN_WIDTH / 2) - 96, (SCREEN_HEIGHT /2) - 96, 192, 192)];
+    UIImage * bigSmileImage = [UIImage imageNamed:imageTitle];
+    [bigSmile setImage:bigSmileImage forState:UIControlStateNormal];
+    [self.view addSubview:bigSmile];
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
     googleButton = [[UIButton alloc] initWithFrame:CGRectMake((SCREEN_WIDTH / 2) - 24, 75, 48, 48)];
 
@@ -63,17 +129,7 @@
     [facebookButton addTarget:self action:@selector(facebookClick) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:facebookButton];
     
-    
-    
-    
-    
-    
-    
-    
-    UIButton * bigSmile = [[UIButton alloc] initWithFrame:CGRectMake((SCREEN_WIDTH / 2) - 96, (SCREEN_HEIGHT /2) - 96, 192, 192)];
-    UIImage * bigSmileImage = [UIImage imageNamed:@"big_smilie.png"];
-    [bigSmile setImage:bigSmileImage forState:UIControlStateNormal];
-    [self.view addSubview:bigSmile];
+
 
 
 
@@ -87,11 +143,7 @@
 }
 
 
-- (void)setfaceWithIndex:(int)index;
-{
 
-
-}
 
 
 

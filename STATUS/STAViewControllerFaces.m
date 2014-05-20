@@ -13,11 +13,13 @@
 
 {
     UINavigationController * nc;
-    UIViewController * shareVC;
+    STAViewControllerShare * shareVC;
     
     NSString * imageTitle;
     NSString * titleString;
 
+    UIImageView * selectedFrame;
+    
     int chosenFaceIndex;
 
     
@@ -32,6 +34,11 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        
+        selectedFrame = [[UIImageView alloc] initWithFrame:CGRectMake(-6, -6, 69, 69)];
+        selectedFrame.image = [UIImage imageNamed:@"squares.png"];
+
+        
         
         self.colors = @[@"smilies",@"angry"];
     }
@@ -95,63 +102,71 @@
     UIImage *smiles_1 = [UIImage imageNamed:titleString1];
     [A1 setImage:smiles_1 forState:UIControlStateNormal];
     A1.tag = 0;
-    [A1 setImage:smiles_1 forState:UIControlStateNormal];
+    [A1 addTarget:self action:@selector(faceSelection:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:A1];
     
     
     UIButton * B1 = [[UIButton alloc] initWithFrame:CGRectMake(128, 192, 56, 56)];
     UIImage *smiles_2 = [UIImage imageNamed:titleString2];
-    [A1 setImage:smiles_2 forState:UIControlStateNormal];
-    A1.tag = 1;
     [B1 setImage:smiles_2 forState:UIControlStateNormal];
+    B1.tag = 1;
+    [B1 addTarget:self action:@selector(faceSelection:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:B1];
     
     
     UIButton * C1 = [[UIButton alloc] initWithFrame:CGRectMake(192, 192, 56, 56)];
     UIImage *smiles_3 = [UIImage imageNamed:titleString3];
-    [A1 setImage:smiles_3 forState:UIControlStateNormal];
-    A1.tag = 2;
     [C1 setImage:smiles_3 forState:UIControlStateNormal];
+    C1.tag = 2;
+    [C1 addTarget:self action:@selector(faceSelection:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:C1];
     
     // ROW 2
     UIButton * A2 = [[UIButton alloc] initWithFrame:CGRectMake(64, 256, 56, 56)];
     UIImage *smiles_4 = [UIImage imageNamed:titleString4];
-    [A1 setImage:smiles_4 forState:UIControlStateNormal];
-    A1.tag = 3;
     [A2 setImage:smiles_4 forState:UIControlStateNormal];
+    A2.tag = 3;
+    [A2 addTarget:self action:@selector(faceSelection:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:A2];
     
     
     UIButton * B2 = [[UIButton alloc] initWithFrame:CGRectMake(128, 256, 56, 56)];
     UIImage *smiles_5 = [UIImage imageNamed:titleString5];
-    [A1 setImage:smiles_4 forState:UIControlStateNormal];
-    A1.tag = 4;
     [B2 setImage:smiles_5 forState:UIControlStateNormal];
+    B2.tag = 4;
+    [B2 addTarget:self action:@selector(faceSelection:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:B2];
     
     
     UIButton * C2 = [[UIButton alloc] initWithFrame:CGRectMake(192, 256, 56, 56)];
     UIImage *smiles_6 = [UIImage imageNamed:titleString6];
     [C2 setImage:smiles_6 forState:UIControlStateNormal];
+    C2.tag = 5;
+    [C2 addTarget:self action:@selector(faceSelection:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:C2];
     
     // ROW 3
     UIButton * A3 = [[UIButton alloc] initWithFrame:CGRectMake(64, 320, 56, 56)];
     UIImage *smiles_7 = [UIImage imageNamed:titleString7];
     [A3 setImage:smiles_7 forState:UIControlStateNormal];
+    A3.tag = 6;
+    [A3 addTarget:self action:@selector(faceSelection:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:A3];
     
     
     UIButton * B3 = [[UIButton alloc] initWithFrame:CGRectMake(128, 320, 56, 56)];
     UIImage *smiles_8 = [UIImage imageNamed:titleString8];
     [B3 setImage:smiles_8 forState:UIControlStateNormal];
+    B3.tag = 7;
+    [B3 addTarget:self action:@selector(faceSelection:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:B3];
     
     
     UIButton * C3 = [[UIButton alloc] initWithFrame:CGRectMake(192, 320, 56, 56)];
     UIImage *smiles_9 = [UIImage imageNamed:titleString9];
     [C3 setImage:smiles_9 forState:UIControlStateNormal];
+    C3.tag = 8;
+    [C3 addTarget:self action:@selector(faceSelection:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:C3];
 
 
@@ -165,11 +180,24 @@
 
 }
 
+-(void)faceSelection:(UIButton *)sender
+{
+
+    NSLog(@"Faces: %d", (int)sender.tag);
+    chosenFaceIndex = (int)sender.tag;
+    [sender insertSubview:selectedFrame atIndex:0];
+
+
+}
+
 
 -(void)launchShareView
 {
-
+    
     shareVC = [[STAViewControllerShare alloc] initWithNibName:nil bundle:nil];
+    
+    [shareVC setFaceWithIndex:chosenFaceIndex];
+    
     nc = [[UINavigationController alloc] initWithRootViewController: shareVC];
     [self.navigationController pushViewController:shareVC animated:NO];
     
