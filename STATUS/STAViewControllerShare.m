@@ -37,7 +37,7 @@
 
         self.faces = @[@"yellow_1.png",@"yellow_2.png",@"yellow_3.png",@"yellow_4.png",@"yellow_5.png",@"yellow_6.png",@"yellow_7.png",@"yellow_8.png",@"yellow_9.png"];
 
-        
+        self.redFaces = @[@"yellow_6.png"];
         
     }
     return self;
@@ -47,6 +47,7 @@
 {
     
     self.face = self.faces[index];
+    self.redFace = self.redFaces[index];
     
 //    NSLog(@"Face Tag: %@",self.face);
 }
@@ -85,8 +86,12 @@
 
     
     
+    if ([self.redFace isEqualToString:@"yellow_6.png"])
+    {imageTitle = @"squares.png";}
     
-    NSString * baseString = [NSString stringWithFormat:@"%@", imageTitle];
+    
+    
+//    NSString * baseString = [NSString stringWithFormat:@"%@", imageTitle];
 
     
     
