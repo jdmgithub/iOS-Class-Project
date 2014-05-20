@@ -196,7 +196,12 @@
     
     shareVC = [[STAViewControllerShare alloc] initWithNibName:nil bundle:nil];
     
+    
+    // get the index of self.color in self.colors
+    shareVC.colorIndex = (int)[self.colors indexOfObject:self.color];
+    
     [shareVC setFaceWithIndex:chosenFaceIndex];
+    
     
     nc = [[UINavigationController alloc] initWithRootViewController: shareVC];
     [self.navigationController pushViewController:shareVC animated:NO];

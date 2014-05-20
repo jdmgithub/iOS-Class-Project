@@ -1,47 +1,26 @@
 //
-//  STAAppDelegate.m
-//  STATUS
+//  TPAAppDelegate.m
+//  TwitterPost
 //
-//  Created by Jeffery Moulds on 5/19/14.
+//  Created by Jeffery Moulds on 5/20/14.
 //  Copyright (c) 2014 Jeffery Moulds. All rights reserved.
 //
 
-#import "STAAppDelegate.h"
+#import "TPAAppDelegate.h"
+#import "TPAViewController.h"
 
-#import "STAViewControllerColors.h"
-#import "STTwitter.h"
-
-@implementation STAAppDelegate
+@implementation TPAAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 
-    STAViewControllerColors * colorsView = [[STAViewControllerColors alloc] initWithNibName:nil bundle:nil];
     
-    UINavigationController * nc = [[UINavigationController alloc] initWithRootViewController:colorsView];
     
-
-    
-    STTwitterAPI * twitter = [STTwitterAPI twitterAPIOSWithFirstAccount];
-    
-    [twitter verifyCredentialsWithSuccessBlock:^(NSString *username) {
-        
-        NSLog(@"%@", username);
-        
-    } errorBlock:^(NSError *error) {
-        
-        NSLog(@"%@", error.userInfo);
-        
-    }];
-    
+    self.window.rootViewController = [[TPAViewController alloc] init];
 
     
     
-    self.window.rootViewController = nc;
-    
-    [nc setNavigationBarHidden:YES];
-
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;

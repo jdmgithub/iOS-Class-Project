@@ -12,9 +12,10 @@
 
 @property (nonatomic) NSArray * faces;
 @property (nonatomic) NSString * face;
+@property (nonatomic) int colorIndex;
 
-@property (nonatomic) NSArray * redFaces;
-@property (nonatomic) NSString * redFace;
+//@property (nonatomic) NSArray * redFaces;
+//@property (nonatomic) NSString * redFace;
 
 
 - (void)setFaceWithIndex:(int)index;
