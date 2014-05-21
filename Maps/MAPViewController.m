@@ -103,6 +103,8 @@
     myMapView = [[MKMapView alloc] initWithFrame:self.view.frame];
     [self.view addSubview:myMapView];
     myMapView.delegate = self;
+    
+    
 
 }
 
