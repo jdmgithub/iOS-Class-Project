@@ -8,8 +8,10 @@
 
 #import "STAViewControllerShare.h"
 #import "STTwitter.h"
+#import <CoreLocation/CoreLocation.h>
 
-@interface STAViewControllerShare ()
+
+@interface STAViewControllerShare () <CLLocationManagerDelegate>
 
 @end
 
@@ -27,8 +29,15 @@
     NSString * imageTitle;
     NSString * titleString;
     
+    UIImage * bigSmileImage;
+    
     STTwitterAPI * twitter;
 
+    CLLocationManager * lManager;
+    CLLocation * currentLocation;
+    
+    NSString * locationLat;
+    NSString * locationLong;
     
 }
 
@@ -65,8 +74,78 @@
             ]
         ];
     }
+    
+    
+    lManager = [[CLLocationManager alloc] init];
+    
+    lManager.delegate = self;
+    
+    lManager.distanceFilter = 1000;
+    
+    //        lManager.desiredAccuracy = kCLLocationAccuracyKilometer;
+    
+    [lManager startUpdatingLocation];
+
+// twitter Login
+    twitter = [STTwitterAPI twitterAPIOSWithFirstAccount];
+    
+    [twitter verifyCredentialsWithSuccessBlock:^(NSString *username)
+     {
+         NSLog(@"%@", username);
+         
+     } errorBlock:^(NSError *error) {
+         
+         NSLog(@"%@", error.userInfo);
+     }];
+    
+    
+    
+    
     return self;
 }
+
+
+//- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
+//{
+//    currentLocation = newLocation;
+//    NSLog(@"%@", currentLocation);
+//}
+
+
+
+-(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
+{
+    
+
+    currentLocation = [locations objectAtIndex:0];
+    [lManager stopUpdatingLocation];
+    
+    
+        CLGeocoder * geoCoder = [[CLGeocoder alloc] init];
+        
+        [geoCoder reverseGeocodeLocation:currentLocation completionHandler:^(NSArray *placemarks, NSError *error) {
+
+ 
+            CLPlacemark * placemark = [placemarks objectAtIndex:0];
+            NSLog(@"Current Location Detected");
+            NSLog(@"placemark %@", placemark);
+            NSString * locatedAt = [[placemark.addressDictionary valueForKey:@"FormattedAddressLines"]componentsJoinedByString:@","];
+            NSString * address = [[NSString alloc]initWithString:locatedAt];
+            NSString * area = [[NSString alloc]initWithString:placemark.locality];
+            NSLog(@"%@, %@", address, area);
+            
+        }];
+ 
+    locationLat = [[NSString alloc] initWithFormat:@"%g", currentLocation.coordinate.latitude];
+    locationLong = [[NSString alloc] initWithFormat:@"%g", currentLocation.coordinate.longitude];
+
+    
+    
+}
+
+
+
+
 
 
 
@@ -86,7 +165,7 @@
     imageTitle = self.face;
     
     UIButton * bigSmile = [[UIButton alloc] initWithFrame:CGRectMake((SCREEN_WIDTH / 2) - 96, (SCREEN_HEIGHT /2) - 96, 192, 192)];
-    UIImage * bigSmileImage = [UIImage imageNamed:imageTitle];
+    bigSmileImage = [UIImage imageNamed:imageTitle];
     [bigSmile setImage:bigSmileImage forState:UIControlStateNormal];
     [self.view addSubview:bigSmile];
     
@@ -136,39 +215,36 @@
 {
     NSLog(@"Posted to Twitter");
 
-    NSString *urlString = imageTitle;
-    NSURL *url = [NSURL URLWithString:[urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+//    NSArray *locations = [[NSArray alloc] init];
+//    
+//    currentLocation = [locations objectAtIndex:0];
     
-    NSLog(@"%@", url);
-
+//    locationLat = [[NSString alloc] initWithFormat:@"%g", currentLocation.coordinate.latitude];
+//    locationLong = [[NSString alloc] initWithFormat:@"%g", currentLocation.coordinate.longitude];
     
-    [twitter postStatusUpdate:nil inReplyToStatusID:nil mediaURL:url placeID:nil latitude:nil longitude:nil uploadProgressBlock:^(NSInteger bytesWritten, NSInteger totalBytesWritten, NSInteger totalBytesExpectedToWrite) {
+//    NSLog(@"Lat:  %@", lat);
+//    NSLog(@"Long:  %@", lng);
+//    NSLog(@"%@", currentLocation);
+    
+    
+    NSArray * paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString * documentPath = paths[0];
+    
+    NSData * imageData = UIImagePNGRepresentation(bigSmileImage);
+    
+    NSString* pngPath = [documentPath stringByAppendingPathComponent:@"yellow_1.png"];
+    [imageData writeToFile:pngPath atomically:YES];
+    NSURL * url = [NSURL fileURLWithPath:pngPath];
+    
+    [twitter postStatusUpdate:@"app test" inReplyToStatusID:nil mediaURL:url placeID:nil latitude:locationLat longitude:locationLong uploadProgressBlock:^(NSInteger bytesWritten, NSInteger totalBytesWritten, NSInteger totalBytesExpectedToWrite) {
+        NSLog(@"posted!");
+    } successBlock:^(NSDictionary *status) {
         
-
-        
-        
-    } successBlock:nil errorBlock:nil];
-
-
-// John Yam's Code To Post Image on Twitter
-//    NSArray * paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-//    NSString * documentPath = paths[0];
-//    
-//    NSData * imageData = UIImagePNGRepresentation(bigSmilie.image);
-//    
-//    NSString* pngPath = [documentPath stringByAppendingPathComponent:@"big_smilie.png"];
-//    [imageData writeToFile:pngPath atomically:YES];
-//    NSURL * url = [NSURL fileURLWithPath:pngPath];
-//    
-//    [twitter postStatusUpdate:@"app test" inReplyToStatusID:nil mediaURL:url placeID:nil latitude:nil longitude:nil uploadProgressBlock:^(NSInteger bytesWritten, NSInteger totalBytesWritten, NSInteger totalBytesExpectedToWrite) {
-//        NSLog(@"posted!");
-//    } successBlock:^(NSDictionary *status) {
-//        
 //        NSLog(@"%@", status);
-//        
-//    } errorBlock:^(NSError *error) {
-//        NSLog(@"%@", error.userInfo);
-//    }];
+        
+    } errorBlock:^(NSError *error) {
+        NSLog(@"%@", error.userInfo);
+    }];
 
 
 
@@ -230,6 +306,8 @@
     if (facebookIsSelected == YES) {
         [self postFacebook];
     }
+
+    
 }
 
 

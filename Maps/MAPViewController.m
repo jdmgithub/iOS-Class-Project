@@ -54,26 +54,12 @@
     for (CLLocation * location in locations)
     {
         MAPAnnotation * annotation = [[MAPAnnotation alloc] initWithCoordinate:location.coordinate];
-
-        annotation.title = @"Marker";
-        annotation.subtitle = @"This is a Subtitle";
         
         [myMapView addAnnotation:annotation];
-        
-        // moves map to pin
-//        [mapView setCenterCoordinate:location.coordinate animated:YES];
-
-        // zooms in to pin location
-        //        MKCoordinateRegion region = mapView.region;
-        //        region.span = MKCoordinateSpanMake(1.0, 1.0);  or one line below:
 
         MKCoordinateRegion region = MKCoordinateRegionMake(location.coordinate, MKCoordinateSpanMake(1.0, 1.0));
         [myMapView setRegion:region animated:YES];
 
-        
-//        MKAnnotationView * annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"annotationView"];
-
-        [myMapView selectAnnotation:annotation animated:YES];
         
 
 //        NSLog(@"%@", location);
@@ -94,17 +80,17 @@
                 
                 [annotation setTitle:cityState];
                 [annotation setSubtitle:placemark.country];
+                
+                [myMapView selectAnnotation:annotation animated:YES];
+
             
             }
-
 
         }];
         
 
-
         
     }
-//    [lManager stopUpdatingLocation];
 }
 
 
@@ -145,23 +131,6 @@
 
     return annotationView;
 }
-
-
-
-//-(void)setTitle:(NSString *)title;
-//{
-//    
-//    
-//}
-//
-//
-//-(void)setSubtitle:(NSString *)subtitle;
-//{
-//
-//
-//}
-
-
 
 
 
@@ -219,10 +188,7 @@
 
 }
 
-//-(void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view
-//{
-//    view.canShowCallout = YES;
-//}
+
 
 
 - (void)didReceiveMemoryWarning
