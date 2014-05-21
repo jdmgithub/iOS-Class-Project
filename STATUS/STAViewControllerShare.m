@@ -148,6 +148,31 @@
         
         
     } successBlock:nil errorBlock:nil];
+
+
+// John Yam's Code To Post Image on Twitter
+//    NSArray * paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+//    NSString * documentPath = paths[0];
+//    
+//    NSData * imageData = UIImagePNGRepresentation(bigSmilie.image);
+//    
+//    NSString* pngPath = [documentPath stringByAppendingPathComponent:@"big_smilie.png"];
+//    [imageData writeToFile:pngPath atomically:YES];
+//    NSURL * url = [NSURL fileURLWithPath:pngPath];
+//    
+//    [twitter postStatusUpdate:@"app test" inReplyToStatusID:nil mediaURL:url placeID:nil latitude:nil longitude:nil uploadProgressBlock:^(NSInteger bytesWritten, NSInteger totalBytesWritten, NSInteger totalBytesExpectedToWrite) {
+//        NSLog(@"posted!");
+//    } successBlock:^(NSDictionary *status) {
+//        
+//        NSLog(@"%@", status);
+//        
+//    } errorBlock:^(NSError *error) {
+//        NSLog(@"%@", error.userInfo);
+//    }];
+
+
+
+
 }
 
 
