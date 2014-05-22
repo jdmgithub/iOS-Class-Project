@@ -59,7 +59,7 @@
         
         CLGeocoder * geoCoder = [[CLGeocoder alloc] init];
         [geoCoder reverseGeocodeLocation:location completionHandler:^(NSArray *placemarks, NSError *error) {
-            //            NSLog(@"%@", placemarks);
+        //        NSLog(@"%@", placemarks);
             
             for (CLPlacemark * placemark in placemarks)
             {

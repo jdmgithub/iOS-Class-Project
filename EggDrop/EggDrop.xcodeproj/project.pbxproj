@@ -1,0 +1,506 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1B4FE311192E43CA003EA261 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B4FE310192E43CA003EA261 /* Foundation.framework */; };
+		1B4FE313192E43CA003EA261 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B4FE312192E43CA003EA261 /* CoreGraphics.framework */; };
+		1B4FE315192E43CA003EA261 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B4FE314192E43CA003EA261 /* UIKit.framework */; };
+		1B4FE31B192E43CA003EA261 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1B4FE319192E43CA003EA261 /* InfoPlist.strings */; };
+		1B4FE31D192E43CA003EA261 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B4FE31C192E43CA003EA261 /* main.m */; };
+		1B4FE321192E43CA003EA261 /* EDAAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B4FE320192E43CA003EA261 /* EDAAppDelegate.m */; };
+		1B4FE324192E43CA003EA261 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B4FE322192E43CA003EA261 /* Main.storyboard */; };
+		1B4FE327192E43CA003EA261 /* EDAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B4FE326192E43CA003EA261 /* EDAViewController.m */; };
+		1B4FE329192E43CA003EA261 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B4FE328192E43CA003EA261 /* Images.xcassets */; };
+		1B4FE330192E43CB003EA261 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B4FE32F192E43CB003EA261 /* XCTest.framework */; };
+		1B4FE331192E43CB003EA261 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B4FE310192E43CA003EA261 /* Foundation.framework */; };
+		1B4FE332192E43CB003EA261 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B4FE314192E43CA003EA261 /* UIKit.framework */; };
+		1B4FE33A192E43CB003EA261 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1B4FE338192E43CB003EA261 /* InfoPlist.strings */; };
+		1B4FE33C192E43CB003EA261 /* EggDropTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B4FE33B192E43CB003EA261 /* EggDropTests.m */; };
+		1B4FE348192E46B4003EA261 /* spoon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B4FE347192E46B4003EA261 /* spoon.png */; };
+		1B4FE34B192E46BB003EA261 /* egg.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B4FE349192E46BB003EA261 /* egg.png */; };
+		1B4FE34C192E46BB003EA261 /* grass.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B4FE34A192E46BB003EA261 /* grass.png */; };
+		1BF1E7F7192E7B83008305BF /* babychicks.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1BF1E7F6192E7B83008305BF /* babychicks.wav */; };
+		1BF1E7F9192E830A008305BF /* babychick3.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BF1E7F8192E830A008305BF /* babychick3.png */; };
+		1BF1E7FB192E882E008305BF /* peeps.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1BF1E7FA192E882E008305BF /* peeps.wav */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1B4FE333192E43CB003EA261 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1B4FE305192E43CA003EA261 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1B4FE30C192E43CA003EA261;
+			remoteInfo = EggDrop;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1B4FE30D192E43CA003EA261 /* EggDrop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EggDrop.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B4FE310192E43CA003EA261 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1B4FE312192E43CA003EA261 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		1B4FE314192E43CA003EA261 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		1B4FE318192E43CA003EA261 /* EggDrop-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "EggDrop-Info.plist"; sourceTree = "<group>"; };
+		1B4FE31A192E43CA003EA261 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1B4FE31C192E43CA003EA261 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1B4FE31E192E43CA003EA261 /* EggDrop-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EggDrop-Prefix.pch"; sourceTree = "<group>"; };
+		1B4FE31F192E43CA003EA261 /* EDAAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EDAAppDelegate.h; sourceTree = "<group>"; };
+		1B4FE320192E43CA003EA261 /* EDAAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EDAAppDelegate.m; sourceTree = "<group>"; };
+		1B4FE323192E43CA003EA261 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1B4FE325192E43CA003EA261 /* EDAViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EDAViewController.h; sourceTree = "<group>"; };
+		1B4FE326192E43CA003EA261 /* EDAViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EDAViewController.m; sourceTree = "<group>"; };
+		1B4FE328192E43CA003EA261 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		1B4FE32E192E43CB003EA261 /* EggDropTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EggDropTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B4FE32F192E43CB003EA261 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		1B4FE337192E43CB003EA261 /* EggDropTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "EggDropTests-Info.plist"; sourceTree = "<group>"; };
+		1B4FE339192E43CB003EA261 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1B4FE33B192E43CB003EA261 /* EggDropTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EggDropTests.m; sourceTree = "<group>"; };
+		1B4FE347192E46B4003EA261 /* spoon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spoon.png; sourceTree = "<group>"; };
+		1B4FE349192E46BB003EA261 /* egg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = egg.png; sourceTree = "<group>"; };
+		1B4FE34A192E46BB003EA261 /* grass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grass.png; sourceTree = "<group>"; };
+		1BF1E7F6192E7B83008305BF /* babychicks.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = babychicks.wav; sourceTree = "<group>"; };
+		1BF1E7F8192E830A008305BF /* babychick3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = babychick3.png; sourceTree = "<group>"; };
+		1BF1E7FA192E882E008305BF /* peeps.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = peeps.wav; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1B4FE30A192E43CA003EA261 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B4FE313192E43CA003EA261 /* CoreGraphics.framework in Frameworks */,
+				1B4FE315192E43CA003EA261 /* UIKit.framework in Frameworks */,
+				1B4FE311192E43CA003EA261 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1B4FE32B192E43CB003EA261 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B4FE330192E43CB003EA261 /* XCTest.framework in Frameworks */,
+				1B4FE332192E43CB003EA261 /* UIKit.framework in Frameworks */,
+				1B4FE331192E43CB003EA261 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1B4FE304192E43CA003EA261 = {
+			isa = PBXGroup;
+			children = (
+				1B4FE346192E46A1003EA261 /* Images */,
+				1B4FE316192E43CA003EA261 /* EggDrop */,
+				1B4FE335192E43CB003EA261 /* EggDropTests */,
+				1B4FE30F192E43CA003EA261 /* Frameworks */,
+				1B4FE30E192E43CA003EA261 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1B4FE30E192E43CA003EA261 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1B4FE30D192E43CA003EA261 /* EggDrop.app */,
+				1B4FE32E192E43CB003EA261 /* EggDropTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1B4FE30F192E43CA003EA261 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1B4FE310192E43CA003EA261 /* Foundation.framework */,
+				1B4FE312192E43CA003EA261 /* CoreGraphics.framework */,
+				1B4FE314192E43CA003EA261 /* UIKit.framework */,
+				1B4FE32F192E43CB003EA261 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1B4FE316192E43CA003EA261 /* EggDrop */ = {
+			isa = PBXGroup;
+			children = (
+				1B4FE31F192E43CA003EA261 /* EDAAppDelegate.h */,
+				1B4FE320192E43CA003EA261 /* EDAAppDelegate.m */,
+				1B4FE322192E43CA003EA261 /* Main.storyboard */,
+				1B4FE325192E43CA003EA261 /* EDAViewController.h */,
+				1B4FE326192E43CA003EA261 /* EDAViewController.m */,
+				1B4FE328192E43CA003EA261 /* Images.xcassets */,
+				1B4FE317192E43CA003EA261 /* Supporting Files */,
+			);
+			path = EggDrop;
+			sourceTree = "<group>";
+		};
+		1B4FE317192E43CA003EA261 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1B4FE318192E43CA003EA261 /* EggDrop-Info.plist */,
+				1B4FE319192E43CA003EA261 /* InfoPlist.strings */,
+				1B4FE31C192E43CA003EA261 /* main.m */,
+				1B4FE31E192E43CA003EA261 /* EggDrop-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1B4FE335192E43CB003EA261 /* EggDropTests */ = {
+			isa = PBXGroup;
+			children = (
+				1B4FE33B192E43CB003EA261 /* EggDropTests.m */,
+				1B4FE336192E43CB003EA261 /* Supporting Files */,
+			);
+			path = EggDropTests;
+			sourceTree = "<group>";
+		};
+		1B4FE336192E43CB003EA261 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1B4FE337192E43CB003EA261 /* EggDropTests-Info.plist */,
+				1B4FE338192E43CB003EA261 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1B4FE346192E46A1003EA261 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				1BF1E7F6192E7B83008305BF /* babychicks.wav */,
+				1BF1E7FA192E882E008305BF /* peeps.wav */,
+				1B4FE349192E46BB003EA261 /* egg.png */,
+				1B4FE34A192E46BB003EA261 /* grass.png */,
+				1BF1E7F8192E830A008305BF /* babychick3.png */,
+				1B4FE347192E46B4003EA261 /* spoon.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1B4FE30C192E43CA003EA261 /* EggDrop */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1B4FE33F192E43CB003EA261 /* Build configuration list for PBXNativeTarget "EggDrop" */;
+			buildPhases = (
+				1B4FE309192E43CA003EA261 /* Sources */,
+				1B4FE30A192E43CA003EA261 /* Frameworks */,
+				1B4FE30B192E43CA003EA261 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EggDrop;
+			productName = EggDrop;
+			productReference = 1B4FE30D192E43CA003EA261 /* EggDrop.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1B4FE32D192E43CB003EA261 /* EggDropTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1B4FE342192E43CB003EA261 /* Build configuration list for PBXNativeTarget "EggDropTests" */;
+			buildPhases = (
+				1B4FE32A192E43CB003EA261 /* Sources */,
+				1B4FE32B192E43CB003EA261 /* Frameworks */,
+				1B4FE32C192E43CB003EA261 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1B4FE334192E43CB003EA261 /* PBXTargetDependency */,
+			);
+			name = EggDropTests;
+			productName = EggDropTests;
+			productReference = 1B4FE32E192E43CB003EA261 /* EggDropTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1B4FE305192E43CA003EA261 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = EDA;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Jeffery Moulds";
+				TargetAttributes = {
+					1B4FE32D192E43CB003EA261 = {
+						TestTargetID = 1B4FE30C192E43CA003EA261;
+					};
+				};
+			};
+			buildConfigurationList = 1B4FE308192E43CA003EA261 /* Build configuration list for PBXProject "EggDrop" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1B4FE304192E43CA003EA261;
+			productRefGroup = 1B4FE30E192E43CA003EA261 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1B4FE30C192E43CA003EA261 /* EggDrop */,
+				1B4FE32D192E43CB003EA261 /* EggDropTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1B4FE30B192E43CA003EA261 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B4FE34C192E46BB003EA261 /* grass.png in Resources */,
+				1B4FE329192E43CA003EA261 /* Images.xcassets in Resources */,
+				1B4FE31B192E43CA003EA261 /* InfoPlist.strings in Resources */,
+				1B4FE324192E43CA003EA261 /* Main.storyboard in Resources */,
+				1BF1E7F9192E830A008305BF /* babychick3.png in Resources */,
+				1BF1E7FB192E882E008305BF /* peeps.wav in Resources */,
+				1B4FE34B192E46BB003EA261 /* egg.png in Resources */,
+				1BF1E7F7192E7B83008305BF /* babychicks.wav in Resources */,
+				1B4FE348192E46B4003EA261 /* spoon.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1B4FE32C192E43CB003EA261 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B4FE33A192E43CB003EA261 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1B4FE309192E43CA003EA261 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B4FE327192E43CA003EA261 /* EDAViewController.m in Sources */,
+				1B4FE31D192E43CA003EA261 /* main.m in Sources */,
+				1B4FE321192E43CA003EA261 /* EDAAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1B4FE32A192E43CB003EA261 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B4FE33C192E43CB003EA261 /* EggDropTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1B4FE334192E43CB003EA261 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1B4FE30C192E43CA003EA261 /* EggDrop */;
+			targetProxy = 1B4FE333192E43CB003EA261 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1B4FE319192E43CA003EA261 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1B4FE31A192E43CA003EA261 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		1B4FE322192E43CA003EA261 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1B4FE323192E43CA003EA261 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		1B4FE338192E43CB003EA261 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1B4FE339192E43CB003EA261 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1B4FE33D192E43CB003EA261 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		1B4FE33E192E43CB003EA261 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1B4FE340192E43CB003EA261 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "EggDrop/EggDrop-Prefix.pch";
+				INFOPLIST_FILE = "EggDrop/EggDrop-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		1B4FE341192E43CB003EA261 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "EggDrop/EggDrop-Prefix.pch";
+				INFOPLIST_FILE = "EggDrop/EggDrop-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		1B4FE343192E43CB003EA261 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/EggDrop.app/EggDrop";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "EggDrop/EggDrop-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "EggDropTests/EggDropTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		1B4FE344192E43CB003EA261 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/EggDrop.app/EggDrop";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "EggDrop/EggDrop-Prefix.pch";
+				INFOPLIST_FILE = "EggDropTests/EggDropTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1B4FE308192E43CA003EA261 /* Build configuration list for PBXProject "EggDrop" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1B4FE33D192E43CB003EA261 /* Debug */,
+				1B4FE33E192E43CB003EA261 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1B4FE33F192E43CB003EA261 /* Build configuration list for PBXNativeTarget "EggDrop" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1B4FE340192E43CB003EA261 /* Debug */,
+				1B4FE341192E43CB003EA261 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1B4FE342192E43CB003EA261 /* Build configuration list for PBXNativeTarget "EggDropTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1B4FE343192E43CB003EA261 /* Debug */,
+				1B4FE344192E43CB003EA261 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1B4FE305192E43CA003EA261 /* Project object */;
+}
