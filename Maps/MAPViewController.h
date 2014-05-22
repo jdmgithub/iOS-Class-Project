@@ -10,4 +10,8 @@
 
 @interface MAPViewController : UIViewController
 
+
+
+-(void)AddGestureRecogniserToMapView;
+
 @end

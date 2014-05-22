@@ -16,6 +16,8 @@
 
 @interface MAPViewController () <CLLocationManagerDelegate, MKMapViewDelegate>
 
+@property (nonatomic, assign)CLLocationCoordinate2D coordinate;
+
 @end
 
 @implementation MAPViewController
@@ -33,15 +35,10 @@
 
     
         lManager = [[CLLocationManager alloc] init];
-    
         lManager.delegate = self;
-        
         lManager.distanceFilter = 1000;
-
 //        lManager.desiredAccuracy = kCLLocationAccuracyKilometer;
-        
         [lManager startUpdatingLocation];
-    
     }
     return self;
 }
@@ -54,42 +51,26 @@
     for (CLLocation * location in locations)
     {
         MAPAnnotation * annotation = [[MAPAnnotation alloc] initWithCoordinate:location.coordinate];
-        
         [myMapView addAnnotation:annotation];
-
         MKCoordinateRegion region = MKCoordinateRegionMake(location.coordinate, MKCoordinateSpanMake(1.0, 1.0));
         [myMapView setRegion:region animated:YES];
 
-        
-
-//        NSLog(@"%@", location);
-        
-        
+        //        NSLog(@"%@", location);
         
         CLGeocoder * geoCoder = [[CLGeocoder alloc] init];
-
         [geoCoder reverseGeocodeLocation:location completionHandler:^(NSArray *placemarks, NSError *error) {
-//            NSLog(@"%@", placemarks);
+            //            NSLog(@"%@", placemarks);
             
             for (CLPlacemark * placemark in placemarks)
             {
                 NSLog(@"%@", placemark.country);
-            
-
                 NSString * cityState = [NSString stringWithFormat:@"%@, %@",placemark.addressDictionary[@"City"],placemark.addressDictionary[@"State"]];
-                
                 [annotation setTitle:cityState];
                 [annotation setSubtitle:placemark.country];
                 
                 [myMapView selectAnnotation:annotation animated:YES];
-
-            
             }
-
         }];
-        
-
-        
     }
 }
 
@@ -104,31 +85,67 @@
     [self.view addSubview:myMapView];
     myMapView.delegate = self;
     
-    
+    [self addGestureRecogniserToMapView];
 
 }
+
+
+
+- (void)addGestureRecogniserToMapView{
+    
+    UILongPressGestureRecognizer * pressgesture = [[UILongPressGestureRecognizer alloc]
+                                          initWithTarget:self action:@selector(addPinToMap:)];
+    pressgesture.minimumPressDuration = 0.5;
+    [self.view addGestureRecognizer:pressgesture];
+    
+}
+
+
+
+- (void)addPinToMap:(UIGestureRecognizer *)gestureRecognizer
+{
+    
+    if (gestureRecognizer.state != UIGestureRecognizerStateBegan)
+        return;
+    
+    CGPoint touchPoint = [gestureRecognizer locationInView:self.view];
+    CLLocationCoordinate2D touchMapCoordinate = [myMapView convertPoint:touchPoint toCoordinateFromView:self.view];
+    
+    
+    MAPAnnotation *newAnnotationView = [[MAPAnnotation alloc]init];
+    
+    newAnnotationView.coordinate = touchMapCoordinate;
+    newAnnotationView.title = @"Title";
+    newAnnotationView.subtitle = @"Subtitle";
+    
+    
+    [myMapView addAnnotation:newAnnotationView];
+    
+    
+    
+//    JFMapAnnotation *toAdd = [[JFMapAnnotation alloc]init];
+    
+    
+    
+}
+
+
 
 
 -(MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
 {
 
     MKAnnotationView * annotationView = [myMapView dequeueReusableAnnotationViewWithIdentifier:@"annotationView"];
-    
     if (annotationView == nil)
-        
     {
         annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"annotationView"];
     } else {
-    
         annotationView.annotation = annotation;
     }
     
-
     // annotationView.image = [[uiimage imageNamed:@"yellow0"]; and change above to annotation view, not pin annotaiton view.
     
-    
     annotationView.draggable = YES;
-    
     annotationView.canShowCallout = YES;
 
     return annotationView;
@@ -147,16 +164,13 @@
             [mapView setCenterCoordinate:view.annotation.coordinate animated:YES];
             
             CLGeocoder * geoCoder = [[CLGeocoder alloc] init];
-            
             CLLocation * location = [[CLLocation alloc] initWithLatitude:view.annotation.coordinate.latitude longitude:view.annotation.coordinate.longitude];
-            
             [geoCoder reverseGeocodeLocation:location completionHandler:^(NSArray *placemarks, NSError *error) {
                 //            NSLog(@"%@", placemarks);
                 
                 for (CLPlacemark * placemark in placemarks)
                 {
                     NSLog(@"%@", placemark.addressDictionary);
-                    
                     NSString * cityState = [NSString stringWithFormat:@"%@, %@",placemark.addressDictionary[@"City"],placemark.addressDictionary[@"State"]];
                     
                     [(MAPAnnotation *)view.annotation setTitle:cityState];
@@ -165,7 +179,6 @@
                 
             }];
         }
-            
             
             break;
 
@@ -181,8 +194,6 @@
             
             break;
     
-            
-            
             
         default:
             break;
