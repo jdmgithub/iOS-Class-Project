@@ -84,6 +84,7 @@
 		1BAA999F192A9251006FDC8C /* angry_7.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BAA9996192A9251006FDC8C /* angry_7.png */; };
 		1BAA99A0192A9251006FDC8C /* angry_8.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BAA9997192A9251006FDC8C /* angry_8.png */; };
 		1BAA99A1192A9251006FDC8C /* angry_9.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BAA9998192A9251006FDC8C /* angry_9.png */; };
+		1BAB4560193769DE004461ED /* STADataArchitecture.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BAB455F193769DE004461ED /* STADataArchitecture.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -196,6 +197,8 @@
 		1BAA9996192A9251006FDC8C /* angry_7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = angry_7.png; sourceTree = "<group>"; };
 		1BAA9997192A9251006FDC8C /* angry_8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = angry_8.png; sourceTree = "<group>"; };
 		1BAA9998192A9251006FDC8C /* angry_9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = angry_9.png; sourceTree = "<group>"; };
+		1BAB455E193769DE004461ED /* STADataArchitecture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STADataArchitecture.h; sourceTree = "<group>"; };
+		1BAB455F193769DE004461ED /* STADataArchitecture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STADataArchitecture.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -335,6 +338,8 @@
 		1BAA9910192A3947006FDC8C = {
 			isa = PBXGroup;
 			children = (
+				1BAB455E193769DE004461ED /* STADataArchitecture.h */,
+				1BAB455F193769DE004461ED /* STADataArchitecture.m */,
 				1BAA998D192A526D006FDC8C /* STAViewControllerShare.h */,
 				1BAA998E192A526D006FDC8C /* STAViewControllerShare.m */,
 				1BAA998A192A4CCA006FDC8C /* STAViewControllerFaces.h */,
@@ -580,6 +585,7 @@
 				1B5C3478192BA9D4008FDC7F /* STTwitterAppOnly.m in Sources */,
 				1B5C347B192BA9D4008FDC7F /* STTwitterOS.m in Sources */,
 				1B5C347C192BA9D4008FDC7F /* STTwitterOSRequest.m in Sources */,
+				1BAB4560193769DE004461ED /* STADataArchitecture.m in Sources */,
 				1B5C3475192BA9D4008FDC7F /* NSString+STTwitter.m in Sources */,
 				1B5C3476192BA9D4008FDC7F /* STHTTPRequest+STTwitter.m in Sources */,
 				1BAA9929192A3947006FDC8C /* main.m in Sources */,
