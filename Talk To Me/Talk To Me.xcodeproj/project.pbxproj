@@ -1,0 +1,453 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1B4D1472193CB1CB0099B978 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B4D1471193CB1CB0099B978 /* Foundation.framework */; };
+		1B4D1474193CB1CB0099B978 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B4D1473193CB1CB0099B978 /* CoreGraphics.framework */; };
+		1B4D1476193CB1CB0099B978 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B4D1475193CB1CB0099B978 /* UIKit.framework */; };
+		1B4D147C193CB1CB0099B978 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1B4D147A193CB1CB0099B978 /* InfoPlist.strings */; };
+		1B4D147E193CB1CB0099B978 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B4D147D193CB1CB0099B978 /* main.m */; };
+		1B4D1482193CB1CB0099B978 /* TTMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B4D1481193CB1CB0099B978 /* TTMAppDelegate.m */; };
+		1B4D1484193CB1CB0099B978 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B4D1483193CB1CB0099B978 /* Images.xcassets */; };
+		1B4D148B193CB1CC0099B978 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B4D148A193CB1CC0099B978 /* XCTest.framework */; };
+		1B4D148C193CB1CC0099B978 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B4D1471193CB1CB0099B978 /* Foundation.framework */; };
+		1B4D148D193CB1CC0099B978 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B4D1475193CB1CB0099B978 /* UIKit.framework */; };
+		1B4D1495193CB1CC0099B978 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1B4D1493193CB1CC0099B978 /* InfoPlist.strings */; };
+		1B4D1497193CB1CC0099B978 /* Talk_To_MeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B4D1496193CB1CC0099B978 /* Talk_To_MeTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1B4D148E193CB1CC0099B978 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1B4D1466193CB1CB0099B978 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1B4D146D193CB1CB0099B978;
+			remoteInfo = "Talk To Me";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1B4D146E193CB1CB0099B978 /* Talk To Me.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Talk To Me.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B4D1471193CB1CB0099B978 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1B4D1473193CB1CB0099B978 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		1B4D1475193CB1CB0099B978 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		1B4D1479193CB1CB0099B978 /* Talk To Me-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Talk To Me-Info.plist"; sourceTree = "<group>"; };
+		1B4D147B193CB1CB0099B978 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1B4D147D193CB1CB0099B978 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1B4D147F193CB1CB0099B978 /* Talk To Me-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Talk To Me-Prefix.pch"; sourceTree = "<group>"; };
+		1B4D1480193CB1CB0099B978 /* TTMAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TTMAppDelegate.h; sourceTree = "<group>"; };
+		1B4D1481193CB1CB0099B978 /* TTMAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TTMAppDelegate.m; sourceTree = "<group>"; };
+		1B4D1483193CB1CB0099B978 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		1B4D1489193CB1CC0099B978 /* Talk To MeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Talk To MeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B4D148A193CB1CC0099B978 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		1B4D1492193CB1CC0099B978 /* Talk To MeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Talk To MeTests-Info.plist"; sourceTree = "<group>"; };
+		1B4D1494193CB1CC0099B978 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1B4D1496193CB1CC0099B978 /* Talk_To_MeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Talk_To_MeTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1B4D146B193CB1CB0099B978 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B4D1474193CB1CB0099B978 /* CoreGraphics.framework in Frameworks */,
+				1B4D1476193CB1CB0099B978 /* UIKit.framework in Frameworks */,
+				1B4D1472193CB1CB0099B978 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1B4D1486193CB1CC0099B978 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B4D148B193CB1CC0099B978 /* XCTest.framework in Frameworks */,
+				1B4D148D193CB1CC0099B978 /* UIKit.framework in Frameworks */,
+				1B4D148C193CB1CC0099B978 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1B4D1465193CB1CB0099B978 = {
+			isa = PBXGroup;
+			children = (
+				1B4D1477193CB1CB0099B978 /* Talk To Me */,
+				1B4D1490193CB1CC0099B978 /* Talk To MeTests */,
+				1B4D1470193CB1CB0099B978 /* Frameworks */,
+				1B4D146F193CB1CB0099B978 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1B4D146F193CB1CB0099B978 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1B4D146E193CB1CB0099B978 /* Talk To Me.app */,
+				1B4D1489193CB1CC0099B978 /* Talk To MeTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1B4D1470193CB1CB0099B978 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1B4D1471193CB1CB0099B978 /* Foundation.framework */,
+				1B4D1473193CB1CB0099B978 /* CoreGraphics.framework */,
+				1B4D1475193CB1CB0099B978 /* UIKit.framework */,
+				1B4D148A193CB1CC0099B978 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1B4D1477193CB1CB0099B978 /* Talk To Me */ = {
+			isa = PBXGroup;
+			children = (
+				1B4D1480193CB1CB0099B978 /* TTMAppDelegate.h */,
+				1B4D1481193CB1CB0099B978 /* TTMAppDelegate.m */,
+				1B4D1483193CB1CB0099B978 /* Images.xcassets */,
+				1B4D1478193CB1CB0099B978 /* Supporting Files */,
+			);
+			path = "Talk To Me";
+			sourceTree = "<group>";
+		};
+		1B4D1478193CB1CB0099B978 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1B4D1479193CB1CB0099B978 /* Talk To Me-Info.plist */,
+				1B4D147A193CB1CB0099B978 /* InfoPlist.strings */,
+				1B4D147D193CB1CB0099B978 /* main.m */,
+				1B4D147F193CB1CB0099B978 /* Talk To Me-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1B4D1490193CB1CC0099B978 /* Talk To MeTests */ = {
+			isa = PBXGroup;
+			children = (
+				1B4D1496193CB1CC0099B978 /* Talk_To_MeTests.m */,
+				1B4D1491193CB1CC0099B978 /* Supporting Files */,
+			);
+			path = "Talk To MeTests";
+			sourceTree = "<group>";
+		};
+		1B4D1491193CB1CC0099B978 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1B4D1492193CB1CC0099B978 /* Talk To MeTests-Info.plist */,
+				1B4D1493193CB1CC0099B978 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1B4D146D193CB1CB0099B978 /* Talk To Me */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1B4D149A193CB1CC0099B978 /* Build configuration list for PBXNativeTarget "Talk To Me" */;
+			buildPhases = (
+				1B4D146A193CB1CB0099B978 /* Sources */,
+				1B4D146B193CB1CB0099B978 /* Frameworks */,
+				1B4D146C193CB1CB0099B978 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Talk To Me";
+			productName = "Talk To Me";
+			productReference = 1B4D146E193CB1CB0099B978 /* Talk To Me.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1B4D1488193CB1CC0099B978 /* Talk To MeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1B4D149D193CB1CC0099B978 /* Build configuration list for PBXNativeTarget "Talk To MeTests" */;
+			buildPhases = (
+				1B4D1485193CB1CC0099B978 /* Sources */,
+				1B4D1486193CB1CC0099B978 /* Frameworks */,
+				1B4D1487193CB1CC0099B978 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1B4D148F193CB1CC0099B978 /* PBXTargetDependency */,
+			);
+			name = "Talk To MeTests";
+			productName = "Talk To MeTests";
+			productReference = 1B4D1489193CB1CC0099B978 /* Talk To MeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1B4D1466193CB1CB0099B978 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = TTM;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Jeffery Moulds";
+				TargetAttributes = {
+					1B4D1488193CB1CC0099B978 = {
+						TestTargetID = 1B4D146D193CB1CB0099B978;
+					};
+				};
+			};
+			buildConfigurationList = 1B4D1469193CB1CB0099B978 /* Build configuration list for PBXProject "Talk To Me" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 1B4D1465193CB1CB0099B978;
+			productRefGroup = 1B4D146F193CB1CB0099B978 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1B4D146D193CB1CB0099B978 /* Talk To Me */,
+				1B4D1488193CB1CC0099B978 /* Talk To MeTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1B4D146C193CB1CB0099B978 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B4D147C193CB1CB0099B978 /* InfoPlist.strings in Resources */,
+				1B4D1484193CB1CB0099B978 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1B4D1487193CB1CC0099B978 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B4D1495193CB1CC0099B978 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1B4D146A193CB1CB0099B978 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B4D1482193CB1CB0099B978 /* TTMAppDelegate.m in Sources */,
+				1B4D147E193CB1CB0099B978 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1B4D1485193CB1CC0099B978 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B4D1497193CB1CC0099B978 /* Talk_To_MeTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1B4D148F193CB1CC0099B978 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1B4D146D193CB1CB0099B978 /* Talk To Me */;
+			targetProxy = 1B4D148E193CB1CC0099B978 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1B4D147A193CB1CB0099B978 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1B4D147B193CB1CB0099B978 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		1B4D1493193CB1CC0099B978 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1B4D1494193CB1CC0099B978 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1B4D1498193CB1CC0099B978 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		1B4D1499193CB1CC0099B978 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1B4D149B193CB1CC0099B978 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Talk To Me/Talk To Me-Prefix.pch";
+				INFOPLIST_FILE = "Talk To Me/Talk To Me-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		1B4D149C193CB1CC0099B978 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Talk To Me/Talk To Me-Prefix.pch";
+				INFOPLIST_FILE = "Talk To Me/Talk To Me-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		1B4D149E193CB1CC0099B978 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Talk To Me.app/Talk To Me";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Talk To Me/Talk To Me-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Talk To MeTests/Talk To MeTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		1B4D149F193CB1CC0099B978 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Talk To Me.app/Talk To Me";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Talk To Me/Talk To Me-Prefix.pch";
+				INFOPLIST_FILE = "Talk To MeTests/Talk To MeTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1B4D1469193CB1CB0099B978 /* Build configuration list for PBXProject "Talk To Me" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1B4D1498193CB1CC0099B978 /* Debug */,
+				1B4D1499193CB1CC0099B978 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1B4D149A193CB1CC0099B978 /* Build configuration list for PBXNativeTarget "Talk To Me" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1B4D149B193CB1CC0099B978 /* Debug */,
+				1B4D149C193CB1CC0099B978 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		1B4D149D193CB1CC0099B978 /* Build configuration list for PBXNativeTarget "Talk To MeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1B4D149E193CB1CC0099B978 /* Debug */,
+				1B4D149F193CB1CC0099B978 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1B4D1466193CB1CB0099B978 /* Project object */;
+}
