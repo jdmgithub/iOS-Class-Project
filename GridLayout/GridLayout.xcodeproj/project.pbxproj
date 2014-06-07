@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B41C6571943970C009A0318 /* GLACollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B41C6561943970C009A0318 /* GLACollectionViewController.m */; };
 		1B75F0A81938BB7B00A58938 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B75F0A71938BB7B00A58938 /* Foundation.framework */; };
 		1B75F0AA1938BB7B00A58938 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B75F0A91938BB7B00A58938 /* CoreGraphics.framework */; };
 		1B75F0AC1938BB7B00A58938 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B75F0AB1938BB7B00A58938 /* UIKit.framework */; };
@@ -21,7 +22,6 @@
 		1B75F0C91938BB7B00A58938 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B75F0AB1938BB7B00A58938 /* UIKit.framework */; };
 		1B75F0D11938BB7B00A58938 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1B75F0CF1938BB7B00A58938 /* InfoPlist.strings */; };
 		1B75F0D31938BB7B00A58938 /* GridLayoutTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B75F0D21938BB7B00A58938 /* GridLayoutTests.m */; };
-		1B75F0DE1938BC0F00A58938 /* GLACollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B75F0DD1938BC0F00A58938 /* GLACollectionViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1B41C6561943970C009A0318 /* GLACollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLACollectionViewController.m; sourceTree = "<group>"; };
 		1B75F0A41938BB7B00A58938 /* GridLayout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GridLayout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B75F0A71938BB7B00A58938 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1B75F0A91938BB7B00A58938 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -55,7 +56,6 @@
 		1B75F0D01938BB7B00A58938 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1B75F0D21938BB7B00A58938 /* GridLayoutTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GridLayoutTests.m; sourceTree = "<group>"; };
 		1B75F0DC1938BC0F00A58938 /* GLACollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GLACollectionViewController.h; path = GridLayout/GLACollectionViewController.h; sourceTree = "<group>"; };
-		1B75F0DD1938BC0F00A58938 /* GLACollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GLACollectionViewController.m; path = GridLayout/GLACollectionViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,7 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				1B75F0DC1938BC0F00A58938 /* GLACollectionViewController.h */,
-				1B75F0DD1938BC0F00A58938 /* GLACollectionViewController.m */,
+				1B41C6561943970C009A0318 /* GLACollectionViewController.m */,
 				1B75F0AD1938BB7B00A58938 /* GridLayout */,
 				1B75F0CC1938BB7B00A58938 /* GridLayoutTests */,
 				1B75F0A61938BB7B00A58938 /* Frameworks */,
@@ -256,9 +256,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B75F0B41938BB7B00A58938 /* main.m in Sources */,
+				1B41C6571943970C009A0318 /* GLACollectionViewController.m in Sources */,
 				1B75F0B81938BB7B00A58938 /* GLAAppDelegate.m in Sources */,
 				1B75F0BE1938BB7B00A58938 /* GLAViewController.m in Sources */,
-				1B75F0DE1938BC0F00A58938 /* GLACollectionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -463,6 +463,7 @@
 				1B75F0D81938BB7B00A58938 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1B75F0D91938BB7B00A58938 /* Build configuration list for PBXNativeTarget "GridLayoutTests" */ = {
 			isa = XCConfigurationList;
@@ -471,6 +472,7 @@
 				1B75F0DB1938BB7B00A58938 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
