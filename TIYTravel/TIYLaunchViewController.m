@@ -32,7 +32,7 @@
     if (self) {
 
 
-        self.view.backgroundColor = [UIColor purpleColor];
+        self.view.backgroundColor = [UIColor lightGrayColor];
         
         
     
@@ -45,13 +45,32 @@
     [super viewDidLoad];
 
 
-    header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT * .2)];
+    header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT * .15)];
     header.backgroundColor = [UIColor whiteColor];
     [self.view addSubview: header];
     
-    UILabel * textBackground = [[UILabel alloc] initWithFrame:CGRectMake(SCREEN_WIDTH * .1, SCREEN_HEIGHT / 4, SCREEN_WIDTH * .8, SCREEN_HEIGHT * .2)];
-    textBackground.backgroundColor = [UIColor whiteColor];
-    [self.view addSubview:textBackground];
+
+    UILabel * titleText = [[UILabel alloc] initWithFrame:CGRectMake(20, 20, SCREEN_WIDTH - 40, 40)];
+//    titleText.backgroundColor = [UIColor redColor];
+    titleText.text = @"A TIME AND A PLACE";
+    titleText.textColor = [UIColor blackColor];
+    titleText.textAlignment = NSTextAlignmentCenter;
+    [titleText setFont:[UIFont fontWithName:@"GillSans" size:50.0f]];
+    [self.view addSubview:titleText];
+    
+    UILabel * TIYText = [[UILabel alloc] initWithFrame:CGRectMake(SCREEN_WIDTH - 170, 80, 150, 40)];
+    //    titleText.backgroundColor = [UIColor redColor];
+    TIYText.text = @"by TIY Travel, Inc.";
+    TIYText.textColor = [UIColor blackColor];
+    TIYText.textAlignment = NSTextAlignmentCenter;
+    [TIYText setFont:[UIFont fontWithName:@"GillSans" size:20.0f]];
+    [self.view addSubview:TIYText];
+
+    
+
+    UILabel * textBackgroundView = [[UILabel alloc] initWithFrame:CGRectMake(SCREEN_WIDTH * .1, SCREEN_HEIGHT / 5, SCREEN_WIDTH * .8, SCREEN_HEIGHT * .2)];
+    textBackgroundView.backgroundColor = [UIColor whiteColor];
+    [self.view addSubview:textBackgroundView];
     
     
     
@@ -61,7 +80,7 @@
     introText1.textColor = [UIColor blackColor];
     introText1.textAlignment = NSTextAlignmentCenter;
     [introText1 setFont:[UIFont fontWithName:@"GillSans" size:35.0f]];
-    [textBackground addSubview:introText1];
+    [textBackgroundView addSubview:introText1];
 
     
     UILabel * introText2 = [[UILabel alloc] initWithFrame:CGRectMake(20, 70, (SCREEN_WIDTH * .8) - 40 , 50)];
@@ -70,7 +89,7 @@
     introText2.textColor = [UIColor blackColor];
     introText2.textAlignment = NSTextAlignmentCenter;
     [introText2 setFont:[UIFont fontWithName:@"GillSans" size:35.0f]];
-    [textBackground addSubview:introText2];
+    [textBackgroundView addSubview:introText2];
 
     UILabel * introText3 = [[UILabel alloc] initWithFrame:CGRectMake(20, 120, (SCREEN_WIDTH * .8) - 40 , 50)];
 //    introText3.backgroundColor = [UIColor redColor];
@@ -78,15 +97,15 @@
     introText3.textColor = [UIColor blackColor];
     introText3.textAlignment = NSTextAlignmentCenter;
     [introText3 setFont:[UIFont fontWithName:@"GillSans" size:35.0f]];
-    [textBackground addSubview:introText3];
+    [textBackgroundView addSubview:introText3];
 
     
     
     
     
     
-    pullView = [[UIView alloc] initWithFrame:CGRectMake(SCREEN_WIDTH * .1, SCREEN_HEIGHT / 2, SCREEN_WIDTH * .8, SCREEN_HEIGHT * .3)];
-    pullView.backgroundColor = [UIColor lightGrayColor];
+    pullView = [[UIView alloc] initWithFrame:CGRectMake(SCREEN_WIDTH * .1, SCREEN_HEIGHT / 2 - 75, SCREEN_WIDTH * .8, SCREEN_HEIGHT * .4)];
+    pullView.backgroundColor = [UIColor darkGrayColor];
     [self.view addSubview: pullView];
     
     
@@ -141,5 +160,8 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+-(BOOL)prefersStatusBarHidden {return YES;}
+
 
 @end
