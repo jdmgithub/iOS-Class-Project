@@ -19,6 +19,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
 
+        self.view.backgroundColor = [UIColor lightGrayColor];
 
         
     }
@@ -28,7 +29,17 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    UIImage * image = [UIImage imageNamed:@"bookingScreen"];
+
+    UIImageView * imageView = [[UIImageView alloc] initWithImage:image];
+    
+    imageView.frame = CGRectMake(40,40, SCREEN_WIDTH - 40, SCREEN_HEIGHT * .4);
+    
+    [self.view addSubview:imageView]; 
+
+    
+    
 }
 
 - (void)didReceiveMemoryWarning

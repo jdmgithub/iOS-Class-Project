@@ -23,6 +23,7 @@
 		1BA2B41219432F6300778719 /* TIYNewClientVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BA2B41119432F6300778719 /* TIYNewClientVC.m */; };
 		1BA2B41519432FA300778719 /* TIYCurrentClientVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BA2B41419432FA300778719 /* TIYCurrentClientVC.m */; };
 		1BA2B41819432FBE00778719 /* TIYBookingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BA2B41719432FBE00778719 /* TIYBookingController.m */; };
+		1BA2B41B19436CC100778719 /* bookingScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BA2B41A19436CC100778719 /* bookingScreen.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		1BA2B41419432FA300778719 /* TIYCurrentClientVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TIYCurrentClientVC.m; sourceTree = "<group>"; };
 		1BA2B41619432FBE00778719 /* TIYBookingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TIYBookingController.h; sourceTree = "<group>"; };
 		1BA2B41719432FBE00778719 /* TIYBookingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TIYBookingController.m; sourceTree = "<group>"; };
+		1BA2B41A19436CC100778719 /* bookingScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bookingScreen.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 		1BA2B3D219432D8600778719 = {
 			isa = PBXGroup;
 			children = (
+				1BA2B41A19436CC100778719 /* bookingScreen.png */,
 				1BA2B4191943305200778719 /* ViewControllers */,
 				1BA2B3E419432D8600778719 /* TIYTravel */,
 				1BA2B3FD19432D8600778719 /* TIYTravelTests */,
@@ -248,6 +251,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1BA2B41B19436CC100778719 /* bookingScreen.png in Resources */,
 				1BA2B3E919432D8600778719 /* InfoPlist.strings in Resources */,
 				1BA2B3F119432D8600778719 /* Images.xcassets in Resources */,
 			);
@@ -472,6 +476,7 @@
 				1BA2B40919432D8600778719 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1BA2B40A19432D8600778719 /* Build configuration list for PBXNativeTarget "TIYTravelTests" */ = {
 			isa = XCConfigurationList;
@@ -480,6 +485,7 @@
 				1BA2B40C19432D8600778719 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

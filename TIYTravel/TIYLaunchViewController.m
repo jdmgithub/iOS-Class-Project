@@ -7,6 +7,9 @@
 //
 
 #import "TIYLaunchViewController.h"
+#import "TIYNewClientVC.h"
+#import "TIYCurrentClientVC.h"
+
 
 @interface TIYLaunchViewController ()
 
@@ -130,6 +133,10 @@
 
 -(void)newClientMethod
 {
+
+    TIYNewClientVC * newClientVC = [[TIYNewClientVC alloc] initWithNibName:nil bundle:nil];
+    
+    [self.navigationController pushViewController:newClientVC animated:YES];
 
     
 }
