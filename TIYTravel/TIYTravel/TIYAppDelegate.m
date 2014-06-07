@@ -8,6 +8,7 @@
 
 #import "TIYAppDelegate.h"
 #import "TIYLaunchViewController.h"
+#import "TIYCollectionViewController.h"
 
 @implementation TIYAppDelegate
 
@@ -17,9 +18,16 @@
 
     
     TIYLaunchViewController * launchPage = [[TIYLaunchViewController alloc] init];
+
+    
     UINavigationController * navController = [[UINavigationController alloc] initWithRootViewController:launchPage];
     self.window.rootViewController = navController;
     navController.navigationBarHidden = YES;
+
+    
+//        self.window.rootViewController = [[TIYCollectionViewController alloc] initWithCollectionViewLayout:[[UICollectionViewFlowLayout alloc] init]];
+    
+    
     
     
     

@@ -9,9 +9,10 @@
 #import "TIYLaunchViewController.h"
 #import "TIYNewClientVC.h"
 #import "TIYCurrentClientVC.h"
+#import "TIYCollectionViewController.h"
 
 
-@interface TIYLaunchViewController ()
+@interface TIYLaunchViewController () 
 
 
 @end
@@ -24,7 +25,7 @@
     UIView * pullView;
     UIButton * newClients;
     UIButton * existingClients;
-    
+    TIYCollectionViewController * collectionVC;
     
 
 }
@@ -48,7 +49,7 @@
     [super viewDidLoad];
 
 
-    header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT * .15)];
+    header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT * .12)];
     header.backgroundColor = [UIColor whiteColor];
     [self.view addSubview: header];
     
@@ -110,7 +111,12 @@
     pullView = [[UIView alloc] initWithFrame:CGRectMake(SCREEN_WIDTH * .1, SCREEN_HEIGHT / 2 - 75, SCREEN_WIDTH * .8, SCREEN_HEIGHT * .4)];
     pullView.backgroundColor = [UIColor darkGrayColor];
     [self.view addSubview: pullView];
+
+    collectionVC = [[TIYCollectionViewController alloc] initWithCollectionViewLayout:[[UICollectionViewFlowLayout alloc] init]];
     
+    collectionVC.collectionView.frame = CGRectMake(0, 0, pullView.frame.size.width, pullView.frame.size.height);
+    
+    [pullView addSubview:collectionVC.collectionView];
     
     
     newClients = [[UIButton alloc] initWithFrame:CGRectMake(SCREEN_WIDTH - 220, SCREEN_HEIGHT - 120, 200, 50)];

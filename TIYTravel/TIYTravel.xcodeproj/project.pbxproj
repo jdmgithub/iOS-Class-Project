@@ -24,6 +24,7 @@
 		1BA2B41519432FA300778719 /* TIYCurrentClientVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BA2B41419432FA300778719 /* TIYCurrentClientVC.m */; };
 		1BA2B41819432FBE00778719 /* TIYBookingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BA2B41719432FBE00778719 /* TIYBookingController.m */; };
 		1BA2B41B19436CC100778719 /* bookingScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BA2B41A19436CC100778719 /* bookingScreen.png */; };
+		1BA2B41E1943823300778719 /* TIYCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BA2B41D1943823300778719 /* TIYCollectionViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,8 @@
 		1BA2B41619432FBE00778719 /* TIYBookingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TIYBookingController.h; sourceTree = "<group>"; };
 		1BA2B41719432FBE00778719 /* TIYBookingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TIYBookingController.m; sourceTree = "<group>"; };
 		1BA2B41A19436CC100778719 /* bookingScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bookingScreen.png; sourceTree = "<group>"; };
+		1BA2B41C1943823300778719 /* TIYCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TIYCollectionViewController.h; sourceTree = "<group>"; };
+		1BA2B41D1943823300778719 /* TIYCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TIYCollectionViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +94,8 @@
 		1BA2B3D219432D8600778719 = {
 			isa = PBXGroup;
 			children = (
+				1BA2B41C1943823300778719 /* TIYCollectionViewController.h */,
+				1BA2B41D1943823300778719 /* TIYCollectionViewController.m */,
 				1BA2B41A19436CC100778719 /* bookingScreen.png */,
 				1BA2B4191943305200778719 /* ViewControllers */,
 				1BA2B3E419432D8600778719 /* TIYTravel */,
@@ -275,6 +280,7 @@
 				1BA2B41819432FBE00778719 /* TIYBookingController.m in Sources */,
 				1BA2B3EB19432D8600778719 /* main.m in Sources */,
 				1BA2B3EF19432D8600778719 /* TIYAppDelegate.m in Sources */,
+				1BA2B41E1943823300778719 /* TIYCollectionViewController.m in Sources */,
 				1BA2B40F19432F3400778719 /* TIYLaunchViewController.m in Sources */,
 				1BA2B41219432F6300778719 /* TIYNewClientVC.m in Sources */,
 				1BA2B41519432FA300778719 /* TIYCurrentClientVC.m in Sources */,

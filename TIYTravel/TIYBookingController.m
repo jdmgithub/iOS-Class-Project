@@ -14,6 +14,10 @@
 
 @implementation TIYBookingController
 
+{
+    UIView * header;
+}
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -34,10 +38,35 @@
 
     UIImageView * imageView = [[UIImageView alloc] initWithImage:image];
     
-    imageView.frame = CGRectMake(40,40, SCREEN_WIDTH - 40, SCREEN_HEIGHT * .4);
+    imageView.frame = CGRectMake(40,SCREEN_HEIGHT * .3, SCREEN_WIDTH - 80, SCREEN_HEIGHT * .4);
     
     [self.view addSubview:imageView]; 
 
+    
+    header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT * .12)];
+    header.backgroundColor = [UIColor whiteColor];
+    [self.view addSubview: header];
+    
+    
+    UILabel * titleText = [[UILabel alloc] initWithFrame:CGRectMake(20, 20, SCREEN_WIDTH - 40, 40)];
+    //    titleText.backgroundColor = [UIColor redColor];
+    titleText.text = @"A TIME AND A PLACE";
+    titleText.textColor = [UIColor blackColor];
+    titleText.textAlignment = NSTextAlignmentCenter;
+    [titleText setFont:[UIFont fontWithName:@"GillSans" size:50.0f]];
+    [self.view addSubview:titleText];
+    
+    UILabel * TIYText = [[UILabel alloc] initWithFrame:CGRectMake(SCREEN_WIDTH - 170, 80, 150, 40)];
+    //    titleText.backgroundColor = [UIColor redColor];
+    TIYText.text = @"by TIY Travel, Inc.";
+    TIYText.textColor = [UIColor blackColor];
+    TIYText.textAlignment = NSTextAlignmentCenter;
+    [TIYText setFont:[UIFont fontWithName:@"GillSans" size:20.0f]];
+    [self.view addSubview:TIYText];
+
+    
+    
+    
     
     
 }

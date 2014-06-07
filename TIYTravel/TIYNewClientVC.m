@@ -43,7 +43,7 @@
     [super viewDidLoad];
 
 
-    header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT * .15)];
+    header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT * .12)];
     header.backgroundColor = [UIColor whiteColor];
     [self.view addSubview: header];
     

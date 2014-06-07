@@ -9,14 +9,15 @@
 #define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
 #define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
 
+#import "TIYCollectionViewController.h"
+//#import "TIYLaunchCollectionVC.h"
+//#import "TIYLaunchViewController.h"
 
-#import "GLACollectionViewController.h"
-
-@interface GLACollectionViewController () <UICollectionViewDelegateFlowLayout>
+@interface TIYCollectionViewController () <UICollectionViewDelegateFlowLayout>
 
 @end
 
-@implementation GLACollectionViewController
+@implementation TIYCollectionViewController
 
 {
     NSArray * movies;
@@ -37,7 +38,7 @@
 //        layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
 
         
-        self.collectionView.contentInset = UIEdgeInsetsMake(10, 10, 10, 10);
+        self.collectionView.contentInset = UIEdgeInsetsMake(20, 20, 20, 20);
         
         movies = @[
                    @"Congo",
@@ -46,6 +47,7 @@
                    @"Big",
                    @"Ed",
                    @"Babe",
+                   @"Firefox",
                    @"Batman",
                    @"Pi"
                    ];
@@ -69,7 +71,9 @@
 
 {
 
-    return CGSizeMake((SCREEN_WIDTH - 50) / 3.0, (SCREEN_HEIGHT - 50) /4.0);
+    
+        return CGSizeMake(175 , 175);
+//    return CGSizeMake((SCREEN_WIDTH - 50) / 4.0, (SCREEN_HEIGHT - 50) /8.0);
 
 }
 
@@ -78,7 +82,7 @@
 
 {
 
-    return 1.0;
+    return 20.0;
 }
 
 -(CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
@@ -101,7 +105,7 @@
 
     UILabel * title = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, cell.frame.size.width - 20, 30)];
     
-    title.textColor = [UIColor darkGrayColor];
+    title.textColor = [UIColor redColor];
     
     title.text = movies[indexPath.row];
     
