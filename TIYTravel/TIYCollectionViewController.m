@@ -33,6 +33,7 @@
     if (self)
     {
      
+        self.collectionView.backgroundColor = [UIColor clearColor];
         [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"cell"];
         
 //        layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
@@ -49,6 +50,14 @@
                    @"Babe",
                    @"Firefox",
                    @"Batman",
+                   @"Congo22",
+                   @"Godzilla22",
+                   @"Weekend At Bernies22",
+                   @"Big22",
+                   @"Ed22",
+                   @"Babe22",
+                   @"Firefox22",
+                   @"Batman22",
                    @"Pi"
                    ];
         
@@ -72,7 +81,7 @@
 {
 
     
-        return CGSizeMake(175 , 175);
+        return CGSizeMake(215 , 215);
 //    return CGSizeMake((SCREEN_WIDTH - 50) / 4.0, (SCREEN_HEIGHT - 50) /8.0);
 
 }
@@ -105,7 +114,7 @@
 
     UILabel * title = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, cell.frame.size.width - 20, 30)];
     
-    title.textColor = [UIColor redColor];
+    title.textColor = [UIColor whiteColor];
     
     title.text = movies[indexPath.row];
     
@@ -113,7 +122,7 @@
     [cell.contentView addSubview:title];
     
     
-    cell.backgroundColor = [UIColor whiteColor];
+    cell.backgroundColor = [UIColor darkGrayColor];
     return cell;
 
 }

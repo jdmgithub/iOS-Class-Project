@@ -43,7 +43,7 @@
     [self.view addSubview:imageView]; 
 
     
-    header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT * .12)];
+    header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT * .06)];
     header.backgroundColor = [UIColor whiteColor];
     [self.view addSubview: header];
     
@@ -56,7 +56,7 @@
     [titleText setFont:[UIFont fontWithName:@"GillSans" size:50.0f]];
     [self.view addSubview:titleText];
     
-    UILabel * TIYText = [[UILabel alloc] initWithFrame:CGRectMake(SCREEN_WIDTH - 170, 80, 150, 40)];
+    UILabel * TIYText = [[UILabel alloc] initWithFrame:CGRectMake(SCREEN_WIDTH - 150, 80, 150, 40)];
     //    titleText.backgroundColor = [UIColor redColor];
     TIYText.text = @"by TIY Travel, Inc.";
     TIYText.textColor = [UIColor blackColor];
