@@ -1,5 +1,5 @@
 //
-//  GLACollectionViewController.h
+//  TIYCollectionViewController.h
 //  GridLayout
 //
 //  Created by Jeffery Moulds on 5/30/14.

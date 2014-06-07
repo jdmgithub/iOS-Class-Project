@@ -8,6 +8,7 @@
 
 #import "TIYNewClientVC.h"
 #import "TIYBookingController.h"
+#import "TIYCollectionVCNewClient.h"
 
 @interface TIYNewClientVC ()
 
@@ -22,7 +23,9 @@
     UIView * bookingView;
     
     UIButton * bookingButton;
-    
+
+    TIYCollectionVCNewClient * collectionVC;
+
 }
 
 
@@ -99,6 +102,13 @@
     pullView.backgroundColor = [UIColor darkGrayColor];
     [self.view addSubview: pullView];
 
+    
+    collectionVC = [[TIYCollectionVCNewClient alloc] initWithCollectionViewLayout:[[UICollectionViewFlowLayout alloc] init]];
+    
+    collectionVC.collectionView.frame = CGRectMake(0, 0, pullView.frame.size.width, pullView.frame.size.height);
+    
+    [pullView addSubview:collectionVC.collectionView];
+    
     
     
     bookingView = [[UIButton alloc] initWithFrame:CGRectMake(SCREEN_WIDTH / 2 - 150, SCREEN_HEIGHT - 170, 320, 100)];

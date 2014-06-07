@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B41C65A19439902009A0318 /* TIYCollectionVCNewClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B41C65919439902009A0318 /* TIYCollectionVCNewClient.m */; };
 		1BA2B3DF19432D8600778719 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BA2B3DE19432D8600778719 /* Foundation.framework */; };
 		1BA2B3E119432D8600778719 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BA2B3E019432D8600778719 /* CoreGraphics.framework */; };
 		1BA2B3E319432D8600778719 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BA2B3E219432D8600778719 /* UIKit.framework */; };
@@ -38,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1B41C65819439902009A0318 /* TIYCollectionVCNewClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TIYCollectionVCNewClient.h; sourceTree = "<group>"; };
+		1B41C65919439902009A0318 /* TIYCollectionVCNewClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TIYCollectionVCNewClient.m; sourceTree = "<group>"; };
 		1BA2B3DB19432D8600778719 /* TIYTravel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TIYTravel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BA2B3DE19432D8600778719 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1BA2B3E019432D8600778719 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -96,6 +99,8 @@
 			children = (
 				1BA2B41C1943823300778719 /* TIYCollectionViewController.h */,
 				1BA2B41D1943823300778719 /* TIYCollectionViewController.m */,
+				1B41C65819439902009A0318 /* TIYCollectionVCNewClient.h */,
+				1B41C65919439902009A0318 /* TIYCollectionVCNewClient.m */,
 				1BA2B41A19436CC100778719 /* bookingScreen.png */,
 				1BA2B4191943305200778719 /* ViewControllers */,
 				1BA2B3E419432D8600778719 /* TIYTravel */,
@@ -278,6 +283,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1BA2B41819432FBE00778719 /* TIYBookingController.m in Sources */,
+				1B41C65A19439902009A0318 /* TIYCollectionVCNewClient.m in Sources */,
 				1BA2B3EB19432D8600778719 /* main.m in Sources */,
 				1BA2B3EF19432D8600778719 /* TIYAppDelegate.m in Sources */,
 				1BA2B41E1943823300778719 /* TIYCollectionViewController.m in Sources */,
