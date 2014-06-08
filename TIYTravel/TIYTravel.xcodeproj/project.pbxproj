@@ -12,6 +12,7 @@
 		1B6E7EF2194483C900A7034A /* TIYThankYouVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B6E7EF1194483C900A7034A /* TIYThankYouVC.m */; };
 		1B6E7EF4194486CE00A7034A /* confirmationScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B6E7EF3194486CE00A7034A /* confirmationScreen.png */; };
 		1B6E7EF61944A30A00A7034A /* vacationBeach.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B6E7EF51944A30A00A7034A /* vacationBeach.png */; };
+		1B6E7EFC1944C29500A7034A /* TIYCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B6E7EFB1944C29500A7034A /* TIYCollectionCell.m */; };
 		1BA2B3DF19432D8600778719 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BA2B3DE19432D8600778719 /* Foundation.framework */; };
 		1BA2B3E119432D8600778719 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BA2B3E019432D8600778719 /* CoreGraphics.framework */; };
 		1BA2B3E319432D8600778719 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BA2B3E219432D8600778719 /* UIKit.framework */; };
@@ -51,6 +52,8 @@
 		1B6E7EF1194483C900A7034A /* TIYThankYouVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TIYThankYouVC.m; sourceTree = "<group>"; };
 		1B6E7EF3194486CE00A7034A /* confirmationScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = confirmationScreen.png; sourceTree = "<group>"; };
 		1B6E7EF51944A30A00A7034A /* vacationBeach.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vacationBeach.png; sourceTree = "<group>"; };
+		1B6E7EFA1944C29500A7034A /* TIYCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TIYCollectionCell.h; sourceTree = "<group>"; };
+		1B6E7EFB1944C29500A7034A /* TIYCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TIYCollectionCell.m; sourceTree = "<group>"; };
 		1BA2B3DB19432D8600778719 /* TIYTravel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TIYTravel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BA2B3DE19432D8600778719 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1BA2B3E019432D8600778719 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -107,6 +110,8 @@
 		1BA2B3D219432D8600778719 = {
 			isa = PBXGroup;
 			children = (
+				1B6E7EFA1944C29500A7034A /* TIYCollectionCell.h */,
+				1B6E7EFB1944C29500A7034A /* TIYCollectionCell.m */,
 				1BA2B41C1943823300778719 /* TIYCollectionViewController.h */,
 				1BA2B41D1943823300778719 /* TIYCollectionViewController.m */,
 				1B41C65819439902009A0318 /* TIYCollectionVCNewClient.h */,
@@ -310,6 +315,7 @@
 				1BA2B40F19432F3400778719 /* TIYLaunchViewController.m in Sources */,
 				1BA2B41219432F6300778719 /* TIYNewClientVC.m in Sources */,
 				1BA2B41519432FA300778719 /* TIYCurrentClientVC.m in Sources */,
+				1B6E7EFC1944C29500A7034A /* TIYCollectionCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

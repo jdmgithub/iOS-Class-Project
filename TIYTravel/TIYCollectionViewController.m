@@ -10,6 +10,8 @@
 #define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
 
 #import "TIYCollectionViewController.h"
+#import "TIYCollectionCell.h"
+
 //#import "TIYLaunchCollectionVC.h"
 //#import "TIYLaunchViewController.h"
 
@@ -21,6 +23,7 @@
 
 {
     NSArray * images;
+    TIYCollectionCell * colCell;
 }
 
 
@@ -106,22 +109,22 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-
-
     
-    UICollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
     
-
+    TIYCollectionCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
+    
+    
+    
     UILabel * title = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, cell.frame.size.width - 20, 30)];
+    
     
     title.textColor = [UIColor whiteColor];
     
+    
+    
     title.text = images[indexPath.row];
     
-    
     [cell.contentView addSubview:title];
-    
-    
     
     cell.backgroundColor = [UIColor darkGrayColor];
     return cell;
