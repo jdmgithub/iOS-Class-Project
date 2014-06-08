@@ -15,7 +15,7 @@
 @implementation TIYCollectionVCNewClient
 
 {
-    NSArray * movies;
+    NSArray * images;
 
 }
 
@@ -35,7 +35,7 @@
         
         self.collectionView.contentInset = UIEdgeInsetsMake(20, 20, 20, 20);
         
-        movies = @[
+        images = @[
                    @"Congo",
                    @"Godzilla",
                    @"Weekend At Bernies",
@@ -65,7 +65,7 @@
 {
     
     // High Numbers Lets it Scroll e.g. 200
-    return [movies count];
+    return [images count];
     
 }
 
@@ -110,7 +110,7 @@
     
     title.textColor = [UIColor whiteColor];
     
-    title.text = movies[indexPath.row];
+    title.text = images[indexPath.row];
     
     
     [cell.contentView addSubview:title];
