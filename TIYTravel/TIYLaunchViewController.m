@@ -89,7 +89,7 @@
     
     UILabel * introText2 = [[UILabel alloc] initWithFrame:CGRectMake(20, 70, (SCREEN_WIDTH * .8) - 40 , 50)];
 //    introText2.backgroundColor = [UIColor redColor];
-    introText2.text = @"Our Clients Are Creating,";
+    introText2.text = @"Let The Iron Yard Travel";
     introText2.textColor = [UIColor blackColor];
     introText2.textAlignment = NSTextAlignmentCenter;
     [introText2 setFont:[UIFont fontWithName:@"GillSans" size:40.0f]];
@@ -97,7 +97,7 @@
 
     UILabel * introText3 = [[UILabel alloc] initWithFrame:CGRectMake(20, 120, (SCREEN_WIDTH * .8) - 40 , 50)];
 //    introText3.backgroundColor = [UIColor redColor];
-    introText3.text = @"And You Can Too.";
+    introText3.text = @"Company Create Them For You.";
     introText3.textColor = [UIColor blackColor];
     introText3.textAlignment = NSTextAlignmentCenter;
     [introText3 setFont:[UIFont fontWithName:@"GillSans" size:40.0f]];

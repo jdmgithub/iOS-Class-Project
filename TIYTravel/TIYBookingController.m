@@ -7,6 +7,7 @@
 //
 
 #import "TIYBookingController.h"
+#import "TIYConfirmationVC.h"
 
 @interface TIYBookingController ()
 
@@ -56,7 +57,7 @@
     [titleText setFont:[UIFont fontWithName:@"GillSans" size:50.0f]];
     [self.view addSubview:titleText];
     
-    UILabel * TIYText = [[UILabel alloc] initWithFrame:CGRectMake(SCREEN_WIDTH - 150, 80, 150, 40)];
+    UILabel * TIYText = [[UILabel alloc] initWithFrame:CGRectMake(SCREEN_WIDTH - 150, 50, 150, 40)];
     //    titleText.backgroundColor = [UIColor redColor];
     TIYText.text = @"by TIY Travel, Inc.";
     TIYText.textColor = [UIColor blackColor];
@@ -64,9 +65,25 @@
     [TIYText setFont:[UIFont fontWithName:@"GillSans" size:20.0f]];
     [self.view addSubview:TIYText];
 
+
+    UILabel * fpoText = [[UILabel alloc] initWithFrame:CGRectMake(20, SCREEN_HEIGHT * .15, SCREEN_WIDTH - 40, 40)];
+    //    titleText.backgroundColor = [UIColor redColor];
+    fpoText.text = @"FPO - Vacation Booking";
+    fpoText.textColor = [UIColor blackColor];
+    fpoText.textAlignment = NSTextAlignmentCenter;
+    [fpoText setFont:[UIFont fontWithName:@"GillSans" size:40.0f]];
+    [self.view addSubview:fpoText];
+
     
     
     
+    UIButton * confirmationButton = [[UIButton alloc] initWithFrame:CGRectMake(0, SCREEN_HEIGHT - 50, SCREEN_WIDTH, 50)];
+    //    bookingButton.backgroundColor = [UIColor redColor];
+    [confirmationButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    confirmationButton.backgroundColor = [UIColor darkGrayColor];
+    [confirmationButton setTitle:@"Trip Details" forState:UIControlStateNormal];
+    [confirmationButton addTarget:self action:@selector(launchThankVC) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:confirmationButton];
     
     
 }
@@ -77,15 +94,19 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+-(void)launchThankVC
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    
+    TIYConfirmationVC * confirm = [[TIYConfirmationVC alloc] initWithNibName:nil bundle:nil];
+    
+    [self.navigationController pushViewController:confirm animated:YES];
+    
 }
-*/
+
+
+
+
+-(BOOL)prefersStatusBarHidden {return YES;}
 
 @end

@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		1B41C65A19439902009A0318 /* TIYCollectionVCNewClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B41C65919439902009A0318 /* TIYCollectionVCNewClient.m */; };
+		1B6E7EEF1944836100A7034A /* TIYConfirmationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B6E7EEE1944836100A7034A /* TIYConfirmationVC.m */; };
+		1B6E7EF2194483C900A7034A /* TIYThankYouVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B6E7EF1194483C900A7034A /* TIYThankYouVC.m */; };
+		1B6E7EF4194486CE00A7034A /* confirmationScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B6E7EF3194486CE00A7034A /* confirmationScreen.png */; };
+		1B6E7EF61944A30A00A7034A /* vacationBeach.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B6E7EF51944A30A00A7034A /* vacationBeach.png */; };
 		1BA2B3DF19432D8600778719 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BA2B3DE19432D8600778719 /* Foundation.framework */; };
 		1BA2B3E119432D8600778719 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BA2B3E019432D8600778719 /* CoreGraphics.framework */; };
 		1BA2B3E319432D8600778719 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BA2B3E219432D8600778719 /* UIKit.framework */; };
@@ -41,6 +45,12 @@
 /* Begin PBXFileReference section */
 		1B41C65819439902009A0318 /* TIYCollectionVCNewClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TIYCollectionVCNewClient.h; sourceTree = "<group>"; };
 		1B41C65919439902009A0318 /* TIYCollectionVCNewClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TIYCollectionVCNewClient.m; sourceTree = "<group>"; };
+		1B6E7EED1944836100A7034A /* TIYConfirmationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TIYConfirmationVC.h; sourceTree = "<group>"; };
+		1B6E7EEE1944836100A7034A /* TIYConfirmationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TIYConfirmationVC.m; sourceTree = "<group>"; };
+		1B6E7EF0194483C900A7034A /* TIYThankYouVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TIYThankYouVC.h; sourceTree = "<group>"; };
+		1B6E7EF1194483C900A7034A /* TIYThankYouVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TIYThankYouVC.m; sourceTree = "<group>"; };
+		1B6E7EF3194486CE00A7034A /* confirmationScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = confirmationScreen.png; sourceTree = "<group>"; };
+		1B6E7EF51944A30A00A7034A /* vacationBeach.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vacationBeach.png; sourceTree = "<group>"; };
 		1BA2B3DB19432D8600778719 /* TIYTravel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TIYTravel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BA2B3DE19432D8600778719 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1BA2B3E019432D8600778719 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -102,6 +112,8 @@
 				1B41C65819439902009A0318 /* TIYCollectionVCNewClient.h */,
 				1B41C65919439902009A0318 /* TIYCollectionVCNewClient.m */,
 				1BA2B41A19436CC100778719 /* bookingScreen.png */,
+				1B6E7EF3194486CE00A7034A /* confirmationScreen.png */,
+				1B6E7EF51944A30A00A7034A /* vacationBeach.png */,
 				1BA2B4191943305200778719 /* ViewControllers */,
 				1BA2B3E419432D8600778719 /* TIYTravel */,
 				1BA2B3FD19432D8600778719 /* TIYTravelTests */,
@@ -181,6 +193,10 @@
 				1BA2B41419432FA300778719 /* TIYCurrentClientVC.m */,
 				1BA2B41619432FBE00778719 /* TIYBookingController.h */,
 				1BA2B41719432FBE00778719 /* TIYBookingController.m */,
+				1B6E7EED1944836100A7034A /* TIYConfirmationVC.h */,
+				1B6E7EEE1944836100A7034A /* TIYConfirmationVC.m */,
+				1B6E7EF0194483C900A7034A /* TIYThankYouVC.h */,
+				1B6E7EF1194483C900A7034A /* TIYThankYouVC.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -263,7 +279,9 @@
 			files = (
 				1BA2B41B19436CC100778719 /* bookingScreen.png in Resources */,
 				1BA2B3E919432D8600778719 /* InfoPlist.strings in Resources */,
+				1B6E7EF4194486CE00A7034A /* confirmationScreen.png in Resources */,
 				1BA2B3F119432D8600778719 /* Images.xcassets in Resources */,
+				1B6E7EF61944A30A00A7034A /* vacationBeach.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,6 +302,8 @@
 			files = (
 				1BA2B41819432FBE00778719 /* TIYBookingController.m in Sources */,
 				1B41C65A19439902009A0318 /* TIYCollectionVCNewClient.m in Sources */,
+				1B6E7EEF1944836100A7034A /* TIYConfirmationVC.m in Sources */,
+				1B6E7EF2194483C900A7034A /* TIYThankYouVC.m in Sources */,
 				1BA2B3EB19432D8600778719 /* main.m in Sources */,
 				1BA2B3EF19432D8600778719 /* TIYAppDelegate.m in Sources */,
 				1BA2B41E1943823300778719 /* TIYCollectionViewController.m in Sources */,
