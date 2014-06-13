@@ -1,0 +1,593 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1B41C65A19439902009A0318 /* TIYCollectionVCNewClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B41C65919439902009A0318 /* TIYCollectionVCNewClient.m */; };
+		1B6E7EEF1944836100A7034A /* TIYConfirmationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B6E7EEE1944836100A7034A /* TIYConfirmationVC.m */; };
+		1B6E7EF2194483C900A7034A /* TIYThankYouVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B6E7EF1194483C900A7034A /* TIYThankYouVC.m */; };
+		1B6E7EF4194486CE00A7034A /* confirmationScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B6E7EF3194486CE00A7034A /* confirmationScreen.png */; };
+		1B6E7EF61944A30A00A7034A /* vacationBeach.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B6E7EF51944A30A00A7034A /* vacationBeach.png */; };
+		1BA2B3DF19432D8600778719 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BA2B3DE19432D8600778719 /* Foundation.framework */; };
+		1BA2B3E119432D8600778719 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BA2B3E019432D8600778719 /* CoreGraphics.framework */; };
+		1BA2B3E319432D8600778719 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BA2B3E219432D8600778719 /* UIKit.framework */; };
+		1BA2B3E919432D8600778719 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1BA2B3E719432D8600778719 /* InfoPlist.strings */; };
+		1BA2B3EB19432D8600778719 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BA2B3EA19432D8600778719 /* main.m */; };
+		1BA2B3EF19432D8600778719 /* TIYAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BA2B3EE19432D8600778719 /* TIYAppDelegate.m */; };
+		1BA2B3F119432D8600778719 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BA2B3F019432D8600778719 /* Images.xcassets */; };
+		1BA2B3F819432D8600778719 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BA2B3F719432D8600778719 /* XCTest.framework */; };
+		1BA2B3F919432D8600778719 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BA2B3DE19432D8600778719 /* Foundation.framework */; };
+		1BA2B3FA19432D8600778719 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BA2B3E219432D8600778719 /* UIKit.framework */; };
+		1BA2B40219432D8600778719 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1BA2B40019432D8600778719 /* InfoPlist.strings */; };
+		1BA2B40419432D8600778719 /* TIYTravelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BA2B40319432D8600778719 /* TIYTravelTests.m */; };
+		1BA2B40F19432F3400778719 /* TIYLaunchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BA2B40E19432F3400778719 /* TIYLaunchViewController.m */; };
+		1BA2B41219432F6300778719 /* TIYNewClientVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BA2B41119432F6300778719 /* TIYNewClientVC.m */; };
+		1BA2B41819432FBE00778719 /* TIYBookingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BA2B41719432FBE00778719 /* TIYBookingController.m */; };
+		1BA2B41B19436CC100778719 /* bookingScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BA2B41A19436CC100778719 /* bookingScreen.png */; };
+		1BA2B41E1943823300778719 /* TIYLaunchCollectionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BA2B41D1943823300778719 /* TIYLaunchCollectionVC.m */; };
+		919C5F701944CD3D00FA58B5 /* london.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 919C5F6B1944CD3D00FA58B5 /* london.jpg */; };
+		919C5F711944CD3D00FA58B5 /* madrid.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 919C5F6C1944CD3D00FA58B5 /* madrid.jpg */; };
+		919C5F721944CD3D00FA58B5 /* mumbai.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 919C5F6D1944CD3D00FA58B5 /* mumbai.jpg */; };
+		919C5F731944CD3D00FA58B5 /* new york.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 919C5F6E1944CD3D00FA58B5 /* new york.jpg */; };
+		919C5F741944CD3D00FA58B5 /* orlando.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 919C5F6F1944CD3D00FA58B5 /* orlando.jpg */; };
+		919C5F791944CE2E00FA58B5 /* TAPFBCollectionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 919C5F761944CE2E00FA58B5 /* TAPFBCollectionVC.m */; };
+		919C5F7A1944CE2E00FA58B5 /* TAPFaceBookRequests.m in Sources */ = {isa = PBXBuildFile; fileRef = 919C5F781944CE2E00FA58B5 /* TAPFaceBookRequests.m */; };
+		919C5F7D1944CE3800FA58B5 /* TAPCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 919C5F7C1944CE3800FA58B5 /* TAPCollectionViewController.m */; };
+		919C5F801944CE4000FA58B5 /* TAPFourSquareRequests.m in Sources */ = {isa = PBXBuildFile; fileRef = 919C5F7F1944CE4000FA58B5 /* TAPFourSquareRequests.m */; };
+		919C5F831944CE4C00FA58B5 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 919C5F811944CE4C00FA58B5 /* Social.framework */; };
+		919C5F841944CE4C00FA58B5 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 919C5F821944CE4C00FA58B5 /* Accounts.framework */; };
+		919C5F861944D56E00FA58B5 /* travlepick.png in Resources */ = {isa = PBXBuildFile; fileRef = 919C5F851944D56E00FA58B5 /* travlepick.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1BA2B3FB19432D8600778719 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1BA2B3D319432D8600778719 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1BA2B3DA19432D8600778719;
+			remoteInfo = TIYTravel;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1B41C65819439902009A0318 /* TIYCollectionVCNewClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TIYCollectionVCNewClient.h; sourceTree = "<group>"; };
+		1B41C65919439902009A0318 /* TIYCollectionVCNewClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TIYCollectionVCNewClient.m; sourceTree = "<group>"; };
+		1B6E7EED1944836100A7034A /* TIYConfirmationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TIYConfirmationVC.h; sourceTree = "<group>"; };
+		1B6E7EEE1944836100A7034A /* TIYConfirmationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TIYConfirmationVC.m; sourceTree = "<group>"; };
+		1B6E7EF0194483C900A7034A /* TIYThankYouVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TIYThankYouVC.h; sourceTree = "<group>"; };
+		1B6E7EF1194483C900A7034A /* TIYThankYouVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TIYThankYouVC.m; sourceTree = "<group>"; };
+		1B6E7EF3194486CE00A7034A /* confirmationScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = confirmationScreen.png; sourceTree = "<group>"; };
+		1B6E7EF51944A30A00A7034A /* vacationBeach.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vacationBeach.png; sourceTree = "<group>"; };
+		1BA2B3DB19432D8600778719 /* TIYTravel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TIYTravel.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1BA2B3DE19432D8600778719 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1BA2B3E019432D8600778719 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		1BA2B3E219432D8600778719 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		1BA2B3E619432D8600778719 /* TIYTravel-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TIYTravel-Info.plist"; sourceTree = "<group>"; };
+		1BA2B3E819432D8600778719 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1BA2B3EA19432D8600778719 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1BA2B3EC19432D8600778719 /* TIYTravel-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TIYTravel-Prefix.pch"; sourceTree = "<group>"; };
+		1BA2B3ED19432D8600778719 /* TIYAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TIYAppDelegate.h; sourceTree = "<group>"; };
+		1BA2B3EE19432D8600778719 /* TIYAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TIYAppDelegate.m; sourceTree = "<group>"; };
+		1BA2B3F019432D8600778719 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		1BA2B3F619432D8600778719 /* TIYTravelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TIYTravelTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1BA2B3F719432D8600778719 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		1BA2B3FF19432D8600778719 /* TIYTravelTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TIYTravelTests-Info.plist"; sourceTree = "<group>"; };
+		1BA2B40119432D8600778719 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1BA2B40319432D8600778719 /* TIYTravelTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TIYTravelTests.m; sourceTree = "<group>"; };
+		1BA2B40D19432F3400778719 /* TIYLaunchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TIYLaunchViewController.h; sourceTree = "<group>"; };
+		1BA2B40E19432F3400778719 /* TIYLaunchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TIYLaunchViewController.m; sourceTree = "<group>"; };
+		1BA2B41019432F6300778719 /* TIYNewClientVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TIYNewClientVC.h; sourceTree = "<group>"; };
+		1BA2B41119432F6300778719 /* TIYNewClientVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TIYNewClientVC.m; sourceTree = "<group>"; };
+		1BA2B41619432FBE00778719 /* TIYBookingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TIYBookingController.h; sourceTree = "<group>"; };
+		1BA2B41719432FBE00778719 /* TIYBookingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TIYBookingController.m; sourceTree = "<group>"; };
+		1BA2B41A19436CC100778719 /* bookingScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bookingScreen.png; sourceTree = "<group>"; };
+		1BA2B41C1943823300778719 /* TIYLaunchCollectionVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TIYLaunchCollectionVC.h; sourceTree = "<group>"; };
+		1BA2B41D1943823300778719 /* TIYLaunchCollectionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TIYLaunchCollectionVC.m; sourceTree = "<group>"; };
+		919C5F6B1944CD3D00FA58B5 /* london.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = london.jpg; sourceTree = "<group>"; };
+		919C5F6C1944CD3D00FA58B5 /* madrid.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = madrid.jpg; sourceTree = "<group>"; };
+		919C5F6D1944CD3D00FA58B5 /* mumbai.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = mumbai.jpg; sourceTree = "<group>"; };
+		919C5F6E1944CD3D00FA58B5 /* new york.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "new york.jpg"; sourceTree = "<group>"; };
+		919C5F6F1944CD3D00FA58B5 /* orlando.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = orlando.jpg; sourceTree = "<group>"; };
+		919C5F751944CE2E00FA58B5 /* TAPFBCollectionVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAPFBCollectionVC.h; sourceTree = "<group>"; };
+		919C5F761944CE2E00FA58B5 /* TAPFBCollectionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAPFBCollectionVC.m; sourceTree = "<group>"; };
+		919C5F771944CE2E00FA58B5 /* TAPFaceBookRequests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAPFaceBookRequests.h; sourceTree = "<group>"; };
+		919C5F781944CE2E00FA58B5 /* TAPFaceBookRequests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAPFaceBookRequests.m; sourceTree = "<group>"; };
+		919C5F7B1944CE3800FA58B5 /* TAPCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAPCollectionViewController.h; sourceTree = "<group>"; };
+		919C5F7C1944CE3800FA58B5 /* TAPCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAPCollectionViewController.m; sourceTree = "<group>"; };
+		919C5F7E1944CE4000FA58B5 /* TAPFourSquareRequests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAPFourSquareRequests.h; sourceTree = "<group>"; };
+		919C5F7F1944CE4000FA58B5 /* TAPFourSquareRequests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAPFourSquareRequests.m; sourceTree = "<group>"; };
+		919C5F811944CE4C00FA58B5 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Social.framework; sourceTree = "<group>"; };
+		919C5F821944CE4C00FA58B5 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Accounts.framework; sourceTree = "<group>"; };
+		919C5F851944D56E00FA58B5 /* travlepick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = travlepick.png; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1BA2B3D819432D8600778719 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1BA2B3E119432D8600778719 /* CoreGraphics.framework in Frameworks */,
+				1BA2B3E319432D8600778719 /* UIKit.framework in Frameworks */,
+				1BA2B3DF19432D8600778719 /* Foundation.framework in Frameworks */,
+				919C5F831944CE4C00FA58B5 /* Social.framework in Frameworks */,
+				919C5F841944CE4C00FA58B5 /* Accounts.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1BA2B3F319432D8600778719 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1BA2B3F819432D8600778719 /* XCTest.framework in Frameworks */,
+				1BA2B3FA19432D8600778719 /* UIKit.framework in Frameworks */,
+				1BA2B3F919432D8600778719 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1BA2B3D219432D8600778719 = {
+			isa = PBXGroup;
+			children = (
+				919C5F7B1944CE3800FA58B5 /* TAPCollectionViewController.h */,
+				919C5F7C1944CE3800FA58B5 /* TAPCollectionViewController.m */,
+				919C5F7E1944CE4000FA58B5 /* TAPFourSquareRequests.h */,
+				919C5F7F1944CE4000FA58B5 /* TAPFourSquareRequests.m */,
+				919C5F751944CE2E00FA58B5 /* TAPFBCollectionVC.h */,
+				919C5F761944CE2E00FA58B5 /* TAPFBCollectionVC.m */,
+				919C5F771944CE2E00FA58B5 /* TAPFaceBookRequests.h */,
+				919C5F781944CE2E00FA58B5 /* TAPFaceBookRequests.m */,
+				919C5F6A1944CC3900FA58B5 /* Images */,
+				1BA2B41C1943823300778719 /* TIYLaunchCollectionVC.h */,
+				1BA2B41D1943823300778719 /* TIYLaunchCollectionVC.m */,
+				1B41C65819439902009A0318 /* TIYCollectionVCNewClient.h */,
+				1B41C65919439902009A0318 /* TIYCollectionVCNewClient.m */,
+				1BA2B41A19436CC100778719 /* bookingScreen.png */,
+				1B6E7EF3194486CE00A7034A /* confirmationScreen.png */,
+				1B6E7EF51944A30A00A7034A /* vacationBeach.png */,
+				1BA2B4191943305200778719 /* ViewControllers */,
+				1BA2B3E419432D8600778719 /* TIYTravel */,
+				1BA2B3FD19432D8600778719 /* TIYTravelTests */,
+				1BA2B3DD19432D8600778719 /* Frameworks */,
+				1BA2B3DC19432D8600778719 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1BA2B3DC19432D8600778719 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1BA2B3DB19432D8600778719 /* TIYTravel.app */,
+				1BA2B3F619432D8600778719 /* TIYTravelTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1BA2B3DD19432D8600778719 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				919C5F811944CE4C00FA58B5 /* Social.framework */,
+				919C5F821944CE4C00FA58B5 /* Accounts.framework */,
+				1BA2B3DE19432D8600778719 /* Foundation.framework */,
+				1BA2B3E019432D8600778719 /* CoreGraphics.framework */,
+				1BA2B3E219432D8600778719 /* UIKit.framework */,
+				1BA2B3F719432D8600778719 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1BA2B3E419432D8600778719 /* TIYTravel */ = {
+			isa = PBXGroup;
+			children = (
+				1BA2B3ED19432D8600778719 /* TIYAppDelegate.h */,
+				1BA2B3EE19432D8600778719 /* TIYAppDelegate.m */,
+				1BA2B3F019432D8600778719 /* Images.xcassets */,
+				1BA2B3E519432D8600778719 /* Supporting Files */,
+			);
+			path = TIYTravel;
+			sourceTree = "<group>";
+		};
+		1BA2B3E519432D8600778719 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1BA2B3E619432D8600778719 /* TIYTravel-Info.plist */,
+				1BA2B3E719432D8600778719 /* InfoPlist.strings */,
+				1BA2B3EA19432D8600778719 /* main.m */,
+				1BA2B3EC19432D8600778719 /* TIYTravel-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1BA2B3FD19432D8600778719 /* TIYTravelTests */ = {
+			isa = PBXGroup;
+			children = (
+				1BA2B40319432D8600778719 /* TIYTravelTests.m */,
+				1BA2B3FE19432D8600778719 /* Supporting Files */,
+			);
+			path = TIYTravelTests;
+			sourceTree = "<group>";
+		};
+		1BA2B3FE19432D8600778719 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1BA2B3FF19432D8600778719 /* TIYTravelTests-Info.plist */,
+				1BA2B40019432D8600778719 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1BA2B4191943305200778719 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				1BA2B40D19432F3400778719 /* TIYLaunchViewController.h */,
+				1BA2B40E19432F3400778719 /* TIYLaunchViewController.m */,
+				1BA2B41019432F6300778719 /* TIYNewClientVC.h */,
+				1BA2B41119432F6300778719 /* TIYNewClientVC.m */,
+				1BA2B41619432FBE00778719 /* TIYBookingController.h */,
+				1BA2B41719432FBE00778719 /* TIYBookingController.m */,
+				1B6E7EED1944836100A7034A /* TIYConfirmationVC.h */,
+				1B6E7EEE1944836100A7034A /* TIYConfirmationVC.m */,
+				1B6E7EF0194483C900A7034A /* TIYThankYouVC.h */,
+				1B6E7EF1194483C900A7034A /* TIYThankYouVC.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		919C5F6A1944CC3900FA58B5 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				919C5F851944D56E00FA58B5 /* travlepick.png */,
+				919C5F6B1944CD3D00FA58B5 /* london.jpg */,
+				919C5F6C1944CD3D00FA58B5 /* madrid.jpg */,
+				919C5F6D1944CD3D00FA58B5 /* mumbai.jpg */,
+				919C5F6E1944CD3D00FA58B5 /* new york.jpg */,
+				919C5F6F1944CD3D00FA58B5 /* orlando.jpg */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1BA2B3DA19432D8600778719 /* TIYTravel */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1BA2B40719432D8600778719 /* Build configuration list for PBXNativeTarget "TIYTravel" */;
+			buildPhases = (
+				1BA2B3D719432D8600778719 /* Sources */,
+				1BA2B3D819432D8600778719 /* Frameworks */,
+				1BA2B3D919432D8600778719 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TIYTravel;
+			productName = TIYTravel;
+			productReference = 1BA2B3DB19432D8600778719 /* TIYTravel.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1BA2B3F519432D8600778719 /* TIYTravelTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1BA2B40A19432D8600778719 /* Build configuration list for PBXNativeTarget "TIYTravelTests" */;
+			buildPhases = (
+				1BA2B3F219432D8600778719 /* Sources */,
+				1BA2B3F319432D8600778719 /* Frameworks */,
+				1BA2B3F419432D8600778719 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1BA2B3FC19432D8600778719 /* PBXTargetDependency */,
+			);
+			name = TIYTravelTests;
+			productName = TIYTravelTests;
+			productReference = 1BA2B3F619432D8600778719 /* TIYTravelTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1BA2B3D319432D8600778719 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = TIY;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Jeffery Moulds";
+				TargetAttributes = {
+					1BA2B3F519432D8600778719 = {
+						TestTargetID = 1BA2B3DA19432D8600778719;
+					};
+				};
+			};
+			buildConfigurationList = 1BA2B3D619432D8600778719 /* Build configuration list for PBXProject "TIYTravel" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 1BA2B3D219432D8600778719;
+			productRefGroup = 1BA2B3DC19432D8600778719 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1BA2B3DA19432D8600778719 /* TIYTravel */,
+				1BA2B3F519432D8600778719 /* TIYTravelTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1BA2B3D919432D8600778719 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				919C5F711944CD3D00FA58B5 /* madrid.jpg in Resources */,
+				1BA2B41B19436CC100778719 /* bookingScreen.png in Resources */,
+				919C5F701944CD3D00FA58B5 /* london.jpg in Resources */,
+				1BA2B3E919432D8600778719 /* InfoPlist.strings in Resources */,
+				919C5F721944CD3D00FA58B5 /* mumbai.jpg in Resources */,
+				919C5F741944CD3D00FA58B5 /* orlando.jpg in Resources */,
+				1B6E7EF4194486CE00A7034A /* confirmationScreen.png in Resources */,
+				919C5F731944CD3D00FA58B5 /* new york.jpg in Resources */,
+				1BA2B3F119432D8600778719 /* Images.xcassets in Resources */,
+				1B6E7EF61944A30A00A7034A /* vacationBeach.png in Resources */,
+				919C5F861944D56E00FA58B5 /* travlepick.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1BA2B3F419432D8600778719 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1BA2B40219432D8600778719 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1BA2B3D719432D8600778719 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				919C5F7A1944CE2E00FA58B5 /* TAPFaceBookRequests.m in Sources */,
+				1BA2B41819432FBE00778719 /* TIYBookingController.m in Sources */,
+				1B41C65A19439902009A0318 /* TIYCollectionVCNewClient.m in Sources */,
+				1B6E7EEF1944836100A7034A /* TIYConfirmationVC.m in Sources */,
+				919C5F7D1944CE3800FA58B5 /* TAPCollectionViewController.m in Sources */,
+				1B6E7EF2194483C900A7034A /* TIYThankYouVC.m in Sources */,
+				919C5F801944CE4000FA58B5 /* TAPFourSquareRequests.m in Sources */,
+				1BA2B3EB19432D8600778719 /* main.m in Sources */,
+				1BA2B3EF19432D8600778719 /* TIYAppDelegate.m in Sources */,
+				919C5F791944CE2E00FA58B5 /* TAPFBCollectionVC.m in Sources */,
+				1BA2B41E1943823300778719 /* TIYLaunchCollectionVC.m in Sources */,
+				1BA2B40F19432F3400778719 /* TIYLaunchViewController.m in Sources */,
+				1BA2B41219432F6300778719 /* TIYNewClientVC.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1BA2B3F219432D8600778719 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1BA2B40419432D8600778719 /* TIYTravelTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1BA2B3FC19432D8600778719 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1BA2B3DA19432D8600778719 /* TIYTravel */;
+			targetProxy = 1BA2B3FB19432D8600778719 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1BA2B3E719432D8600778719 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1BA2B3E819432D8600778719 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		1BA2B40019432D8600778719 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1BA2B40119432D8600778719 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1BA2B40519432D8600778719 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		1BA2B40619432D8600778719 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1BA2B40819432D8600778719 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TIYTravel/TIYTravel-Prefix.pch";
+				INFOPLIST_FILE = "TIYTravel/TIYTravel-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		1BA2B40919432D8600778719 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TIYTravel/TIYTravel-Prefix.pch";
+				INFOPLIST_FILE = "TIYTravel/TIYTravel-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		1BA2B40B19432D8600778719 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/TIYTravel.app/TIYTravel";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TIYTravel/TIYTravel-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "TIYTravelTests/TIYTravelTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		1BA2B40C19432D8600778719 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/TIYTravel.app/TIYTravel";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TIYTravel/TIYTravel-Prefix.pch";
+				INFOPLIST_FILE = "TIYTravelTests/TIYTravelTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1BA2B3D619432D8600778719 /* Build configuration list for PBXProject "TIYTravel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1BA2B40519432D8600778719 /* Debug */,
+				1BA2B40619432D8600778719 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1BA2B40719432D8600778719 /* Build configuration list for PBXNativeTarget "TIYTravel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1BA2B40819432D8600778719 /* Debug */,
+				1BA2B40919432D8600778719 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1BA2B40A19432D8600778719 /* Build configuration list for PBXNativeTarget "TIYTravelTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1BA2B40B19432D8600778719 /* Debug */,
+				1BA2B40C19432D8600778719 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1BA2B3D319432D8600778719 /* Project object */;
+}
