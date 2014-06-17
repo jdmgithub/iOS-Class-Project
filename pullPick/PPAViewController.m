@@ -14,7 +14,7 @@
 @interface PPAViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate, PPAFilterControllerDelegate, ControlsViewControllerDelegate>
 
 
-@property (nonatomic) UIImage * originalImage;
+@property (nonatomic, weak) UIImage * originalImage;
 
 
 @end

@@ -14,7 +14,7 @@
 
 @property (nonatomic, assign) id<PPAFilterControllerDelegate> delegate;
 
-@property (nonatomic) UIImage * imageToFilter;
+@property (nonatomic, weak) UIImage * imageToFilter;
 
 
 @end
