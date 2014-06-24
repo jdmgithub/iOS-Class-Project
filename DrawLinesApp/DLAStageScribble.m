@@ -159,18 +159,18 @@
     
 
 // Adds and fills Rectangle  ODD - CLEARS CURRENT PATH
-    CGContextFillRect(context, CGRectMake(140, 200, 50, 100));
+//    CGContextFillRect(context, CGRectMake(140, 200, 50, 100));
 
     
 // Adds a Curve
-    CGContextMoveToPoint(context, 50, 50);
-    CGContextAddCurveToPoint(context, 270, 50, 270, 400, 50, 400);
+//    CGContextMoveToPoint(context, 50, 50);
+//    CGContextAddCurveToPoint(context, 270, 50, 270, 400, 50, 400);
 
 // Adds an Ellipses
-    CGContextAddEllipseInRect(context, CGRectMake(80, 100, 50, 70));
+//    CGContextAddEllipseInRect(context, CGRectMake(80, 100, 50, 70));
 
 // Adds Rectangle
-    CGContextAddRect(context, CGRectMake(100, 100, 70, 140));
+//    CGContextAddRect(context, CGRectMake(100, 100, 70, 140));
     
 //  ???
 //    CGContextAddRects(context, <#const CGRect *rects#>, <#size_t count#>);
