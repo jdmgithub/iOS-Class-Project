@@ -53,7 +53,7 @@
     
     
     
-    UISlider * slider = [[UISlider alloc] initWithFrame:CGRectMake(20, 430, 280, 40)];
+    UISlider * slider = [[UISlider alloc] initWithFrame:CGRectMake(20, 500, 280, 40)];
     slider.minimumValue = 2.0;
     slider.maximumValue = 20.0;
     slider.value = lineWidth;
@@ -109,7 +109,7 @@
     UIButton * clearButton = [[UIButton alloc] initWithFrame:CGRectMake(260, 50, 50, 50)];
     clearButton.backgroundColor = [UIColor redColor];
     [clearButton addTarget:self action:@selector(clearStage) forControlEvents:UIControlEventTouchUpInside];
-    
+    [clearButton setTitle:@"Clear" forState:UIControlStateNormal];
     [self.view addSubview:clearButton];
     
     
@@ -117,7 +117,7 @@
     UIButton * undoButton = [[UIButton alloc] initWithFrame:CGRectMake(200, 50, 50, 50)];
     undoButton.backgroundColor = [UIColor lightGrayColor];
     [undoButton addTarget:self action:@selector(undoStage) forControlEvents:UIControlEventTouchUpInside];
-    
+    [undoButton setTitle:@"Undo" forState:UIControlStateNormal];
     [self.view addSubview:undoButton];
 }
 
