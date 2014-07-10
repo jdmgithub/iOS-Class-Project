@@ -65,16 +65,16 @@
         {
             eggIsFalling = YES;
             
-//            [UIView animateWithDuration:0.3 animations:^{
-//                
-//                float x = self.Egg.frame.origin.x + self.Egg.frame.size.width / 4.0;
-//                float y = self.Egg.frame.origin.y + self.Egg.frame.size.width / 4.0;
-//                float w = self.Egg.frame.size.width /2.0;
-//                float h = self.Egg.frame.size.height /2.0;;
-//                
-//                self.Egg.frame = CGRectMake(x, y, w, h);
-//            
-//            }];
+            [UIView animateWithDuration:0.3 animations:^{
+                
+                float x = self.Egg.frame.origin.x + self.Egg.frame.size.width / 4.0;
+                float y = self.Egg.frame.origin.y + self.Egg.frame.size.width / 4.0;
+                float w = self.Egg.frame.size.width /2.0;
+                float h = self.Egg.frame.size.height /2.0;;
+                
+                self.Egg.frame = CGRectMake(x, y, w, h);
+            
+            }];
             
             
             
